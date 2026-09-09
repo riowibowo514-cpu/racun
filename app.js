@@ -1,6 +1,7 @@
 // --- DOM Elements ---
 const modalProfile = document.getElementById('profile-modal');
 const btnEditProfile = document.getElementById('btn-edit-profile');
+const btnThemeToggle = document.getElementById('btn-theme-toggle');
 const btnSaveProfile = document.getElementById('btn-save-profile');
 const inputLimitKalium = document.getElementById('limit-kalium');
 const inputLimitFosfor = document.getElementById('limit-fosfor');
@@ -98,6 +99,13 @@ async function initApp() {
         modalProfile.classList.remove('hidden');
     } else {
         updateDashboard();
+    }
+    
+    // Check Theme
+    const isDark = localStorage.getItem('ggk_dark_mode') === 'true';
+    if (isDark) {
+        document.body.classList.add('dark-mode');
+        btnThemeToggle.textContent = '☀️';
     }
 }
 
@@ -230,7 +238,10 @@ function renderLogList(logs) {
                     <span class="fosfor-text font-semibold">P: ${log.fosfor_konsumsi.toFixed(1)} mg</span>
                 </div>
             </div>
-            <button class="btn-danger-sm" onclick="deleteEntry('${log.id}')">Hapus</button>
+            <div>
+                <button class="btn-warning-sm" onclick="editEntry('${log.id}')">Edit</button>
+                <button class="btn-danger-sm" onclick="deleteEntry('${log.id}')">Hapus</button>
+            </div>
         `;
         logList.appendChild(li);
     });
@@ -408,6 +419,31 @@ window.deleteEntry = function(id) {
         dailyLogs[currentDateStr] = dailyLogs[currentDateStr].filter(log => log.id !== id);
         saveLogs();
         updateDashboard();
+    }
+};
+
+window.editEntry = function(id) {
+    const logIndex = dailyLogs[currentDateStr].findIndex(log => log.id === id);
+    if (logIndex === -1) return;
+    
+    const log = dailyLogs[currentDateStr][logIndex];
+    const newPortion = prompt(`Masukkan berat porsi baru (gram) untuk ${log.nama_bahan}:`, log.porsi_g);
+    
+    if (newPortion !== null && newPortion.trim() !== "") {
+        const portion = parseFloat(newPortion);
+        if (portion > 0) {
+            const kBase = (log.kalium_konsumsi / log.porsi_g) * 100;
+            const pBase = (log.fosfor_konsumsi / log.porsi_g) * 100;
+            
+            log.porsi_g = portion;
+            log.kalium_konsumsi = (kBase / 100) * portion;
+            log.fosfor_konsumsi = (pBase / 100) * portion;
+            
+            saveLogs();
+            updateDashboard();
+        } else {
+            alert("Berat porsi tidak valid.");
+        }
     }
 };
 
@@ -593,6 +629,13 @@ btnSaveRecipe.addEventListener('click', () => {
 
 
 // --- Other Event Listeners ---
+btnThemeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('ggk_dark_mode', isDark);
+    btnThemeToggle.textContent = isDark ? '☀️' : '🌙';
+});
+
 btnEditProfile.addEventListener('click', () => {
     modalProfile.classList.remove('hidden');
     if (userProfile) {
