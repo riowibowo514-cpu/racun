@@ -1,0 +1,1147 @@
+﻿kelompok,tipe,kode,nama_bahan,sumber,air_g,energi_kal,protein_g,lemak_g,serat_g,kalsium_mg,fosfor_mg,besi_mg,natrium_mg,kalium_mg,tembaga_mg,seng_mg
+BUAH,Mentah,ER001,"Alpukat, segar",DABM-1964,84.3,85.0,0.9,6.5,,10.0,20.0,0.9,2.0,278.0,0.2,0.43
+BUAH,Mentah,ER002,"Anggur hutan, segar",KZGPI- 1990,92.3,30.0,0.5,0.2,1.2,39.0,12.0,1.1,,,,
+BUAH,Mentah,ER003,"Apel malang, segar",KZGPI- 1990,85.9,57.0,0.5,0.4,0.8,9.0,18.0,0.6,3.64,175.4,110.16,0.0
+BUAH,Mentah,ER004,"Apel, segar",DABM-1964,84.1,58.0,0.3,0.4,2.64,6.0,10.0,0.3,2.0,130.0,124.2,0.25
+BUAH,Mentah,ER005,"Arbai, segar",DABM-1964,89.9,37.0,0.8,0.5,,28.0,27.0,0.8,1.95,43.0,63.52,18.89
+BUAH,Olahan,EP001,Barongko,KZGMI-2001,66.7,159.0,3.1,5.8,,35.0,65.0,1.2,46.0,78.0,0.3,0.6
+BUAH,Mentah,ER006,"Belimbing, segar",DABM-1964,90.0,36.0,0.4,0.4,3.25,4.0,12.0,1.1,4.0,130.0,,0.14
+BUAH,Mentah,ER007,"Biwah, segar",KZGPI- 1990,87.1,51.0,0.3,0.1,0.7,220.0,14.0,0.8,0.97,258.58,0.04,0.05
+BUAH,Mentah,ER012,"Buah Naga Merah, segar",BKP,85.7,71.0,1.7,3.1,3.2,12.9,13.9,0.4,128.0,128.0,0.0,0.4
+BUAH,Mentah,ER013,"Buah Naga Putih, segar",BKP,86.6,56.0,0.8,1.0,3.2,13.0,27.3,0.5,231.0,231.0,0.0,0.4
+BUAH,Mentah,ER008,"Buah atung, segar",DABM-1964,92.0,23.0,0.8,0.2,,30.0,50.0,4.6,,,,
+BUAH,Mentah,ER009,"Buah kelenting, segar",KZGMI-2001,73.9,110.0,1.4,2.1,,8.0,102.0,1.1,2.0,0.0,0.3,0.9
+BUAH,Mentah,ER010,"Buah kom, segar",KZGPI- 1990,33.7,264.0,4.0,1.1,9.0,306.0,92.0,0.8,,,,
+BUAH,Mentah,ER011,"Buah mentega (Bisbul), segar",DABM-1964,89.0,39.0,0.7,0.2,2.01,43.0,17.0,0.8,0.6,89.98,0.06,0.06
+BUAH,Mentah,ER014,"Buah negri, segar",KZGMI-2001,85.7,55.0,1.2,0.1,5.2,30.0,40.0,0.2,10.0,0.0,0.1,0.3
+BUAH,Mentah,ER015,"Buah nona, segar",DABM-1964,71.5,101.0,1.7,0.6,2.75,27.0,20.0,0.8,5.0,312.5,325.7,0.11
+BUAH,Mentah,ER016,"Buah rotan, segar",KZGMI-2001,79.4,78.0,0.6,0.3,,1.0,7.0,3.4,7.0,495.0,0.3,0.7
+BUAH,Mentah,ER017,"Buah rukam, segar",KZGMI-2001,71.3,113.0,0.8,0.3,7.7,108.0,52.0,1.2,2.0,219.0,0.3,0.9
+BUAH,Mentah,ER018,"Buah ruruhi, segar",KZGMI-2001,93.0,29.0,2.1,0.7,2.6,6.0,7.0,0.0,36.0,45.0,0.0,0.1
+BUAH,Mentah,ER019,"Buah tuppa, segar",KZGMI-2001,82.5,67.0,0.4,0.2,,12.0,139.0,0.5,2.0,0.0,0.2,0.5
+BUAH,Mentah,ER020,"Carica papaya, segar",KZGPI- 1990,93.4,24.0,1.9,0.2,1.0,51.0,33.0,1.8,,,,
+BUAH,Mentah,ER021,"Cempedak, segar",DABM-1964,67.0,116.0,3.0,0.4,3.37,20.0,30.0,1.5,25.7,243.7,,
+BUAH,Olahan,EP002,Dodol nanas,KZGMI-2001,16.1,338.0,1.5,1.2,,,,,,,,
+BUAH,Mentah,ER022,"Duku, segar",DABM-1964,82.0,63.0,1.0,0.2,4.32,18.0,9.0,0.9,2.11,147.47,0.09,0.21
+BUAH,Mentah,ER023,"Durian, segar",DABM-1964,65.0,134.0,2.5,3.0,3.51,7.4,44.0,1.3,1.0,601.0,0.12,0.25
+BUAH,Mentah,ER024,"Duwet, segar",KZGPI- 1990,80.2,80.0,0.5,0.6,0.9,33.0,138.0,1.3,16.43,92.72,191.28,0.34
+BUAH,Mentah,ER025,"Embacang, segar",DABM-1964,72.5,98.0,1.4,0.2,1.87,21.0,15.0,0.54,2.68,250.85,0.13,0.13
+BUAH,Mentah,ER026,"Encung asam, segar",KZGPI- 1990,73.0,122.0,3.5,4.5,9.3,63.0,69.0,3.2,,,,
+BUAH,Mentah,ER027,"Erbis, segar",DABM-1964,80.0,70.0,0.6,0.0,7.68,11.0,50.0,1.1,20.68,257.11,0.06,0.07
+BUAH,Mentah,ER028,Gandaria masak,DABM-1964,80.8,68.0,0.7,0.1,2.15,8.5,20.0,1.0,3.07,129.02,,
+BUAH,Mentah,ER029,"Gatep, segar",KZGPI- 1990,52.7,191.0,4.5,1.5,13.4,186.0,69.0,3.2,17.16,403.25,0.69,1.35
+BUAH,Olahan,EP003,Getuk pisang,KZGPI- 1990,63.7,144.0,1.1,0.4,0.4,48.0,32.0,1.0,,,,
+BUAH,Mentah,ER030,"Jambu air, segar",DABM-1964,87.0,46.0,0.6,0.2,2.08,7.5,9.0,1.1,11.47,321.18,,0.11
+BUAH,Mentah,ER031,Jambu biji,DABM-1964,86.0,49.0,0.9,0.3,2.4,14.0,28.0,1.1,10.35,52.84,0.02,0.27
+BUAH,Mentah,ER032,Jambu bj putih tdk brbj,KZGPI- 1990,82.8,61.0,0.9,0.3,4.5,31.0,41.0,0.2,20.17,102.99,0.04,0.53
+BUAH,Mentah,ER033,"Jambu bol, segar",KZGMI-2001,87.1,49.0,2.3,0.2,3.5,8.0,8.0,0.3,1.0,14.0,0.0,0.0
+BUAH,Mentah,ER034,"Jambu monyet, segar",DABM-1964,82.6,64.0,0.7,0.6,1.22,4.0,13.0,0.5,11.69,107.78,,
+BUAH,Mentah,ER038,"Jeruk Kalamansi, segar",BKP,90.2,39.0,0.3,0.3,2.3,41.9,84.5,0.5,82.0,82.0,0.3,0.1
+BUAH,Mentah,ER035,"Jeruk bali, segar",DABM-1964,86.3,48.0,0.6,0.2,0.83,23.0,27.0,0.5,21.26,366.12,171.25,0.07
+BUAH,Mentah,ER036,"Jeruk banjar, segar",KZGMI-2001,84.5,61.0,0.8,0.2,,9.0,13.0,0.2,3.0,79.0,0.1,0.1
+BUAH,Mentah,ER037,Jeruk garut-keprok,DABM-1964,87.3,44.0,0.8,0.3,1.57,33.0,23.0,0.4,4.5,518.12,169.3,0.22
+BUAH,Mentah,ER039,"Jeruk manis, segar",DABM-1964,87.2,45.0,0.9,0.2,1.43,33.0,23.0,0.4,4.1,472.06,160.0,0.2
+BUAH,Mentah,ER040,"Jeruk nipis, segar",KZGPI- 1990,88.9,44.0,0.5,0.2,0.4,18.0,22.0,0.2,3.47,108.9,0.06,0.1
+BUAH,Mentah,ER041,"Jeruk ragi, segar",KZGPI- 1990,87.6,49.0,0.7,0.2,0.5,36.0,67.0,0.7,3.97,457.31,155.0,0.2
+BUAH,Mentah,ER042,"Kawista, segar",KZGPI- 1990,71.8,120.0,3.5,2.5,4.6,190.0,230.0,1.6,8.81,1015.6,308.43,0.44
+BUAH,Mentah,ER043,"Kedondong masak, segar",DABM-1964,88.0,46.0,1.0,0.1,2.6,15.0,22.0,2.8,2.26,216.23,0.03,0.06
+BUAH,Mentah,ER044,"Kedondong, segar ",KZGMI-2001,87.8,47.0,0.5,0.2,2.65,7.0,58.0,0.8,2.0,0.0,,0.2
+BUAH,Mentah,ER045,"Kelapa hutan, kering",KZGMI-2001,6.0,623.0,2.0,52.1,15.3,120.0,280.0,3.8,100.0,460.0,1.7,1.9
+BUAH,Mentah,ER046,"Kelapa muda, daging, segar",DABM-1964,83.3,68.0,1.0,0.9,0.0,7.0,30.0,1.0,17.89,564.62,0.14,0.35
+BUAH,Mentah,ER047,"Kemang, segar",DABM-1964,86.5,48.0,1.0,0.2,1.7,10.0,24.0,0.13,1.89,88.58,0.04,0.06
+BUAH,Olahan,EP004,Keripik lampung,KZGPI- 1990,5.0,485.0,1.7,22.2,0.6,43.0,65.0,0.8,,,,
+BUAH,Mentah,ER048,"Kesemek, segar",DABM-1964,78.2,78.0,0.8,0.4,0.64,6.0,26.0,0.3,0.34,34.54,0.12,0.12
+BUAH,Mentah,ER049,"Kokosan, segar",DABM-1964,85.0,86.0,1.6,0.2,1.35,22.0,38.0,1.3,1.66,118.3,0.08,0.17
+BUAH,Mentah,ER050,"Kranji, segar",KZGPI- 1990,20.1,315.0,2.1,1.4,,160.0,120.0,3.7,,,,
+BUAH,Mentah,ER051,"Langsat, segar",DABM-1964,84.1,56.0,0.9,0.2,1.43,17.0,24.0,1.1,1.0,232.0,0.09,0.19
+BUAH,Olahan,EP005,Ledre pisang,KZGPI- 1990,3.6,405.0,4.8,5.1,0.4,59.0,124.0,2.6,,,,
+BUAH,Mentah,ER052,"Lemon, segar",KZGMI-2001,92.2,34.0,0.5,0.8,0.1,23.0,20.0,0.3,31.0,140.0,0.1,0.2
+BUAH,Olahan,EP006,Lempog durian,KZGPI- 1990,25.2,320.0,3.5,5.7,4.9,190.0,93.0,2.5,,,,
+BUAH,Olahan,EP007,Loka anjoro,KZGMI-2001,63.3,163.0,1.1,4.3,,,,,,,,
+BUAH,Mentah,ER053,"Lontar, segar",KZGPI- 1990,93.0,27.0,0.4,0.2,1.6,91.0,243.0,0.5,,,,
+BUAH,Mentah,ER055,"Mangga benggala, segar",KZGMI-2001,84.4,63.0,2.4,0.4,5.8,9.0,13.0,0.2,3.0,79.0,0.1,0.1
+BUAH,Mentah,ER056,"Mangga gedung, segar",DABM-1964,87.4,44.0,0.7,0.2,1.59,13.0,10.0,0.2,1.77,83.61,0.04,0.06
+BUAH,Mentah,ER057,"Mangga golek, segar",DABM-1964,82.2,63.0,0.5,0.2,2.25,14.0,10.0,0.7,2.5,118.11,0.05,0.08
+BUAH,Mentah,ER058,"Mangga harumanis, segar",DABM-1964,86.6,46.0,0.4,0.2,1.69,15.0,9.0,0.2,1.88,88.92,0.04,0.06
+BUAH,Mentah,ER059,"Mangga indramayu, segar",DABM-1964,80.2,72.0,0.8,0.2,2.5,13.0,10.0,1.9,2.78,131.38,0.06,0.09
+BUAH,Mentah,ER060,"Mangga kopek, segar",DABM-1964,84.5,56.0,0.4,0.2,1.96,16.0,10.0,1.7,2.17,102.85,0.04,0.07
+BUAH,Mentah,ER061,"Mangga kwini, segar",KZGMI-2001,78.6,86.0,0.7,0.5,6.5,11.0,11.0,0.2,1.0,16.0,0.1,0.1
+BUAH,Mentah,ER062,"Mangga manalagi, segar",KZGMI-2001,66.5,133.0,1.0,0.1,11.8,20.0,23.0,1.0,70.0,161.0,0.0,0.0
+BUAH,Mentah,ER063,"Mangga muda, segar",DABM-1964,83.7,59.0,0.5,0.4,,12.0,11.0,0.4,2.29,108.16,0.05,0.08
+BUAH,Mentah,ER054,"Mangga, segar",KZGMI-2001,86.6,52.0,0.7,0.0,1.6,20.0,16.0,1.0,3.0,140.0,0.33,0.04
+BUAH,Mentah,ER064,"Manggis, segar",DABM-1964,83.0,63.0,0.6,0.6,1.47,8.0,12.0,0.8,9.83,61.91,0.1,0.1
+BUAH,Mentah,ER065,"Markisa, segar",KZGPI- 1990,64.7,144.0,3.5,1.2,11.4,27.0,203.0,1.4,36.51,453.8,0.11,0.13
+BUAH,Mentah,ER066,"Matoa, segar",KZGMI-2001,76.5,90.0,1.2,0.1,0.46,20.0,40.0,0.6,10.0,190.0,0.3,0.6
+BUAH,Mentah,ER067,"Melon, segar",BKP,90.8,37.0,0.6,0.4,1.0,11.6,13.9,0.4,167.0,167.0,0.3,0.1
+BUAH,Mentah,ER068,"Menteng, segar",DABM-1964,79.0,65.0,1.7,0.25,,13.0,20.0,0.8,,,,
+BUAH,Mentah,ER069,"Nanas palembang, segar",KZGMI-2001,85.5,58.0,0.7,0.2,1.6,28.7,15.0,0.6,7.0,117.0,0.03,0.1
+BUAH,Mentah,ER070,"Nanas, segar",KZGPI- 1990,88.9,40.0,0.6,0.3,0.6,22.0,14.0,0.9,18.21,111.0,0.03,0.09
+BUAH,Mentah,ER071,"Nangka masak pohon, segar",DABM-1964,70.0,106.0,1.2,0.3,3.72,20.0,19.0,0.9,2.0,407.0,246.58,1.38
+BUAH,Mentah,ER072,"Pala, daging, segar",DABM-1964,88.1,42.0,0.3,0.2,0.48,32.0,24.0,1.5,,,,
+BUAH,Mentah,ER073,"Pepaya, segar",DABM-1964,86.7,46.0,0.5,12.0,1.59,23.0,12.0,1.7,4.0,221.0,0.02,0.3
+BUAH,Mentah,ER074,"Pisang ambon, segar",KZGMI-2001,72.9,108.0,1.0,0.8,1.9,20.0,30.0,0.2,10.0,0.0,0.2,0.2
+BUAH,Mentah,ER075,"Pisang angleng (pisang ampyang), segar",DABM-1964,80.3,68.0,1.3,0.2,0.78,10.0,26.0,0.6,23.36,215.69,0.04,0.01
+BUAH,Mentah,ER076,"Pisang ayam, segar",KZGMI-2001,71.2,120.0,1.1,0.2,4.1,20.0,61.0,0.4,6.0,392.0,0.1,0.3
+BUAH,Mentah,ER077,"Pisang gapi, segar ",KZGMI-2001,66.3,126.54,2.13,0.27,11.7,0.0,40.0,0.3,39.96,392.0,,0.25
+BUAH,Mentah,ER078,"Pisang goroho, segar",KZGMI-2001,69.4,114.9,1.94,0.24,4.6,0.0,30.0,0.2,36.28,359.0,,0.25
+BUAH,Mentah,ER079,"Pisang hijau, segar",KZGPI- 1990,68.9,116.78,1.97,0.25,0.4,0.0,37.0,0.9,31.47,529.44,0.28,0.59
+BUAH,Mentah,ER080,"Pisang kayu, segar",KZGMI-2001,74.4,100.0,1.4,0.46,2.6,14.5,0.0,0.1,1.0,493.0,0.08,0.3
+BUAH,Mentah,ER081,"Pisang kepok, segar",KZGMI-2001,71.9,109.0,0.8,0.5,5.7,10.0,30.0,0.5,10.0,300.0,0.1,0.2
+BUAH,Mentah,ER082,"Pisang ketip, segar",KZGMI-2001,63.4,145.0,1.1,0.3,6.6,5.0,54.46,0.1,4.0,726.0,0.15,0.5
+BUAH,Mentah,ER083,"Pisang kidang, segar",KZGPI- 1990,75.4,96.0,1.0,0.2,0.6,87.0,173.0,0.6,5.51,418.79,0.22,0.47
+BUAH,Mentah,ER084,"Pisang lampung, segar",DABM-1964,72.1,99.0,1.3,0.2,4.32,10.0,19.0,0.9,28.23,474.96,0.25,0.53
+BUAH,Mentah,ER085,"Pisang mas bali ampenan, segar ",KZGMI-2001,76.8,92.0,1.4,0.2,3.7,7.0,29.0,1.2,32.0,272.0,0.18,0.44
+BUAH,Mentah,ER086,"Pisang mas bali kopang, segar",KZGMI-2001,64.2,127.0,1.4,0.2,3.7,10.0,0.0,0.1,43.0,616.0,0.12,0.4
+BUAH,Mentah,ER087,"Pisang mas, segar",DABM-1964,64.2,127.0,1.4,0.2,1.42,7.0,25.0,0.8,42.45,391.96,195.78,0.52
+BUAH,Mentah,ER088,"Pisang raja sereh, segar",KZGPI- 1990,69.3,108.0,1.3,0.3,0.7,16.0,38.0,0.1,31.07,522.63,0.27,0.58
+BUAH,Mentah,ER089,"Pisang raja, segar",DABM-1964,65.8,120.0,1.2,0.2,5.29,10.0,22.0,0.8,34.61,582.21,0.31,0.65
+BUAH,Mentah,ER090,"Pisang rotan, segar",KZGPI- 1990,76.1,98.0,1.3,1.2,1.0,17.0,51.0,1.1,24.2,406.87,0.21,0.46
+BUAH,Mentah,ER091,"Pisang talas, segar",KZGMI-2001,71.0,113.0,1.2,0.2,4.4,22.0,22.0,0.6,29.35,48.0,0.26,0.1
+BUAH,Mentah,ER092,Pisang tujuh bulan,KZGMI-2001,75.9,94.0,0.6,0.2,3.73,50.0,20.0,0.2,0.0,4.0,0.1,0.4
+BUAH,Mentah,ER093,"Pisang ua, segar",KZGMI-2001,67.8,128.0,0.8,0.5,8.1,12.0,28.0,0.7,32.58,382.0,0.2,0.3
+BUAH,Mentah,ER094,"Pisang uli, segar",KZGPI- 1990,61.8,134.0,1.1,0.5,1.4,31.0,53.0,0.9,38.65,650.31,0.34,0.73
+BUAH,Mentah,ER095,"Purut, segar",KZGPI- 1990,81.1,76.0,4.1,1.1,1.7,30.0,76.0,0.6,9.94,285.15,,
+BUAH,Mentah,ER096,"Rambutan binjai, segar",KZGMI-2001,81.0,76.0,0.5,0.2,3.8,15.0,22.0,1.2,22.0,120.0,0.2,0.2
+BUAH,Mentah,ER097,"Rambutan, segar",DABM-1964,80.5,69.0,0.9,0.1,0.8,16.0,16.0,0.5,15.69,104.22,0.17,0.11
+BUAH,Olahan,EP008,Rica-rica taipa,KZGMI-2001,86.7,49.0,1.6,0.3,,11.0,48.0,3.0,426.0,42.0,0.5,0.5
+BUAH,Olahan,EP009,Rujak aceh,KZGMI-2001,78.7,82.0,0.4,0.3,2.4,,,,,,,
+BUAH,Mentah,ER098,"Salak bali, segar",KZGPI- 1990,85.1,57.0,0.5,0.1,1.3,94.0,25.0,2.1,,,0.08,0.17
+BUAH,Mentah,ER099,"Salak medan, segar",KZGMI-2001,78.1,55.0,0.4,0.2,3.2,6.0,46.0,0.5,39.0,113.0,0.2,0.3
+BUAH,Mentah,ER100,"Salak pondoh, segar",KZGPI- 1990,77.9,87.0,0.8,0.4,0.0,38.0,31.0,3.9,,,0.08,0.17
+BUAH,Mentah,ER101,"Salak, segar",DABM-1964,78.0,77.0,0.4,,,28.0,18.0,4.2,,,0.08,0.17
+BUAH,Olahan,EP010,Sale kesemek,KZGMI-2001,25.0,296.0,1.1,0.6,,,,,,,,
+BUAH,Olahan,EP011,Sale pisang siam,KZGPI- 1990,28.9,281.0,2.4,0.7,1.0,41.0,64.0,1.2,,,,
+BUAH,Olahan,EP012,"Sale pisang, cilacap",KZGPI- 1990,27.1,295.0,2.3,2.1,1.3,47.0,97.0,2.8,,,,
+BUAH,Olahan,EP013,Sanggara belanda,KZGMI-2001,47.1,242.0,6.4,7.1,,,,,,,,
+BUAH,Mentah,ER104,"Sawo Manila, segar",DABM-1964,75.5,92.0,0.5,1.1,9.5,25.0,12.0,1.0,25.79,110.19,0.04,0.12
+BUAH,Mentah,ER102,"Sawo duren, segar",KZGPI- 1990,87.3,64.0,1.0,3.1,0.8,18.0,45.0,0.8,13.36,111.41,0.02,0.06
+BUAH,Mentah,ER103,"Sawo kecik, segar",KZGPI- 1990,73.8,111.0,0.9,2.3,1.0,20.0,185.0,0.7,27.57,117.8,0.04,0.12
+BUAH,Mentah,ER105,"Semangka, segar",DABM-1964,92.1,28.0,0.5,0.2,0.37,7.0,12.0,0.2,7.41,93.81,0.04,0.12
+BUAH,Mentah,ER106,"Sirsak, segar",DABM-1964,81.7,65.0,1.0,0.3,3.21,14.0,27.0,0.6,2.03,298.9,0.08,0.97
+BUAH,Mentah,ER107,"Sowa, segar",KZGMI-2001,87.7,48.0,1.6,0.6,45.0,50.0,40.0,0.3,9.0,0.0,0.1,1.5
+BUAH,Mentah,ER108,"Srikaya, segar",KZGPI- 1990,83.4,63.0,1.1,0.5,2.1,127.0,30.0,2.7,,,,
+BUAH,Mentah,ER109,"Sukun muda, segar",KZGPI- 1990,69.4,119.0,1.4,0.2,1.4,24.0,44.0,1.4,24.23,414.38,0.09,0.13
+BUAH,Mentah,ER110,"Sukun tua, segar",KZGPI- 1990,67.8,126.0,1.6,0.2,1.5,37.0,47.0,1.6,25.49,436.04,0.09,0.13
+BUAH,Olahan,EP014,Tepung Pisang,BKP,13.8,338.0,2.9,0.4,5.3,23.4,61.6,4.0,18.4,734.0,0.1,0.5
+BUAH,Olahan,EP015,Tepung Sukun,BKP,10.1,353.0,2.9,0.5,3.7,99.9,85.1,4.6,9.0,2008.0,0.1,0.6
+BUAH,Mentah,ER111,"Vigus, segar",KZGMI-2001,88.0,44.0,2.4,0.1,,30.0,20.0,0.3,2.0,180.0,0.1,0.2
+BUAH,Mentah,ER112,"Wani, segar",KZGPI- 1990,81.2,74.0,0.8,0.3,3.1,66.0,29.0,1.2,,,,
+BUMBU,Mentah,NR001,"Asam arang coklat, segar",KZGPI- 1990,66.1,130.0,0.5,1.1,1.5,79.0,113.0,4.3,13.1,,0.0,
+BUMBU,Mentah,NR002,"Asam arang merah, segar",KZGPI- 1990,75.9,99.0,0.8,1.6,2.8,69.0,300.0,4.6,2.3,95.71,0.0,0.12
+BUMBU,Mentah,NR004,"Asam kandis, segar",KZGPI- 1990,81.5,75.0,0.2,1.1,3.4,63.0,139.0,2.5,7.17,93.16,0.1,0.09
+BUMBU,Mentah,NR005,"Asam masak pohon, segar",DABM-1964,31.4,267.0,2.8,0.6,1.22,74.0,113.0,0.6,8.83,139.5,0.09,0.1
+BUMBU,Mentah,NR006,"Asam payak, segar",KZGPI- 1990,65.1,135.0,0.8,0.4,10.0,60.0,39.0,5.7,0.2,,,
+BUMBU,Mentah,NR003,"Asan kandis, kering",KZGPI- 1990,32.2,261.0,0.9,1.6,5.0,192.0,657.0,4.4,26.26,341.4,0.4,0.34
+BUMBU,Olahan,NP001,Balichong,KZGMI-2001,59.9,152.0,13.2,0.8,1.5,380.0,210.0,2.9,120.0,310.0,0.8,1.1
+BUMBU,Mentah,NR007,"Bawang merah, segar",DABM-1964,88.0,46.0,1.5,0.3,1.67,36.0,40.0,0.8,6.98,178.6,0.06,0.21
+BUMBU,Mentah,NR008,"Bawang putih, segar",DABM-1964,71.0,112.0,4.5,0.2,0.56,42.0,134.0,1.0,46.14,665.68,0.09,0.44
+BUMBU,Olahan,NP002,Bekasam,KZGMI-2001,65.5,116.0,11.9,4.9,3.46,704.0,757.0,7.5,711.0,176.0,0.8,1.9
+BUMBU,Olahan,NP003,Bekasang,KZGMI-2001,67.1,78.0,11.4,2.0,0.35,54.0,97.0,2.6,4016.0,121.0,0.2,4.8
+BUMBU,Mentah,NR009,"Boros kunci, segar",DABM-1964,90.0,40.0,1.0,0.8,0.98,50.0,50.0,2.0,33.33,480.0,0.02,0.3
+BUMBU,Mentah,NR010,"Boros laja (lengkuas), segar",DABM-1964,93.0,26.0,1.0,0.3,1.11,50.0,50.0,2.0,24.1,137.13,0.07,0.34
+BUMBU,Mentah,NR011,"Cabai gembor merah, segar",KZGPI- 1990,90.8,38.0,1.6,0.8,1.6,49.0,41.0,1.1,6.57,275.34,0.12,0.18
+BUMBU,Mentah,NR012,"Cabai hijau, segar",DABM-1964,93.4,26.0,0.7,0.3,2.64,14.0,23.0,0.4,7.42,150.97,0.08,0.16
+BUMBU,Mentah,NR013,"Cabai merah, kering",DABM-1964,10.0,367.0,15.9,6.2,26.85,160.0,370.0,2.3,25.17,181.47,1.2,1.8
+BUMBU,Mentah,NR014,"Cabai merah, segar",DABM-1964,90.9,36.0,1.0,0.3,1.42,29.0,24.0,0.5,23.26,272.35,0.12,0.18
+BUMBU,Mentah,NR015,"Cabai rawit, segar",DABM-1964,71.2,120.0,4.7,2.4,15.17,45.0,85.0,2.5,33.7,706.21,0.29,0.61
+BUMBU,Mentah,NR016,"Cengkeh, kering",DABM-1964,23.3,330.0,5.2,8.9,10.0,740.0,100.0,4.9,282.0,961.0,0.3,0.0
+BUMBU,Olahan,NP004,Cuka,DABM-1964,94.5,21.0,0.1,0.1,0.0,7.0,10.0,0.5,20.63,37.81,0.0,0.0
+BUMBU,Mentah,NR017,"Daun salam,  bubuk",FCTEA-1972,13.1,301.0,14.2,10.9,9.4,86.0,250.0,44.1,180.0,619.0,1.31,0.65
+BUMBU,Mentah,NR018,"Jahe, segar",DABM-1964,55.0,51.0,1.5,1.0,11.97,21.0,39.0,1.6,12.39,441.74,0.48,0.72
+BUMBU,Olahan,NP005,Kecap,DABM-1964,63.0,71.0,5.7,1.3,0.0,123.0,96.0,5.7,1114.45,,0.04,
+BUMBU,Mentah,NR019,Kemiri,DABM-1964,7.0,675.0,19.0,63.0,3.03,80.0,200.0,2.0,25.45,430.74,0.23,0.78
+BUMBU,Mentah,NR020,"Ketumbar, kering",DABM-1964,11.2,418.0,14.1,16.1,12.28,630.0,370.0,17.9,91.21,1787.02,0.95,4.58
+BUMBU,Mentah,NR021,Kluwek,DABM-1964,51.0,310.0,10.0,24.0,,40.0,100.0,2.0,,,,
+BUMBU,Mentah,NR022,"Kunyit, segar",DABM-1964,84.9,69.0,2.0,2.7,0.56,24.0,78.0,3.3,5.63,406.71,0.05,0.36
+BUMBU,Mentah,NR023,"Merica, kering",DABM-1964,12.9,365.0,11.5,6.8,0.98,460.0,200.0,16.4,3.91,99.71,0.89,1.11
+BUMBU,Mentah,NR024,"Pala, biji, kering",DABM-1964,14.3,518.0,7.5,36.4,3.49,120.0,240.0,4.6,1.99,78.72,0.94,1.96
+BUMBU,Olahan,NP006,Petis ikan,DABM-1964,56.0,165.0,20.0,0.2,,37.0,36.0,2.8,,,,
+BUMBU,Olahan,NP007,Petis udang kering,KZGPI- 1990,8.3,345.0,23.8,1.4,0.0,221.0,397.0,3.8,11998.13,462.79,0.75,1.89
+BUMBU,Olahan,NP008,Petis udang pasta,DABM-1964,39.0,220.0,15.0,0.9,2.28,37.0,36.0,2.8,7981.31,307.85,0.5,1.25
+BUMBU,Olahan,NP009,Saos tomat,DABM-1964,69.5,110.0,2.0,0.4,0.93,12.0,18.0,0.8,889.82,129.65,0.18,0.26
+BUMBU,Olahan,NP010,Tempoya,KZGMI-2001,70.1,110.0,1.7,1.3,2.6,190.0,45.0,2.9,596.97,486.26,,
+BUMBU,Olahan,NP011,Terasi,KZGPI- 1990,33.8,155.0,22.3,2.9,2.7,3812.0,726.0,78.5,1663.73,821.39,0.99,2.36
+BUMBU,Olahan,NP012,Terasi dobo,KZGMI-2001,58.4,191.0,33.1,3.6,1.56,2250.0,1130.0,22.9,650.0,1260.0,2.9,5.0
+BUMBU,Olahan,NP013,Terasi merah,DABM-1964,40.0,174.0,30.0,3.5,2.24,100.0,150.0,3.1,7850.47,302.8,0.49,1.23
+DAGING & UNGGAS,Mentah,FR001,"Anak sapi, daging, gemuk, segar",DABM-1964,62.0,184.0,18.8,14.0,0.0,10.0,200.0,2.2,117.67,490.05,0.17,5.83
+DAGING & UNGGAS,Mentah,FR002,"Anak sapi, daging, kurus, segar",DABM-1964,69.0,174.0,19.6,10.0,0.0,11.0,201.0,2.9,95.99,399.78,0.14,4.76
+DAGING & UNGGAS,Mentah,FR003,"Anak sapi, daging, sedang, segar",DABM-1964,68.0,190.0,19.1,12.0,0.0,11.0,193.0,2.9,99.09,412.68,0.14,4.91
+DAGING & UNGGAS,Mentah,FR004,"Angsa, daging, segar",DABM-1964,51.1,349.0,16.4,31.5,0.0,15.0,188.0,1.8,70.91,299.19,0.26,1.67
+DAGING & UNGGAS,Olahan,FP027,"Ayam  goreng Kentucky,sayap",KZGPI- 1990,44.7,297.0,35.9,15.2,0.0,103.0,227.0,4.4,807.44,248.44,0.06,1.4
+DAGING & UNGGAS,Olahan,FP026,"Ayam goreng Kentucky, paha",KZGPI- 1990,48.7,286.0,32.1,16.1,0.0,89.0,248.0,6.9,746.45,265.23,0.09,2.3
+DAGING & UNGGAS,Olahan,FP021,"Ayam goreng church texas, dada",KZGPI- 1990,42.2,338.0,35.2,20.6,0.0,79.0,221.0,5.6,800.1,369.49,0.16,1.11
+DAGING & UNGGAS,Olahan,FP023,"Ayam goreng church texas, sayap",KZGPI- 1990,47.2,295.0,34.0,16.0,0.0,81.0,179.0,3.0,770.94,237.21,0.16,1.2
+DAGING & UNGGAS,Olahan,FP022,"Ayam goreng church,texas paha",KZGPI- 1990,50.3,287.0,31.0,15.7,0.0,99.0,176.0,4.1,723.17,256.96,0.17,1.51
+DAGING & UNGGAS,Olahan,FP024,"Ayam goreng kalasan, paha",KZGPI- 1990,46.2,275.0,37.4,12.2,0.0,116.0,237.0,5.8,175.7,321.93,0.16,1.5
+DAGING & UNGGAS,Olahan,FP025,"Ayam goreng kentucky, dada",KZGPI- 1990,46.5,298.0,34.2,16.8,0.0,90.0,284.0,5.5,740.58,342.0,0.07,1.0
+DAGING & UNGGAS,Olahan,FP028,Ayam goreng mbok berek dada,KZGPI- 1990,43.4,295.0,39.2,13.6,0.0,114.0,278.0,5.4,,,,
+DAGING & UNGGAS,Olahan,FP029,"Ayam goreng pasundan, dada",KZGPI-1990,50.1,246.0,37.9,9.0,0.0,90.0,260.0,7.5,,,,
+DAGING & UNGGAS,Olahan,FP030,"Ayam goreng pasundan, paha",KZGPI-1990,52.8,245.0,33.1,11.4,0.0,90.0,283.0,7.3,,,,
+DAGING & UNGGAS,Olahan,FP031,"Ayam goreng pioneer, dada",KZGPI-1990,44.5,295.0,37.4,14.7,0.0,108.0,236.0,6.8,,,,
+DAGING & UNGGAS,Olahan,FP032,"Ayam goreng sukabumi, dada",KZGPI-1990,49.8,244.0,36.7,9.2,0.0,81.0,154.0,6.1,,,,
+DAGING & UNGGAS,Olahan,FP033,"Ayam goreng sukabumi, paha",KZGPI-1990,46.0,283.0,35.7,14.3,0.0,68.0,106.0,5.4,,,,
+DAGING & UNGGAS,Olahan,FP034,"Ayam taliwang, masakan",KZGMI-2001,57.5,264.0,18.2,20.1,,94.0,164.0,2.0,507.0,408.0,0.4,12.3
+DAGING & UNGGAS,Olahan,FP001,"Ayam, ampela, goreng",KZGMS-1993,4.8,270.0,32.3,11.2,0.0,129.0,314.0,4.9,979.7,,0.12,3.3
+DAGING & UNGGAS,Mentah,FR005,"Ayam, daging, segar",DABM-1964,55.9,298.0,18.2,25.0,0.0,14.0,200.0,1.5,108.72,385.88,0.11,2.0
+DAGING & UNGGAS,Mentah,FR006,"Ayam, dideh/darah, segar",DABM-1964,82.0,75.0,13.8,1.9,0.0,15.0,9.0,1.3,337.0,234.0,,
+DAGING & UNGGAS,Mentah,FR007,"Ayam, hati, segar",KZGMS-1993,53.4,261.0,27.4,16.1,0.0,118.0,373.0,15.8,1068.2,22.86,0.84,0.04
+DAGING & UNGGAS,Olahan,FP002,"Ayam, usus, goreng",KZGPI-1990,4.6,473.0,45.2,26.3,0.0,1407.0,458.0,8.4,,,,
+DAGING & UNGGAS,Olahan,FP035,"Babi hutan masak rica, masakan",KZGMI-2001,56.2,491.0,24.6,16.3,,18.0,144.0,1.2,1415.0,327.0,0.2,2.6
+DAGING & UNGGAS,Mentah,FR008,"Babi, daging, gemuk,segar",DABM-1964,42.0,453.0,11.9,45.0,0.0,7.0,117.0,1.8,112.12,819.33,0.22,0.43
+DAGING & UNGGAS,Mentah,FR009,"Babi, daging, kurus, segar",DABM-1964,50.0,371.0,14.1,35.0,0.0,8.0,151.0,2.1,96.65,706.32,0.19,0.37
+DAGING & UNGGAS,Mentah,FR010,"Babi, ginjal, segar",DABM-1964,77.1,110.0,16.3,4.6,0.0,11.0,246.0,8.0,138.96,390.0,0.71,3.16
+DAGING & UNGGAS,Mentah,FR011,"Babi, hati, segar",DABM-1964,72.3,129.0,19.7,4.8,0.0,10.0,362.0,18.0,110.0,447.0,0.58,0.12
+DAGING & UNGGAS,Mentah,FR012,"Bebek (itik), daging, segar",DABM-1964,54.3,321.0,16.0,28.6,0.0,15.0,188.0,1.8,54.48,199.03,0.21,1.21
+DAGING & UNGGAS,Mentah,FR013,"Bebek alabio, daging, segar",KZGMI-2001,57.0,303.0,11.3,27.0,0.0,20.0,293.0,4.8,50.0,260.0,0.7,2.0
+DAGING & UNGGAS,Olahan,FP003,"Bebek, daging, goreng",KZGMI-2001,48.8,300.0,24.0,20.7,0.0,170.0,170.0,4.1,34.0,6.0,0.4,3.0
+DAGING & UNGGAS,Olahan,FP036,Beef burger,KZGMS-1993,45.5,258.0,10.6,9.5,0.4,210.0,157.0,2.6,572.2,189.06,,
+DAGING & UNGGAS,Olahan,FP037,"Beef teriyaki, masakan",KZGMS-1993,65.1,151.0,8.6,3.1,0.3,142.0,62.0,2.3,376.8,,,
+DAGING & UNGGAS,Olahan,FP038,"Beef yakiniku, masakan",KZGMS-1993,67.7,132.0,9.8,1.1,0.3,302.0,67.0,2.0,408.9,,,
+DAGING & UNGGAS,Mentah,FR014,"Belibis, daging, segar",KZGMI-2001,71.3,131.0,20.2,4.3,0.0,8.0,192.0,9.6,46.0,104.0,1.2,1.6
+DAGING & UNGGAS,Olahan,FP039,Brongkos,KZGPI-1990,76.4,141.0,15.3,3.3,1.0,87.0,97.0,5.1,,,,
+DAGING & UNGGAS,Olahan,FP004,"Buaya, daging, dendeng, mentah",KZGMI-2001,12.3,365.0,49.6,4.8,,60.0,130.0,4.3,500.0,680.0,0.2,11.6
+DAGING & UNGGAS,Olahan,FP040,"Bulgogi, masakan",KZGMS-1993,84.2,72.0,11.4,4.9,1.7,214.0,86.0,2.5,508.6,,,
+DAGING & UNGGAS,Mentah,FR015,"Burung, sarang, segar",DABM-1964,24.8,281.0,37.5,0.3,,485.0,18.0,3.0,,,,
+DAGING & UNGGAS,Olahan,FP041,"Chicken teriyaki, masakan",KZGMS-1993,68.2,168.0,13.0,9.6,0.8,137.0,106.0,3.1,958.5,,,
+DAGING & UNGGAS,Olahan,FP042,"Chikiniku, masakan",KZGMS-1993,65.4,143.0,9.8,1.4,0.4,301.0,63.0,2.0,531.4,,,
+DAGING & UNGGAS,Olahan,FP043,"Coto mangkasara, kuda, masakan",KZGMI-2001,83.5,96.0,6.8,5.9,,11.0,106.0,2.3,96.0,31.0,0.1,1.0
+DAGING & UNGGAS,Olahan,FP044,"Coto mangkasara, sapi, masakan",KZGMI-2001,85.9,84.0,6.0,6.0,,8.0,104.0,4.0,90.0,25.0,0.3,0.6
+DAGING & UNGGAS,Olahan,FP045,"Djibokum, masakan",KZGMS-1993,43.4,248.0,10.0,2.3,0.1,116.0,110.0,2.8,400.5,,,
+DAGING & UNGGAS,Mentah,FR016,"Domba, daging, gemuk, segar",DABM-1964,55.8,317.0,15.7,27.7,0.0,9.0,157.0,2.4,64.34,242.1,0.11,3.72
+DAGING & UNGGAS,Mentah,FR017,"Domba, daging, kurus,  segar",DABM-1964,66.3,202.0,17.1,14.8,0.0,10.0,191.0,2.6,90.0,355.0,0.08,2.84
+DAGING & UNGGAS,Mentah,FR018,"Domba, ginjal, segar",DABM-1964,77.8,100.0,16.6,3.3,0.0,13.0,237.0,9.2,166.74,296.07,0.48,2.39
+DAGING & UNGGAS,Olahan,FP046,"Empal (daging) Goreng, masakan",KZGMS-1993,43.9,248.0,36.2,6.9,,131.0,235.0,6.4,847.5,,,
+DAGING & UNGGAS,Olahan,FP047,Gulai kambing,KZGMI-2001,78.4,126.0,4.2,9.4,,45.0,73.0,1.3,302.0,138.0,0.2,1.1
+DAGING & UNGGAS,Olahan,FP005,Ham,DABM-1964,42.0,384.0,16.9,35.0,0.0,10.0,136.0,2.5,112.12,819.33,0.11,0.43
+DAGING & UNGGAS,Olahan,FP006,"Itik alabio, daging, dendeng, mentah",KZGMI-2001,12.7,496.0,30.3,33.5,,135.0,370.0,12.5,1081.0,478.0,0.7,0.3
+DAGING & UNGGAS,Olahan,FP048,"Jangang bintatoeng, masakan",KZGMI-2001,73.6,107.0,5.3,2.2,,64.0,61.0,2.5,482.0,406.0,0.2,0.8
+DAGING & UNGGAS,Olahan,FP049,"Kalio ayam, masakan",KZGMS-1993,64.7,203.0,16.0,13.5,,278.0,177.0,4.2,533.6,,,
+DAGING & UNGGAS,Olahan,FP050,"Kalio jeroan, masakan",KZGMS-1993,68.9,163.0,16.5,9.0,,102.0,268.0,7.1,569.5,,,
+DAGING & UNGGAS,Olahan,FP051,"Kalio kikil (tunjang), masakan",KZGMS-1993,75.3,122.0,13.8,5.7,,154.0,59.0,3.4,518.5,,,
+DAGING & UNGGAS,Olahan,FP052,"Kalio otak, masakan",KZGMS-1993,70.3,157.0,8.1,8.8,,212.0,69.0,3.3,603.6,,,
+DAGING & UNGGAS,Mentah,FR019,"Kambing, daging, segar",DABM-1964,70.3,149.0,16.6,9.2,0.0,11.0,124.0,1.0,95.5,268.66,0.31,4.92
+DAGING & UNGGAS,Mentah,FR020,"Kelinci, daging, segar",FCTEA-1972,74.3,142.0,16.9,7.8,0.0,7.0,350.0,0.96,49.05,371.1,,
+DAGING & UNGGAS,Mentah,FR021,"Kerbau, daging, segar",DABM-1964,80.0,79.0,18.7,0.5,0.0,14.0,221.0,3.3,91.0,273.0,0.13,1.63
+DAGING & UNGGAS,Olahan,FP007,Kerupuk urat,KZGMI-2001,3.6,588.0,53.7,40.9,,36.0,15.0,1.3,1024.0,37.0,0.1,0.2
+DAGING & UNGGAS,Mentah,FR022,"Kuda, daging, segar",DABM-1964,76.0,113.0,18.1,4.1,0.0,10.0,150.0,2.7,46.47,315.67,0.13,2.54
+DAGING & UNGGAS,Olahan,FP053,"Lawar babi, masakan",KZGPI-1990,68.8,174.0,17.0,10.0,0.0,61.0,141.0,3.0,,,,0.0
+DAGING & UNGGAS,Olahan,FP054,"Lawar penyu, masakan",KZGPI-1990,66.3,141.0,23.0,1.5,0.0,69.0,141.0,6.0,,,,0.0
+DAGING & UNGGAS,Olahan,FP055,"Lawara jangang, masakan",KZGMI-2001,72.4,159.0,5.0,10.9,,57.0,107.0,1.5,400.0,2368.0,0.1,1.0
+DAGING & UNGGAS,Olahan,FP008,"Menjangan, daging, dendeng, mentah",KZGMI-2001,14.3,322.0,55.8,2.0,,55.0,310.0,2.1,765.0,1282.0,1.7,3.2
+DAGING & UNGGAS,Olahan,FP056,"Naan maran sapi, masakan",KZGMI-2001,14.8,478.0,38.3,33.9,,30.0,390.0,11.8,220.0,320.0,0.6,3.9
+DAGING & UNGGAS,Olahan,FP057,"Nasu likku, masakan",KZGMI-2001,59.0,196.0,14.5,8.3,,69.0,157.0,1.0,386.0,470.0,0.3,2.0
+DAGING & UNGGAS,Olahan,FP058,"Oramu ninahu ndawa olaho, masakan",KZGMI-2001,74.9,117.0,13.7,5.0,,964.0,804.0,2.0,,727.0,0.3,1.5
+DAGING & UNGGAS,Olahan,FP059,"Paniki masak santan, masakan",KZGMI-2001,25.4,460.0,28.5,35.2,,188.0,357.0,5.5,2002.0,532.0,0.4,2.5
+DAGING & UNGGAS,Olahan,FP060,"Pelolah manuk, masakan",KZGMI-2001,60.0,219.0,19.7,13.6,,33.0,160.0,1.6,577.0,,,
+DAGING & UNGGAS,Olahan,FP066,"Penyu, serapah, masakan",KZGPI-1990,71.3,174.0,13.1,12.2,0.0,72.0,186.0,9.5,,507.0,0.8,2.4
+DAGING & UNGGAS,Olahan,FP009,"Punai, daging, goreng",KZGMI-2001,54.5,224.0,26.2,11.3,,362.0,362.0,3.1,2.0,19.0,0.3,1.6
+DAGING & UNGGAS,Olahan,FP063,"RW, anjing, masakan",KZGMI-2001,60.8,198.0,24.6,10.7,,1071.0,876.0,4.0,1604.0,226.0,0.1,2.8
+DAGING & UNGGAS,Olahan,FP061,"Rawon, masakan",KZGPI-1990,86.0,60.0,5.4,2.5,0.3,272.0,153.0,3.3,,,,
+DAGING & UNGGAS,Olahan,FP062,"Rendang sapi, masakan",KZGPI-1990,57.9,193.0,22.6,7.9,0.0,474.0,211.0,14.9,,,,
+DAGING & UNGGAS,Olahan,FP010,"Rusa, daging, dendeng, mentah",KZGMI-2001,18.3,536.0,40.5,41.5,,90.0,420.0,13.4,130.0,690.0,0.3,10.7
+DAGING & UNGGAS,Olahan,FP011,"Sapi, abon",KZGPI-1990,7.1,212.0,18.0,10.6,7.5,150.0,209.0,12.3,,,,
+DAGING & UNGGAS,Olahan,FP012,"Sapi, abon, asli",KZGPI-1990,24.8,358.0,14.6,16.1,2.5,165.0,136.0,14.6,,,,
+DAGING & UNGGAS,Mentah,FR023,"Sapi, babat, segar",DABM-1964,76.7,108.0,17.6,4.2,0.0,12.0,144.0,1.0,146.76,101.37,0.11,2.15
+DAGING & UNGGAS,Olahan,FP013,"Sapi, daging, asap",DABM-1964,60.0,182.0,32.0,6.0,0.0,15.0,300.0,5.0,1619.57,485.36,0.03,5.06
+DAGING & UNGGAS,Olahan,FP014,"Sapi, daging, dendeng, mentah",DABM-1964,25.0,301.0,55.0,9.0,,30.0,370.0,5.1,,,,
+DAGING & UNGGAS,Mentah,FR024,"Sapi, daging, gemuk, segar",DABM-1964,60.0,273.0,17.5,22.0,0.0,10.0,150.0,2.6,93.0,267.0,0.17,6.41
+DAGING & UNGGAS,Olahan,FP015,"Sapi, daging, kornet",DABM-1964,53.0,289.0,16.0,25.0,0.0,10.0,170.0,4.0,793.59,94.42,0.07,3.97
+DAGING & UNGGAS,Mentah,FR025,"Sapi, daging, kurus, segar",DABM-1964,69.0,174.0,19.6,10.0,0.0,11.0,181.0,2.9,83.0,489.0,0.07,4.87
+DAGING & UNGGAS,Mentah,FR026,"Sapi, daging, lemak sedang, segar",DABM-1964,66.0,201.0,18.8,14.0,0.0,11.0,170.0,2.8,105.28,378.0,4.58,5.22
+DAGING & UNGGAS,Olahan,FP016,"Sapi, daging, sosis (Worst)",DABM-1964,37.6,448.0,14.5,42.3,,28.0,61.0,1.1,765.27,284.46,0.06,1.67
+DAGING & UNGGAS,Mentah,FR027,"Sapi, daleman, segar",KZGMI-2001,70.1,183.0,12.0,14.4,0.0,43.0,319.0,1.8,277.0,160.0,0.1,0.8
+DAGING & UNGGAS,Mentah,FR028,"Sapi, dideh/darah",DABM-1964,75.6,98.0,21.9,1.1,0.0,7.0,24.0,1.3,150.0,170.0,,0.22
+DAGING & UNGGAS,Mentah,FR029,"Sapi, ginjal, segar",DABM-1964,74.9,137.0,15.0,8.1,0.0,9.0,221.0,7.9,200.0,230.19,,
+DAGING & UNGGAS,Olahan,FP017,"Sapi, hati, sosis (liverworst)",DABM-1964,56.6,274.0,16.0,22.0,2.33,20.0,150.0,4.0,653.76,158.77,0.22,2.15
+DAGING & UNGGAS,Mentah,FR030,"Sapi, keleponan, segar",KZGMI-2001,83.8,84.0,10.5,4.6,0.0,20.0,13.0,2.1,73.0,318.0,0.2,1.7
+DAGING & UNGGAS,Mentah,FR031,"Sapi, liver, segar",DABM-1964,69.7,132.0,19.7,3.2,0.0,7.0,358.0,6.6,110.0,213.0,0.51,2.25
+DAGING & UNGGAS,Mentah,FR032,"Sapi, otak, segar",DABM-1964,78.9,123.0,10.4,8.6,0.0,16.0,330.0,3.6,112.13,243.84,0.26,0.91
+DAGING & UNGGAS,Olahan,FP018,"Sapi, paru, dendeng, mentah",KZGMI-2001,9.7,360.0,57.3,6.0,,126.0,903.0,21.1,1483.0,864.0,1.2,6.1
+DAGING & UNGGAS,Olahan,FP019,"Sapi, paru, goreng",KZGMS-1993,45.5,268.0,23.9,12.7,,102.0,315.0,8.8,923.1,299.0,0.0,1.5
+DAGING & UNGGAS,Mentah,FR033,"Sapi, usus, segar",DABM-1964,76.7,126.0,14.0,7.2,0.0,14.0,115.0,4.0,,,,
+DAGING & UNGGAS,Olahan,FP065,"Sate pusut, masakan",KZGMI-2001,52.1,274.0,12.9,18.6,,63.0,190.0,2.7,609.0,,,
+DAGING & UNGGAS,Olahan,FP064,"Sate, penyu, masakan",KZGPI-1990,57.4,179.0,22.5,3.5,0.0,187.0,238.0,14.4,,,,0.0
+DAGING & UNGGAS,Olahan,FP067,"Sie reuboh, masakan",KZGMI-2001,32.4,474.0,11.2,42.5,,26.0,62.0,1.3,677.0,176.0,2.4,3.2
+DAGING & UNGGAS,Olahan,FP068,"Sop buntut, masakan",KZGMS-1993,86.1,71.0,7.5,3.6,,286.0,38.0,3.2,489.7,,,
+DAGING & UNGGAS,Olahan,FP069,"Sop daging sapi, masakan",KZGMS-1993,87.5,49.0,5.8,0.5,,158.0,48.0,2.2,390.5,,,
+DAGING & UNGGAS,Olahan,FP070,"Sop kaki sapi, masakan",KZGMS-1993,84.5,68.0,9.0,1.9,,302.0,15.0,2.2,434.7,,,
+DAGING & UNGGAS,Olahan,FP071,"Sop kambing, masakan",KZGMS-1993,91.6,34.0,5.5,0.8,,145.0,37.0,1.6,347.5,,,
+DAGING & UNGGAS,Olahan,FP072,"Sop konro, masakan",KZGMI-2001,85.0,71.0,7.4,2.6,,17.0,60.0,4.6,184.0,25.0,0.3,1.3
+DAGING & UNGGAS,Olahan,FP073,"Sop saudara, masakan",KZGMI-2001,82.4,89.0,7.2,5.0,,10.0,174.0,9.0,274.0,50.0,0.2,1.1
+DAGING & UNGGAS,Olahan,FP074,"Soto bandung, masakan",KZGPI-1990,89.9,42.0,3.9,1.7,0.4,74.0,75.0,1.8,,,,
+DAGING & UNGGAS,Olahan,FP075,"Soto banjar, masakan",KZGMI-2001,83.7,110.0,2.9,9.5,,28.0,28.0,0.3,36.0,6.0,,0.2
+DAGING & UNGGAS,Olahan,FP076,"Soto betawi, masakan",KZGPI-1990,75.9,135.0,2.5,8.8,0.5,222.0,72.0,1.9,,,,
+DAGING & UNGGAS,Olahan,FP077,"Soto jeroan, masakan",KZGMS-1993,81.4,92.0,11.8,4.3,,218.0,48.0,1.9,363.3,,,
+DAGING & UNGGAS,Olahan,FP078,"Soto kudus, masakan",KZGPI-1990,91.6,38.0,2.6,2.3,0.2,237.0,67.0,1.7,,,,
+DAGING & UNGGAS,Olahan,FP079,"Soto madura, masakan",KZGPI-1990,89.8,60.0,3.5,4.5,0.0,361.0,126.0,3.8,,,,
+DAGING & UNGGAS,Olahan,FP080,"Soto padang, masakan",KZGPI-1990,75.0,127.0,5.9,6.6,0.7,298.0,94.0,1.5,,,,
+DAGING & UNGGAS,Olahan,FP081,"Soto pekalongan, masakan",KZGPI-1990,83.8,94.0,3.0,6.8,0.3,322.0,79.0,2.0,,,,
+DAGING & UNGGAS,Olahan,FP082,"Soto pemalang, masakan",KZGPI-1990,86.0,75.0,3.6,5.2,0.0,170.0,80.0,2.1,,,,
+DAGING & UNGGAS,Olahan,FP083,"Soto sukaraja, masakan",KZGPI-1990,75.9,80.0,3.2,3.5,0.3,347.0,77.0,2.3,,,,
+DAGING & UNGGAS,Olahan,FP084,"Soto sulung, masakan",KZGPI-1990,88.1,86.0,2.3,8.5,0.0,200.0,120.0,2.9,,,,
+DAGING & UNGGAS,Olahan,FP085,"Sukiyaki, masakan",KZGMS-1993,81.0,75.0,5.6,0.4,0.2,109.0,59.0,0.5,426.2,,,
+DAGING & UNGGAS,Olahan,FP086,"Tedong pallu basa, masakan",KZGMI-2001,81.7,83.0,10.4,3.4,,10.0,139.0,2.6,397.0,34.0,0.6,1.3
+DAGING & UNGGAS,Olahan,FP087,"Tikus rica, masakan",KZGMI-2001,54.9,257.0,18.8,18.5,,232.0,293.0,6.5,1724.0,308.0,0.5,2.3
+DAGING & UNGGAS,Olahan,FP088,"Tinoransa, masakan",KZGMI-2001,31.6,516.0,17.7,49.5,,698.0,648.0,3.5,1307.0,320.0,0.1,1.8
+DAGING & UNGGAS,Mentah,FR034,Ulat sagu segar,KZGMI-2001,65.9,241.0,5.8,21.6,2.8,20.0,70.0,0.5,210.0,210.0,1.0,7.7
+DAGING & UNGGAS,Olahan,FP020,"Ulat sagu, panggang",KZGMI-2001,41.3,380.0,11.9,30.3,4.8,30.0,120.0,1.5,260.0,550.0,3.1,14.2
+IKAN,Olahan,GP053,Abon haruwan,KZGMI-2001,11.6,513.0,23.7,37.0,,25.0,25.0,0.5,61.0,15.0,,0.2
+IKAN,Olahan,GP054,Abon ikan,KZGMI-2001,6.4,435.0,27.2,20.2,,,,,,,,
+IKAN,Olahan,GP001,"Bekicot, dendeng, mentah",KZGPI- 1990,6.7,441.0,48.7,20.3,0.0,692.0,523.0,16.6,,,,
+IKAN,Olahan,GP002,"Belut, goreng",KZGPI- 1990,11.2,417.0,25.9,19.4,0.0,840.0,872.0,4.9,70.8,217.7,0.3,1.8
+IKAN,Mentah,GR011,"Belut, segar",KZGMI-2001,81.5,70.0,14.6,0.8,0.0,49.0,155.0,1.5,55.0,169.0,0.2,1.2
+IKAN,Mentah,GR012,"Belut,laut, segar",KZGPI- 1990,79.5,93.0,12.8,1.5,0.0,60.0,199.0,3.0,33.0,175.9,0.1,1.0
+IKAN,Olahan,GP055,"Betok wadi, masakan",KZGMI-2001,69.2,145.0,16.3,7.0,,405.0,523.0,1.8,69.0,203.0,1.0,1.3
+IKAN,Olahan,GP056,"Bou ninahu ndamate, masakan",KZGMI-2001,79.5,79.0,6.3,1.0,,,,,66.7,,,
+IKAN,Olahan,GP057,"Bouiki ninahu nggaluku, masakan",KZGMI-2001,73.9,94.0,7.8,2.2,,,,,58.4,179.4,,1.5
+IKAN,Olahan,GP058,Cakalang asar (asap papua),KZGMI-2001,64.3,155.0,20.1,3.8,,20.0,240.0,2.1,90.0,390.0,0.3,0.1
+IKAN,Olahan,GP003,"Cumi-cumi, goreng",KZGPI- 1990,54.2,265.0,40.6,10.1,0.0,62.0,270.0,2.7,86.2,81.9,,
+IKAN,Mentah,GR022,"Cumi-cumi, segar",KZGPI- 1990,82.2,75.0,16.1,0.7,0.0,32.0,200.0,1.8,36.5,204.1,1.6,1.3
+IKAN,Olahan,GP059,"Dendeng belut, goreng",KZGPI- 1990,8.2,382.0,55.7,14.1,0.0,1069.0,654.0,15.4,,,,
+IKAN,Olahan,GP060,"Dendeng mujahir, goreng",KZGPI- 1990,6.5,598.0,74.3,26.9,0.0,1957.0,1447.0,7.4,,,,
+IKAN,Olahan,GP061,Fillet o-fish,KZGMS-1993,51.0,270.0,12.3,15.9,0.2,239.0,272.0,1.8,438.5,,,
+IKAN,Olahan,GP062,"Gete kuah asam, masakan",KZGMI-2001,80.1,75.0,8.2,2.0,,1620.0,880.0,0.8,260.0,150.0,0.1,1.5
+IKAN,Olahan,GP063,"Gulai asam keueung, masakan",KZGMI-2001,86.0,52.0,10.0,0.5,,62.0,102.0,0.3,332.0,141.0,0.0,1.0
+IKAN,Olahan,GP064,"Gulai ikan paya, masakan",KZGMI-2001,72.1,148.0,10.0,9.8,,103.0,82.0,0.7,525.0,256.0,0.1,0.9
+IKAN,Olahan,GP065,"Gulai ikan, masakan",KZGMS-1993,75.7,106.0,16.5,3.3,,306.0,196.0,4.8,742.5,,,
+IKAN,Olahan,GP066,"Gulai keumamah, masakan",KGZMI-2001,81.4,110.0,5.9,8.2,,32.0,96.0,1.0,335.0,121.0,0.2,0.9
+IKAN,Olahan,GP067,"Gulai tiram, masakan",KZGMI-2001,73.1,132.0,9.0,7.2,,53.0,134.0,3.7,285.0,133.0,1.1,0.7
+IKAN,Olahan,GP068,"Gurame asem manis, masakan",KZGPI- 1990,63.1,192.0,12.7,10.1,0.0,283.0,169.0,1.1,,,,
+IKAN,Olahan,GP007,Ikan Belida bakar,KZGMI-2001,68.2,128.0,18.0,3.0,0.0,58.0,134.0,0.0,293.0,198.0,0.1,0.4
+IKAN,Mentah,GR010,"Ikan Belida, segar",KZGMI-2001,79.2,80.0,14.7,1.4,0.0,303.0,315.0,1.3,41.0,356.0,0.0,0.8
+IKAN,Olahan,GP011,"Ikan Gabus asap, mentah",KZGMI-2001,26.4,261.0,38.1,2.3,0.0,2510.0,1840.0,2.9,320.0,410.0,0.4,0.8
+IKAN,Olahan,GP012,"Ikan Gabus, kering",DABM- 1964,24.0,268.0,58.0,4.0,0.0,15.0,100.0,0.1,,,,
+IKAN,Mentah,GR026,"Ikan Heu, segar",KZGMI-2001,75.6,81.0,10.0,1.6,,1910.0,990.0,2.1,240.0,210.0,0.1,2.7
+IKAN,Mentah,GR033,"Ikan Kamera, segar",KZGMI-2001,78.5,86.0,19.7,0.8,0.0,50.0,170.0,0.3,90.0,290.0,0.3,0.1
+IKAN,Olahan,GP017,Ikan Lais bakar,KZGMI-2001,69.4,147.0,17.5,6.5,,54.0,194.0,0.1,142.0,209.0,,0.5
+IKAN,Olahan,GP019,Ikan Mas pepes,KZGPI- 1990,57.5,209.0,15.2,11.3,0.5,686.0,530.0,6.1,73.7,276.7,0.1,1.9
+IKAN,Olahan,GP021,Ikan Mujahir pepes,KZGPI- 1990,73.7,121.0,21.7,2.8,0.0,83.0,248.0,1.6,57.8,265.8,0.0,0.3
+IKAN,Olahan,GP023,"Ikan Papuyu, bakar",KZGMI-2001,66.6,152.0,17.6,6.1,0.0,244.0,227.0,3.4,320.0,224.0,0.2,1.0
+IKAN,Olahan,GP024,"Ikan Patin, bakar",KZGMI-2001,70.3,144.0,17.5,6.3,,191.0,232.0,1.4,379.0,230.0,0.1,0.7
+IKAN,Mentah,GR060,"Ikan Patin, segar",KZGMI-2001,74.4,132.0,17.0,6.6,0.0,31.0,173.0,1.6,77.0,346.0,0.7,0.8
+IKAN,Olahan,GP027,"Ikan Pindang banjar, mentah",DABM-60/64,59.0,157.0,28.0,4.2,0.0,50.0,100.0,1.0,,,,
+IKAN,Olahan,GP028,"Ikan Pindang benggol, mentah",DABM-60/64,57.0,170.0,31.0,4.2,0.0,50.0,100.0,1.0,,,,
+IKAN,Olahan,GP029,"Ikan Pindang layang, mentah",DABM-60/64,60.0,153.0,30.0,2.8,0.0,60.0,200.0,3.0,,,,
+IKAN,Olahan,GP030,"Ikan Pindang selar, mentah",DABM-60/64,60.0,142.0,27.0,3.0,0.0,60.0,200.0,3.0,,,,
+IKAN,Mentah,GR062,"Ikan Puntin, segar",KZGMI-2001,81.1,76.0,14.4,1.1,,28.0,166.0,0.0,,325.0,0.1,0.6
+IKAN,Mentah,GR072,"Ikan Sale, segar",BKP,8.5,534.0,40.2,39.3,2.0,199.0,1244.0,2.7,673.0,673.0,0.3,2.6
+IKAN,Olahan,GP039,"Ikan Teri nasi, kering, mentah",DABM-60/64,34.5,144.0,32.5,0.6,0.0,1000.0,1000.0,3.0,312.0,,,
+IKAN,Olahan,GP040,"Ikan Teri, bubuk, mentah",DABM-60/64,15.0,277.0,60.0,2.3,0.0,1209.0,1225.0,3.0,,,,
+IKAN,Olahan,GP042,"Ikan Teri, kering, tawar, mentah",DABM-60/64,16.7,331.0,68.7,4.2,0.0,2381.0,1500.0,23.4,,,,
+IKAN,Olahan,GP043,"Ikan Teri, tepung, mentah",KZGPI- 1990,5.2,347.0,48.8,6.4,0.0,4608.0,1200.0,18.6,,,,
+IKAN,Olahan,GP069,"Ikan asar merah, masakan",KZGMI-2001,69.2,146.0,17.7,5.9,,100.0,240.0,4.0,170.0,310.0,0.3,1.4
+IKAN,Olahan,GP004,"Ikan asin, kering",DABM- 1964,40.0,193.0,42.0,1.5,0.0,200.0,300.0,2.5,,,,
+IKAN,Mentah,GR001,"Ikan bader, segar",DABM- 1964,66.0,193.0,19.0,13.0,0.0,48.0,150.0,0.4,118.0,264.9,0.1,0.2
+IKAN,Mentah,GR002,"Ikan balong, segar",KZGPI- 1990,76.5,107.0,16.5,3.9,0.0,54.0,202.0,2.0,85.5,253.4,0.5,1.0
+IKAN,Mentah,GR003,"Ikan bambangan, segar",KZGPI- 1990,73.7,112.0,20.0,1.3,0.0,98.0,120.0,3.0,147.8,258.7,0.0,0.1
+IKAN,Olahan,GP005,"Ikan bandeng presto, masakan",KZGPI- 1990,45.3,296.0,17.1,20.3,0.0,1422.0,659.0,1.9,,,,
+IKAN,Mentah,GR004,"Ikan bandeng, segar",DABM- 1964,74.0,123.0,20.0,4.8,0.0,20.0,150.0,2.0,66.9,271.1,0.0,0.9
+IKAN,Mentah,GR005,"Ikan banjar, segar",KZGPI- 1990,73.5,111.0,19.4,0.9,0.0,68.0,278.0,7.3,99.2,338.7,0.2,0.6
+IKAN,Mentah,GR006,"Ikan baronang, segar",KZGMI-2001,80.0,78.0,14.5,0.6,0.0,26.0,521.0,3.8,26.0,692.0,4.7,4.1
+IKAN,Mentah,GR007,"Ikan batung, segar",KZGMI-2001,75.7,115.0,14.5,4.6,0.0,,207.0,0.0,42.0,361.0,0.2,0.9
+IKAN,Olahan,GP006,Ikan baung bakar,KZGMI-2001,69.8,144.0,17.8,5.8,,18.0,169.0,0.0,168.0,236.0,0.1,0.7
+IKAN,Mentah,GR008,"Ikan baung, segar",KZGMI-2001,74.9,123.0,15.1,5.5,0.0,5.0,146.0,1.3,32.0,349.0,0.1,0.7
+IKAN,Mentah,GR009,"Ikan bawal, segar",DABM- 1964,78.0,91.0,19.0,1.7,0.0,20.0,150.0,2.0,128.6,233.3,0.1,0.3
+IKAN,Mentah,GR013,"Ikan beunteur, segar",DABM- 1964,70.0,109.0,17.0,4.0,0.0,500.0,500.0,1.0,109.1,323.5,0.6,1.3
+IKAN,Mentah,GR014,"Ikan biawan, segar",KZGMI-2001,79.1,90.0,14.9,2.5,0.0,125.0,265.0,1.0,35.0,207.0,0.4,0.6
+IKAN,Mentah,GR015,"Ikan bili, segar",KZGMI-2001,68.3,88.0,14.2,0.7,0.0,27.0,1760.0,1.5,217.0,202.0,0.0,4.1
+IKAN,Mentah,GR016,"Ikan bubara, segar",KZGMI-2001,75.5,100.0,14.7,2.4,,90.0,90.0,0.4,390.0,390.0,0.7,0.8
+IKAN,Mentah,GR017,"Ikan bulan-bulan, segar",KZGMI-2001,66.7,134.0,25.5,1.3,,29.0,29.0,0.5,197.0,489.0,0.1,0.5
+IKAN,Olahan,GP008,"Ikan cakalang asap, mentah",KZGMI-2001,56.9,204.0,34.2,5.6,,14.0,399.0,1.3,176.0,588.0,0.3,0.7
+IKAN,Olahan,GP009,"Ikan cakalang asin, mentah",KZGPI- 1990,41.7,198.0,36.5,2.2,0.0,236.0,346.0,3.7,4303.6,302.1,,
+IKAN,Mentah,GR019,"Ikan cakalang, hati, segar",KZGMI-2001,73.4,120.0,11.3,3.9,,30.0,30.0,0.9,420.0,280.0,1.6,4.3
+IKAN,Mentah,GR020,"Ikan cakalang, jantung, segar",KZGMI-2001,76.3,116.0,11.2,1.2,,10.0,40.0,3.4,360.0,250.0,0.5,1.9
+IKAN,Mentah,GR021,"Ikan cakalang, perut, segar",KZGMI-2001,79.1,86.0,10.2,1.1,,20.0,110.0,2.1,230.0,210.0,0.3,9.3
+IKAN,Olahan,GP010,"Ikan calo/ peda, mentah",KZGPI- 1990,71.3,81.0,11.4,1.9,0.0,743.0,174.0,22.6,,,,
+IKAN,Mentah,GR023,"Ikan daun, segar",KZGMI-2001,78.6,101.0,11.5,4.1,0.0,80.0,210.0,0.8,120.0,270.0,0.1,0.9
+IKAN,Mentah,GR024,"Ikan ekor kuning, segar",KZGMI-2001,74.1,108.0,22.3,1.2,0.0,30.0,220.0,0.5,50.0,230.0,0.1,0.6
+IKAN,Mentah,GR025,"Ikan gabus, segar",KZGMI-2001,79.6,80.0,16.2,0.5,0.0,170.0,139.0,0.1,65.0,254.0,0.3,0.4
+IKAN,Olahan,GP013,"Ikan gete, goreng",KZGMI-2001,44.7,267.0,23.1,19.4,,2340.0,1240.0,0.8,590.0,440.0,0.1,1.9
+IKAN,Mentah,GR027,"Ikan hitam, segar",KZGMI-2001,78.2,101.0,10.3,3.7,0.0,50.0,140.0,0.4,70.0,210.0,,0.4
+IKAN,Olahan,GP014,"Ikan hiu, kering",KZGMI-2001,23.1,298.0,46.3,3.6,,335.0,846.0,2.5,957.0,1457.0,0.5,2.0
+IKAN,Mentah,GR028,"Ikan hiu, segar",KZGPI- 1990,85.7,57.0,10.7,0.3,0.0,75.0,206.0,2.0,,,0.02,
+IKAN,Mentah,GR029,"Ikan kacangan, segar",KZGPI- 1990,80.7,77.0,15.6,0.9,0.0,94.0,170.0,1.7,,,,
+IKAN,Mentah,GR030,"Ikan kakap, segar",DABM- 1964,77.0,92.0,20.0,0.7,0.0,20.0,200.0,1.0,,,,
+IKAN,Mentah,GR031,"Ikan kakatua, segar",KZGMI-2001,79.7,82.0,11.4,1.2,,20.0,160.0,0.4,90.0,300.0,0.1,0.3
+IKAN,Mentah,GR032,"Ikan kalaban, segar",KZGMI-2001,80.3,77.0,16.4,0.7,0.0,182.0,248.0,0.9,40.0,334.0,0.7,0.8
+IKAN,Mentah,GR034,"Ikan kapar, segar",KZGMI-2001,74.2,132.0,17.0,6.7,0.0,151.0,272.0,1.2,78.0,229.0,0.9,0.7
+IKAN,Olahan,GP015,"Ikan katombo, asin",KZGPI- 1990,44.7,162.0,31.7,2.8,0.0,279.0,609.0,4.6,4392.5,342.2,2.8,
+IKAN,Mentah,GR035,"Ikan kawalinya, segar",KZGMI-2001,76.1,110.0,12.6,4.2,,80.0,300.0,1.5,340.0,300.0,0.2,1.4
+IKAN,Olahan,GP016,"Ikan kayu, kering",KZGMI-2001,23.1,302.0,70.7,1.9,0.0,313.0,22.0,4.1,345.0,1045.0,,1.8
+IKAN,Mentah,GR040,"Ikan keru-keru, segar",KZGPI- 1990,77.2,93.0,16.5,2.1,0.0,65.0,217.0,2.4,136.8,255.27,0.34,0.69
+IKAN,Mentah,GR041,"Ikan kima, segar",KZGMI-2001,82.1,70.0,10.8,0.7,,53.0,72.0,2.0,342.0,101.0,0.5,0.5
+IKAN,Mentah,GR045,"Ikan lais, segar",KZGPI- 1990,65.0,161.0,11.9,11.5,0.0,70.0,237.0,0.0,,,,
+IKAN,Mentah,GR046,"Ikan layang, segar",DABM- 1964,74.0,109.0,22.0,1.7,0.0,50.0,150.0,2.0,,,,
+IKAN,Mentah,GR047,"Ikan layur, segar",KZGPI- 1990,80.1,82.0,18.0,1.0,0.0,48.0,229.0,2.2,,,,
+IKAN,Mentah,GR048,"Ikan lehoma, segar",KZGMI-2001,77.6,90.0,20.4,0.9,,88.0,270.0,0.7,56.0,281.0,0.3,0.9
+IKAN,Mentah,GR049,"Ikan lemuru, segar",DABM- 1964,76.0,112.0,20.0,3.0,0.0,20.0,100.0,1.0,,,,
+IKAN,Mentah,GR050,"Ikan lidah, segar",KZGPI- 1990,78.3,104.0,15.6,3.2,0.0,30.0,143.0,2.0,,,,
+IKAN,Olahan,GP018,"Ikan lomak asin, mentah",KZGMI-2001,21.6,258.0,40.3,2.3,0.0,139.9,278.9,2.3,6227.3,485.1,2.3,
+IKAN,Mentah,GR052,"Ikan malalugis, segar",KZGMI-2001,75.6,99.0,20.6,1.4,,164.0,330.0,0.5,76.0,282.0,0.2,0.9
+IKAN,Mentah,GR053,"Ikan mamar merah, segar",KZGMI-2001,75.0,115.0,15.3,4.0,0.0,60.0,190.0,1.6,120.0,240.0,0.2,1.0
+IKAN,Mentah,GR054,"Ikan mas, segar",DABM- 1964,80.0,86.0,16.0,2.0,0.0,20.0,150.0,2.0,65.0,276.7,0.1,1.1
+IKAN,Mentah,GR055,"Ikan mayong, segar",KZGPI- 1990,78.2,97.0,17.9,2.0,0.0,40.0,100.0,2.5,,,,
+IKAN,Olahan,GP020,Ikan mujahir goreng,KZGPI- 1990,44.7,416.0,46.9,23.9,0.0,346.0,654.0,0.9,53.5,278.9,0.0,0.2
+IKAN,Olahan,GP022,"Ikan mujahir, dendeng, mentah",KZGPI- 1990,15.2,582.0,68.3,15.2,0.0,3258.0,1699.0,4.3,,,,
+IKAN,Mentah,GR056,"Ikan mujahir, segar",KZGPI- 1990,79.7,89.0,18.7,1.0,0.0,96.0,209.0,1.5,51.0,265.8,0.0,0.2
+IKAN,Mentah,GR057,"Ikan nasu metti, segar",KZGMI-2001,65.3,154.0,16.8,5.0,,80.0,244.0,1.6,421.0,488.0,0.2,1.2
+IKAN,Mentah,GR036,"Ikan oci, kembung, segar",KZGMI-2001,71.4,125.0,21.3,3.4,,136.0,69.0,0.8,214.0,245.0,0.2,1.1
+IKAN,Mentah,GR058,"Ikan paling, segar",DABM- 1964,58.0,303.0,14.0,27.0,0.0,20.0,200.0,1.0,43.0,,,
+IKAN,Mentah,GR059,"Ikan papuyu/ betok, segar",KZGMI-2001,75.0,120.0,14.3,4.9,0.0,329.0,436.0,1.5,240.0,169.0,0.8,1.1
+IKAN,Olahan,GP025,"Ikan peda banjar, mentah",DABM- 1964,46.0,156.0,28.0,4.0,0.0,174.0,316.0,3.1,58.8,368.8,0.0,0.5
+IKAN,Olahan,GP026,"Ikan pepetek, mentah",DABM-60/64,33.0,176.0,32.0,4.4,0.0,120.0,200.0,1.0,78.5,1.0,,
+IKAN,Mentah,GR061,"Ikan pomo, segar",KZGMI-2001,68.3,147.0,22.5,5.2,,80.0,230.0,1.3,,380.0,0.2,0.7
+IKAN,Olahan,GP031,"Ikan sale lais, mentah",KZGPI- 1990,12.4,415.0,61.3,17.6,0.0,258.0,919.0,7.0,380.9,488.0,17.6,1.0
+IKAN,Olahan,GP032,"Ikan saluang, kering, mentah",KZGMI-2001,33.6,284.0,34.1,9.9,0.0,1426.0,1103.0,9.5,1767.0,263.0,1.3,18.7
+IKAN,Mentah,GR065,"Ikan saluang, segar",KZGMI-2001,74.8,113.0,13.9,4.9,0.0,642.0,646.0,1.9,50.7,182.0,0.8,3.6
+IKAN,Olahan,GP033,"Ikan sanggang, masakan",KZGMI-2001,42.6,240.0,21.7,7.7,,159.0,362.0,9.8,2041.0,159.0,1.5,8.8
+IKAN,Mentah,GR066,"Ikan sarden, segar",KZGMI-2001,72.7,109.0,19.9,1.8,0.0,95.0,597.0,1.3,266.0,227.0,0.3,2.0
+IKAN,Olahan,GP034,"Ikan selar kuning, cue, mentah",DABM- 1964,59.0,138.0,27.0,3.3,0.0,50.0,100.0,2.0,,,,
+IKAN,Olahan,GP035,"Ikan selar, kering, mentah",DABM-60/64,43.0,194.0,38.0,3.5,0.0,20.0,200.0,1.0,,,,
+IKAN,Mentah,GR067,"Ikan selar, segar",DABM- 1964,75.4,100.0,18.8,2.2,0.0,40.0,179.0,0.5,43.2,392.6,0.1,0.3
+IKAN,Olahan,GP036,"Ikan sepat, kering, mentah",DABM-60/64,30.0,289.0,38.0,14.0,0.0,40.0,100.0,0.7,,,,
+IKAN,Mentah,GR068,"Ikan sepat, segar",KZGMI-2001,78.8,84.0,15.2,0.6,0.0,68.0,171.0,2.1,211.0,198.0,0.7,0.6
+IKAN,Mentah,GR069,"Ikan sidat, segar",KZGPI- 1990,71.3,81.0,11.4,1.9,0.0,118.0,174.0,3.0,46.1,245.9,0.0,1.5
+IKAN,Olahan,GP037,"Ikan sunu, asin, mentah",KZGMI-2001,34.7,199.0,34.1,3.8,,94.0,92.0,2.2,377.0,57.0,0.1,3.2
+IKAN,Mentah,GR070,"Ikan sunu, segar",KZGMI-2001,75.5,111.0,13.3,3.4,,86.0,174.0,1.2,91.0,197.0,0.0,0.6
+IKAN,Mentah,GR071,"Ikan tahuman, segar",KZGMI-2001,77.4,88.0,15.9,0.9,0.0,221.0,223.0,0.0,24.0,364.0,0.4,0.7
+IKAN,Mentah,GR073,"Ikan tarmon, segar",KZGMI-2001,76.7,96.0,19.5,1.1,0.0,9.0,129.0,0.3,43.0,154.0,0.1,0.5
+IKAN,Mentah,GR074,"Ikan telan, segar",KZGMI-2001,75.3,95.0,15.8,0.7,0.0,503.0,354.0,0.2,58.0,294.0,1.6,1.2
+IKAN,Mentah,GR075,"Ikan tembang, segar",DABM- 1964,65.0,204.0,16.0,15.0,0.0,20.0,200.0,2.0,341.0,291.0,0.4,2.6
+IKAN,Mentah,GR076,"Ikan tempahas, segar",KZGMI-2001,78.9,101.0,15.1,4.1,0.0,32.0,163.0,0.0,50.0,320.0,0.7,0.6
+IKAN,Mentah,GR077,"Ikan terbang, segar",KZGMI-2001,76.1,98.0,19.6,1.7,0.0,90.0,190.0,0.6,90.0,320.0,0.1,0.5
+IKAN,Olahan,GP041,"Ikan teri, kering, mentah",DABM-60/64,37.8,170.0,33.4,3.0,0.0,1200.0,1500.0,3.6,,,,
+IKAN,Mentah,GR078,"Ikan teri, segar",KZGPI- 1990,80.0,74.0,10.3,1.4,0.0,972.0,253.0,3.9,553.6,126.1,305.2,0.2
+IKAN,Mentah,GR079,"Ikan titang, segar",KZGMI-2001,78.8,82.0,17.4,0.4,0.0,145.0,130.0,1.8,110.0,275.0,0.1,0.8
+IKAN,Mentah,GR080,"Ikan tongkol, segar",KZGMI-2001,74.7,100.0,13.7,1.5,0.0,92.0,606.0,1.7,202.0,227.0,0.2,1.6
+IKAN,Mentah,GR081,"Ikan turi, segar",KZGMI-2001,76.9,96.0,19.2,2.0,,340.0,340.0,0.8,370.0,300.0,0.1,2.0
+IKAN,Mentah,GR018,"Ikan, cakalang, segar",KZGMI-2001,73.0,107.0,19.6,0.7,0.0,23.0,242.0,2.9,66.0,239.0,0.2,0.6
+IKAN,Olahan,GP038,"Ikan, tepung, mentah",KZGPI- 1990,4.3,316.0,60.1,6.5,0.0,3196.0,1976.0,16.6,,,,
+IKAN,Olahan,GP070,Jambal goreng,KZGMS-1993,13.4,286.0,48.5,9.2,,207.0,457.0,3.3,,,,
+IKAN,Olahan,GP071,"Jukku pallu kaloa, masakan",KZGMI-2001,69.4,15.0,15.2,4.3,,40.0,170.0,1.1,605.0,153.0,0.6,1.1
+IKAN,Olahan,GP072,"Kaholeo, masakan",KZGMI-2001,11.2,413.0,28.7,19.8,,909.0,1291.0,0.0,0.0,1171.0,0.1,3.1
+IKAN,Mentah,GR037,"Keong, segar",DABM- 1964,81.0,64.0,12.0,1.0,0.0,217.0,78.0,1.7,230.99,9.0,0.37,0.09
+IKAN,Mentah,GR038,"Kepiting, segar",DABM- 1964,68.1,151.0,13.8,3.8,0.0,210.0,250.0,1.1,,,,
+IKAN,Olahan,GP044,"Kerang, asap, mentah",KZGMI-2001,9.3,393.0,38.9,13.3,,420.0,410.0,8.5,160.0,50.0,0.6,3.7
+IKAN,Olahan,GP045,"Kerang, dendeng, mentah",KZGPI- 1990,18.3,357.0,41.1,10.0,0.0,217.0,904.0,5.2,,,,
+IKAN,Mentah,GR039,"Kerang, segar",KZGPI- 1990,78.2,101.0,14.4,2.6,0.0,321.0,270.0,15.6,,,,
+IKAN,Mentah,GR042,"Kodok, segar",DABM- 1964,81.9,73.0,16.4,0.3,0.0,18.0,147.0,1.1,,,,
+IKAN,Mentah,GR043,"Kura-kura, segar",DABM- 1964,80.0,83.0,19.1,0.2,0.0,27.0,87.0,0.7,,,,
+IKAN,Mentah,GR044,"Kuro, segar",KZGPI- 1990,79.9,87.0,16.0,2.2,0.0,75.0,136.0,1.0,,,,
+IKAN,Olahan,GP073,"Lawara penjah, masakan",KZGMI-2001,64.5,207.0,7.4,15.4,,114.0,219.0,5.9,683.0,117.0,0.5,0.7
+IKAN,Mentah,GR051,"Lokan, segar",KZGMI-2001,80.9,217.0,11.0,1.7,,20.0,390.0,10.9,3.0,7.0,0.2,2.7
+IKAN,Olahan,GP074,"Model, masakan",KZGMI-2001,83.9,79.0,2.2,4.0,,8.0,33.0,0.8,146.9,34.0,0.1,0.5
+IKAN,Olahan,GP075,"Mujahir acar kuning, masakan",KZGPI- 1990,43.1,330.0,17.8,23.4,1.1,154.0,357.0,5.3,,,,
+IKAN,Olahan,GP076,"Parede baleh, masakan",KZGMI-2001,80.0,87.0,10.5,2.5,,35.0,215.0,0.9,416.0,59.0,0.1,0.2
+IKAN,Olahan,GP077,Pempek adaan,KZGMI-2001,62.6,162.0,4.9,3.0,,26.0,116.0,1.0,488.0,119.0,0.1,0.2
+IKAN,Olahan,GP078,Pempek belida,KZGPI- 1990,61.4,156.0,4.2,1.4,0.2,100.0,55.0,3.3,,,,
+IKAN,Olahan,GP079,Pempek kapal selam,KZGMI-2001,63.4,152.0,4.5,2.3,,19.0,115.0,1.6,628.0,91.0,0.1,0.2
+IKAN,Olahan,GP080,Pempek kelesan,KZGPI- 1990,53.0,211.0,12.3,6.1,0.4,840.0,176.0,1.8,,,,
+IKAN,Olahan,GP081,Pempek kulit,KZGMI-2001,45.7,243.0,5.2,7.3,,16.0,96.0,2.0,555.0,102.0,0.1,0.6
+IKAN,Olahan,GP082,Pempek telur,KZGMI-2001,62.4,156.0,4.7,2.7,,13.0,83.0,1.3,448.0,48.0,0.1,0.6
+IKAN,Olahan,GP083,Pempek tenggiri,KZGPI- 1990,56.3,173.0,7.2,1.2,0.2,164.0,80.0,3.1,,,,
+IKAN,Olahan,GP084,"Pencok lele, masakan",KZGPI- 1990,47.5,372.0,7.8,36.3,0.0,289.0,295.0,5.3,,,,
+IKAN,Olahan,GP085,"Pinda, masakan",KZGMI-2001,71.0,107.0,15.9,0.6,,375.0,336.0,1.9,526.0,330.0,0.2,1.0
+IKAN,Olahan,GP086,"Pindang kenari, masakan",KZGMI-2001,80.1,124.0,9.5,9.6,,120.0,220.0,1.3,370.0,270.0,0.3,1.2
+IKAN,Mentah,GR063,"Rajungan, segar",KZGMI-2001,80.2,76.0,12.1,2.0,0.0,721.0,214.0,2.2,69.0,192.0,1.7,2.9
+IKAN,Olahan,GP046,"Rebon, kering, mentah",DABM-60/64,21.6,299.0,59.4,3.6,0.0,2306.0,625.0,21.4,,,,
+IKAN,Mentah,GR064,"Rebon, udang kecil, segar",DABM- 1964,79.0,81.0,16.2,1.2,0.0,757.0,292.0,2.2,169.1,202.9,0.7,1.2
+IKAN,Olahan,GP047,"Rebung laut, mentah",KZGMI-2001,18.2,320.0,7.2,4.2,,240.0,570.0,6.6,20.0,1040.0,1.5,6.2
+IKAN,Olahan,GP048,Rusip,KZGPI- 1990,58.5,110.0,11.5,2.0,0.0,479.0,348.0,7.1,,,,
+IKAN,Olahan,GP087,"Saboko gurita, masakan",KZGMI-2001,76.2,87.0,15.7,1.5,,60.0,14.0,2.1,200.0,180.0,0.9,4.0
+IKAN,Olahan,GP088,"Saboko saltan, masakan",KZGMI-2001,76.0,113.0,17.1,3.6,,240.0,60.0,0.5,40.0,350.0,0.2,0.6
+IKAN,Olahan,GP089,"Saboko sardin, masakan",KZGMI-2001,70.0,110.0,12.9,4.3,,220.0,520.0,6.0,200.0,280.0,0.2,3.9
+IKAN,Olahan,GP049,Sardines dalam kaleng,DABM-60/64,47.1,338.0,21.1,27.0,0.0,354.0,434.0,3.5,,,,
+IKAN,Olahan,GP090,Sate Bandeng,BKP,47.1,283.0,12.1,16.8,2.0,118.0,186.0,1.2,543.0,199.0,0.2,0.9
+IKAN,Olahan,GP091,"Sepi, masakan",KZGMI-2001,66.1,88.0,7.9,1.6,,924.0,350.0,2.3,873.0,258.0,1.0,1.1
+IKAN,Olahan,GP092,Tekwan,KZGMI-2001,86.7,53.0,1.9,0.9,,9.0,41.0,1.0,173.6,42.0,0.0,0.0
+IKAN,Olahan,GP093,"Teri balado, masakan",KZGPI- 1990,25.8,365.0,23.7,22.3,0.0,869.0,348.0,4.0,,,,
+IKAN,Olahan,GP050,"Teripang, dendeng, mentah",KZGPI- 1990,12.5,462.0,39.1,32.4,0.0,499.0,616.0,96.4,315.0,402.5,,
+IKAN,Olahan,GP094,Tumis bandeng,KZGMI-2001,70.5,189.0,11.3,15.7,,56.0,129.0,0.4,314.0,280.0,0.1,0.7
+IKAN,Olahan,GP095,Tumis keumamah,KGZMI-2001,45.7,300.0,14.5,20.0,4.5,,,,,,,
+IKAN,Mentah,GR083,"Udang galah, segar",KZGMI-2001,79.0,81.0,16.5,0.3,0.0,87.0,167.0,0.7,95.0,132.0,0.7,1.2
+IKAN,Olahan,GP051,"Udang kering, mentah",KZGMI-2001,14.9,278.0,62.6,4.1,,760.0,510.0,5.2,540.0,360.0,2.4,3.2
+IKAN,Olahan,GP052,"Udang papay, mentah",KZGMI-2001,24.5,273.0,47.8,3.8,,1109.0,789.0,2.4,651.0,802.0,2.6,10.8
+IKAN,Mentah,GR082,"Udang, besar, segar",KZGMI-2001,85.5,56.0,11.4,0.6,0.0,30.0,20.0,0.3,190.0,210.0,0.4,0.8
+IKAN,Mentah,GR084,"Udang, segar",DABM- 1964,75.0,91.0,21.0,0.2,0.0,136.0,170.0,8.0,177.9,222.4,0.3,1.3
+KACANG-KACANGAN,Mentah,CP015,Ampas kacang hijau,KZGPI- 1990,70.6,96.0,3.7,0.6,2.7,133.0,150.0,1.3,,,,
+KACANG-KACANGAN,Mentah,CP017,Ampas tahu kukus,KZGPI- 1990,82.5,75.0,4.1,2.1,5.1,203.0,60.0,1.3,,,,
+KACANG-KACANGAN,Mentah,CP018,"Ampas tahu, kering",DABM-1964,9.0,414.0,26.6,18.3,0.0,19.0,29.0,4.0,44.61,1055.72,0.99,2.8
+KACANG-KACANGAN,Mentah,CP016,"Ampas tahu, mentah",KZGPI- 1990,84.1,67.0,5.0,2.1,4.1,460.0,88.0,1.0,7.79,184.46,0.17,0.48
+KACANG-KACANGAN,Mentah,CP020,Bungkil biji karet,DABM-1964,12.0,333.0,29.3,3.3,,102.0,660.0,12.0,,,,
+KACANG-KACANGAN,Mentah,CP021,Bungkil kacang tanah,DABM-1964,14.0,336.0,37.4,13.0,,730.0,470.0,30.7,,,,
+KACANG-KACANGAN,Mentah,CP022,Bungkil kelapa,DABM-1964,16.0,368.0,23.0,15.0,,137.0,433.0,41.5,,,,
+KACANG-KACANGAN,Mentah,CP023,Dodol banjarmasin,KZGMI-2001,17.3,368.0,2.6,8.6,0.5,51.0,180.0,3.3,48.0,96.0,0.4,2.6
+KACANG-KACANGAN,Mentah,CP024,Emping (kerupuk melinjo),DABM-1964,13.0,345.0,12.0,1.5,,100.0,400.0,5.0,,,,
+KACANG-KACANGAN,Mentah,CP025,Emping komak,KZGMI-2001,14.2,355.0,17.8,4.6,,87.0,304.0,4.3,24.0,1233.0,1.0,2.3
+KACANG-KACANGAN,Mentah,CP026,Enting-enting gepuk hello kity,KZGPI- 1990,2.4,538.0,13.6,30.3,0.2,81.0,248.0,1.6,,,,
+KACANG-KACANGAN,Mentah,CP027,Enting-enting gepuk kacang tanah,KZGPI- 1990,4.2,524.0,13.3,29.2,0.2,76.0,248.0,1.4,,,,
+KACANG-KACANGAN,Mentah,CP028,Enting-enting wijen,KZGPI- 1990,3.7,565.0,18.2,38.4,1.9,251.0,502.0,10.9,,,,
+KACANG-KACANGAN,Mentah,CP029,Geplak,KZGMI-2001,29.6,350.0,1.4,14.4,1.8,151.0,43.0,2.1,,,,
+KACANG-KACANGAN,Mentah,CP030,Geplak jahe,KZGMI-2001,12.4,462.0,3.1,24.4,3.3,212.0,161.0,6.6,,,,
+KACANG-KACANGAN,Mentah,CR001,"Kacang arab, kering",DABM-1964,11.6,330.0,23.8,1.4,17.39,57.0,388.0,4.7,23.98,874.31,0.85,3.43
+KACANG-KACANGAN,Mentah,CP031,Kacang atom,KZGPI- 1990,3.1,533.0,27.8,38.1,2.5,87.0,423.0,3.0,,,,
+KACANG-KACANGAN,Mentah,CR002,"Kacang babi, kering",KZGPI-1990,11.6,341.0,30.4,3.2,4.5,178.0,521.0,6.8,12.91,1768.0,0.82,3.12
+KACANG-KACANGAN,Mentah,CR003,"Kacang belimbing (kecipir), kering",KZGPI-1990,10.4,400.0,34.4,16.9,10.7,468.0,182.0,6.8,37.15,955.04,2.82,2.0
+KACANG-KACANGAN,Mentah,CP001,"Kacang belimbing, rebus",KZGPI-1990,55.6,204.0,16.9,8.8,4.8,230.0,180.0,3.3,42.76,1097.95,3.24,2.3
+KACANG-KACANGAN,Mentah,CR004,"Kacang beracun, segar",KZGMI-2001,72.1,118.0,4.4,1.5,,50.0,50.0,1.7,10.0,40.0,0.3,1.0
+KACANG-KACANGAN,Mentah,CP002,"Kacang bogor, goreng",KZGPI-1990,3.0,479.0,12.7,23.2,1.2,135.0,184.0,2.9,,,,
+KACANG-KACANGAN,Mentah,CR005,"Kacang bogor, kering",DABM-1964,10.0,370.0,16.0,6.0,26.28,85.0,264.0,4.2,44.3,868.79,1.48,2.72
+KACANG-KACANGAN,Mentah,CP003,"Kacang bogor, rebus",KZGPI-1990,61.2,161.0,7.7,2.8,2.0,56.0,134.0,1.4,,,,
+KACANG-KACANGAN,Mentah,CR006,"Kacang bogor, segar",KZGPI-1990,60.8,165.0,7.7,3.1,2.5,96.0,126.0,5.3,6.47,537.03,0.41,1.18
+KACANG-KACANGAN,Mentah,CR007,"Kacang endel, biji, kering",DABM-1964,14.0,331.0,25.0,1.0,23.64,80.0,400.0,5.0,11.69,1322.4,0.68,2.72
+KACANG-KACANGAN,Mentah,CR008,"Kacang ercis, segar",KZGMI-2001,67.6,129.0,12.4,0.7,28.6,40.0,130.0,2.3,4.0,310.0,0.3,2.1
+KACANG-KACANGAN,Mentah,CP032,Kacang goyang,KZGMI-2001,8.3,516.0,14.7,31.1,,34.0,230.0,0.7,2.0,365.0,0.6,1.7
+KACANG-KACANGAN,Mentah,CR010,"Kacang gude, biji, kering",KZGPI-1990,16.1,316.0,20.7,1.0,4.6,146.0,445.0,4.7,15.95,1306.22,0.99,2.7
+KACANG-KACANGAN,Mentah,CR011,"Kacang gude, biji, segar",DABM-1964,70.3,114.0,7.0,0.6,4.44,3.2,122.0,1.5,4.35,480.49,0.12,0.91
+KACANG-KACANGAN,Mentah,CP004,"Kacang gude, rebus",KZGPI-1990,61.5,147.0,9.0,0.5,3.4,50.0,175.0,2.0,13.8,1126.0,0.8,2.7
+KACANG-KACANGAN,Mentah,CR012,"Kacang hijau var. bakti, kering",KZGPI-1990,7.4,350.0,17.1,1.8,5.7,94.0,315.0,4.9,45.57,893.89,1.52,3.1
+KACANG-KACANGAN,Mentah,CR013,"Kacang hijau var. siwalik, kering",KZGPI-1990,8.8,339.0,20.8,2.1,7.4,122.0,136.0,4.9,44.89,880.38,1.5,3.1
+KACANG-KACANGAN,Mentah,CR014,"Kacang hijau, kering",KZGPI-1990,15.5,323.0,22.9,1.5,7.5,223.0,319.0,7.5,41.59,815.7,1.9,2.9
+KACANG-KACANGAN,Mentah,CR015,"Kacang hitam, kering",KZGMI-2001,12.5,346.0,16.6,1.7,22.8,70.0,300.0,4.7,3.0,0.0,0.9,3.5
+KACANG-KACANGAN,Mentah,CR016,"Kacang kapri, segar",DABM-1964,74.3,98.0,6.7,0.4,6.2,22.0,122.0,1.9,6.08,296.63,0.21,1.51
+KACANG-KACANGAN,Mentah,CP006,"Kacang kedelai, goreng",KZGPI-1990,9.6,521.0,32.2,37.7,7.6,296.0,800.0,6.5,3491.7,11890.0,26.3,60.0
+KACANG-KACANGAN,Mentah,CR017,"Kacang kedelai, kering",KZGPI-1990,12.7,381.0,40.4,16.7,3.2,222.0,682.0,10.0,209.52,713.37,1.58,3.9
+KACANG-KACANGAN,Mentah,CP007,"Kacang kedelai, rebus",KZGPI-1990,56.8,189.0,20.2,8.2,1.6,91.0,270.0,3.9,180.6,615.0,1.3,3.7
+KACANG-KACANGAN,Mentah,CR018,"Kacang kedelai, segar",DABM-1964,20.0,286.0,30.2,15.6,0.0,196.0,506.0,6.9,28.04,870.9,1.24,3.6
+KACANG-KACANGAN,Mentah,CR019,"Kacang kincai, kering",KZGMI-2001,4.2,444.0,19.9,16.0,,26.0,,,,,,
+KACANG-KACANGAN,Mentah,CR020,"Kacang komak, segar",KZGMI-2001,20.9,327.0,16.4,4.3,0.46,74.0,282.0,4.0,22.0,1137.0,0.9,2.1
+KACANG-KACANGAN,Mentah,CR021,"Kacang kuning, kering",KZGMI-2001,11.7,355.0,17.0,2.5,15.1,140.0,220.0,5.8,1.0,0.0,0.7,3.2
+KACANG-KACANGAN,Mentah,CR022,"Kacang lebui /iris, kering",KZGMI-2001,11.8,346.0,16.5,1.5,37.3,144.0,368.0,3.4,17.0,1225.0,1.5,3.3
+KACANG-KACANGAN,Mentah,CR023,"Kacang mentega, kering",KZGMI-2001,13.7,344.0,16.7,2.1,13.0,110.0,300.0,6.7,1.0,10.0,0.7,2.5
+KACANG-KACANGAN,Mentah,CR024,"Kacang merah /banda, kering",KZGMI-2001,13.0,350.0,13.9,3.0,26.3,84.0,242.0,6.8,19.0,1127.0,0.0,42.0
+KACANG-KACANGAN,Mentah,CP008,"Kacang merah kering, rebus",KZGPI- l990,59.6,158.0,10.3,0.9,2.6,160.0,149.0,3.7,6.29,310.95,0.27,1.45
+KACANG-KACANGAN,Mentah,CP009,"Kacang merah segar, rebus",KZGPI- l990,63.1,144.0,10.0,1.0,3.5,144.0,150.0,2.8,6.29,310.95,0.27,1.45
+KACANG-KACANGAN,Mentah,CR025,"Kacang merah tua, kering",KZGPI- l990,12.3,280.0,16.7,1.6,4.6,209.0,335.0,6.4,0.0,1348.53,0.69,2.77
+KACANG-KACANGAN,Mentah,CR026,"Kacang merah, kering",KZGPI- l990,17.7,314.0,22.1,1.1,4.0,502.0,429.0,10.3,11.19,1265.51,0.65,2.6
+KACANG-KACANGAN,Mentah,CR027,"Kacang merah, segar",KZGPI- l990,57.2,171.0,11.0,2.2,2.1,293.0,134.0,3.7,7.32,360.65,0.34,1.35
+KACANG-KACANGAN,Mentah,CP010,"Kacang mete/biji jambu monyet, goreng",KZGPI- 1990,1.0,629.0,20.4,56.3,1.1,502.0,493.0,8.0,13.2,641.69,4.7,5.43
+KACANG-KACANGAN,Mentah,CR028,"Kacang mete/biji jambu monyet, segar",KZGMI-2001,4.6,616.0,16.3,48.4,0.9,26.0,521.0,3.8,26.0,692.0,4.7,4.1
+KACANG-KACANGAN,Mentah,CP033,Kacang negara,KZGMI-2001,3.1,480.0,18.4,19.1,11.72,34.0,404.0,10.3,1010.0,385.0,2.5,7.1
+KACANG-KACANGAN,Mentah,CR029,"Kacang panjang, biji, kering",DABM-1964,12.2,357.0,17.3,1.5,10.55,163.0,437.0,6.9,16.3,1109.37,0.35,2.75
+KACANG-KACANGAN,Mentah,CP034,Kacang sukro,KZGPI- 1990,4.7,484.0,8.8,26.1,1.8,49.0,194.0,2.5,,,,
+KACANG-KACANGAN,Mentah,CP011,Kacang tanah rebus dg kulit,DABM-1964,40.2,360.0,13.5,31.2,,42.0,177.0,1.4,32.0,483.0,1.6,2.0
+KACANG-KACANGAN,Mentah,CR030,Kacang tanah sangan,KZGPI- l990,1.2,560.0,29.5,43.0,2.9,107.0,366.0,4.1,33.78,509.83,1.69,2.11
+KACANG-KACANGAN,Mentah,CR031,Kacang tanah sangan tanpa selaput,DABM-1964,2.6,559.0,26.9,44.2,2.59,74.0,393.0,1.9,32.9,202.28,520.4,1.72
+KACANG-KACANGAN,Mentah,CP035,Kacang tanah sari,KZGPI- 1990,2.1,561.0,25.5,43.8,2.2,50.0,324.0,3.1,,,,
+KACANG-KACANGAN,Mentah,CP012,"Kacang tanah, goreng",KZGPI- l990,2.5,564.0,25.5,44.4,2.8,106.0,390.0,4.1,,,,
+KACANG-KACANGAN,Mentah,CR032,"Kacang tanah, kering",KZGPI- l990,9.6,525.0,27.9,42.7,2.4,316.0,456.0,5.7,30.91,466.49,1.55,1.93
+KACANG-KACANGAN,Mentah,CP013,"Kacang tanah, rebus",KZGPI- l990,62.1,220.0,10.6,18.0,1.0,89.0,273.0,1.9,35.52,536.21,1.78,2.18
+KACANG-KACANGAN,Mentah,CR033,"Kacang tolo / tunggak, kering",KZGPI- l990,13.5,331.0,24.4,1.9,1.6,481.0,399.0,13.9,14.56,7.77,1.03,5.94
+KACANG-KACANGAN,Mentah,CP014,"Kacang tolo, rebus",KZGPI- l990,64.4,138.0,10.7,1.1,0.9,165.0,172.0,4.0,12.59,6.72,0.8,6.1
+KACANG-KACANGAN,Mentah,CR034,"Kacang tunis, kering",KZGMI-2001,10.5,351.0,12.2,1.2,29.5,120.0,220.0,6.9,1.0,0.0,1.4,2.9
+KACANG-KACANGAN,Mentah,CR035,"Kacang uci, kering",KZGPI- l990,9.9,358.0,23.4,2.4,7.4,269.0,264.0,0.5,13.2,1457.66,0.35,
+KACANG-KACANGAN,Mentah,CR036,"Kacang urei, kering",KZGMI-2001,12.8,354.0,12.8,1.8,26.1,220.0,220.0,5.1,1.0,0.0,0.7,3.1
+KACANG-KACANGAN,Mentah,CP036,Keju kacang tanah (peanut butter),DABM-1964,3.0,590.0,27.0,49.0,1.59,60.0,360.0,2.0,354.71,492.43,0.57,2.74
+KACANG-KACANGAN,Mentah,CP037,Kembang tahu,KZGPI- 1990,10.8,380.0,48.9,13.8,0.0,378.0,781.0,2.06,54.72,455.29,0.68,4.17
+KACANG-KACANGAN,Mentah,CP038,Kembang tahu rebus,KZGPI- 1990,79.8,90.0,10.7,4.0,,85.0,,,,,,
+KACANG-KACANGAN,Mentah,CR037,"Kenari banda, kering",KZGMI-2001,13.0,616.0,13.9,56.2,,0.0,380.0,1.4,11.0,460.0,1.1,3.2
+KACANG-KACANGAN,Mentah,CR038,"Kenari, kering",DABM-1964,3.0,657.0,15.0,66.0,,92.0,691.0,7.7,3.0,505.8,0.97,3.0
+KACANG-KACANGAN,Mentah,CP039,Keripik oncom,KZGPI- 1990,3.0,598.0,8.3,43.8,3.3,85.0,153.0,27.0,,,,
+KACANG-KACANGAN,Mentah,CP040,Keripik tempe,KZGPI- 1990,3.3,581.0,12.1,40.6,2.2,237.0,116.0,6.9,,,,
+KACANG-KACANGAN,Mentah,CP041,Keripik tempe abadi besar,KZGPI- 1990,4.5,556.0,15.8,37.1,3.5,112.0,215.0,5.4,,,,
+KACANG-KACANGAN,Mentah,CP042,Keripik tempe abadi murni,KZGPI- 1990,3.2,542.0,40.3,42.4,2.2,175.0,529.0,5.2,,,,
+KACANG-KACANGAN,Mentah,CP043,Keripik tempe abadi sedang,KZGPI- 1990,4.4,510.0,12.3,27.9,3.6,122.0,211.0,8.4,,,,
+KACANG-KACANGAN,Mentah,CP044,Keripik tempe abadi telur,KZGPI- 1990,4.5,529.0,20.8,31.7,3.0,124.0,222.0,5.4,,,,
+KACANG-KACANGAN,Mentah,CP045,Kerupik tempe abadi prima,KZGPI- 1990,4.8,540.0,16.7,33.9,2.2,92.0,184.0,3.2,,,,
+KACANG-KACANGAN,Mentah,CR039,"Komak polong, segar",KZGMI-2001,74.3,99.0,3.3,0.1,10.3,50.0,99.0,13.1,15.0,567.0,0.2,0.6
+KACANG-KACANGAN,Mentah,CR040,"Koro andong, kering",KZGPI- 1990,10.8,356.0,20.5,4.1,7.0,150.0,272.0,6.2,18.41,301.77,0.73,2.81
+KACANG-KACANGAN,Mentah,CR041,"Koro benguk, biji, kering",DABM-1964,15.0,332.0,24.0,3.0,5.62,30.0,200.0,2.0,41.63,389.18,1.25,8.72
+KACANG-KACANGAN,Mentah,CR042,"Koro kerupuk, biji, segar",DABM-1964,67.2,125.0,8.3,0.7,2.17,17.0,12.0,2.7,15.88,150.33,0.48,3.37
+KACANG-KACANGAN,Mentah,CR043,"Koro loke, biji, segar",DABM-1964,88.6,33.0,2.7,0.2,3.54,60.0,40.0,2.0,2.35,38.57,0.09,0.36
+KACANG-KACANGAN,Mentah,CR044,"Koro roay, kering",KZGPI- 1990,13.0,344.0,12.5,2.1,7.5,70.0,103.0,4.4,17.96,294.32,0.72,2.7
+KACANG-KACANGAN,Mentah,CR045,"Koro wedus, biji, kering",DABM-1964,11.8,338.0,22.2,1.5,5.83,88.0,395.0,3.5,43.2,403.83,1.3,9.05
+KACANG-KACANGAN,Mentah,CP046,Kwaci,DABM-1964,9.9,515.0,30.6,42.1,13.56,54.0,312.0,6.2,123.54,448.64,0.65,9.68
+KACANG-KACANGAN,Mentah,CR046,"Lamtoro biji, muda, segar",DABM-1964,77.4,85.0,5.7,0.3,10.77,180.0,53.0,2.7,35.12,485.67,0.02,1.4
+KACANG-KACANGAN,Mentah,CR047,"Lamtoro biji, tua, segar",DABM-1964,61.4,148.0,10.6,0.5,17.03,155.0,59.0,2.2,27.88,628.55,0.03,2.39
+KACANG-KACANGAN,Mentah,CR048,Lamtoro var. gung tanpa kulit,KZGPI- 1990,10.2,367.0,46.4,5.4,2.6,136.0,441.0,23.3,64.86,1462.27,0.07,5.56
+KACANG-KACANGAN,Mentah,CR049,Lamtoro var. lokal dengan kulit,KZGPI- 1990,13.5,336.0,23.8,1.2,15.4,867.0,321.0,1.5,134.43,1858.87,0.07,5.36
+KACANG-KACANGAN,Mentah,CP047,Melinjo emping tebal goreng manis,KZGPI- 1990,5.6,439.0,10.0,16.4,,66.0,225.0,,,,,
+KACANG-KACANGAN,Mentah,CP048,"Melinjo emping tebal, goreng asin",KZGPI- 1990,8.0,431.0,11.1,16.2,,77.0,,,,,,
+KACANG-KACANGAN,Mentah,CP049,Melinjo emping tipis goreng,KZGPI- 1990,3.3,485.0,11.5,24.5,,85.0,218.0,,,,,
+KACANG-KACANGAN,Mentah,CP050,Moon tahu,KZGMS-1993,79.9,128.0,8.0,10.0,0.2,205.0,92.0,2.5,392.5,,,
+KACANG-KACANGAN,Mentah,CR050,"Nangka, biji, segar",DABM-1964,57.7,165.0,4.2,0.1,1.83,33.0,200.0,1.0,69.0,179.0,0.12,0.21
+KACANG-KACANGAN,Mentah,CP051,Oncom,DABM-1964,57.0,187.0,13.0,6.0,,96.0,115.0,27.0,,,,
+KACANG-KACANGAN,Mentah,CP052,Oncom ampas kacang hijau,KZGPI- 1990,13.4,376.0,14.9,6.0,12.3,199.0,110.0,10.9,,,,
+KACANG-KACANGAN,Mentah,CP053,Oncom kacang hijau + singkong,KZGPI- 1990,16.5,351.0,11.0,5.3,9.0,164.0,113.0,7.8,,,,
+KACANG-KACANGAN,Mentah,CP054,Oncom kacang tanah pepes,KZGPI- 1990,65.0,132.0,12.7,3.8,3.1,133.0,355.0,34.4,,,,
+KACANG-KACANGAN,Mentah,CP019,Pepea oncom ampas tahu,KZGPI- 1990,80.9,76.0,5.2,1.8,2.2,215.0,66.0,12.5,,,,
+KACANG-KACANGAN,Mentah,CP055,Rempeyek kacang tanah,KZGPI- 1990,3.9,513.0,17.5,32.5,1.7,65.0,202.0,2.6,,,,
+KACANG-KACANGAN,Mentah,CP056,Rempeyek kacang tolo,KZGPI- 1990,6.1,451.0,11.2,20.2,1.8,156.0,221.0,4.6,,,,
+KACANG-KACANGAN,Mentah,CP057,Rempeyek kacang uci,KZGPI- 1990,4.0,497.0,17.0,27.6,2.4,166.0,89.0,6.7,,,,
+KACANG-KACANGAN,Mentah,CR051,"Saga merah terkupas, mentah",KZGPI- 1990,8.1,449.0,30.6,25.5,3.5,1062.0,161.0,14.2,66.38,1496.47,0.07,5.69
+KACANG-KACANGAN,Mentah,CP059,"Saridele, bubuk",DABM-1964,3.0,344.0,30.0,20.0,6.22,450.0,500.0,4.0,56.02,2572.28,2.99,4.01
+KACANG-KACANGAN,Mentah,CP058,Sayur lebui,KZGMI-2001,83.9,64.0,2.1,0.6,5.7,21.0,2.0,1.0,124.0,146.0,0.2,0.7
+KACANG-KACANGAN,Mentah,CP060,Susu kedelai,DABM-1964,87.0,41.0,3.5,2.5,0.23,50.0,45.0,0.7,127.68,287.86,0.12,1.02
+KACANG-KACANGAN,Mentah,CP062,Tahu goreng,KZGPI- 1990,77.3,115.0,9.7,8.5,0.1,229.0,200.0,4.1,7.3,68.16,0.09,1.31
+KACANG-KACANGAN,Mentah,CP063,Tahu telur,KZGMS-1993,41.8,328.0,12.6,19.9,0.4,492.0,238.0,4.9,755.4,,,
+KACANG-KACANGAN,Mentah,CP061,"Tahu, mentah",KZGPI- 1990,82.2,80.0,10.9,4.7,0.1,223.0,183.0,3.4,1.75,50.61,0.19,0.81
+KACANG-KACANGAN,Mentah,CP064,Takwa,KZGPI- 1990,72.2,148.0,13.8,8.5,0.0,140.0,214.0,8.5,2.73,79.0,0.3,1.3
+KACANG-KACANGAN,Mentah,CP065,Tauco,KZGPI- 1990,54.0,184.0,11.4,5.5,1.9,72.0,463.0,6.0,1766.0,233.0,0.39,1.0
+KACANG-KACANGAN,Mentah,CP067,"Tauco cap DAS, cake",KZGPI- 1990,10.2,358.0,7.5,4.3,3.1,94.0,94.0,4.5,,,,
+KACANG-KACANGAN,Mentah,CP066,"Tauco cap beruang, cake",KZGPI- 1990,11.4,347.0,7.4,5.2,3.2,63.0,106.0,6.2,,,,
+KACANG-KACANGAN,Mentah,CP068,Tauco cap meong,KZGPI- 1990,59.7,159.0,7.4,4.9,1.6,183.0,84.0,10.1,1547.17,204.13,0.34,0.86
+KACANG-KACANGAN,Mentah,CP069,Tauji cap singa,KZGPI- 1990,30.4,277.0,9.1,4.7,1.2,68.0,106.0,3.0,,,,
+KACANG-KACANGAN,Mentah,CP070,Tempe bongkrek,DABM-1964,72.5,119.0,4.4,3.5,,27.0,100.0,2.6,,,,
+KACANG-KACANGAN,Mentah,CP071,Tempe gembus P3G,KZGPI- 1990,81.9,73.0,5.7,1.3,4.2,204.0,80.0,1.5,,,,
+KACANG-KACANGAN,Mentah,CP072,Tempe gembus yogya,KZGPI- 1990,80.7,76.0,6.8,0.7,5.3,76.0,142.0,16.5,,,,
+KACANG-KACANGAN,Mentah,CP073,Tempe kacang babi,KZGPI- 1990,64.0,139.0,12.5,0.8,1.8,68.0,182.0,2.6,,,,
+KACANG-KACANGAN,Mentah,CP074,Tempe kacang belimbing,KZGPI- 1990,58.2,212.0,17.5,10.0,2.9,186.0,160.0,2.2,,,,
+KACANG-KACANGAN,Mentah,CP075,Tempe kedelai + jagung,KZGPI- 1990,70.6,143.0,12.0,5.5,1.9,155.0,156.0,6.8,,,,
+KACANG-KACANGAN,Mentah,CP076,"Tempe kedelai murni, goreng",KZGPI- 1990,36.8,350.0,24.5,26.6,4.2,202.0,296.0,4.9,21.9,626.7,0.8,2.5
+KACANG-KACANGAN,Mentah,CP077,"Tempe kedelai murni, mentah",KZGPI- 1990,55.3,201.0,20.8,8.8,1.4,155.0,326.0,4.0,9.2,234.0,0.57,1.7
+KACANG-KACANGAN,Mentah,CP078,Tempe koro benguk,DABM-1964,64.0,141.0,10.2,1.3,,42.0,15.0,2.6,,,,
+KACANG-KACANGAN,Mentah,CP079,Tempe lamtoro,KZGPI- 1990,66.8,128.0,10.7,0.5,7.1,203.0,108.0,0.6,,,,
+KACANG-KACANGAN,Mentah,CP080,Tempe lamtoro var. gung dengan kulit,KZGPI- 1990,65.1,146.0,11.7,2.3,7.6,128.0,41.0,6.8,,,,
+KACANG-KACANGAN,Mentah,CP081,Tempe lamtoro var. gung tanpa kulit,KZGPI- 1990,67.1,131.0,18.0,0.8,1.3,95.0,154.0,12.4,,,,
+KACANG-KACANGAN,Mentah,CP082,Tempe pasar,KZGPI- 1990,68.3,150.0,14.0,7.7,1.4,517.0,202.0,1.5,6.52,165.9,0.4,1.2
+KACANG-KACANGAN,Mentah,CP083,Tempe pasar goreng,KZGPI- 1990,42.9,336.0,20.0,28.0,3.4,156.0,350.0,3.0,19.8,566.2,0.8,2.2
+KACANG-KACANGAN,Mentah,CP085,Tepung Jalejo,BKP,10.0,388.0,19.0,7.5,5.8,101.0,663.0,2.0,2.6,712.0,0.6,1.9
+KACANG-KACANGAN,Mentah,CP084,Tepung hunkwe (pati kacang ijo),DABM-1964,10.0,364.0,4.5,1.0,16.13,50.0,100.0,1.0,14.84,1232.9,0.93,2.65
+KACANG-KACANGAN,Mentah,CP086,Tepung kacang kedelai,DABM-1964,9.0,347.0,35.9,20.6,5.84,195.0,544.0,8.4,52.26,2522.6,4303.45,2.6
+KACANG-KACANGAN,Mentah,CR052,"Wijen, mentah",DABM-1964,5.8,568.0,19.3,51.1,3.57,1125.0,614.0,9.5,17.87,303.74,4.16,7.9
+KACANG-KACANGAN,Mentah,CR009,"kacang galing, segar",DABM-1964,12.0,336.0,23.1,1.7,0.0,80.0,400.0,5.0,,,,
+KACANG-KACANGAN,Mentah,CP005,"kacang hijau, rebus",KZGPI-1990,71.3,109.0,8.7,0.5,1.5,95.0,149.0,1.5,447.31,657.8,1.4,2.8
+KONFEKSIONERI,Mentah,MP004,Coklat bubuk,DABM- 1964,3.9,311.0,8.0,4.0,32.6,125.0,715.0,11.6,,,,
+KONFEKSIONERI,Mentah,MP001,"Coklat manis, batang",DABM- 1964,1.4,527.0,2.0,29.8,6.47,63.0,287.0,2.8,5.97,499.47,0.0,0.02
+KONFEKSIONERI,Mentah,MP002,"Coklat pahit,batang",DABM- 1964,2.3,615.0,5.5,42.63,10.8,98.0,446.0,4.4,19.81,708.26,1.7,3.28
+KONFEKSIONERI,Mentah,MP003,"Coklat susu, batang",DABM- 1964,1.0,565.0,9.0,35.0,3.42,200.0,200.0,2.0,100.19,405.54,0.49,2.31
+KONFEKSIONERI,Mentah,MP005,Gula aren,DABM- 1964,7.0,368.0,0.0,0.0,0.0,75.0,35.0,3.0,14.5,390.43,0.04,26.39
+KONFEKSIONERI,Mentah,MP006,Gula kelapa,DABM- 1964,10.0,386.0,3.0,10.0,0.0,76.0,37.0,2.6,1.93,0.0,0.0,0.0
+KONFEKSIONERI,Mentah,MP007,Gula putih,DABM- 1964,5.4,394.0,0.0,0.0,0.0,5.0,1.0,0.1,0.95,4.75,0.0,0.01
+KONFEKSIONERI,Mentah,MP008,"Jam, selai",DABM- 1964,34.0,239.0,0.5,0.6,1.04,20.0,20.0,1.0,30.38,73.09,0.09,0.0
+KONFEKSIONERI,Mentah,MP009,Kopi bubuk instant,FCTEA-1972,2.6,129.0,12.26,0.5,0.0,179.0,383.0,5.6,72.0,3256.0,0.14,0.0
+KONFEKSIONERI,Mentah,MP010,Madu,DABM- 1964,20.0,294.0,0.3,0.0,0.19,5.0,16.0,0.9,5.6,26.89,0.04,0.21
+KONFEKSIONERI,Mentah,MP011,Markisa squash,KZGMI-2001,46.7,217.0,2.5,1.0,,6.0,83.0,0.6,14.0,65.0,0.0,0.1
+KONFEKSIONERI,Mentah,MP012,"Markisa squash, BD",KZGMI-2001,74.4,104.0,1.2,0.5,,1.0,88.0,0.5,40.0,40.0,0.0,0.1
+KONFEKSIONERI,Mentah,MP013,Melase,DABM- 1964,21.2,276.0,,0.1,0.0,6.0,83.0,0.6,14.0,,0.0,0.3
+KONFEKSIONERI,Mentah,MP014,Sirup,DABM- 1964,44.0,213.0,0.0,0.0,0.0,0.0,0.0,0.0,3.3,4.2,,
+KONFEKSIONERI,Mentah,MP015,Sirup pirous,KZGMI-2001,43.3,228.0,0.2,0.4,0.0,470.0,93.0,29.5,3.38,4.22,,
+KONFEKSIONERI,Mentah,MP016,Teh hijau daun kering,FCTEA-1972,7.7,300.0,28.3,4.8,9.6,245.0,415.0,18.9,60.0,5873.9,0.5,0.0
+KONFEKSIONERI,Mentah,MP017,Teh hitam daun kering,FCTEA-1972,8.0,293.0,24.5,2.8,8.7,327.0,313.0,24.3,50.0,5854.8,0.0,0.0
+KONFEKSIONERI,Mentah,MP018,Teh melati daun kering,FCTEA-1972,8.1,299.0,24.1,3.5,9.7,320.0,185.0,31.6,69.7,5848.4,0.53,0.0
+LEMAK & MINYAK,Mentah,KR001,"Kelapa setengah tua, daging, segar",DABM-1964,70.0,180.0,4.0,15.0,2.4,8.0,55.0,1.3,4.01,317.75,0.29,2.86
+LEMAK & MINYAK,Mentah,KR002,"Kelapa tua, daging, segar",DABM-1964,46.9,359.0,3.4,34.7,4.74,21.0,98.0,2.0,3.09,293.85,0.44,1.1
+LEMAK & MINYAK,Mentah,KR003,Lemak babi  (lard),DABM-1964,0.0,902.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,9.0,0.11
+LEMAK & MINYAK,Mentah,KR004,Lemak babi (bacon),DABM-1964,20.0,626.0,9.1,65.0,0.0,13.0,108.0,0.8,0.0,0.0,0.0,0.9
+LEMAK & MINYAK,Mentah,KR005,Lemak ikan,KZGMI-2001,43.3,372.0,12.0,29.4,0.0,20.0,230.0,32.7,60.0,52.0,0.4,1.1
+LEMAK & MINYAK,Mentah,KR006,Lemak kerbau (lemak sapi),DABM-1964,5.0,818.0,1.5,90.0,0.0,0.0,0.0,0.0,28.7,25.8,0.0,0.0
+LEMAK & MINYAK,Olahan,KP001,Margarin,DABM-1964,15.5,720.0,0.6,81.0,0.0,20.0,16.0,0.0,760.2,25.9,0.0,0.02
+LEMAK & MINYAK,Olahan,KP002,Mentega,DABM- 1964,16.0,742.0,0.5,81.6,0.0,15.0,16.0,1.1,652.8,103.0,0.0,0.4
+LEMAK & MINYAK,Mentah,KR014,Minyak Zaitun,DABM- 1964,0.0,884.0,0.0,100.0,0.0,14.0,0.0,1.2,7.0,0.0,0.0,0.0
+LEMAK & MINYAK,Mentah,KR007,"Minyak hiu, hati",DABM-1964,0.0,902.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+LEMAK & MINYAK,Mentah,KR008,Minyak ikan,DABM-1964,0.0,902.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+LEMAK & MINYAK,Mentah,KR009,Minyak kacang tanah,DABM-1964,0.0,902.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+LEMAK & MINYAK,Mentah,KR010,Minyak kedelai,FCTEA-1972,0.1,883.0,0.0,99.9,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0
+LEMAK & MINYAK,Mentah,KR011,Minyak kelapa,DABM-1964,0.0,870.0,1.0,98.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+LEMAK & MINYAK,Mentah,KR012,Minyak kelapa sawit,DABM-1964,0.0,884.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+LEMAK & MINYAK,Mentah,KR013,Minyak wijen,FCTEA-1972,0.1,881.0,0.2,99.7,0.0,10.0,5.0,0.1,2.0,20.0,0.0,0.0
+LEMAK & MINYAK,Olahan,KP003,Santan (dengan air),DABM-1964,80.0,122.0,2.0,10.0,1.36,25.0,30.0,0.1,9.26,162.45,0.16,0.41
+LEMAK & MINYAK,Olahan,KP004,Santan murni,DABM-1964,54.9,324.0,4.2,34.3,0.0,14.0,45.0,1.9,18.04,514.14,0.37,0.94
+MINUMAN NON ALKOHOL,Mentah,PR001,"Kelapa muda, air, segar",DABM-1964,95.5,17.0,0.2,0.1,0.0,15.0,8.0,0.2,1.0,149.0,0.04,0.1
+SAYURAN,Mentah,DR001,"Akar tonjong, segar",KZGPI-1990,86.7,45.0,1.1,0.4,1.2,72.0,125.0,1.3,96.4,1147.1,0.02,0.21
+SAYURAN,Mentah,DR002,"Ale,toge, segar",KZGPI-1990,90.6,37.0,4.4,0.5,1.7,50.0,248.0,2.0,2.3,105.0,0.16,0.4
+SAYURAN,Mentah,DR003,"Andaliman, segar",KZGPI-1990,74.2,99.0,4.6,1.0,8.5,383.0,107.0,2.9,,,,
+SAYURAN,Mentah,DR004,"Andewi, segar",DABM-1964,91.8,226.0,1.6,0.2,4.09,33.0,66.0,1.0,29.0,414.6,0.13,1.04
+SAYURAN,Olahan,DP023,"Anyang, sayur",KZGMI-2001,76.9,126.0,3.4,7.9,5.4,180.0,1.0,2.9,290.0,181.0,0.3,1.2
+SAYURAN,Olahan,DP024,"Ares, sayur",KZGMI-2001,77.7,113.0,0.9,7.2,4.7,63.0,5.0,1.5,1413.0,1030.0,0.7,3.8
+SAYURAN,Olahan,DP025,Arwan sirsir,KZGMI-2001,59.0,277.0,2.4,25.0,4.6,120.0,40.0,2.4,240.0,320.0,0.2,0.9
+SAYURAN,Olahan,DP022,"Asinan Bogor, sayuran",KZGMS-1993,78.0,98.0,3.9,2.6,0.5,314.0,17.0,1.2,483.2,,,
+SAYURAN,Mentah,DR005,"Bakung, segar",KZGMI-2001,92.5,27.0,2.0,0.2,3.8,19.0,20.0,0.5,37.0,340.0,0.2,0.3
+SAYURAN,Mentah,DR006,"Baligo, segar",DABM-1964,96.1,15.0,0.4,0.2,0.43,19.0,19.0,0.4,1.7,131.1,0.02,0.6
+SAYURAN,Mentah,DR007,"Bawang bombay, segar",DABM-1964,87.5,43.0,1.4,0.2,1.95,32.0,44.0,0.5,12.2,9.62,0.1,0.31
+SAYURAN,Olahan,DP002,"Bayam ,rebus",KZGPI-1990,93.5,23.0,1.2,0.6,1.1,150.0,35.0,0.5,16.0,308.4,0.2,0.3
+SAYURAN,Mentah,DR009,"Bayam merah, segar",KZGMI-2001,88.5,41.0,2.2,0.8,2.2,520.0,80.0,7.0,20.0,60.0,0.2,0.8
+SAYURAN,Olahan,DP001,"Bayam, kukus",KZGPI-1990,90.7,30.0,1.3,0.7,1.2,239.0,35.0,5.7,14.9,431.0,0.1,0.3
+SAYURAN,Mentah,DR008,"Bayam, segar",KZGPI-1990,94.5,16.0,0.9,0.4,0.7,166.0,76.0,3.5,15.8,456.44,0.13,0.4
+SAYURAN,Olahan,DP026,Beberuk,KZGMI-2001,89.1,65.0,1.1,5.2,3.1,179.0,72.0,8.3,53.0,427.0,0.4,0.2
+SAYURAN,Mentah,DR010,"Bit, segar",DABM-1964,87.6,41.0,1.6,0.1,2.63,27.0,43.0,1.0,28.5,404.9,0.2,0.67
+SAYURAN,Olahan,DP027,Botok lamtoro,KZGPI-1990,63.9,186.0,11.7,9.7,2.1,771.0,322.0,26.0,,,,
+SAYURAN,Mentah,DR011,Buah kelor,KZGMI-2001,89.5,38.0,1.5,0.2,3.2,30.0,54.0,0.0,48.0,216.0,0.0,0.2
+SAYURAN,Mentah,DR012,Buah merah,KZGMI-2001,81.2,87.0,2.6,2.7,4.0,30.0,1.0,1.1,110.0,140.0,0.1,0.3
+SAYURAN,Olahan,DP003,"Buncis, rebus",KZGPI-1990,90.6,30.0,2.2,0.2,1.5,107.0,47.0,0.5,6.7,138.9,0.1,0.3
+SAYURAN,Mentah,DR013,"Buncis, segar",KZGPI-1990,89.6,34.0,2.4,0.3,1.9,101.0,42.0,0.7,8.0,250.0,0.07,0.26
+SAYURAN,Mentah,DR014,"Bunga pepaya, segar",KZGPI-1990,87.3,45.0,2.6,0.3,1.6,290.0,113.0,4.2,2.28,478.34,0.08,0.78
+SAYURAN,Mentah,DR015,"Bunga turi, segar",BKP,90.4,42.0,2.0,1.1,3.3,28.0,22.7,0.8,97.4,97.4,0.1,0.6
+SAYURAN,Olahan,DP028,Buntil daun talas,KZGPI-1990,74.5,141.0,4.4,10.2,1.8,149.0,121.0,14.5,,,,
+SAYURAN,Mentah,DR016,"Caisin, segar",KZGPI-1990,93.6,20.0,1.7,0.4,1.2,123.0,40.0,1.9,17.96,358.18,0.05,1.37
+SAYURAN,Olahan,DP029,Cammetutu,KZGMI-2001,79.6,102.0,3.2,6.0,4.3,41.0,93.0,0.5,443.0,518.0,0.3,0.7
+SAYURAN,Olahan,DP030,"Cap cai, sayur",KZGMS-1993,82.7,97.0,5.8,6.3,0.6,287.0,89.0,1.8,405.0,,,
+SAYURAN,Mentah,DR017,"Daun bangun-bangun, segar",KZGPI-1990,92.5,27.0,1.3,0.6,1.0,279.0,40.0,13.6,3.62,143.95,,
+SAYURAN,Mentah,DR018,"Daun bawang  merah, segar",KZGMI-2001,89.1,41.0,2.0,0.3,2.1,60.0,40.0,2.3,30.0,90.0,0.1,0.3
+SAYURAN,Mentah,DR019,"Daun bebuas, segar",KZGPI-1990,87.9,41.0,2.7,1.0,2.1,29.0,245.0,1.5,,,,
+SAYURAN,Mentah,DR020,"Daun belem, segar",KZGPI-1990,84.6,50.0,4.4,1.4,1.9,698.0,151.0,7.5,,,,
+SAYURAN,Mentah,DR021,"Daun bluntas, segar",DABM-1964,86.0,44.0,1.8,0.5,,256.0,49.0,5.6,,,,
+SAYURAN,Mentah,DR022,"Daun gandaria, segar",DABM-1964,81.0,63.0,3.1,0.3,2.12,40.0,45.0,4.7,3.04,127.68,,
+SAYURAN,Mentah,DR023,"Daun gedi besar, segar",KZGMI-2001,84.0,58.0,2.9,0.7,3.3,440.0,100.0,1.9,30.0,40.0,0.2,2.1
+SAYURAN,Mentah,DR024,"Daun gedi kecil, segar",KZGMI-2001,83.7,61.0,3.2,0.7,3.4,420.0,70.0,1.7,20.0,50.0,0.1,1.4
+SAYURAN,Mentah,DR025,"Daun gelang, segar",KZGPI-1990,90.3,30.0,1.3,0.7,1.3,350.0,210.0,11.9,4.7,333.3,0.31,1.2
+SAYURAN,Mentah,DR026,"Daun gunda bali, segar",KZGPI-1990,86.4,50.0,4.6,0.9,1.4,167.0,62.0,0.5,,,,
+SAYURAN,Mentah,DR027,"Daun gunda serang, segar",KZGPI-1990,84.6,62.0,4.2,0.9,1.3,171.0,64.0,0.6,,,,
+SAYURAN,Mentah,DR028,"Daun jambu mete muda, segar",DABM-1964,78.0,78.0,4.6,0.5,3.03,33.0,64.0,8.9,13.9,670.48,,
+SAYURAN,Mentah,DR029,"Daun jampang, segar",KZGPI-1990,88.9,34.0,3.8,0.5,1.4,21.0,245.0,1.0,,,,
+SAYURAN,Mentah,DR030,"Daun jawaw seluang, segar",KZGMI-2001,77.2,93.0,5.0,1.3,3.9,146.0,103.0,5.3,2.0,434.0,0.5,1.5
+SAYURAN,Mentah,DR031,"Daun jonghe, segar",KZGPI-1990,91.4,27.0,2.1,0.7,2.0,253.0,192.0,9.5,,,,
+SAYURAN,Mentah,DR032,"Daun kacang ma, segar",KZGPI-1990,89.1,36.0,2.9,0.6,1.8,64.0,220.0,2.2,7.46,485.27,0.2,0.31
+SAYURAN,Olahan,DP004,"Daun kacang panjang, kukus",KZGPI-1990,87.2,40.0,3.7,0.3,1.8,111.0,66.0,3.7,6.0,419.5,0.2,0.3
+SAYURAN,Mentah,DR033,"Daun kacang panjang, segar",KZGPI-1990,89.7,30.0,3.1,0.3,1.7,200.0,66.0,4.5,7.1,458.6,0.2,0.3
+SAYURAN,Mentah,DR034,"Daun kasbi/singkong karet, segar",KZGMI-2001,80.3,92.0,4.0,3.6,5.8,140.0,70.0,1.6,70.0,90.0,0.3,1.1
+SAYURAN,Olahan,DP005,"Daun katuk, rebus",KZGPI-1990,83.3,53.0,5.3,0.9,1.2,185.0,102.0,3.1,15.6,291.3,0.3,1.3
+SAYURAN,Mentah,DR035,"Daun katuk, segar",KZGPI-1990,81.0,59.0,6.4,1.0,1.5,233.0,98.0,3.5,20.7,478.8,0.3,1.3
+SAYURAN,Mentah,DR036,"Daun kecipir, segar",DABM-1964,85.0,52.0,5.0,0.5,,134.0,81.0,6.2,5.8,114.0,0.3,0.8
+SAYURAN,Mentah,DR037,"Daun kedondong, segar",DABM-1964,81.0,59.0,3.5,0.3,10.7,540.0,82.0,6.2,12.1,579.0,,
+SAYURAN,Olahan,DP006,"Daun kelor, rebus",KZGPI-1990,80.3,61.0,6.1,0.9,0.9,255.0,36.0,2.1,45.3,181.2,0.1,0.6
+SAYURAN,Mentah,DR038,"Daun kelor, segar",KZGMI-2001,75.5,92.0,5.1,1.6,8.2,1077.0,76.0,6.0,61.0,298.0,0.1,0.6
+SAYURAN,Mentah,DR039,"Daun kemang, segar",DABM-1964,85.0,43.0,5.5,0.3,8.4,35.0,106.0,1.0,9.5,457.1,,
+SAYURAN,Mentah,DR040,"Daun kenikir, segar",BKP,87.6,45.0,3.7,0.5,5.8,328.0,65.2,2.7,431.0,431.0,0.1,0.6
+SAYURAN,Mentah,DR041,"Daun kesum, segar",KZGPI-1990,84.8,48.0,4.5,0.8,1.6,125.0,142.0,2.6,10.8,174.7,0.4,1.2
+SAYURAN,Mentah,DR042,"Daun kol sawi, segar",KZGPI-1990,93.1,22.0,2.1,0.5,0.9,200.0,92.0,3.2,19.4,386.2,0.1,0.2
+SAYURAN,Mentah,DR043,"Daun koro, segar",DABM-1964,91.0,23.0,3.0,0.3,,134.0,81.0,6.2,3.5,68.4,0.2,0.5
+SAYURAN,Mentah,DR044,"Daun kubis, segar",KZGMI-2001,86.2,51.0,2.5,1.1,3.4,100.0,50.0,3.4,50.0,100.0,0.9,0.6
+SAYURAN,Mentah,DR045,"Daun kumak, segar",KZGPI-1990,95.2,14.0,1.3,0.3,0.9,90.0,59.0,2.7,1.9,36.5,0.1,0.3
+SAYURAN,Mentah,DR046,"Daun labu siam, segar",DABM-1964,89.7,34.0,4.0,0.4,3.5,58.0,70.0,2.5,15.9,630.7,0.2,0.3
+SAYURAN,Mentah,DR047,"Daun labu waluh/kuning, segar",DABM-1964,89.7,34.0,3.6,0.6,2.9,138.0,99.0,3.7,15.9,630.7,0.2,0.3
+SAYURAN,Mentah,DR048,"Daun lamtoro, segar",KZGPI-1990,74.0,87.0,8.3,1.8,3.3,725.0,174.0,3.9,10.1,197.7,0.5,1.4
+SAYURAN,Mentah,DR049,"Daun leilem, segar",KZGMI-2001,79.4,76.0,2.8,0.2,3.1,296.0,22.0,3.4,6.0,46.0,0.5,1.1
+SAYURAN,Mentah,DR050,"Daun leunca, segar",DABM-1964,85.0,49.0,4.7,0.5,,210.0,80.0,6.1,,,,
+SAYURAN,Mentah,DR051,"Daun lobak, segar",DKBM-1964,90.0,30.0,2.3,0.4,3.2,140.0,33.0,3.7,15.8,747.4,0.2,0.2
+SAYURAN,Mentah,DR052,"Daun lompong talas, segar",DABM-1964,87.2,44.0,3.0,0.8,3.3,76.0,59.0,1.0,2.7,578.4,0.2,0.4
+SAYURAN,Mentah,DR053,"Daun mangkokan, segar",DABM-1964,82.0,57.0,3.7,0.3,,474.0,49.0,4.0,,,,
+SAYURAN,Mentah,DR054,"Daun matel ambon, segar",KZGPI-1990,77.1,71.0,6.8,1.6,4.6,93.0,95.0,10.2,,,,
+SAYURAN,Mentah,DR055,"Daun melinjo, segar",DABM-1964,70.8,104.0,5.0,1.3,10.3,219.0,82.0,4.2,12.2,604.8,0.4,0.6
+SAYURAN,Olahan,DP007,"Daun mengkudu, kukus",KZGPI-1990,81.6,63.0,3.8,1.5,2.4,300.0,43.0,6.0,,,,
+SAYURAN,Mentah,DR056,"Daun mengkudu, segar",KZGPI-1990,80.9,65.0,4.0,1.7,3.9,296.0,40.0,6.9,,,,
+SAYURAN,Mentah,DR057,"Daun ndusuk, segar",KZGMI-2001,56.0,166.0,1.7,0.5,10.7,40.0,20.0,1.8,40.0,310.0,0.2,0.7
+SAYURAN,Mentah,DR058,"Daun oyong, segar",DABM-1964,93.0,22.0,1.0,0.1,2.0,21.0,44.0,2.0,39.9,295.5,0.1,0.2
+SAYURAN,Mentah,DR060,"Daun pakis longgiho, segar",KZGMI-2001,89.5,54.0,2.2,3.6,2.1,40.0,80.0,0.7,70.0,500.0,0.4,0.1
+SAYURAN,Mentah,DR061,"Daun pakis wambateu, segar",KZGMI-2001,86.9,53.0,3.4,1.2,4.8,30.0,100.0,0.3,20.0,200.0,0.2,0.3
+SAYURAN,Mentah,DR059,"Daun pakis, segar",KZGPI-1990,86.8,39.0,4.5,0.4,2.0,136.0,159.0,2.3,20.1,201.9,0.2,0.3
+SAYURAN,Mentah,DR062,"Daun paku, segar",KZGMI-2001,88.8,29.0,3.4,0.1,4.3,13.0,88.0,1.3,19.0,434.0,0.5,0.7
+SAYURAN,Mentah,DR063,"Daun pangi,segar",KZGMI-2001,76.1,104.0,3.9,0.6,8.3,256.0,22.0,1.8,4.0,266.0,1.7,0.5
+SAYURAN,Mentah,DR064,"Daun pare, segar",KZGMI-2001,87.3,49.0,2.7,1.0,3.0,217.0,70.0,3.3,7.0,498.0,0.4,1.2
+SAYURAN,Mentah,DR065,"Daun pepaya, segar",DABM-1964,75.4,87.0,8.0,2.0,1.5,353.0,63.0,0.8,4.4,926.6,0.2,1.5
+SAYURAN,Mentah,DR066,"Daun pohpohan, segar",KZGPI-1990,87.4,37.0,2.5,0.8,2.6,744.0,80.0,5.9,,,,
+SAYURAN,Mentah,DR067,"Daun selasih, segar",KZGMI-2001,83.1,62.0,4.0,0.5,5.3,122.0,16.0,13.9,3.0,259.0,0.4,0.7
+SAYURAN,Mentah,DR068,"Daun semanggi, segar",KZGPI-1990,84.7,45.0,4.4,0.5,1.9,98.0,90.0,7.0,64.2,520.7,0.5,0.3
+SAYURAN,Mentah,DR069,"Daun simpur, segar",KZGPI-1990,86.2,53.0,3.2,2.5,1.6,228.0,194.0,3.5,,,,
+SAYURAN,Mentah,DR070,"Daun singkil, segar",KZGPI-1990,80.9,68.0,2.0,1.0,3.3,178.0,86.0,2.1,,,,
+SAYURAN,Mentah,DR072,"Daun singkong ambon, segar",DABM-1964,58.0,144.0,12.7,1.2,10.2,165.0,54.0,3.9,44.4,62.2,0.2,5.4
+SAYURAN,Mentah,DR073,"Daun singkong ampenan, segar",KZGMI-2001,84.4,50.0,6.2,1.1,2.4,352.0,123.0,2.7,49.0,570.0,0.2,1.3
+SAYURAN,Mentah,DR074,"Daun singkong kopang, segar",KZGMI-2001,81.1,74.0,6.3,0.7,4.6,142.0,115.0,1.7,32.0,382.0,0.2,1.5
+SAYURAN,Olahan,DP008,"Daun singkong, rebus",KZGPI-1990,90.5,31.0,3.7,0.6,1.6,160.0,50.0,2.6,12.6,14.0,0.1,2.0
+SAYURAN,Mentah,DR071,"Daun singkong, segar",KZGPI-1990,84.4,50.0,6.2,1.1,2.4,166.0,99.0,1.3,16.5,23.1,0.1,2.0
+SAYURAN,Mentah,DR075,"Daun sintrong, segar",KZGPI-1990,88.5,36.0,2.6,0.9,1.7,398.0,95.0,9.3,64.1,444.4,0.1,0.4
+SAYURAN,Olahan,DP009,"Daun talas, rebus",KZGPI-1990,91.6,27.0,1.3,0.2,1.6,119.0,41.0,1.4,2.9,519.4,0.5,0.5
+SAYURAN,Mentah,DR076,"Daun talas, segar",KZGPI-1990,81.1,59.0,3.0,0.4,3.0,236.0,50.0,2.4,4.0,854.1,0.4,0.5
+SAYURAN,Mentah,DR077,"Daun tespong, segar",DABM-1964,81.0,70.0,2.9,0.3,2.3,155.0,65.0,2.5,72.4,,0.15,0.9
+SAYURAN,Mentah,DR078,"Daun ubi kuning, segar",KZGMI-2001,83.5,62.0,3.7,0.3,6.4,170.0,40.0,0.6,10.0,0.0,0.2,0.5
+SAYURAN,Olahan,DP010,"Daun ubi merah, kukus",KZGPI-1990,82.5,56.0,3.1,0.3,1.5,78.0,52.0,4.3,28.2,472.8,0.1,0.4
+SAYURAN,Mentah,DR079,"Daun ubi merah, segar",KZGPI-1990,84.4,48.0,3.0,0.3,1.4,80.0,81.0,6.4,32.8,517.3,0.0,0.4
+SAYURAN,Mentah,DR080,"Daun ubi putih, segar",KZGMI-2001,87.5,46.0,2.8,0.2,4.8,120.0,50.0,0.8,10.0,0.0,0.2,0.5
+SAYURAN,Mentah,DR081,"Daun ubi tinta, segar",KZGMI-2001,85.1,55.0,1.7,0.1,7.6,120.0,40.0,0.6,10.0,0.0,0.2,0.5
+SAYURAN,Mentah,DR082,"Eceng, segar",DABM-1964,93.0,19.0,1.0,0.2,1.8,80.0,45.0,3.7,44.8,634.1,,
+SAYURAN,Olahan,DP031,Gado-gado,KZGPI-1990,68.5,137.0,6.1,3.2,1.1,301.0,135.0,7.5,,,,
+SAYURAN,Mentah,DR083,"Gambas (oyong), segar",DABM-1964,94.5,19.0,0.8,0.2,1.3,19.0,33.0,0.9,22.9,109.1,0.0,0.1
+SAYURAN,Mentah,DR084,"Genjer, segar",DABM-1964,90.0,35.0,1.7,0.2,2.5,62.0,33.0,2.1,64.0,905.8,,
+SAYURAN,Olahan,DP032,"Gudeg, sayur",KZGPI-1990,69.2,160.0,3.3,9.2,2.3,62.0,55.0,12.8,,,,
+SAYURAN,Olahan,DP033,Gulai pakis,KZGPI-1990,76.1,143.0,4.0,11.4,1.4,548.0,124.0,1.7,,,,
+SAYURAN,Olahan,DP034,Gulai pliek,KZGMI-2001,71.9,176.0,7.3,14.9,,39.0,54.0,1.4,257.0,285.0,0.3,0.6
+SAYURAN,Mentah,DR085,"Jagung muda / semi, segar",DABM-1964,89.5,35.0,2.2,0.1,1.9,7.0,100.0,0.5,353.0,230.24,0.1,0.76
+SAYURAN,Mentah,DR086,Jamur encik,KZGMI-2001,24.8,296.0,9.4,1.1,,5.0,277.0,5.3,2.0,,0.2,3.1
+SAYURAN,Mentah,DR087,"Jamur kuping, kering",DABM-1964,14.9,294.0,16.0,0.9,46.49,51.0,223.0,6.7,173.8,726.14,0.29,5.47
+SAYURAN,Mentah,DR088,"Jamur kuping, segar",DABM-1964,93.7,21.0,3.8,0.6,5.06,3.0,94.0,1.7,17.29,33.35,0.19,0.06
+SAYURAN,Mentah,DR089,"Jamur merang, segar",BKP,91.5,30.0,3.5,0.2,2.4,14.4,117.0,1.0,300.0,300.0,0.3,0.8
+SAYURAN,Mentah,DR091,Jamur sagu,KZGMI-2001,91.3,48.0,1.9,3.2,1.0,10.0,90.0,0.6,100.0,440.0,0.6,0.6
+SAYURAN,Mentah,DR090,"Jamur tiram, segar",BKP,92.5,30.0,1.9,0.1,3.6,8.6,82.7,0.7,226.0,226.0,0.0,0.8
+SAYURAN,Mentah,DR092,"Jantung pisang, segar",DABM-1964,90.2,32.0,1.2,0.3,3.2,30.0,50.0,0.1,3.0,524.0,0.09,0.3
+SAYURAN,Mentah,DR093,"Jengkol, segar",KZGMI-2001,52.7,192.0,5.4,0.3,1.52,4.0,150.0,0.7,60.0,241.0,0.3,0.6
+SAYURAN,Mentah,DR094,"Jotang, segar",DABM-1964,89.0,34.0,1.9,0.3,3.5,162.0,41.0,4.0,58.5,388.5,0.3,1.2
+SAYURAN,Mentah,DR095,"Kabau, segar",KZGMI-2001,67.2,130.0,6.7,0.3,2.9,4.0,204.0,0.5,1.0,397.8,0.2,0.5
+SAYURAN,Mentah,DR096,"Kacang mekah, polong, segar",KZGPI-1990,93.6,22.0,1.1,1.0,1.1,63.0,296.0,1.0,2.2,69.2,0.3,
+SAYURAN,Olahan,DP011,"Kacang panjang ,kukus",KZGPI-1990,88.2,39.0,3.0,0.6,1.7,100.0,91.0,1.2,28.0,198.96,0.11,0.49
+SAYURAN,Olahan,DP012,"Kacang panjang, rebus",KZGPI-1990,90.9,30.0,2.3,0.4,1.4,71.0,68.0,0.8,24.2,114.5,0.1,0.4
+SAYURAN,Mentah,DR097,"Kacang panjang, segar",KZGMI-2001,91.8,31.0,2.3,0.1,2.7,60.0,64.0,0.6,30.0,213.0,0.1,0.5
+SAYURAN,Mentah,DR098,Kacang ranti polong,KZGPI-1990,88.5,37.0,3.1,0.2,2.5,103.0,126.0,0.8,,,,
+SAYURAN,Olahan,DP035,Kadada katembe,KZGMI-2001,80.0,110.0,4.5,6.9,3.9,26.0,77.0,0.0,178.0,131.0,0.2,0.7
+SAYURAN,Mentah,DR099,"Kalakai, segar",KZGMI-2001,89.9,38.0,2.4,0.2,5.8,18.0,90.0,1.1,7.0,443.0,0.4,0.9
+SAYURAN,Mentah,DR101,Kangkung tondano,KZGMI-2001,88.5,43.0,1.8,0.2,4.3,72.0,9.0,0.7,30.0,361.0,0.3,0.4
+SAYURAN,Olahan,DP013,"Kangkung, kukus",KZGPI-1990,90.4,30.0,3.2,0.7,1.8,70.0,49.0,4.4,45.13,184.87,0.1,0.35
+SAYURAN,Olahan,DP014,"Kangkung, rebus",KZGPI-1990,93.0,22.0,2.5,0.6,1.2,50.0,51.0,3.5,31.03,97.97,0.1,0.29
+SAYURAN,Mentah,DR100,"Kangkung, segar",KZGPI-1990,91.0,28.0,3.4,0.7,2.0,67.0,54.0,2.3,64.88,250.12,0.13,0.44
+SAYURAN,Olahan,DP036,"Kaparende, sayur",KZGMI-2001,91.7,38.0,2.4,2.0,1.5,126.0,68.0,0.0,170.0,43.0,0.0,0.3
+SAYURAN,Mentah,DR102,"Kapri muda, segar",DABM-1964,86.8,45.0,3.3,0.2,1.79,51.0,85.0,1.0,1.7,118.37,0.09,0.68
+SAYURAN,Mentah,DR103,Karawila,KZGMI-2001,93.7,25.0,2.3,0.2,2.1,25.0,67.0,0.3,8.0,88.4,0.08,0.3
+SAYURAN,Olahan,DP037,"Karedok, sayur",KZGPI-1990,79.0,92.0,2.2,3.3,1.4,174.0,85.0,2.4,,,,
+SAYURAN,Mentah,DR104,"Kecipir muda, segar",DABM-1964,90.4,32.0,2.9,0.2,5.47,63.0,37.0,0.3,3.3,103.81,0.18,0.4
+SAYURAN,Mentah,DR105,"Kecombrang, segar",KZGPI-1990,90.0,34.0,0.9,1.0,2.6,60.0,16.0,1.0,47.1,650.6,,
+SAYURAN,Mentah,DR106,"Kelawi,kluwih, segar",DABM-1964,70.0,118.0,1.5,0.3,5.01,28.0,32.0,0.9,2.04,500.85,0.09,0.12
+SAYURAN,Mentah,DR107,"Kembang turi, segar",DABM-1964,87.4,51.0,1.8,0.6,4.98,23.0,29.0,0.9,22.4,275.34,0.15,0.9
+SAYURAN,Olahan,DP038,Keripik bayam,KZGPI-1990,2.3,586.0,4.9,40.6,0.5,236.0,117.0,3.6,,,,
+SAYURAN,Mentah,DR108,"Kerokot, segar",DABM-1964,93.0,26.0,1.7,0.4,1.0,103.0,39.0,3.6,3.6,240.5,0.23,0.9
+SAYURAN,Mentah,DR110,"Ketimun krai, segar",KZGPI-1990,96.8,10.0,0.5,0.2,0.6,20.0,98.0,1.0,9.74,82.09,0.03,0.13
+SAYURAN,Mentah,DR111,"Ketimun madura, segar",KZGPI-1990,97.1,9.0,0.5,0.1,0.7,15.0,102.0,0.6,2.38,78.92,0.02,0.1
+SAYURAN,Mentah,DR109,"Ketimun, segar",KZGPI-1990,97.9,8.0,0.2,0.2,0.3,29.0,95.0,0.8,1.72,57.1,0.02,0.07
+SAYURAN,Mentah,DR112,"Komak, segar",KZGMI-2001,74.3,99.0,3.3,0.1,10.3,50.0,99.0,13.1,15.0,567.0,0.2,0.6
+SAYURAN,Mentah,DR113,Kool kembang,DABM-1964,91.7,25.0,2.4,0.2,1.55,22.0,72.0,1.1,46.52,186.98,0.04,0.28
+SAYURAN,Mentah,DR114,"Kool merah,kool putih",DABM-1964,92.4,29.0,1.4,0.2,1.85,46.0,31.0,0.5,28.26,236.77,0.29,0.29
+SAYURAN,Mentah,DR115,"Koro kerupuk, polong",DABM-1964,67.2,128.0,8.3,0.7,,17.0,12.0,2.7,,,,
+SAYURAN,Mentah,DR116,"Koro wedus, polong",DABM-1964,88.0,46.0,3.0,0.3,3.3,56.0,47.0,1.1,2.0,249.3,0.09,0.4
+SAYURAN,Olahan,DP039,Kotiu hinela tawang nggole,KZGMI-2001,88.4,46.0,2.2,1.5,3.8,64.0,44.0,0.0,316.0,103.0,1.6,0.8
+SAYURAN,Mentah,DR118,"Kucai muda (Lokio), segar",DABM-1964,86.0,42.0,3.8,0.6,4.9,76.0,91.0,2.5,21.8,449.1,0.11,0.5
+SAYURAN,Mentah,DR117,"Kucai, segar",DABM-1964,86.3,45.0,2.2,0.3,4.8,52.0,50.0,1.1,21.4,439.5,0.11,0.5
+SAYURAN,Mentah,DR119,Kulit melinjo,KZGPI-1990,71.9,111.0,4.5,1.1,5.0,117.0,179.0,2.6,,,,
+SAYURAN,Mentah,DR120,"Kundur, segar",KZGMI-2001,94.0,22.0,0.4,0.2,1.33,3.0,54.0,0.5,2.0,200.0,0.1,0.3
+SAYURAN,Mentah,DR121,"Labu air, segar",DABM-1964,95.0,19.0,0.6,0.2,0.56,12.0,18.0,0.6,2.24,168.16,0.03,0.78
+SAYURAN,Mentah,DR122,"Labu kuning, segar",KZGMI-2001,86.6,51.0,1.7,0.5,2.7,40.0,180.0,0.7,280.0,220.0,0.35,1.5
+SAYURAN,Mentah,DR123,"Labu siam, segar",DABM-1964,92.3,30.0,0.6,0.1,6.19,14.0,25.0,0.5,2.67,167.1,0.16,1.0
+SAYURAN,Mentah,DR124,"Labu waluh, segar",DABM-1964,91.2,32.0,1.1,0.1,0.52,45.0,64.0,1.4,1.0,356.19,0.13,0.34
+SAYURAN,Mentah,DR125,"Lantar, segar",KZGMI-2001,91.2,34.0,2.2,0.3,2.9,10.0,58.0,0.4,3.0,155.0,0.2,0.4
+SAYURAN,Olahan,DP040,Lema/ Rebung asam,KZGMI-2001,96.3,15.0,1.0,0.4,,17.0,230.0,2.9,3.0,156.0,0.1,0.7
+SAYURAN,Olahan,DP041,Lilin bungkus gedi,KZGMI-2001,84.8,79.0,2.3,5.2,2.5,170.0,70.0,0.9,170.0,50.0,0.2,0.8
+SAYURAN,Mentah,DR126,"Lobak, segar",DABM-1964,94.1,21.0,0.9,0.1,1.35,35.0,26.0,0.6,49.33,109.3,0.03,0.19
+SAYURAN,Mentah,DR127,"Lumai/Leunca, segar",KZGMI-2001,90.5,38.0,1.1,0.3,2.0,7.0,55.0,1.0,2.0,,0.1,0.3
+SAYURAN,Mentah,DR128,"Melinjo, segar",DABM-1964,80.0,66.0,5.0,0.7,,163.0,75.0,2.8,,,,
+SAYURAN,Mentah,DR129,Mostarda metan -sawi,KZGMI-2001,91.4,33.0,2.3,0.5,1.8,60.0,30.0,3.1,20.0,100.0,0.1,0.4
+SAYURAN,Mentah,DR130,"Nangka muda, segar",DABM-1964,85.4,57.0,2.0,0.4,8.34,45.0,29.0,0.5,1.1,246.45,0.04,0.07
+SAYURAN,Olahan,DP042,Olah-olah,KZGMI-2001,83.9,9.1,2.1,6.0,4.4,26.0,3.0,1.2,289.0,266.0,0.3,0.6
+SAYURAN,Olahan,DP043,Paku hinela wulelenggapaya,KZGMI-2001,83.4,77.0,3.5,4.6,3.6,63.0,85.0,0.0,469.0,37.0,0.3,0.7
+SAYURAN,Olahan,DP015,"Paria putih, kukus",KZGPI-1990,95.0,16.0,0.8,0.2,1.2,16.0,33.0,0.5,3.99,236.0,0.0,0.68
+SAYURAN,Mentah,DR131,"Paria putih, segar",KZGPI-1990,94.4,19.0,1.0,0.4,1.3,31.0,65.0,0.9,4.7,277.65,0.03,0.75
+SAYURAN,Olahan,DP044,Pelecing kangkung,KZGMI-2001,83.8,75.0,2.5,2.8,5.4,36.0,3.0,2.1,408.0,381.0,0.1,0.4
+SAYURAN,Mentah,DR132,"Pepare ular, segar",KZGMI-2001,95.1,19.0,0.6,0.1,1.0,20.0,10.0,0.4,130.0,30.0,0.1,0.1
+SAYURAN,Mentah,DR133,"Pepaya muda, segar",DABM-1964,92.3,29.0,2.1,0.1,2.08,50.0,16.0,0.4,21.85,211.23,0.01,0.0
+SAYURAN,Mentah,DR134,"Petai, segar",KZGMI-2001,77.2,92.0,5.4,1.1,2.0,14.0,170.0,1.6,55.0,221.0,0.2,0.8
+SAYURAN,Mentah,DR135,"Peterseli, segar",DABM-1964,83.9,53.0,3.7,1.0,0.0,193.0,84.0,4.3,18.2,1125.6,0.2,1.4
+SAYURAN,Mentah,DR136,"Pucuk lumai/daun leunca, segar",KZGMI-2001,91.0,33.0,4.5,0.4,,13.0,75.0,2.9,2.0,0.0,0.2,0.6
+SAYURAN,Olahan,DP045,Purundawa,KZGMI-2001,91.8,25.0,1.5,0.5,1.7,147.0,39.0,0.0,239.0,201.0,0.1,0.6
+SAYURAN,Mentah,DR137,"Putri malu, segar",KZGMI-2001,80.2,76.0,3.6,0.3,7.1,119.0,84.0,3.3,1.0,631.0,0.6,1.4
+SAYURAN,Mentah,DR138,"Rebung, segar",KZGMI-2001,93.3,25.0,0.8,0.1,9.7,3.0,5.0,0.5,3.0,206.0,0.1,0.4
+SAYURAN,Mentah,DR139,"Rimbang, segar",KZGMI-2001,80.8,75.0,1.6,0.6,10.0,55.0,97.0,0.6,20.0,234.0,0.4,0.4
+SAYURAN,Olahan,DP046,Rujak cingur,KZGPI-1990,70.1,153.0,11.3,8.4,1.4,256.0,143.0,4.4,,,,
+SAYURAN,Mentah,DR140,Rumput laut,KZGMI-2001,87.0,41.0,1.4,0.3,2.2,80.0,20.0,1.6,250.0,380.0,0.2,0.4
+SAYURAN,Mentah,DR142,"Sawi putih / pecai, segar",KZGPI-1990,96.6,9.0,1.0,0.1,0.8,56.0,42.0,1.1,4.99,193.12,0.05,0.07
+SAYURAN,Mentah,DR143,"Sawi taiwan, segar",KZGMI-2001,91.8,30.0,1.9,0.5,2.7,100.0,58.0,1.6,27.0,217.0,0.1,0.7
+SAYURAN,Mentah,DR144,"Sawi tanah, segar",KZGMI-2001,94.9,19.0,1.3,0.2,2.2,92.0,45.0,1.2,17.0,145.0,0.1,0.4
+SAYURAN,Mentah,DR141,"Sawi, segar",DABM-1964,92.2,28.0,2.3,0.3,2.46,220.0,38.0,2.9,21.89,436.53,0.12,0.17
+SAYURAN,Olahan,DP047,Sayur asem,KZGPI-1990,93.2,29.0,0.7,0.6,0.6,40.0,61.0,3.1,,,,
+SAYURAN,Olahan,DP048,Sayur bunga pepaya,KZGMI-2001,83.4,49.0,1.7,0.3,2.7,220.0,220.0,1.3,90.0,350.0,0.1,0.1
+SAYURAN,Olahan,DP049,Sayur garu,KZGMI-2001,70.8,178.0,2.6,13.9,8.4,30.0,130.0,0.9,20.0,120.0,0.1,0.3
+SAYURAN,Olahan,DP050,Sayur kohu-kohu,KZGMI-2001,72.8,133.0,7.3,6.6,1.2,40.0,120.0,0.2,20.0,50.0,0.1,0.3
+SAYURAN,Olahan,DP051,Sayur lilin-terubuk,KZGMI-2001,90.4,36.0,2.7,0.7,1.4,10.0,90.0,0.1,30.0,44.0,0.2,1.0
+SAYURAN,Olahan,DP052,Sayur ndusuk,KZGMI-2001,87.5,49.0,3.1,2.5,,11.0,6.0,0.5,1011.0,88.0,,0.2
+SAYURAN,Olahan,DP053,Sayur sop,KZGPI-1990,92.7,27.0,1.3,2.0,0.3,168.0,57.0,1.8,,,,
+SAYURAN,Olahan,DP054,Sayur umbut kelapa,KZGMI-2001,85.5,67.0,5.2,2.9,1.4,48.0,81.0,3.2,313.0,108.0,0.2,1.1
+SAYURAN,Olahan,DP055,Sayur umbut rotan,KZGMI-2001,87.6,57.0,5.4,2.6,1.6,184.0,135.0,1.2,256.0,81.0,0.2,0.9
+SAYURAN,Mentah,DR146,"Selada air, segar",KZGPI-1990,93.3,17.0,3.1,0.2,0.7,95.0,152.0,2.4,64.91,260.67,0.11,0.15
+SAYURAN,Olahan,DP016,"Selada, rebus",KZGPI-1990,93.5,19.0,2.7,0.2,0.7,83.0,74.0,1.4,24.1,160.7,0.05,0.25
+SAYURAN,Mentah,DR145,"Selada, segar",DABM-1964,94.8,18.0,1.2,0.2,1.77,22.0,25.0,0.5,18.64,186.42,0.03,0.19
+SAYURAN,Mentah,DR147,"Seledri, segar",DABM-1964,93.0,23.0,1.0,0.1,2.04,50.0,40.0,1.0,64.49,258.76,0.08,0.39
+SAYURAN,Olahan,DP057,Semur jengkol,KZGMS-1993,52.7,212.0,6.0,10.0,,77.0,99.0,1.0,,,,
+SAYURAN,Olahan,DP056,Shabu-shabu,KZGMS-1993,87.1,88.0,3.2,8.0,0.9,217.0,48.0,2.9,513.5,,,
+SAYURAN,Mentah,DR149,"Taoge kacang kedelai, segar",DABM-1964,81.0,76.0,9.0,2.6,0.71,50.0,65.0,1.0,4.72,212.42,0.26,0.72
+SAYURAN,Mentah,DR150,"Taoge kacang tunggak, segar",DABM-1964,88.0,40.0,5.0,0.2,2.63,57.0,88.0,1.0,2.11,226.8,0.07,0.53
+SAYURAN,Olahan,DP017,"Taoge, goreng",KZGPI-1990,79.2,88.0,3.2,2.1,0.7,168.0,50.0,5.7,,,,
+SAYURAN,Olahan,DP018,"Taoge, seduh",KZGPI-1990,91.9,28.0,3.0,0.8,1.0,52.0,73.0,0.5,17.75,58.31,0.19,0.38
+SAYURAN,Mentah,DR148,"Taoge, segar",KZGPI-1990,90.4,34.0,3.7,1.2,1.1,166.0,74.0,0.8,18.93,93.3,0.16,0.41
+SAYURAN,Mentah,DR151,"Tebu terubuk (lilin), segar",DABM-1964,91.0,30.0,4.6,0.4,0.8,40.0,80.0,2.0,698.6,,0.2,1.1
+SAYURAN,Mentah,DR153,"Tekokak, kering",DABM-1964,12.3,302.0,8.3,1.7,21.2,370.0,180.0,22.2,8.5,0.0,1044.2,1.0
+SAYURAN,Mentah,DR152,"Tekokak, segar",DABM-1964,89.0,34.0,2.0,0.1,4.93,50.0,30.0,2.0,2.9,333.33,0.12,0.23
+SAYURAN,Mentah,DR155,"Terong asam, segar",KZGMI-2001,90.5,37.0,2.0,0.4,3.2,13.0,59.0,1.5,3.0,155.0,0.3,0.3
+SAYURAN,Mentah,DR158,"Terong hintalo, segar",KZGMI-2001,89.2,45.0,1.9,0.8,5.1,19.0,268.0,1.0,167.0,142.0,0.6,0.2
+SAYURAN,Mentah,DR154,"Terong, segar",DABM-1964,92.7,28.0,1.1,0.2,2.09,15.0,37.0,0.4,8.94,186.97,0.1,0.1
+SAYURAN,Mentah,DR156,"Terung belanda, segar",KZGPI-1990,87.3,52.0,2.1,1.1,1.4,16.0,40.0,1.1,,,,
+SAYURAN,Mentah,DR157,"Terung bengkulu, segar",KZGPI-1990,86.6,52.0,1.1,0.4,3.2,19.0,39.0,1.1,13.7,,0.16,1.0
+SAYURAN,Mentah,DR159,Terung panjang,KZGPI-1990,91.8,25.0,2.1,0.1,0.5,38.0,24.0,0.7,8.79,53.69,0.09,0.17
+SAYURAN,Olahan,DP019,"Terung panjang, kukus",KZGPI-1990,92.7,23.0,1.8,0.1,0.4,40.0,13.0,0.5,9.34,57.0,67.1,0.19
+SAYURAN,Olahan,DP058,Tinira ninahu nggaluku,KZGMI-2001,91.8,33.0,1.2,1.3,3.1,35.0,35.0,0.0,161.0,119.0,0.2,0.7
+SAYURAN,Mentah,DR161,"Tomat merah, segar",KZGPI-1990,92.9,24.0,1.3,0.5,,8.0,77.0,0.6,9.83,164.94,0.14,0.22
+SAYURAN,Mentah,DR162,"Tomat muda, segar",DABM-1964,93.0,24.0,2.0,0.7,1.75,5.0,27.0,0.5,10.29,210.0,0.07,0.21
+SAYURAN,Mentah,DR160,"Tomat, air (sari), segar",DABM-1964,94.0,20.0,1.0,0.2,0.39,7.0,15.0,0.4,9.84,225.2,0.06,0.1
+SAYURAN,Olahan,DP059,Tumis bayam bersantan,KZGPI-1990,91.2,48.0,1.4,4.2,0.5,129.0,27.0,0.8,,,,
+SAYURAN,Mentah,DR163,"Uceng/ bunga melinjo, segar",KZGPI-1990,79.5,82.0,5.8,1.3,4.8,70.0,266.0,2.4,,,,
+SAYURAN,Mentah,DR164,"Umbut kelapa, segar",KZGMI-2001,89.3,39.0,2.0,0.2,2.5,57.0,49.0,,4.0,447.0,0.2,1.4
+SAYURAN,Mentah,DR165,Umbut rotan,KZGMI-2001,90.5,34.0,2.4,0.3,2.2,89.0,79.0,1.3,8.0,552.0,0.2,1.9
+SAYURAN,Olahan,DP060,Waluh balamak,KZGMI-2001,89.4,45.0,0.8,0.9,7.9,25.0,25.0,0.5,61.0,15.0,,0.2
+SAYURAN,Olahan,DP061,Woku ubi,KZGMI-2001,73.0,143.0,3.1,7.8,7.0,195.0,91.0,2.8,353.0,256.0,0.3,1.0
+SAYURAN,Olahan,DP021,"Wortel, kukus",KZGPI-1990,89.5,37.0,1.0,0.6,1.1,44.0,30.0,0.6,42.78,122.5,0.11,0.25
+SAYURAN,Olahan,DP020,"Wortel, rebus",KZGPI-1990,92.1,28.0,0.7,0.5,0.8,46.0,28.0,0.6,41.0,117.3,0.1,0.24
+SAYURAN,Mentah,DR166,"Wortel, segar",KZGPI-1990,89.9,36.0,1.0,0.6,1.0,45.0,74.0,1.0,70.0,245.0,0.06,0.3
+SEREALIA,Olahan,AP026,Amparan tatak,KZGMI-2001,58.4,191.0,1.3,5.5,,,,,,,,
+SEREALIA,Olahan,AP027,"Apang kukus, kue",KZGMI-2001,49.5,202.0,3.0,0.3,,,,,,,,
+SEREALIA,Olahan,AP028,"Apem, kue",KZGMI-2001,63.1,148.0,2.0,0.5,,,,,,,,
+SEREALIA,Olahan,AP030,"Bakpia, kue",KZGPI- 1990,38.9,272.0,8.7,6.7,0.9,194.0,117.0,4.5,,,,
+SEREALIA,Olahan,AP031,Bakwan,KZGPI- 1990,40.5,280.0,8.2,10.2,3.4,204.0,79.0,7.0,,,,
+SEREALIA,Olahan,AP032,Bantal,KZGMI-2001,52.3,190.0,3.3,0.3,3.4,9.0,0.0,0.4,164.0,84.0,0.2,0.9
+SEREALIA,Olahan,AP033,Baruasa,KZGMI-2001,5.3,417.0,6.5,8.2,,,,,,,,
+SEREALIA,Olahan,AP034,Batar daan,KZGMI-2001,75.3,107.0,2.2,2.2,,20.0,30.0,0.6,200.0,90.0,0.1,
+SEREALIA,Mentah,AR002,"Beras giling var pelita, mentah",KZGPI- 1990,11.4,369.0,9.5,1.4,0.4,68.0,171.0,1.4,34.19,0.0,0.0,0.0
+SEREALIA,Mentah,AR003,"Beras giling var rojolele, mentah",KZGPI- 1990,12.0,357.0,8.4,1.7,0.2,147.0,81.0,1.8,34.0,112.87,0.14,0.1
+SEREALIA,Mentah,AR001,"Beras giling, mentah",KZGMI-2001,12.0,357.0,8.4,1.7,0.2,147.0,81.0,1.8,27.0,71.0,0.1,0.5
+SEREALIA,Mentah,AR004,"Beras hitam, mentah",KZGMI-2001,12.9,351.0,8.0,1.3,20.1,6.0,198.0,0.1,15.0,105.0,0.1,1.6
+SEREALIA,Mentah,AR005,"Beras jagung kuning, kering, mentah",KZGMI-2001,10.8,358.0,5.5,0.1,10.0,20.0,90.0,1.4,1.0,80.0,0.1,4.1
+SEREALIA,Mentah,AR006,"Beras jagung putih, kering, mentah",KZGMI-2001,22.5,307.0,4.8,0.1,10.0,17.0,78.0,1.2,1.0,70.0,0.1,3.5
+SEREALIA,Mentah,AR007,"Beras ketan hitam tumbuk, mentah",KZGPI- 1990,13.7,360.0,8.0,2.3,1.0,10.0,347.0,6.2,11.0,288.0,0.28,2.2
+SEREALIA,Mentah,AR008,"Beras ketan putih tumbuk, mentah",KZGPI- 1990,12.9,361.0,7.4,0.8,0.4,13.0,157.0,3.4,3.0,282.0,0.28,2.2
+SEREALIA,Mentah,AR009,"Beras ladang, mentah",KZGMI-2001,9.8,376.0,7.5,3.8,5.9,20.0,110.0,0.8,10.0,70.0,0.1,1.4
+SEREALIA,Mentah,AR010,"Beras menir, mentah",DABM-1964,12.0,362.0,7.7,4.4,0.2,22.0,272.0,3.7,90.0,201.0,0.1,0.5
+SEREALIA,Mentah,AR011,Beras parboiled,DABM-1964,10.0,353.0,6.8,0.6,0.5,5.0,142.0,0.8,2.0,46.0,0.28,1.0
+SEREALIA,Mentah,AR013,"Beras tumbuk merah, mentah",KZGPI- 1990,14.6,352.0,7.3,0.9,0.8,15.0,257.0,4.2,10.0,202.0,0.36,1.9
+SEREALIA,Mentah,AR012,"Beras tumbuk, mentah",KZGMI-2001,11.5,354.0,7.8,0.4,3.8,3.0,112.0,0.6,5.0,85.0,0.5,1.5
+SEREALIA,Olahan,AP008,"Bihun Jagung, mentah",BKP,11.3,354.0,0.5,0.3,3.0,12.8,111.0,0.6,48.8,1.4,0.4,0.0
+SEREALIA,Olahan,AP007,Bihun goreng instan,KZGMS-1993,9.0,381.0,6.1,3.9,,266.0,151.0,2.9,927.5,,,
+SEREALIA,Olahan,AP006,"Bihun, mentah",DABM-1964,12.9,348.0,4.7,0.1,1.2,6.0,35.0,1.8,12.0,5.0,0.08,0.7
+SEREALIA,Olahan,AP035,Bika ambon,KZGPI- 1990,51.5,199.0,2.1,1.5,0.3,45.0,28.0,1.8,,,,
+SEREALIA,Olahan,AP036,Bingka,KZGMI-2001,44.4,273.0,5.3,10.6,,,,,,,,
+SEREALIA,Olahan,AP029,Biskuit,DABM-1964,2.2,458.0,6.9,14.4,2.1,62.0,87.0,2.7,241.21,20.3,0.16,0.6
+SEREALIA,Olahan,AP037,Bobengka,KZGMI-2001,46.3,225.0,5.3,2.6,,,,,,,,
+SEREALIA,Olahan,AP038,Bolu peca,KZGMI-2001,55.6,197.0,3.3,4.6,,,0.0,0.0,0.0,0.0,,
+SEREALIA,Olahan,AP039,Brem,KZGPI-1990,37.4,249.0,3.4,0.4,0.0,198.0,86.0,2.0,,,,
+SEREALIA,Olahan,AP040,Bubur tinotuan (Manado),KZGMI-2001,80.9,156.0,2.3,0.2,8.2,41.0,20.0,0.4,486.0,164.0,0.3,0.4
+SEREALIA,Olahan,AP041,Cake tape,KZGMI-2001,32.2,323.0,4.9,11.5,1.4,131.0,83.0,2.6,,,,
+SEREALIA,Olahan,AP042,Cangkuning ,KZGMI-2001,57.5,204.0,2.8,7.5,,,,,,,,
+SEREALIA,Mentah,AR014,"Cantel, mentah",DABM-1964,11.0,366.0,11.0,3.3,1.2,28.0,287.0,4.4,7.0,249.0,,
+SEREALIA,Olahan,AP043,Dodol bali,KZGPI- 1990,26.5,298.0,3.7,2.1,0.4,70.0,76.0,2.5,,,,
+SEREALIA,Olahan,AP044,Dodol galamai,KZGMI-2001,16.5,348.0,0.4,3.8,0.5,41.0,144.0,2.6,38.0,76.0,0.3,2.1
+SEREALIA,Olahan,AP045,Dodol kedondong,KZGPI- 1990,26.4,331.0,1.9,7.6,1.0,90.0,55.0,2.3,,,,
+SEREALIA,Olahan,AP046,Dodol manado,KZGMI-2001,26.1,373.0,4.3,16.5,0.4,41.0,142.0,2.4,35.0,72.0,0.3,2.1
+SEREALIA,Olahan,AP047,Emping beras,KZGMI-2001,13.6,403.0,10.6,2.2,0.2,11.0,240.0,0.3,1.0,113.0,0.3,2.4
+SEREALIA,Olahan,AP048,Gemblong,KZGPI- 1990,36.2,274.0,1.7,5.4,2.2,69.0,55.0,3.3,,,,
+SEREALIA,Olahan,AP049,Gendar goreng,KZGPI- 1990,30.4,407.0,6.4,28.2,0.1,216.0,62.0,1.6,,,,
+SEREALIA,Olahan,AP050,Intip goreng,KZGPI- 1990,6.5,474.0,7.6,21.6,1.2,36.0,64.0,2.5,0.0,38.0,0.05,0.5
+SEREALIA,Olahan,AP051,Jagung gerontol,KZGPI- 1990,61.7,156.0,2.7,1.3,1.0,51.0,105.0,1.2,,,,
+SEREALIA,Mentah,AR016,"Jagung kuning pipil, kering, mentah",KZGPI- 1990,11.5,366.0,9.8,7.3,2.2,30.0,538.0,2.3,5.0,79.4,0.1,1.87
+SEREALIA,Olahan,AP012,"Jagung kuning pipil, rebus",KZGPI- 1990,63.7,154.0,3.8,3.5,0.7,7.0,171.0,0.5,5.4,56.4,0.1,2.0
+SEREALIA,Olahan,AP011,"Jagung kuning, tepung",DABM-1964,12.0,355.0,9.2,3.9,7.2,10.0,256.0,2.4,10.7,24.4,0.23,1.7
+SEREALIA,Mentah,AR015,"Jagung muda, kuning, mentah",KZGPI- 1990,61.8,147.0,5.1,0.7,1.3,6.0,122.0,1.1,4.9,33.6,0.13,0.81
+SEREALIA,Olahan,AP010,"Jagung muda, rebus",KZGPI- 1990,53.2,142.0,5.0,0.7,0.8,5.0,105.0,0.8,5.4,24.3,0.2,0.86
+SEREALIA,Mentah,AR017,"Jagung pipil var. harapan, kering",KZGPI- 1990,11.3,367.0,6.2,5.1,2.6,7.0,354.0,2.8,1.0,79.6,0.1,1.87
+SEREALIA,Mentah,AR018,"Jagung pipil var. metro, kering",KZGPI- 1990,10.6,368.0,5.5,4.6,2.9,7.0,300.0,2.4,1.0,80.2,0.1,1.88
+SEREALIA,Olahan,AP052,Jagung titi,KZGPI- 1990,9.2,374.0,9.4,2.2,0.8,14.0,142.0,2.9,,,9.0,
+SEREALIA,Mentah,AR019,"Jali, mentah",DABM-1964,23.0,324.0,11.0,4.0,3.1,213.0,176.0,11.0,23.5,,0.1,0.4
+SEREALIA,Mentah,AR021,"Jampang huma, mentah",DABM-1964,11.7,350.0,6.2,1.4,1.7,329.0,254.0,5.3,52.8,396.7,0.7,1.6
+SEREALIA,Olahan,AP053,Japilus,KZGPI- 1990,3.8,500.0,1.2,25.1,0.4,186.0,29.0,4.9,,,,
+SEREALIA,Mentah,AR020,"Jawawut, mentah",DABM-1964,11.9,364.0,9.7,3.5,8.2,28.0,311.0,5.3,7.2,255.1,0.45,1.5
+SEREALIA,Olahan,AP054,Kakicak,KZGMI-2001,43.9,296.0,3.4,15.1,,,,,,,,
+SEREALIA,Olahan,AP055,Kambose,KZGMI-2001,61.5,164.0,3.0,2.4,4.3,16.0,36.0,0.7,0.0,32.0,0.1,1.6
+SEREALIA,Olahan,AP056,Kapusa,KZGMI-2001,63.5,158.0,4.4,3.2,5.3,79.0,115.0,1.2,104.0,149.0,0.5,1.1
+SEREALIA,Olahan,AP057,Keddo bodong,KZGMI-2001,33.9,290.0,4.6,5.7,,,,,,,,
+SEREALIA,Olahan,AP058,"Kelepon, kue",KZGMI-2001,49.6,215.0,3.7,3.7,1.0,232.0,45.0,3.3,,,,
+SEREALIA,Olahan,AP059,Kereput,KZGMI-2001,3.5,580.0,4.8,39.6,,,,,,,,
+SEREALIA,Olahan,AP015,"Ketan hitam, matang",KZGPI- 1990,56.9,181.0,4.0,1.2,0.3,9.0,144.0,1.7,9.2,18.4,0.1,0.7
+SEREALIA,Olahan,AP017,"Ketan putih, matang",KZGPI- 1990,60.7,163.0,3.0,0.4,0.2,4.0,55.0,0.7,8.4,16.8,0.1,0.7
+SEREALIA,Olahan,AP060,Ketoprak,KZGPI-1990,69.1,153.0,7.9,7.7,2.9,153.0,134.0,3.4,,,,
+SEREALIA,Olahan,AP061,Ketupat kandangan,KZGMI-2001,78.5,109.0,2.2,5.2,,,,,,,,
+SEREALIA,Olahan,AP014,Ketupat ketan,KZGPI- 1990,52.0,212.0,4.0,4.6,0.2,8.0,46.0,1.0,,,,
+SEREALIA,Olahan,AP062,Koya,KZGMI-2001,13.2,366.0,4.2,4.3,0.8,153.0,222.0,7.0,,,,
+SEREALIA,Olahan,AP063,Koya mirasa,KZGMI-2001,7.2,370.0,8.0,1.0,0.4,83.0,110.0,17.0,,,,
+SEREALIA,Olahan,AP064,Koyabu,KZGMI-2001,44.2,241.0,3.4,4.3,,,,,,,,
+SEREALIA,Olahan,AP065,Kue ali,KZGMI-2001,12.8,440.0,3.8,18.5,0.3,27.0,47.0,2.5,,,,
+SEREALIA,Olahan,AP066,Kue bangen,KZGMI-2001,5.6,442.0,3.3,14.7,,,,,,,,
+SEREALIA,Olahan,AP067,Kue gelang,KZGMI-2001,7.1,448.0,5.8,16.1,,,,,,,,
+SEREALIA,Olahan,AP068,Kue jahe,KZGPI- 1990,3.7,425.0,1.6,8.8,1.2,155.0,61.0,4.0,,,,
+SEREALIA,Olahan,AP069,Kue kelapa,KZGMI-2001,3.3,591.0,5.6,42.1,,32.0,180.0,1.6,33.0,443.0,0.5,1.1
+SEREALIA,Olahan,AP070,Kue koa,KZGMI-2001,14.5,340.0,4.8,0.4,,,,,,,,
+SEREALIA,Olahan,AP071,Kue ku temu,KZGMI-2001,46.2,214.0,3.5,0.2,,,,,,,,
+SEREALIA,Olahan,AP072,Kue lumpur,KZGMS-1993,40.1,291.0,3.6,11.1,,96.0,60.0,2.3,,,,
+SEREALIA,Olahan,AP073,Kue pelita,KZGMI-2001,71.0,141.0,5.3,5.5,,,,,,,,
+SEREALIA,Olahan,AP074,Kue putu cangkir,KZGPI- 1990,32.6,304.0,5.3,7.0,0.9,18.0,193.0,4.0,,,,
+SEREALIA,Olahan,AP075,Kue sus,KZGMS-1993,56.6,221.0,7.5,10.2,,105.0,85.0,2.5,,,,
+SEREALIA,Olahan,AP076,Kue thipan,KZGMI-2001,43.0,247.0,2.9,4.2,,16.0,107.0,1.8,95.0,56.0,1.3,0.8
+SEREALIA,Olahan,AP077,Laksa/Putu mayang,KZGMI-2001,73.2,121.0,1.7,3.4,,,,,,,,
+SEREALIA,Olahan,AP078,Lapis legit,KZGPI- 1990,21.3,389.0,6.6,15.7,0.5,16.0,136.0,1.9,,,,
+SEREALIA,Olahan,AP079,Lupis ketan,KZGPI- 1990,61.0,164.0,1.8,2.1,0.7,119.0,31.0,1.5,,,,
+SEREALIA,Olahan,AP019,"Maizena, tepung",DABM-1964,14.0,341.0,0.3,0.0,7.0,20.0,30.0,1.5,6.0,9.0,0.22,1.6
+SEREALIA,Olahan,AP020,"Makaroni, mentah",DABM-1964,11.7,353.0,8.7,0.4,4.9,20.0,80.0,0.3,5.0,0.0,0.28,1.4
+SEREALIA,Olahan,AP080,Manan samin,KZGMI-2001,27.1,379.0,3.4,18.1,,,,,,,,
+SEREALIA,Olahan,AP081,Martabak india,KZGMI-2001,65.8,153.0,4.5,4.2,,14.0,108.0,2.4,240.0,112.0,0.4,0.5
+SEREALIA,Olahan,AP082,Martabak mesir,KZGMI-2001,40.2,278.0,5.1,8.6,,49.0,168.0,3.4,193.0,123.0,0.2,0.9
+SEREALIA,Olahan,AP083,Masekat,KZGMI-2001,15.6,369.0,2.1,7.0,4.0,17.0,52.0,0.8,141.0,12.0,0.4,0.3
+SEREALIA,Olahan,AP021,Mi basah,DABM-1964,80.0,88.0,0.6,3.3,0.1,14.0,13.0,6.8,62.8,13.5,0.06,0.4
+SEREALIA,Olahan,AP022,Mi kering,KZGPI- 1990,10.6,339.0,10.0,1.7,0.4,31.0,143.0,3.9,760.0,83.0,0.29,1.9
+SEREALIA,Olahan,AP084,Mie aceh rebus,KZGMI-2001,74.6,113.0,3.0,3.2,,22.0,44.0,1.4,191.0,36.0,0.2,0.3
+SEREALIA,Olahan,AP085,Mie ayam,KZGMS-1993,78.6,102.0,6.2,3.9,,262.0,51.0,1.8,279.0,,,
+SEREALIA,Olahan,AP086,Mie bakso,KZGMS-1993,74.5,114.0,5.3,3.0,0.1,286.0,53.0,1.9,759.9,,,
+SEREALIA,Olahan,AP087,Mie celon,KZGMI-2001,75.9,102.0,3.0,2.1,,12.0,84.0,1.4,451.0,112.0,0.1,0.5
+SEREALIA,Olahan,AP088,Mie pangsit basah,KZGMS-1993,79.2,105.0,5.9,4.9,,208.0,48.0,2.0,529.5,,,
+SEREALIA,Olahan,AP023,Misoa,KZGPI- 1990,10.0,345.0,8.5,2.2,0.5,52.0,120.0,8.7,3063.6,44.0,0.08,0.0
+SEREALIA,Olahan,AP001,Nasi,KZGPI- 1990,56.7,180.0,3.0,0.3,0.2,25.0,27.0,0.4,1.0,38.0,0.1,0.6
+SEREALIA,Olahan,AP005,Nasi beras merah,KZGPI- 1990,64.0,149.0,2.8,0.4,0.3,6.0,63.0,0.8,4.8,91.4,0.2,0.9
+SEREALIA,Olahan,AP089,Nasi gemuk,KZGMI-2001,61.4,192.0,3.8,8.8,0.7,15.0,74.0,1.0,355.0,63.0,0.2,1.4
+SEREALIA,Olahan,AP090,Nasi gurih,KZGMI-2001,60.5,190.0,4.7,7.5,0.7,12.0,62.0,0.8,296.0,52.0,0.2,1.2
+SEREALIA,Olahan,AP009,Nasi jagung,BKP,11.0,357.0,8.8,0.5,6.2,5.4,43.2,0.6,1.9,30.4,0.1,0.3
+SEREALIA,Olahan,AP091,Nasi minyak,KZGMI-2001,53.3,207.0,3.5,5.0,0.8,26.0,100.0,1.5,74.0,174.0,0.2,2.2
+SEREALIA,Olahan,AP092,Nasi rames,KZGMS-1993,65.8,155.0,10.3,4.2,,239.0,62.0,1.8,265.3,,,
+SEREALIA,Olahan,AP002,Nasi tim,OKN-1992,71.0,120.0,2.4,0.4,0.5,3.0,7.0,0.4,0.0,23.9,0.1,0.4
+SEREALIA,Olahan,AP093,Nopia spesial,KZGPI- 1990,11.5,387.0,5.3,7.6,0.3,903.0,133.0,4.2,,,,
+SEREALIA,Olahan,AP094,Onde-onde,KZGMI-2001,27.7,336.0,4.0,9.8,,,,,,,,
+SEREALIA,Olahan,AP095,Padamaran,KZGMI-2001,67.6,171.0,3.9,8.9,,,,,,,,
+SEREALIA,Olahan,AP096,Pastel,KZGMS-1993,38.3,307.0,4.5,13.3,,296.0,53.0,2.5,,,,
+SEREALIA,Olahan,AP097,Pulut,KZGMI-2001,49.1,216.0,2.6,3.1,,6.0,70.0,3.8,100.0,22.0,0.4,1.3
+SEREALIA,Olahan,AP098,Pundut nasi,KZGMI-2001,77.8,104.0,1.9,4.1,0.4,26.0,100.0,1.5,74.0,174.0,0.0,0.0
+SEREALIA,Olahan,AP99,Putri hijau,KGZMI-2001,54.8,189.0,5.4,2.1,,,,,,,,
+SEREALIA,Olahan,AP100,Putri selat,KZGMI-2001,66.6,163.0,2.2,6.5,,72.0,3.0,4.0,6.0,68.0,,
+SEREALIA,Olahan,AP101,Putu sopa,KZGMI-2001,50.7,215.0,3.3,4.1,,,,,,,,
+SEREALIA,Olahan,AP102,Renggi goreng,KZGMI-2001,8.8,471.0,4.7,21.8,6.4,4.0,80.0,1.1,126.0,29.0,0.9,1.3
+SEREALIA,Olahan,AP103,Roti boong,KZGMI-2001,34.0,341.0,5.5,16.2,,15.0,65.0,1.1,161.0,41.0,,0.9
+SEREALIA,Olahan,AP024,Roti putih,DABM-1964,40.0,248.0,8.0,1.2,9.1,10.0,95.0,1.5,530.0,91.0,0.15,0.9
+SEREALIA,Olahan,AP104,Roti warna sawo matang,DABM-1964,40.0,249.0,7.9,1.5,,20.0,140.0,2.5,500.0,91.0,,
+SEREALIA,Olahan,AP105,Sarimuka,KZGMI-2001,61.5,166.0,2.3,2.8,,36.0,13.0,2.0,3.0,34.0,0.0,0.0
+SEREALIA,Olahan,AP106,Spaghetti,KZGMS-1993,66.1,139.0,7.4,2.1,,109.0,53.0,4.7,,,,
+SEREALIA,Olahan,AP107,Srikaya ketan,KZGMI-2001,41.0,265.0,2.7,6.4,,,,,,,,
+SEREALIA,Olahan,AP108,Sunduk lawang,KZGMI-2001,63.4,181.0,1.9,1.3,,,,,,,,
+SEREALIA,Olahan,AP109,Suwir-suwir,KZGPI- 1990,13.4,347.0,0.5,0.9,0.8,42.0,40.0,4.3,,,,
+SEREALIA,Olahan,AP003,Tapai beras,KZGMI-2001,75.5,99.0,1.7,0.3,0.0,4.0,19.0,0.0,26.0,2.0,0.1,0.5
+SEREALIA,Olahan,AP016,Tapai ketan hitam,KZGPI- 1990,50.2,166.0,3.8,1.0,0.3,8.0,106.0,1.6,5.0,12.0,,
+SEREALIA,Olahan,AP018,Tapai ketan putih,KZGPI- 1990,58.9,172.0,3.0,0.5,0.6,6.0,35.0,0.5,1.0,,,
+SEREALIA,Olahan,AP004,"Tepung beras, mentah",DABM-1964,12.0,353.0,7.0,0.5,2.4,5.0,140.0,0.8,5.0,241.0,0.1,0.8
+SEREALIA,Olahan,AP013,Tepung jagung putih,DABM-1964,12.0,355.0,9.2,3.9,7.2,10.0,256.0,2.4,10.7,24.4,0.23,1.7
+SEREALIA,Olahan,AP025,Tepung terigu,KZGPI- 1990,11.8,333.0,9.0,1.0,0.3,22.0,150.0,6.3,2.0,0.0,0.02,2.8
+SEREALIA,Olahan,AP110,Tipa-tipa,KZGPI- 1990,11.3,355.0,6.2,1.2,1.3,17.0,328.0,1.6,,,,
+SEREALIA,Olahan,AP111,Wajit camilan,KZGPI- 1990,27.1,303.0,6.3,2.7,6.9,61.0,302.0,5.5,,,,
+SEREALIA,Olahan,AP112,Widaran,KZGPI- 1990,7.0,424.0,1.3,10.7,0.2,49.0,88.0,2.5,,,,
+SEREALIA,Olahan,AP113,Wingko babat,KZGPI- 1990,29.7,355.0,3.2,15.1,2.4,47.0,63.0,1.1,,,,
+SEREALIA,Olahan,AP114,Yangko,KZGPI- 1990,37.4,254.0,3.0,1.1,0.8,184.0,24.0,2.6,,,,
+SUSU,Olahan,JP001,Es krim,DABM-1964,62.1,210.0,4.0,12.5,0.0,123.0,99.0,0.1,77.74,193.39,0.0,0.67
+SUSU,Olahan,JP002,Hangop,DABM-1964,84.0,65.0,10.0,1.0,0.0,180.0,190.0,0.2,125.6,374.4,0.0,
+SUSU,Olahan,JP003,Keju,DABM-1964,38.5,326.0,22.8,20.3,0.0,777.0,338.0,1.5,1410.26,82.71,0.03,3.13
+SUSU,Mentah,JR001,"Kepala susu - krim, segar",DABM-1964,72.5,204.0,2.6,20.0,0.0,97.0,77.0,0.1,,,,
+SUSU,Olahan,JP004,Kwark (Quark),DABM-1964,59.0,242.0,19.0,17.0,0.0,300.0,350.0,0.5,36.84,72.71,0.01,0.22
+SUSU,Olahan,JP005,"Susu asam untuk bayi, bubuk",DABM-1964,2.5,418.0,19.0,9.0,0.0,800.0,600.0,7.0,188.19,486.5,0.0,0.0
+SUSU,Olahan,JP006,Susu bubuk,DABM-1964,3.5,513.0,24.6,30.0,0.0,904.0,694.0,0.6,380.0,1330.0,0.02,4.07
+SUSU,Mentah,JR002,Susu ibu - ASI,FCTEA-1972,88.1,62.0,1.5,3.2,0.0,34.0,20.0,0.2,15.0,41.0,0.01,0.41
+SUSU,Mentah,JR003,"Susu kambing, segar",DABM-1964,85.9,64.0,4.3,2.3,0.0,98.0,78.0,2.7,35.0,160.0,0.33,0.05
+SUSU,Olahan,JP007,Susu kental manis,DABM-1964,25.0,343.0,8.2,10.0,0.0,275.0,209.0,0.2,150.0,320.0,0.02,0.97
+SUSU,Olahan,JP008,Susu kental tak manis,DABM-1964,73.7,138.0,7.0,7.9,,243.0,195.0,0.2,140.0,303.0,,
+SUSU,Mentah,JR004,"Susu kerbau, segar",DABM-1964,73.8,160.0,6.3,12.0,,216.0,101.0,0.2,82.0,,,0.3
+SUSU,Mentah,JR005,"Susu kuda, segar",FCTEA-1972,91.0,40.0,2.0,1.1,0.0,,,,,37.44,0.0,0.0
+SUSU,Mentah,JR006,"Susu sapi, segar",DABM-1964,88.3,61.0,3.2,3.5,0.0,143.0,60.0,1.7,36.0,149.0,0.02,0.34
+SUSU,Olahan,JP009,"Susu skim, bubuk",DABM-1964,3.5,359.0,35.6,1.0,0.0,1300.0,1030.0,0.6,470.0,1745.0,0.04,4.08
+SUSU,Olahan,JP010,"Susu skim, segar",DABM-1964,90.5,36.0,3.5,0.1,,123.0,97.0,0.1,38.0,,,
+SUSU,Olahan,JP011,"Yoghurt, segar",DABM-1964,88.0,52.0,3.3,2.5,0.0,120.0,90.0,0.1,40.0,299.0,0.01,0.63
+TELUR,Olahan,HP005,"Bayau mi balu, masakan",KGZMI-2001,36.1,313.0,6.0,12.2,,,,,,,,
+TELUR,Olahan,HP006,"Cucuru bayau, masakan",KGZMI-2001,35.0,349.0,6.8,18.7,,,,,,,,
+TELUR,Olahan,HP004,"Ikan, telur, asin, mentah",KZGMI-2001,37.8,358.0,20.7,26.4,0.0,48.0,311.0,15.1,2684.0,59.0,0.4,3.0
+TELUR,Olahan,HP007,"Kalio telur, masakan",KZGMS-1993,79.0,193.0,10.6,12.4,,148.0,246.0,3.8,539.8,,,
+TELUR,Mentah,HR004,"Telur aAyam ras, bagian putih, segar",DABM-1964,87.8,50.0,10.8,0.0,0.0,6.0,17.0,0.2,164.2,138.51,0.03,0.37
+TELUR,Mentah,HR001,"Telur ayam kampung, segar",KZGMI-2001,73.1,174.0,10.8,14.0,0.0,68.0,268.0,4.9,190.0,141.0,0.6,1.5
+TELUR,Mentah,HR003,"Telur ayam ras, bagian kuning, segar",DABM-1964,49.4,355.0,16.3,31.9,0.0,147.0,586.0,7.2,111.47,107.53,0.2,2.53
+TELUR,Mentah,HR002,"Telur ayam ras, segar",KZGPI-1990,74.3,154.0,12.4,10.8,0.0,86.0,258.0,3.0,142.25,118.54,0.16,1.04
+TELUR,Olahan,HP001,"Telur ayam, dadar, masakan",KZGPI-1990,61.9,251.0,16.3,19.4,0.0,62.0,250.0,2.5,,,,
+TELUR,Mentah,HR005,"Telur bebek alabio, segar",KZGMI-2001,70.0,187.0,11.8,14.2,0.0,60.0,268.0,6.0,115.0,80.0,0.6,1.7
+TELUR,Mentah,HR008,"Telur bebek tambak, segar",KZGMI-2001,67.7,187.0,10.9,12.4,0.0,64.0,295.0,5.4,209.0,146.0,0.4,1.8
+TELUR,Olahan,HP002,"Telur bebek, asin, mentah",DABM-60/64,66.5,179.0,13.6,13.3,0.0,120.0,157.0,1.8,482.63,140.06,,
+TELUR,Mentah,HR006,"Telur bebek, bagian kuning, segar",DABM-1964,47.0,386.0,17.0,35.0,0.0,150.0,400.0,7.0,106.21,90.74,0.09,2.47
+TELUR,Mentah,HR007,"Telur bebek, bagian putih, segar",DABM-1964,88.0,54.0,11.0,0.0,0.0,21.0,20.0,0.1,184.0,150.22,0.13,0.09
+TELUR,Olahan,HP003,"Telur bebek, dadar, masakan",KZGPI-1990,55.1,301.0,20.0,23.7,0.0,71.0,600.0,9.2,,,,
+TELUR,Mentah,HR009,"Telur burung maleo, segar",KZGMI-2001,36.0,436.0,26.5,36.3,,154.0,120.0,4.3,77.0,333.0,0.4,2.9
+TELUR,Mentah,HR011,"Telur burung puyuh, segar",FCTEA-1972,79.8,116.0,10.7,7.0,0.0,65.0,191.0,3.5,111.04,11.0,0.05,1.16
+TELUR,Mentah,HR010,"Telur penyu, segar",KZGMI-2001,7.4,136.0,8.6,10.1,0.0,66.0,282.0,3.4,478.0,115.0,0.5,1.4
+UMBI BERPATI,Mentah,BR001,"Arrowroot, segar",KZGPI- 1990,73.5,102.0,1.0,0.2,1.7,28.0,35.0,1.7,35.9,626.6,0.2,0.8
+UMBI BERPATI,Olahan,BP013,Bagea kelapa asin,KZGMI-2001,3.5,450.0,3.2,13.9,,38.0,38.0,0.3,74.0,0.0,0.2,0.2
+UMBI BERPATI,Olahan,BP014,Bagea kelapa manis,KZGMI-2001,3.0,452.0,1.3,13.8,,38.0,39.0,0.3,75.0,0.0,0.2,0.2
+UMBI BERPATI,Olahan,BP015,Bagea kenari asin,KZGMI-2001,2.8,529.0,3.2,29.1,,38.0,40.0,0.4,74.0,0.0,0.2,0.2
+UMBI BERPATI,Olahan,BP016,Bagea kenari manis,KZGMI-2001,3.1,523.0,3.2,28.2,,38.0,39.0,0.3,74.0,0.0,0.2,0.2
+UMBI BERPATI,Olahan,BP017,Bagea kw 1,KZGPI- 1990,7.2,416.0,6.5,9.4,0.4,49.0,77.0,4.9,,,,
+UMBI BERPATI,Olahan,BP018,Bagea kw 2,KZGPI- 1990,7.9,382.0,0.3,3.5,0.9,172.0,120.0,7.6,,,,
+UMBI BERPATI,Mentah,BR002,"Batatas gembili, segar",KZGMI-2001,76.7,76.0,1.1,0.9,4.2,0.0,40.0,0.2,10.0,200.0,0.2,0.3
+UMBI BERPATI,Olahan,BP001,"Batatas kelapa, ubi, bakar",KZGMI-2001,73.2,110.0,1.4,1.1,4.5,1.0,46.0,0.2,12.0,230.0,0.2,0.3
+UMBI BERPATI,Olahan,BP002,"Batatas kelapa, ubi, kukus",KZGMI-2001,75.7,92.0,1.2,0.3,4.1,0.0,42.0,0.2,10.0,209.0,0.2,0.3
+UMBI BERPATI,Mentah,BR003,"Batatas kelapa, ubi, segar",KZGMI-2001,76.1,89.0,1.1,0.1,4.0,0.0,40.0,0.2,20.0,340.0,0.1,0.2
+UMBI BERPATI,Olahan,BP003,"Batatas tali, ubi, rebus",KZGMI-2001,53.2,182.0,2.4,0.4,9.2,1.0,80.0,0.3,20.0,402.0,0.3,0.6
+UMBI BERPATI,Olahan,BP004,"Belitung, talas, kukus",KZGPI- 1990,63.1,145.0,1.2,0.4,1.0,21.0,48.0,0.9,7.4,552.6,0.2,0.9
+UMBI BERPATI,Mentah,BR004,"Belitung, talas, segar",KZGPI- 1990,63.1,145.0,1.2,0.4,1.5,26.0,54.0,1.4,6.4,536.1,0.2,0.9
+UMBI BERPATI,Mentah,BR005,"Bengkuang, segar",DABM- 1964,85.1,59.0,1.4,0.2,1.0,15.0,18.0,0.6,2.4,244.3,0.1,0.3
+UMBI BERPATI,Mentah,BR006,"Bentul (Komba),  talas, segar",KZGPI- 1990,75.8,98.0,1.6,0.7,0.7,44.0,66.0,1.5,,195.5,0.2,0.6
+UMBI BERPATI,Olahan,BP005,"Bentul, talas, kukus",KZGPI- 1990,81.1,71.0,2.3,0.3,0.5,29.0,26.0,0.6,,201.0,0.2,0.6
+UMBI BERPATI,Olahan,BP019,Beras Cerdas,BKP,11.3,350.0,2.7,1.1,6.2,28.1,351.0,2.9,358.0,568.0,0.2,0.9
+UMBI BERPATI,Olahan,BP021,Beras Siger,BKP,13.5,344.0,1.1,0.2,5.6,31.9,21.7,5.6,106.0,77.9,0.1,0.5
+UMBI BERPATI,Olahan,BP020,Beras ganyong,BKP,9.3,364.0,3.4,0.7,4.7,4.4,46.9,5.0,3.6,72.2,0.2,0.6
+UMBI BERPATI,Olahan,BP022,Biji nangka/Biji salak,KZGMI-2001,40.5,262.0,2.3,5.4,8.0,60.0,80.0,0.8,10.0,2.0,0.6,2.0
+UMBI BERPATI,Olahan,BP023,Bubur sagu,KZGMI-2001,62.5,167.0,0.2,4.0,,3.0,3.0,0.1,7.0,0.0,0.1,0.1
+UMBI BERPATI,Olahan,BP024,Cassavastick,KZGPI- 1990,5.6,460.0,0.8,18.7,1.6,144.0,58.0,7.5,,,,
+UMBI BERPATI,Olahan,BP025,Ceriping getuk singkong,KZGPI- 1990,7.2,462.0,1.2,20.7,0.6,1248.0,172.0,8.8,,,,
+UMBI BERPATI,Mentah,BR007,"Gadeng/Gadung, kering",KZGMI-2001,20.2,322.0,2.4,0.6,,39.0,22.0,2.2,5.0,2.0,0.5,0.2
+UMBI BERPATI,Olahan,BP006,"Gadung, ubi, kukus",KZGPI- 1990,77.4,88.0,0.6,0.3,0.9,26.0,47.0,0.4,6.4,584.0,0.2,0.2
+UMBI BERPATI,Mentah,BR008,"Gadung, ubi, segar",KZGPI- 1990,74.4,100.0,0.9,0.3,2.1,79.0,66.0,0.9,7.6,687.2,0.2,0.2
+UMBI BERPATI,Olahan,BP007,"Ganyong, rebus",KZGPI- 1990,74.1,100.0,0.8,0.2,0.9,15.0,65.0,0.9,,,,
+UMBI BERPATI,Mentah,BR009,"Ganyong, segar",KZGPI- 1990,79.9,77.0,0.6,0.2,0.8,15.0,67.0,1.0,,,,
+UMBI BERPATI,Olahan,BP026,Gatot,BKP,12.8,347.0,1.3,0.7,5.8,78.1,44.2,17.1,27.8,242.0,0.2,0.7
+UMBI BERPATI,Olahan,BP027,Geblek,BKP,52.1,195.0,0.4,1.7,3.6,34.6,13.4,0.6,353.0,125.0,0.3,0.3
+UMBI BERPATI,Mentah,BR010,"Gembili, ubi, segar",KZGPI- 1990,66.4,131.0,1.1,0.2,1.1,14.0,56.0,0.6,10.0,200.0,0.2,0.3
+UMBI BERPATI,Olahan,BP028,Getuk goreng,KZGPI- 1990,16.5,360.0,1.3,6.4,0.8,59.0,81.0,3.2,,,,
+UMBI BERPATI,Olahan,BP029,Getuk singkong,KZGPI- 1990,49.8,204.0,0.5,1.4,0.8,97.0,52.0,1.5,,,,
+UMBI BERPATI,Olahan,BP030,Gurandil,KZGPI- 1990,47.5,218.0,0.5,2.5,3.1,50.0,25.0,2.8,,,,
+UMBI BERPATI,Mentah,BR011,"Hofa/Ubi hutan, segar",KZGMI-2001,67.9,127.0,1.2,0.5,3.4,30.0,8.0,0.7,3.0,4.0,0.1,0.2
+UMBI BERPATI,Mentah,BR012,"Kaburan, ubi, segar",KZGPI- 1990,66.5,133.0,1.0,0.2,0.7,65.0,50.0,0.6,9.9,899.2,0.2,0.2
+UMBI BERPATI,Olahan,BP031,Kabuto,KZGMI-2001,58.9,250.0,2.6,2.5,1.8,35.0,49.0,1.1,2.0,218.0,,
+UMBI BERPATI,Olahan,BP032,Kapurung,KZGMI-2001,79.6,41.0,2.0,0.3,2.0,34.0,12.0,0.3,185.0,566.0,0.1,0.3
+UMBI BERPATI,Olahan,BP033,Kecimpring singkong goreng,KZGPI- 1990,3.7,464.0,1.2,18.6,1.3,82.0,52.0,3.4,,,,
+UMBI BERPATI,Mentah,BR014,"Kentang hitam, segar",DABM- 1964,64.0,142.0,0.9,0.4,5.4,34.0,75.0,0.2,21.6,890.3,0.9,0.6
+UMBI BERPATI,Mentah,BR013,"Kentang, segar",KZGPI- 1990,83.4,62.0,2.1,0.2,0.5,63.0,58.0,0.7,7.0,396.0,0.4,0.3
+UMBI BERPATI,Olahan,BP034,Keremes,KZGPI- 1990,6.7,475.0,1.6,25.2,2.1,153.0,88.0,1.0,,,,
+UMBI BERPATI,Mentah,BR015,"Keribang, ubi, segar",KZGPI- 1990,67.0,137.0,1.3,1.1,0.6,45.0,56.0,0.8,9.8,885.8,0.2,0.3
+UMBI BERPATI,Olahan,BP035,Keripik gadung,KZGPI- 1990,4.0,446.0,2.8,14.5,1.7,147.0,52.0,1.9,,,,
+UMBI BERPATI,Olahan,BP036,Keripik kentang,KZGMI-2001,7.8,448.0,2.7,18.8,3.8,25.0,130.0,1.2,712.0,406.0,1.1,
+UMBI BERPATI,Olahan,BP037,Keripik singkong,KZGPI- 1990,4.2,478.0,0.9,20.7,2.0,189.0,101.0,1.9,,,,
+UMBI BERPATI,Olahan,BP038,Keripik singkong berbumbu,KZGPI- 1990,2.2,481.0,2.2,19.7,1.6,156.0,103.0,1.6,,,,
+UMBI BERPATI,Olahan,BP039,Keripik ubi,KZGMI-2001,6.0,486.0,0.2,23.9,14.3,68.0,92.0,0.9,52.0,2.0,0.7,2.3
+UMBI BERPATI,Olahan,BP040,Kerupuk cumi goreng,KZGMI-2001,3.4,444.0,6.9,14.6,5.0,47.0,375.0,1.8,837.0,191.0,0.1,0.3
+UMBI BERPATI,Olahan,BP041,Kerupuk kemplang  (ikan) mentah,KZGMI-2001,14.2,325.0,1.8,0.4,4.5,59.0,268.0,2.3,1123.0,273.0,0.2,0.5
+UMBI BERPATI,Olahan,BP042,Kerupuk kemplang goreng,KZGPI- 1990,5.8,504.0,5.6,28.1,0.3,50.0,94.0,2.9,,,,
+UMBI BERPATI,Olahan,BP043,Kerupuk kemplang panggang,KZGPI- 1990,9.4,356.0,9.7,1.1,1.0,62.0,129.0,2.9,,,,
+UMBI BERPATI,Olahan,BP044,Kerupuk mie kuning goreng,KZGPI- 1990,7.2,476.0,0.1,21.1,4.2,57.0,36.0,4.6,,109.0,0.1,0.2
+UMBI BERPATI,Olahan,BP045,Kerupuk udang goreng,KZGMI-2001,4.4,477.0,4.7,20.5,5.0,24.0,188.0,0.9,449.0,109.0,0.1,0.2
+UMBI BERPATI,Mentah,BR016,"Ketela pohon/ singkong, segar",KZGPI- 1990,61.4,154.0,1.0,0.3,0.9,77.0,24.0,1.1,2.0,394.0,0.3,0.43
+UMBI BERPATI,Olahan,BP008,Ketela pohon/singkong kukus,KZGPI- 1990,61.5,153.0,1.2,0.3,1.3,56.0,22.0,0.4,1.6,345.3,0.3,0.1
+UMBI BERPATI,Olahan,BP046,Kue bangket,KZGMI-2001,16.1,338.0,1.5,1.2,,34.0,35.0,0.3,67.0,0.0,0.2,0.2
+UMBI BERPATI,Olahan,BP047,Kue putu singkong,KZGMI-2001,44.2,217.0,1.2,0.5,2.4,48.0,68.0,1.5,3.0,305.0,,
+UMBI BERPATI,Olahan,BP048,Lanting getuk,KZGPI- 1990,4.2,422.0,0.9,10.8,1.4,206.0,104.0,3.6,,,,
+UMBI BERPATI,Mentah,BR017,Lepok/Ubi rumput,KZGMI-2001,55.3,181.0,2.8,1.2,10.7,7.0,50.0,3.1,116.0,306.0,1.6,0.9
+UMBI BERPATI,Olahan,BP049,Mi golosor,KZGPI- 1990,82.9,71.0,0.2,0.8,0.1,117.0,5.0,0.2,,,,
+UMBI BERPATI,Olahan,BP050,Mie Bendo,BKP,11.5,353.0,0.3,0.0,2.4,28.0,13.7,2.8,8.8,49.2,0.5,0.1
+UMBI BERPATI,Olahan,BP051,Mie Sagu,BKP,52.8,190.0,0.2,0.4,1.4,7.5,6.9,0.3,9.7,2.6,0.1,0.0
+UMBI BERPATI,Olahan,BP052,Ongol-ongol sagu,KZGPI- 1990,75.3,111.0,0.3,2.7,0.3,79.0,15.0,1.7,,,,
+UMBI BERPATI,Olahan,BP053,Oyek,BKP,12.6,351.0,0.9,0.9,4.3,60.4,35.6,2.1,5.4,229.0,0.1,0.5
+UMBI BERPATI,Olahan,BP054,Papeda,KZGMI-2001,84.8,61.0,0.2,0.1,0.5,3.0,1.0,0.2,4.0,20.0,0.1,0.1
+UMBI BERPATI,Olahan,BP055,Rasbi (Beras Ubi),BKP,11.1,394.0,2.2,8.8,6.8,68.3,75.7,1.6,165.0,388.0,0.4,0.4
+UMBI BERPATI,Olahan,BP056,Rasi (Beras Singkong),BKP,12.6,350.0,0.9,0.4,14.4,41.5,20.7,1.5,7.8,14.0,0.3,0.5
+UMBI BERPATI,Olahan,BP058,Sagu Lemak (Kue Sagon),BKP,4.3,452.0,2.8,14.8,1.1,15.4,39.4,1.12,182.0,52.7,0.04,0.81
+UMBI BERPATI,Olahan,BP060,Sagu Rendang,BKP,8.2,364.0,0.1,0.2,1.9,12.9,9.2,3.9,41.6,15.1,0.1,0.1
+UMBI BERPATI,Mentah,BR018,"Sagu aren, kering",KZGPI- 1990,11.9,355.0,0.6,1.1,0.3,91.0,167.0,2.2,2.0,200.0,0.0,0.3
+UMBI BERPATI,Mentah,BR019,"Sagu aren, segar",KZGMI-2001,42.5,231.0,0.6,0.2,3.2,20.0,20.0,0.1,7.0,0.0,0.1,0.1
+UMBI BERPATI,Olahan,BP057,Sagu forno,KZGMI-2001,31.5,291.0,0.5,4.0,,10.0,20.0,0.8,40.0,50.0,0.1,0.2
+UMBI BERPATI,Mentah,BR020,Sagu kasbi segar,KZGMI-2001,42.5,230.0,0.6,0.2,3.0,20.0,1.0,0.3,100.0,410.0,0.1,0.2
+UMBI BERPATI,Mentah,BR021,Sagu lempeng,KZGMI-2001,13.5,347.0,0.9,0.3,4.7,30.0,30.0,0.2,11.0,0.0,0.1,0.1
+UMBI BERPATI,Olahan,BP059,Sagu manis,KZGMI-2001,32.6,287.0,0.5,3.9,,8.0,17.0,0.7,34.0,42.0,0.1,0.2
+UMBI BERPATI,Mentah,BR022,"Sagu singkong, kering",DABM- 1964,12.0,362.0,0.5,0.3,,0.0,0.0,0.0,,,,
+UMBI BERPATI,Olahan,BP061,Sagu sinole,KZGMI-2001,22.0,354.0,0.8,8.3,,10.0,30.0,0.8,30.0,11.0,0.2,0.3
+UMBI BERPATI,Mentah,BR023,"Sente, talas, segar",DABM- 1964,14.0,353.0,0.7,0.2,6.6,11.0,13.0,1.5,30.3,694.6,0.6,2.2
+UMBI BERPATI,Olahan,BP062,Serimping talas kebumen,KZGPI- 1990,4.8,478.0,2.5,21.2,1.7,112.0,118.0,2.3,,,,
+UMBI BERPATI,Olahan,BP009,"Suweg, talas, kukus",KZGPI- 1990,75.5,93.0,1.5,0.1,0.9,50.0,58.0,0.8,6.1,350.3,0.1,0.1
+UMBI BERPATI,Mentah,BR024,"Suweg, talas, segar",KZGPI- 1990,80.1,74.0,1.4,0.1,1.4,42.0,46.0,1.3,7.4,400.0,0.1,0.1
+UMBI BERPATI,Olahan,BP010,"Talas bogor, kukus",KZGPI- 1990,69.2,120.0,1.5,0.3,0.7,31.0,63.0,0.7,11.0,498.0,0.2,0.6
+UMBI BERPATI,Mentah,BR025,"Talas bogor, segar",KZGPI- 1990,72.4,108.0,1.4,0.4,0.9,47.0,67.0,0.7,10.0,448.0,0.2,0.7
+UMBI BERPATI,Mentah,BR026,"Talas pontianak, segar",KZGPI- 1990,60.0,163.0,2.3,0.5,0.7,45.0,80.0,1.7,14.1,323.1,0.3,1.0
+UMBI BERPATI,Mentah,BR027,"Talas viqueque, segar",KZGMI-2001,70.6,115.0,1.8,0.5,8.6,50.0,220.0,0.9,1.0,70.0,0.3,1.0
+UMBI BERPATI,Olahan,BP063,Tapai singkong,KZGPI- 1990,57.4,169.0,1.4,0.3,2.0,21.0,34.0,0.8,,,,
+UMBI BERPATI,Olahan,BP064,Tepung Arrowroot,DABM- 1964,13.6,355.0,0.7,0.2,0.4,8.0,22.0,1.5,2.0,10.7,0.0,0.1
+UMBI BERPATI,Olahan,BP065,Tepung Ganyong,BKP,13.6,353.0,0.8,1.7,0.7,3.8,31.2,3.3,2.5,63.5,0.1,0.3
+UMBI BERPATI,Olahan,BP066,Tepung Gaplek,BKP,13.0,345.0,2.4,0.4,6.7,17.5,95.0,1.5,5.5,55.0,0.4,1.2
+UMBI BERPATI,Olahan,BP068,Tepung Mocaf,BKP,11.9,350.0,1.2,0.6,6.0,59.5,64.4,15.8,7.6,403.0,0.1,0.6
+UMBI BERPATI,Olahan,BP069,Tepung Sente,BKP,15.3,326.0,4.0,0.4,8.5,40.9,141.0,3.5,13.5,1602.0,0.4,1.4
+UMBI BERPATI,Olahan,BP071,Tepung Tales Beneng,BKP,12.2,332.0,5.7,0.6,12.2,58.8,302.0,10.7,7.3,1404.0,0.8,6.2
+UMBI BERPATI,Olahan,BP072,Tepung Ubi Ungu,BKP,9.4,354.0,2.8,0.6,12.9,89.1,125.0,3.9,41.7,940.0,0.8,0.6
+UMBI BERPATI,Olahan,BP067,"Tepung kentang, kering",DABM- 1964,13.0,347.0,0.3,0.1,0.4,20.0,30.0,0.5,51.2,156.3,0.2,0.5
+UMBI BERPATI,Olahan,BP070,Tepung singkong/ Tapioka,DABM- 1964,9.1,363.0,1.1,0.5,0.9,84.0,125.0,1.0,1.0,7.1,0.0,0.1
+UMBI BERPATI,Olahan,BP073,Tiwul  ,BKP,11.2,353.0,2.4,1.1,6.5,54.9,95.3,4.7,5.1,670.0,0.2,0.8
+UMBI BERPATI,Olahan,BP074,Tiwul Instan,BKP,9.1,395.0,3.2,8.5,4.2,81.0,80.6,5.8,377.0,469.0,2.1,1.2
+UMBI BERPATI,Olahan,BP075,Ubi Cilembu,BKP,52.7,186.0,1.9,0.2,3.4,37.2,51.1,0.6,61.9,61.9,0.1,0.2
+UMBI BERPATI,Mentah,BR029,"Ubi jalar manis, segar",KZGPI- 1990,78.4,83.0,1.5,0.2,0.6,27.0,162.0,2.1,52.3,320.7,0.1,0.3
+UMBI BERPATI,Mentah,BR030,"Ubi jalar merah, segar",KZGPI- 1990,61.9,151.0,1.6,0.3,0.7,29.0,74.0,0.7,92.3,565.6,0.3,0.5
+UMBI BERPATI,Mentah,BR031,"Ubi jalar putih, segar",KZGMI-2001,77.8,88.0,0.4,0.4,4.0,30.0,10.0,0.5,2.0,4.0,0.1,0.2
+UMBI BERPATI,Mentah,BR032,Ubi jalar tinta/ kemayung,KZGMI-2001,72.5,108.0,0.5,0.4,4.2,30.0,40.0,0.5,1.0,1.0,0.1,0.2
+UMBI BERPATI,Olahan,BP012,Ubi jalar tinta/ kemayung kukus,KZGPI- 1990,58.5,165.0,0.9,0.2,1.1,20.0,23.0,0.8,0.8,0.9,0.1,0.2
+UMBI BERPATI,Olahan,BP011,"Ubi jalar, kuning, kukus",KZGPI- 1990,74.2,100.0,0.7,0.3,1.0,44.0,46.0,0.4,2.5,0.8,0.1,0.2
+UMBI BERPATI,Mentah,BR028,"Ubi jalar, kuning, segar",KZGMI-2001,72.6,119.0,0.5,0.4,4.2,30.0,40.0,0.4,3.0,1.0,0.1,0.2
+UMBI BERPATI,Olahan,BP076,Uli batatas,KZGMI-2001,66.5,150.0,1.1,4.0,,,23.0,0.1,6.0,112.0,0.1,0.2
+UMBI BERPATI,Mentah,BR033,"Umbi Uwi, segar",BKP,69.7,120.0,2.8,0.5,2.6,8.9,41.5,1.3,412.0,412.0,0.3,0.6

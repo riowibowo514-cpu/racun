@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemantau Asupan GGK</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="glass-panel">
+            <div class="header-content">
+                <div>
+                    <h1>Pemantau Kalium & Fosfor</h1>
+                    <p class="subtitle">Khusus Penderita GGK</p>
+                </div>
+                <button id="btn-edit-profile" class="btn btn-outline btn-sm">Batas Harian</button>
+            </div>
+        </header>
+
+        <!-- Dashboard / Progress -->
+        <section id="dashboard" class="glass-panel mt-4">
+            <h2>Ringkasan Hari Ini (<span id="current-date"></span>)</h2>
+            
+            <div class="progress-container mt-4">
+                <div class="progress-header">
+                    <span class="font-semibold">Kalium</span>
+                    <span id="kalium-text" class="text-sm">0 / 0 mg</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="kalium-bar" class="progress-bar kalium-color"></div>
+                </div>
+                <div id="kalium-alert" class="alert hidden mt-2"></div>
+            </div>
+
+            <div class="progress-container mt-4">
+                <div class="progress-header">
+                    <span class="font-semibold">Fosfor</span>
+                    <span id="fosfor-text" class="text-sm">0 / 0 mg</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="fosfor-bar" class="progress-bar fosfor-color"></div>
+                </div>
+                <div id="fosfor-alert" class="alert hidden mt-2"></div>
+            </div>
+        </section>
+
+        <!-- Form Tambah Asupan -->
+        <section id="add-entry" class="glass-panel mt-4">
+            <div class="flex-between">
+                <h2>Catat Asupan Baru</h2>
+            </div>
+            
+            <div class="tabs mt-3 mb-3">
+                <button id="tab-mentah" class="tab-btn active">Bahan Mentah</button>
+                <button id="tab-olahan" class="tab-btn">Bahan Olahan</button>
+            </div>
+
+            <div class="form-group mt-3 relative">
+                <label for="search-input" id="search-label">Cari Bahan Mentah</label>
+                <input type="text" id="search-input" class="input-field" placeholder="Ketik nama bahan (min 2 huruf)..." autocomplete="off">
+                <ul id="search-results" class="autocomplete-list hidden"></ul>
+            </div>
+            
+            <button id="btn-open-recipe" class="btn btn-outline btn-sm w-full mt-2 hidden">+ Buat Resep Olahan Baru</button>
+
+            <div id="selected-ingredient-card" class="ingredient-card hidden mt-3">
+                <div class="ingredient-header">
+                    <h3 id="sel-name">Nama Bahan</h3>
+                    <span id="sel-category" class="badge">Kategori</span>
+                </div>
+                <div class="ingredient-stats mt-3">
+                    <div class="stat-box">
+                        <span class="stat-label">Kalium / 100g</span>
+                        <span id="sel-kalium" class="stat-val font-semibold">0 mg</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Fosfor / 100g</span>
+                        <span id="sel-fosfor" class="stat-val font-semibold">0 mg</span>
+                    </div>
+                </div>
+                <div id="null-warning" class="alert alert-warning text-sm mt-3 hidden">
+                    ⚠ Data kandungan gizi tidak tersedia untuk bahan ini. Otomatis dihitung sebagai 0 mg.
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="portion-input">Berat Porsi</label>
+                    <div class="input-group">
+                        <input type="number" id="portion-input" class="input-field" min="1" placeholder="Misal: 150">
+                        <span class="input-suffix">gram</span>
+                    </div>
+                </div>
+
+                <div class="calculated-preview mt-3">
+                    <span class="text-sm text-gray">Estimasi Asupan:</span> 
+                    <div class="preview-vals mt-1">
+                        <span class="font-semibold kalium-text">K: <span id="preview-kalium">0</span> mg</span>
+                        <span class="font-semibold fosfor-text">P: <span id="preview-fosfor">0</span> mg</span>
+                    </div>
+                </div>
+
+                <button id="btn-add-entry" class="btn btn-primary mt-4 w-full">Tambah ke Catatan</button>
+            </div>
+        </section>
+
+        <!-- Daftar Asupan Hari Ini -->
+        <section id="daily-logs" class="glass-panel mt-4 mb-8">
+            <div class="flex-between">
+                <h2>Daftar Asupan</h2>
+                <span class="badge badge-subtle"><span id="log-count">0</span> item</span>
+            </div>
+            <ul id="log-list" class="log-list mt-3">
+                <li class="empty-state">Belum ada catatan hari ini.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- Modal Profil -->
+    <div id="profile-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <h2>Pengaturan Profil</h2>
+            <p class="text-sm mt-2 text-gray">Masukkan batas harian sesuai anjuran dokter/ahli gizi Anda.</p>
+            
+            <div class="form-group mt-4">
+                <label for="limit-kalium">Batas Kalium Harian (mg)</label>
+                <input type="number" id="limit-kalium" class="input-field" min="1" placeholder="Misal: 2000">
+            </div>
+            
+            <div class="form-group mt-3">
+                <label for="limit-fosfor">Batas Fosfor Harian (mg)</label>
+                <input type="number" id="limit-fosfor" class="input-field" min="1" placeholder="Misal: 800">
+            </div>
+
+            <button id="btn-save-profile" class="btn btn-primary mt-5 w-full">Simpan Profil</button>
+        </div>
+    </div>
+
+    <!-- Modal Recipe Builder -->
+    <div id="recipe-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel" style="max-width: 450px;">
+            <h2>Buat Resep Olahan</h2>
+            <p class="text-sm mt-1 text-gray">Nilai gizi otomatis dihitung dari bahan mentah penyusunnya.</p>
+            
+            <div class="form-group mt-4">
+                <label for="recipe-name">Nama Masakan / Olahan</label>
+                <input type="text" id="recipe-name" class="input-field" placeholder="Misal: Soto Nasi Spesial">
+            </div>
+            
+            <div class="form-group mt-3 relative">
+                <label for="recipe-search">Tambah Bahan Mentah</label>
+                <input type="text" id="recipe-search" class="input-field" placeholder="Cari bahan mentah..." autocomplete="off">
+                <ul id="recipe-search-results" class="autocomplete-list hidden"></ul>
+            </div>
+
+            <!-- Form input portion for selected recipe ingredient -->
+            <div id="recipe-selected-card" class="hidden mt-2 p-3 border rounded bg-gray-50 border-gray-200">
+                <div class="font-semibold text-sm" id="recipe-sel-name">Nama Bahan</div>
+                <div class="flex-between mt-2 gap-2">
+                    <div class="input-group" style="flex: 1;">
+                        <input type="number" id="recipe-portion" class="input-field" style="padding: 0.5rem;" placeholder="Berat">
+                        <span class="input-suffix" style="padding: 0.5rem;">g</span>
+                    </div>
+                    <button id="btn-add-recipe-item" class="btn btn-primary" style="padding: 0.5rem 1rem;">Tambah</button>
+                </div>
+            </div>
+
+            <!-- List of added ingredients -->
+            <div class="mt-4">
+                <h3 class="text-sm font-semibold">Komposisi Bahan:</h3>
+                <ul id="recipe-items-list" class="log-list mt-2 mb-3" style="max-height: 150px; overflow-y: auto;">
+                    <li class="empty-state text-sm" id="recipe-empty">Belum ada bahan ditambahkan.</li>
+                </ul>
+            </div>
+
+            <!-- Total Preview -->
+            <div class="calculated-preview mt-3 p-3">
+                <div class="flex-between">
+                    <span class="text-sm">Total Berat Masakan:</span>
+                    <span class="font-semibold"><span id="recipe-total-weight">0</span> g</span>
+                </div>
+                <div class="flex-between mt-2 border-t pt-2 border-gray-200" style="border-top: 1px solid #cbd5e1;">
+                    <span class="text-sm text-gray">Estimasi Gizi (per 100g):</span>
+                </div>
+                <div class="flex-between mt-1">
+                    <span class="font-semibold kalium-text text-sm">Kalium: <span id="recipe-k-100">0</span> mg</span>
+                    <span class="font-semibold fosfor-text text-sm">Fosfor: <span id="recipe-p-100">0</span> mg</span>
+                </div>
+            </div>
+
+            <div class="flex-between mt-4" style="gap: 10px;">
+                <button id="btn-cancel-recipe" class="btn btn-outline w-full">Batal</button>
+                <button id="btn-save-recipe" class="btn btn-primary w-full">Simpan Resep</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p class="mt-3 font-semibold text-white">Memuat Data Gizi...</p>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
