@@ -739,11 +739,50 @@ btnSaveProfile.addEventListener('click', saveProfile);
 // Start app
 document.addEventListener('DOMContentLoaded', initApp);
 
-// Register Service Worker for PWA
+// Register Service Worker for PWA with Auto-Update Detection
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('PWA Service Worker registered'))
+            .then(reg => {
+                console.log('PWA Service Worker registered');
+                
+                // If there's already a waiting worker
+                if (reg.waiting) {
+                    showUpdateToast(reg.waiting);
+                }
+
+                // Listen for new updates
+                reg.addEventListener('updatefound', () => {
+                    const newWorker = reg.installing;
+                    if (newWorker) {
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                showUpdateToast(newWorker);
+                            }
+                        });
+                    }
+                });
+            })
             .catch(err => console.error('PWA SW registration failed:', err));
     });
+
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+            refreshing = true;
+            window.location.reload();
+        }
+    });
+}
+
+function showUpdateToast(worker) {
+    const toast = document.getElementById('update-toast');
+    const btnUpdate = document.getElementById('btn-update-app');
+    if (!toast || !btnUpdate) return;
+
+    toast.classList.remove('hidden');
+    btnUpdate.onclick = () => {
+        worker.postMessage({ action: 'skipWaiting' });
+        toast.classList.add('hidden');
+    };
 }

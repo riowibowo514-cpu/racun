@@ -30,6 +30,12 @@ self.addEventListener('activate', (e) => {
     );
 });
 
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.action === 'skipWaiting') {
+        self.skipWaiting();
+    }
+});
+
 self.addEventListener('fetch', (e) => {
     // Network-First strategy for instant updates
     e.respondWith(
