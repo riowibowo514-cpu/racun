@@ -275,6 +275,129 @@ h3 { font-size: 1.1rem; font-weight: 600; }
     color: var(--danger);
 }
 
+/* Therapy Selector in Modal */
+.therapy-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 6px;
+}
+.therapy-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px;
+    border-radius: 10px;
+    border: 1.5px solid #cbd5e1;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
+    font-family: inherit;
+}
+.therapy-btn:hover {
+    border-color: var(--primary);
+    background: #f8fafc;
+}
+.therapy-btn.active {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(59, 130, 246, 0.1));
+    box-shadow: 0 3px 10px rgba(99, 102, 241, 0.15);
+}
+.therapy-icon {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+}
+.therapy-info strong {
+    font-size: 0.78rem;
+    display: block;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+.therapy-info small {
+    font-size: 0.65rem;
+    color: var(--text-gray);
+    display: block;
+    margin-top: 1px;
+}
+
+/* Cumulative Report Styles */
+.report-date-badge {
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.03);
+    border-radius: 8px;
+}
+.report-status-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #f1f5f9;
+}
+.report-status-banner.status-safe {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+}
+.report-status-banner.status-warning {
+    background: #fefce8;
+    border: 1px solid #fde68a;
+    color: #92400e;
+}
+.report-status-banner.status-danger {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+.report-status-icon {
+    font-size: 1.5rem;
+}
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+.report-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.report-card strong {
+    font-size: 1.1rem;
+    margin: 2px 0;
+}
+.report-table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    text-align: left;
+}
+.report-table th {
+    background: #f8fafc;
+    padding: 8px 10px;
+    font-weight: 600;
+    color: var(--text-gray);
+    border-bottom: 1px solid #e2e8f0;
+}
+.report-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+.report-table tr:last-child td {
+    border-bottom: none;
+}
+
 /* Kidney Companion Status Card */
 .kidney-status-card {
     display: flex;
@@ -738,3 +861,58 @@ body.dark-mode .user-pill-btn { background: rgba(30, 41, 59, 0.8); border-color:
 body.dark-mode .user-pill-btn:hover { background: #1e293b; border-color: var(--primary); }
 body.dark-mode .avatar-preview-box { background: #334155; border-color: #1e293b; }
 body.dark-mode .btn-close { color: #94a3b8; }
+body.dark-mode .therapy-btn { background: #1e293b; border-color: #334155; color: var(--text-main); }
+body.dark-mode .therapy-btn:hover { background: #334155; }
+body.dark-mode .therapy-btn.active { background: rgba(99, 102, 241, 0.25); border-color: #818cf8; }
+body.dark-mode .report-card { background: #1e293b; border-color: #334155; color: var(--text-main); }
+body.dark-mode .report-table th { background: #1e293b; border-color: #334155; }
+body.dark-mode .report-table td { border-color: #334155; }
+body.dark-mode .report-table-wrapper { border-color: #334155; }
+
+/* Print View Stylesheet */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    body * {
+        visibility: hidden;
+    }
+    #report-modal, #report-modal * {
+        visibility: visible;
+    }
+    #report-modal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        z-index: 9999;
+    }
+    #report-modal .modal-content {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: 100% !important;
+        padding: 10px !important;
+        background: white !important;
+        color: black !important;
+    }
+    .btn, .btn-close, #report-period-tabs, .report-actions, .camera-icon-badge {
+        display: none !important;
+    }
+    .report-card {
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+    }
+    .report-table {
+        border: 1px solid #cbd5e1 !important;
+    }
+    .report-table th, .report-table td {
+        border: 1px solid #cbd5e1 !important;
+        color: black !important;
+    }
+}

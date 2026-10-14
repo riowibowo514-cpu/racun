@@ -14,6 +14,67 @@ const profileAvatarUploader = document.getElementById('profile-avatar-uploader')
 const modalAvatarPreview = document.getElementById('modal-avatar-preview');
 const headerAvatarContainer = document.getElementById('header-avatar-container');
 const headerUserName = document.getElementById('header-user-name');
+const headerTherapyBadge = document.getElementById('header-therapy-badge');
+const therapyBtns = document.querySelectorAll('.therapy-btn');
+const therapyPresetNotice = document.getElementById('therapy-preset-notice');
+
+// Report DOM Elements
+const btnOpenReport = document.getElementById('btn-open-report');
+const reportModal = document.getElementById('report-modal');
+const btnCloseReport = document.getElementById('btn-close-report');
+const reportPeriodTabs = document.querySelectorAll('#report-period-tabs .tab-btn');
+const reportPatientInfo = document.getElementById('report-patient-info');
+const reportDateRange = document.getElementById('report-date-range');
+const reportStatusBanner = document.getElementById('report-status-banner');
+const reportStatusTitle = document.getElementById('report-status-title');
+const reportStatusDesc = document.getElementById('report-status-desc');
+const reportStatusIcon = document.getElementById('report-status-icon');
+const reportTotalK = document.getElementById('report-total-k');
+const reportTotalAir = document.getElementById('report-total-air');
+const reportTotalP = document.getElementById('report-total-p');
+const reportTotalNa = document.getElementById('report-total-na');
+const reportTargetK = document.getElementById('report-target-k');
+const reportTargetAir = document.getElementById('report-target-air');
+const reportTargetP = document.getElementById('report-target-p');
+const reportTargetNa = document.getElementById('report-target-na');
+const reportTableBody = document.getElementById('report-table-body');
+const btnPrintReport = document.getElementById('btn-print-report');
+const btnExportCsv = document.getElementById('btn-export-csv');
+const btnCopyWa = document.getElementById('btn-copy-wa');
+
+// Global Therapy Presets (KDOQI & PERNEFRI Standard)
+const THERAPY_PRESETS = {
+    HD: {
+        name: "Hemodialisis",
+        badge: "HD",
+        kalium: 2000,
+        fosfor: 800,
+        natrium: 2000,
+        air: 1200,
+        defaultPeriod: 3
+    },
+    CAPD: {
+        name: "CAPD",
+        badge: "CAPD",
+        kalium: 3000,
+        fosfor: 900,
+        natrium: 2000,
+        air: 1800,
+        defaultPeriod: 7
+    },
+    KONSERVATIF: {
+        name: "Pra-Dialisis",
+        badge: "Pra-HD",
+        kalium: 2200,
+        fosfor: 800,
+        natrium: 1800,
+        air: 1800,
+        defaultPeriod: 7
+    }
+};
+
+let selectedTherapy = 'HD';
+let currentReportPeriod = 3;
 
 const inputLimitKalium = document.getElementById('limit-kalium');
 const inputLimitFosfor = document.getElementById('limit-fosfor');
@@ -149,13 +210,16 @@ function loadLocalStorage() {
     if (savedProfile) {
         userProfile = JSON.parse(savedProfile);
         if (!userProfile.name) userProfile.name = "Pasien";
+        if (!userProfile.therapyType) userProfile.therapyType = 'HD';
         if (!userProfile.natriumLimit) userProfile.natriumLimit = 2000;
         if (!userProfile.airLimit) userProfile.airLimit = 1500;
+        selectedTherapy = userProfile.therapyType;
         if (inputUserName) inputUserName.value = userProfile.name;
         inputLimitKalium.value = userProfile.kaliumLimit;
         inputLimitFosfor.value = userProfile.fosforLimit;
         inputLimitNatrium.value = userProfile.natriumLimit;
         inputLimitAir.value = userProfile.airLimit;
+        selectTherapyType(selectedTherapy, false);
         renderUserProfileHeader();
     }
 
@@ -198,6 +262,7 @@ function saveProfile() {
     userProfile = {
         name: name,
         photo: photoToSave,
+        therapyType: selectedTherapy,
         kaliumLimit: kLimit,
         fosforLimit: pLimit,
         natriumLimit: naLimit,
@@ -222,6 +287,30 @@ function renderUserProfileHeader() {
         } else {
             headerAvatarContainer.innerHTML = `<span id="header-avatar-initial">${initial}</span>`;
         }
+    }
+
+    const therapy = THERAPY_PRESETS[userProfile ? userProfile.therapyType : 'HD'] || THERAPY_PRESETS.HD;
+    if (headerTherapyBadge) {
+        headerTherapyBadge.textContent = therapy.badge;
+    }
+}
+
+function selectTherapyType(type, applyPresets = true) {
+    selectedTherapy = type;
+    therapyBtns.forEach(btn => {
+        if (btn.dataset.type === type) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    if (applyPresets && THERAPY_PRESETS[type]) {
+        const preset = THERAPY_PRESETS[type];
+        inputLimitKalium.value = preset.kalium;
+        inputLimitFosfor.value = preset.fosfor;
+        inputLimitNatrium.value = preset.natrium;
+        inputLimitAir.value = preset.air;
     }
 }
 
@@ -277,6 +366,185 @@ function processImageFile(file, callback) {
         img.src = e.target.result;
     };
     reader.readAsDataURL(file);
+}
+
+// --- Cumulative Report Functions ---
+function generateCumulativeReport(days) {
+    currentReportPeriod = days;
+    
+    // Update active tab in report modal
+    reportPeriodTabs.forEach(tab => {
+        if (parseInt(tab.dataset.period) === days) {
+            tab.classList.add('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
+
+    const patientName = (userProfile && userProfile.name) ? userProfile.name : "Pasien";
+    const therapy = THERAPY_PRESETS[userProfile ? userProfile.therapyType : 'HD'] || THERAPY_PRESETS.HD;
+    if (reportPatientInfo) {
+        reportPatientInfo.textContent = `Pasien: ${patientName} • Terapi: ${therapy.name} (${therapy.badge})`;
+    }
+
+    const dates = [];
+    for (let i = days - 1; i >= 0; i--) {
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        dates.push(d.toISOString().split('T')[0]);
+    }
+
+    const startDate = new Date(dates[0]);
+    const endDate = new Date(dates[dates.length - 1]);
+    const dateOpts = { day: 'numeric', month: 'short', year: 'numeric' };
+    const dateRangeStr = `Periode: ${startDate.toLocaleDateString('id-ID', dateOpts)} s/d ${endDate.toLocaleDateString('id-ID', dateOpts)} (${days} Hari)`;
+    if (reportDateRange) reportDateRange.textContent = dateRangeStr;
+
+    let cumK = 0, cumAir = 0, cumP = 0, cumNa = 0;
+    const dailyBreakdown = [];
+
+    dates.forEach(dateStr => {
+        const logs = dailyLogs[dateStr] || [];
+        let dayK = 0, dayAir = 0, dayP = 0, dayNa = 0;
+        logs.forEach(item => {
+            dayK += item.kalium_konsumsi || 0;
+            dayAir += item.air_konsumsi || 0;
+            dayP += item.fosfor_konsumsi || 0;
+            dayNa += item.natrium_konsumsi || 0;
+        });
+
+        cumK += dayK;
+        cumAir += dayAir;
+        cumP += dayP;
+        cumNa += dayNa;
+
+        dailyBreakdown.push({
+            date: dateStr,
+            k: dayK,
+            air: dayAir,
+            p: dayP,
+            na: dayNa,
+            count: logs.length
+        });
+    });
+
+    const kLimitDay = (userProfile && userProfile.kaliumLimit) ? userProfile.kaliumLimit : therapy.kalium;
+    const airLimitDay = (userProfile && userProfile.airLimit) ? userProfile.airLimit : therapy.air;
+    const pLimitDay = (userProfile && userProfile.fosforLimit) ? userProfile.fosforLimit : therapy.fosfor;
+    const naLimitDay = (userProfile && userProfile.natriumLimit) ? userProfile.natriumLimit : therapy.natrium;
+
+    const targetK = kLimitDay * days;
+    const targetAir = airLimitDay * days;
+    const targetP = pLimitDay * days;
+    const targetNa = naLimitDay * days;
+
+    if (reportTotalK) reportTotalK.textContent = `${cumK.toFixed(1)} mg`;
+    if (reportTotalAir) reportTotalAir.textContent = `${cumAir.toFixed(1)} ml`;
+    if (reportTotalP) reportTotalP.textContent = `${cumP.toFixed(1)} mg`;
+    if (reportTotalNa) reportTotalNa.textContent = `${cumNa.toFixed(1)} mg`;
+
+    if (reportTargetK) reportTargetK.textContent = `Batas: max ${targetK} mg (${(cumK / targetK * 100).toFixed(0)}%)`;
+    if (reportTargetAir) reportTargetAir.textContent = `Batas: max ${targetAir} ml (${(cumAir / targetAir * 100).toFixed(0)}%)`;
+    if (reportTargetP) reportTargetP.textContent = `Batas: max ${targetP} mg (${(cumP / targetP * 100).toFixed(0)}%)`;
+    if (reportTargetNa) reportTargetNa.textContent = `Batas: max ${targetNa} mg (${(cumNa / targetNa * 100).toFixed(0)}%)`;
+
+    const maxRatio = Math.max(cumK / targetK, cumAir / targetAir, cumP / targetP, cumNa / targetNa);
+    reportStatusBanner.classList.remove('status-safe', 'status-warning', 'status-danger');
+
+    if (maxRatio > 1.0) {
+        reportStatusBanner.classList.add('status-danger');
+        reportStatusIcon.textContent = '🚨';
+        reportStatusTitle.textContent = 'Akumulasi Asupan Melebihi Target';
+        reportStatusDesc.textContent = `Akumulasi zat gizi melebihi batas kumulatif ${days} hari. Konsultasikan dengan dokter/ahli gizi Anda.`;
+    } else if (maxRatio >= 0.85) {
+        reportStatusBanner.classList.add('status-warning');
+        reportStatusIcon.textContent = '⚠️';
+        reportStatusTitle.textContent = 'Akumulasi Asupan Mendekati Batas';
+        reportStatusDesc.textContent = `Asupan kumulatif berada di ${Math.round(maxRatio * 100)}% dari batas aman. Pertahankan pemilihan menu rendah kalium/cairan.`;
+    } else {
+        reportStatusBanner.classList.add('status-safe');
+        reportStatusIcon.textContent = '🌿';
+        reportStatusTitle.textContent = 'Akumulasi Asupan Aman Terkendali';
+        reportStatusDesc.textContent = `Seluruh zat gizi kumulatif terjaga di bawah batas aman periode ${days} hari.`;
+    }
+
+    if (reportTableBody) {
+        reportTableBody.innerHTML = '';
+        dailyBreakdown.forEach(row => {
+            const tr = document.createElement('tr');
+            const dObj = new Date(row.date);
+            const formattedDate = dObj.toLocaleDateString('id-ID', { weekday: 'short', day: 'numeric', month: 'short' });
+            
+            const kWarning = row.k > kLimitDay ? 'style="color:var(--danger); font-weight:bold;"' : '';
+            const airWarning = row.air > airLimitDay ? 'style="color:var(--danger); font-weight:bold;"' : '';
+
+            tr.innerHTML = `
+                <td><strong>${formattedDate}</strong> <br><small class="text-gray">${row.count} item</small></td>
+                <td ${kWarning}>${row.k.toFixed(1)} mg</td>
+                <td ${airWarning}>${row.air.toFixed(1)} ml</td>
+                <td>${row.p.toFixed(1)} mg</td>
+                <td>${row.na.toFixed(1)} mg</td>
+            `;
+            reportTableBody.appendChild(tr);
+        });
+    }
+}
+
+function exportReportCSV() {
+    const patientName = (userProfile && userProfile.name) ? userProfile.name : "Pasien";
+    const therapy = THERAPY_PRESETS[userProfile ? userProfile.therapyType : 'HD'] || THERAPY_PRESETS.HD;
+    let csvContent = `Laporan Asupan Pasien GGK\n`;
+    csvContent += `Nama Pasien,${patientName}\n`;
+    csvContent += `Terapi,${therapy.name} (${therapy.badge})\n`;
+    csvContent += `Periode,${currentReportPeriod} Hari\n`;
+    csvContent += `Tanggal Cetak,${new Date().toLocaleString('id-ID')}\n\n`;
+
+    csvContent += `Tanggal,Waktu,Nama Makanan,Porsi (g),Kalium (mg),Fosfor (mg),Natrium (mg),Air (ml)\n`;
+
+    for (let i = currentReportPeriod - 1; i >= 0; i--) {
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        const dateStr = d.toISOString().split('T')[0];
+        const logs = dailyLogs[dateStr] || [];
+        logs.forEach(log => {
+            const time = log.timestamp ? new Date(log.timestamp).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }) : '-';
+            csvContent += `"${dateStr}","${time}","${log.nama_bahan.replace(/"/g, '""')}","${log.porsi_g}","${log.kalium_konsumsi.toFixed(1)}","${log.fosfor_konsumsi.toFixed(1)}","${(log.natrium_konsumsi || 0).toFixed(1)}","${(log.air_konsumsi || 0).toFixed(1)}"\n`;
+        });
+    }
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Laporan_Gizi_GGK_${patientName}_${currentReportPeriod}Hari.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function copyReportToWhatsApp() {
+    const patientName = (userProfile && userProfile.name) ? userProfile.name : "Pasien";
+    const therapy = THERAPY_PRESETS[userProfile ? userProfile.therapyType : 'HD'] || THERAPY_PRESETS.HD;
+    const totalK = reportTotalK ? reportTotalK.textContent : '0';
+    const totalAir = reportTotalAir ? reportTotalAir.textContent : '0';
+    const totalP = reportTotalP ? reportTotalP.textContent : '0';
+    const totalNa = reportTotalNa ? reportTotalNa.textContent : '0';
+
+    let msg = `*📊 LAPORAN ASUPAN GIZI PASIEN GGK*\n`;
+    msg += `👤 *Nama:* ${patientName}\n`;
+    msg += `🩺 *Terapi:* ${therapy.name} (${therapy.badge})\n`;
+    msg += `📅 *Periode:* ${currentReportPeriod} Hari Terakhir\n\n`;
+    msg += `*Akumulasi Zat Gizi:*\n`;
+    msg += `• Kalium: ${totalK}\n`;
+    msg += `• Cairan: ${totalAir}\n`;
+    msg += `• Fosfor: ${totalP}\n`;
+    msg += `• Natrium: ${totalNa}\n\n`;
+    msg += `_Dipantau melalui Pemantau Asupan GGK_`;
+
+    navigator.clipboard.writeText(msg).then(() => {
+        alert("✅ Ringkasan berhasil disalin! Anda dapat menempelkannya (paste) langsung ke chat WhatsApp dokter atau keluarga.");
+    }).catch(() => {
+        prompt("Salin teks berikut untuk WhatsApp:", msg);
+    });
 }
 
 function saveLogs() {
@@ -944,12 +1212,58 @@ btnEditProfile.addEventListener('click', () => {
         inputLimitFosfor.value = userProfile.fosforLimit;
         inputLimitNatrium.value = userProfile.natriumLimit || 2000;
         inputLimitAir.value = userProfile.airLimit || 1500;
+        selectTherapyType(userProfile.therapyType || 'HD', false);
         renderModalAvatarPreview(userProfile.photo, userProfile.name);
     } else {
         if (inputUserName) inputUserName.value = "";
+        selectTherapyType('HD', true);
         renderModalAvatarPreview(null, "");
     }
 });
+
+// Therapy selection buttons
+therapyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        selectTherapyType(btn.dataset.type, true);
+    });
+});
+
+// Report Modal Event Listeners
+if (btnOpenReport) {
+    btnOpenReport.addEventListener('click', () => {
+        const therapyType = (userProfile && userProfile.therapyType) ? userProfile.therapyType : 'HD';
+        const defaultPeriod = THERAPY_PRESETS[therapyType] ? THERAPY_PRESETS[therapyType].defaultPeriod : 3;
+        reportModal.classList.remove('hidden');
+        generateCumulativeReport(defaultPeriod);
+    });
+}
+
+if (btnCloseReport) {
+    btnCloseReport.addEventListener('click', () => {
+        reportModal.classList.add('hidden');
+    });
+}
+
+reportPeriodTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const period = parseInt(tab.dataset.period);
+        generateCumulativeReport(period);
+    });
+});
+
+if (btnPrintReport) {
+    btnPrintReport.addEventListener('click', () => {
+        window.print();
+    });
+}
+
+if (btnExportCsv) {
+    btnExportCsv.addEventListener('click', exportReportCSV);
+}
+
+if (btnCopyWa) {
+    btnCopyWa.addEventListener('click', copyReportToWhatsApp);
+}
 
 if (btnCloseProfile) {
     btnCloseProfile.addEventListener('click', () => {
