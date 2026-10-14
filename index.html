@@ -7,7 +7,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6366f1">
     <link rel="apple-touch-icon" href="/icon-192.png">
-    <link rel="stylesheet" href="/styles.css?v=5.0.0">
+    <link rel="stylesheet" href="/styles.css?v=5.1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,9 +15,28 @@
         <!-- Header -->
         <header class="glass-panel">
             <div class="header-content">
-                <div>
-                    <h1>Pemantau Asupan GGK</h1>
-                    <p class="subtitle">Kalium, Fosfor, Natrium & Cairan</p>
+                <div class="brand-group">
+                    <div class="header-kidney-badge" title="NutriKidney - Pemantau GGK">
+                        <!-- Stylized modern twin-kidney SVG emblem -->
+                        <svg class="header-kidney-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="headerKidneyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6366f1"/>
+                                    <stop offset="100%" stop-color="#3b82f6"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Left kidney -->
+                            <path d="M16 11C11.5 11 8 16 8 24C8 32 11.5 37 16 37C20 37 21.5 33 20 27C18.5 21 19.5 15.5 21 13C19.8 11.7 18 11 16 11Z" fill="url(#headerKidneyGrad)"/>
+                            <!-- Right kidney -->
+                            <path d="M32 11C36.5 11 40 16 40 24C40 32 36.5 37 32 37C28 37 26.5 33 28 27C29.5 21 28.5 15.5 27 13C28.2 11.7 30 11 32 11Z" fill="url(#headerKidneyGrad)"/>
+                            <!-- Gentle central pulse -->
+                            <path d="M20 24C22 24 23 20 24 20C25 20 26 28 27 28C28 28 28.5 24 30 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1>Pemantau Asupan GGK</h1>
+                        <p class="subtitle">Kalium, Fosfor, Natrium & Cairan</p>
+                    </div>
                 </div>
                 <div>
                     <button id="btn-theme-toggle" class="btn btn-outline btn-sm" style="margin-right: 5px;">🌙</button>
@@ -28,7 +47,39 @@
 
         <!-- Dashboard / Progress -->
         <section id="dashboard" class="glass-panel mt-4">
-            <h2>Ringkasan Hari Ini (<span id="current-date"></span>)</h2>
+            <div class="flex-between">
+                <h2>Ringkasan Hari Ini</h2>
+                <span id="current-date" class="text-xs text-gray font-normal"></span>
+            </div>
+
+            <!-- Kidney Health Indicator Card -->
+            <div id="kidney-status-card" class="kidney-status-card status-safe mt-3">
+                <div class="kidney-avatar-box">
+                    <svg class="kidney-companion-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="kidneyGlowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--kidney-c1, #10b981)"/>
+                                <stop offset="100%" stop-color="var(--kidney-c2, #059669)"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Left Kidney -->
+                        <path class="kidney-organ kidney-left" d="M22 13C15 13 10 19.5 10 32C10 44.5 15 51 22 51C28 51 30.5 45.5 28.5 37C26.5 28.5 28 20 30 16.5C28.2 14.3 25.3 13 22 13Z" fill="url(#kidneyGlowGrad)"/>
+                        <!-- Right Kidney -->
+                        <path class="kidney-organ kidney-right" d="M42 13C49 13 54 19.5 54 32C54 44.5 49 51 42 51C36 51 33.5 45.5 35.5 37C37.5 28.5 36 20 34 16.5C35.8 14.3 38.7 13 42 13Z" fill="url(#kidneyGlowGrad)"/>
+                        <!-- Gentle Health Dot & Pulse -->
+                        <circle cx="20" cy="31" r="2.5" fill="white" opacity="0.85"/>
+                        <circle cx="44" cy="31" r="2.5" fill="white" opacity="0.85"/>
+                        <path class="kidney-pulse" d="M26 33C29 33 30 27 32 27C34 27 35 37 36 37C37 37 38 33 40 33" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="kidney-status-details">
+                    <div class="flex-between">
+                        <span class="kidney-status-label" id="kidney-status-label">Beban Ginjal: Optimal</span>
+                        <span class="kidney-badge" id="kidney-badge">Aman 🌿</span>
+                    </div>
+                    <p class="kidney-status-desc" id="kidney-status-desc">Semua asupan (Kalium, Fosfor, Natrium & Cairan) dalam target aman.</p>
+                </div>
+            </div>
             
             <div class="progress-container mt-4">
                 <div class="progress-header">
@@ -260,6 +311,6 @@
         <button id="btn-update-app" class="btn btn-primary btn-sm" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Perbarui</button>
     </div>
 
-    <script src="/app.js?v=5.0.0"></script>
+    <script src="/app.js?v=5.1.0"></script>
 </body>
 </html>

@@ -227,7 +227,46 @@ function updateDashboard() {
     updateProgressBarState(naPercent, natriumBar, natriumAlert, "Natrium");
     updateProgressBarState(airPercent, airBar, airAlert, "Cairan");
 
+    // Kidney Companion Indicator Status
+    updateKidneyStatus(kPercent, pPercent, naPercent, airPercent);
+
     renderLogList(todayLogs);
+}
+
+function updateKidneyStatus(kPercent, pPercent, naPercent, airPercent) {
+    const statusCard = document.getElementById('kidney-status-card');
+    const statusLabel = document.getElementById('kidney-status-label');
+    const statusDesc = document.getElementById('kidney-status-desc');
+    const statusBadge = document.getElementById('kidney-badge');
+    if (!statusCard || !statusLabel || !statusDesc || !statusBadge) return;
+
+    const nutrients = [
+        { name: 'Kalium', pct: kPercent },
+        { name: 'Fosfor', pct: pPercent },
+        { name: 'Natrium', pct: naPercent },
+        { name: 'Cairan', pct: airPercent }
+    ];
+    nutrients.sort((a, b) => b.pct - a.pct);
+    const topNutrient = nutrients[0];
+
+    statusCard.classList.remove('status-safe', 'status-warning', 'status-danger');
+
+    if (topNutrient.pct >= 100) {
+        statusCard.classList.add('status-danger');
+        statusLabel.textContent = 'Beban Ginjal: Melebihi Batas';
+        statusBadge.textContent = 'Perhatian 🚨';
+        statusDesc.textContent = `${topNutrient.name} telah melampaui batas harian (${Math.round(topNutrient.pct)}%). Batasi asupan tinggi ${topNutrient.name.toLowerCase()} untuk sisa hari ini.`;
+    } else if (topNutrient.pct >= 80) {
+        statusCard.classList.add('status-warning');
+        statusLabel.textContent = 'Beban Ginjal: Mendekati Batas';
+        statusBadge.textContent = 'Waspada ⚠️';
+        statusDesc.textContent = `${topNutrient.name} sudah mencapai ${Math.round(topNutrient.pct)}% batas harian. Pilih menu rendah ${topNutrient.name.toLowerCase()} untuk berikutnya.`;
+    } else {
+        statusCard.classList.add('status-safe');
+        statusLabel.textContent = 'Beban Ginjal: Optimal';
+        statusBadge.textContent = 'Aman 🌿';
+        statusDesc.textContent = 'Semua asupan (Kalium, Fosfor, Natrium & Cairan) berada dalam batas aman.';
+    }
 }
 
 function updateProgressBarState(percent, barElement, alertElement, nutrientName) {

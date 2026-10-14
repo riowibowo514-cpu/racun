@@ -113,6 +113,122 @@ h3 { font-size: 1.1rem; font-weight: 600; }
     align-items: center;
 }
 
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.header-kidney-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(59, 130, 246, 0.12));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+    transition: transform 0.3s ease;
+}
+.header-kidney-badge:hover {
+    transform: scale(1.05);
+}
+.header-kidney-svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Kidney Companion Status Card */
+.kidney-status-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+.kidney-avatar-box {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kidney-companion-svg {
+    width: 46px;
+    height: 46px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.06));
+    transition: transform 0.3s ease;
+}
+.kidney-status-card:hover .kidney-companion-svg {
+    transform: scale(1.06);
+}
+.kidney-status-details {
+    flex: 1;
+}
+.kidney-status-label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+.kidney-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.kidney-status-desc {
+    font-size: 0.78rem;
+    color: var(--text-gray);
+    margin-top: 2px;
+    line-height: 1.35;
+}
+
+/* Status Variations */
+.kidney-status-card.status-safe {
+    background: linear-gradient(135deg, rgba(236, 253, 245, 0.9), rgba(240, 253, 250, 0.9));
+    border-color: #a7f3d0;
+    --kidney-c1: #10b981;
+    --kidney-c2: #059669;
+}
+.kidney-status-card.status-safe .kidney-badge {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.kidney-status-card.status-warning {
+    background: linear-gradient(135deg, rgba(254, 252, 232, 0.95), rgba(254, 243, 199, 0.95));
+    border-color: #fde68a;
+    --kidney-c1: #f59e0b;
+    --kidney-c2: #d97706;
+}
+.kidney-status-card.status-warning .kidney-badge {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+.kidney-status-card.status-danger {
+    background: linear-gradient(135deg, rgba(254, 242, 242, 0.95), rgba(255, 228, 230, 0.95));
+    border-color: #fecaca;
+    --kidney-c1: #f43f5e;
+    --kidney-c2: #e11d48;
+}
+.kidney-status-card.status-danger .kidney-badge {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    animation: pulse 1.5s infinite;
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -474,3 +590,11 @@ body.dark-mode .input-suffix { background: #334155; border-color: #334155; color
 body.dark-mode .autocomplete-list li:hover { background: #334155; }
 body.dark-mode .btn-warning-sm { background: rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.3); color: #fbbf24; }
 body.dark-mode .btn-danger-sm { background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.3); color: #f87171; }
+body.dark-mode .header-kidney-badge { background: rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.4); }
+body.dark-mode .kidney-status-card { background: #1e293b; border-color: #334155; }
+body.dark-mode .kidney-status-card.status-safe { background: linear-gradient(135deg, rgba(6, 78, 59, 0.35), rgba(4, 120, 87, 0.2)); border-color: rgba(16, 185, 129, 0.4); }
+body.dark-mode .kidney-status-card.status-safe .kidney-badge { background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.3); }
+body.dark-mode .kidney-status-card.status-warning { background: linear-gradient(135deg, rgba(120, 53, 15, 0.35), rgba(180, 83, 9, 0.2)); border-color: rgba(245, 158, 11, 0.4); }
+body.dark-mode .kidney-status-card.status-warning .kidney-badge { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3); }
+body.dark-mode .kidney-status-card.status-danger { background: linear-gradient(135deg, rgba(159, 18, 57, 0.35), rgba(225, 29, 72, 0.2)); border-color: rgba(244, 63, 94, 0.4); }
+body.dark-mode .kidney-status-card.status-danger .kidney-badge { background: rgba(244, 63, 94, 0.2); color: #fb7185; border-color: rgba(244, 63, 94, 0.3); }
