@@ -7,7 +7,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6366f1">
     <link rel="apple-touch-icon" href="/icon-192.png">
-    <link rel="stylesheet" href="/styles.css?v=5.1.0">
+    <link rel="stylesheet" href="/styles.css?v=5.2.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -38,9 +38,17 @@
                         <p class="subtitle">Kalium, Fosfor, Natrium & Cairan</p>
                     </div>
                 </div>
-                <div>
-                    <button id="btn-theme-toggle" class="btn btn-outline btn-sm" style="margin-right: 5px;">🌙</button>
-                    <button id="btn-edit-profile" class="btn btn-outline btn-sm">Batas Harian</button>
+                <div class="header-actions">
+                    <button id="btn-theme-toggle" class="btn btn-outline btn-icon" title="Ubah Tema" style="padding: 0.4rem 0.6rem;">🌙</button>
+                    <div id="btn-edit-profile" class="user-pill-btn" role="button" tabindex="0" title="Klik untuk edit profil & batas harian">
+                        <div class="user-avatar-circle" id="header-avatar-container">
+                            <span id="header-avatar-initial">P</span>
+                        </div>
+                        <div class="user-pill-text">
+                            <span class="user-pill-greeting">Halo,</span>
+                            <strong class="user-pill-name" id="header-user-name">Pasien</strong>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -210,11 +218,34 @@
 
     <!-- Modal Profil -->
     <div id="profile-modal" class="modal-overlay hidden">
-        <div class="modal-content glass-panel">
-            <h2>Pengaturan Profil</h2>
-            <p class="text-sm mt-2 text-gray">Masukkan batas harian sesuai anjuran dokter/ahli gizi Anda.</p>
+        <div class="modal-content glass-panel" style="max-width: 440px;">
+            <div class="flex-between">
+                <h2>Profil & Batas Harian</h2>
+                <button id="btn-close-profile" class="btn-close" title="Tutup">&times;</button>
+            </div>
+            <p class="text-sm mt-1 text-gray">Atur identitas pasien dan target batas gizi harian.</p>
+
+            <!-- Photo Upload Section -->
+            <div class="profile-photo-section mt-4">
+                <div class="profile-avatar-uploader" id="profile-avatar-uploader" title="Klik untuk pilih foto">
+                    <div class="avatar-preview-box" id="modal-avatar-preview">
+                        <span id="modal-avatar-initial" class="avatar-initial-large">P</span>
+                    </div>
+                    <div class="camera-icon-badge" title="Ganti Foto">📷</div>
+                </div>
+                <input type="file" id="input-profile-photo" accept="image/*" class="hidden">
+                <div class="photo-action-btns mt-2">
+                    <button type="button" id="btn-choose-photo" class="btn btn-outline btn-sm" style="font-size: 0.75rem; padding: 4px 10px;">Pilih Foto</button>
+                    <button type="button" id="btn-remove-photo" class="btn-danger-sm hidden" style="font-size: 0.75rem; padding: 4px 10px;">Hapus Foto</button>
+                </div>
+            </div>
             
-            <div class="form-group mt-4">
+            <div class="form-group mt-3">
+                <label for="input-user-name">Nama Pasien / Panggilan</label>
+                <input type="text" id="input-user-name" class="input-field" placeholder="Contoh: Rio, Bu Siti, Ayah...">
+            </div>
+
+            <div class="form-group mt-3">
                 <label for="limit-kalium">Batas Kalium Harian (mg)</label>
                 <input type="number" id="limit-kalium" class="input-field" min="1" placeholder="Misal: 2500">
             </div>
@@ -234,7 +265,10 @@
                 <input type="number" id="limit-air" class="input-field" min="1" placeholder="Misal: 1500">
             </div>
 
-            <button id="btn-save-profile" class="btn btn-primary mt-5 w-full">Simpan Profil</button>
+            <div class="flex-between gap-2 mt-4">
+                <button id="btn-cancel-profile" type="button" class="btn btn-outline w-full">Batal</button>
+                <button id="btn-save-profile" type="button" class="btn btn-primary w-full">Simpan</button>
+            </div>
         </div>
     </div>
 
@@ -311,6 +345,6 @@
         <button id="btn-update-app" class="btn btn-primary btn-sm" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Perbarui</button>
     </div>
 
-    <script src="/app.js?v=5.1.0"></script>
+    <script src="/app.js?v=5.2.0"></script>
 </body>
 </html>

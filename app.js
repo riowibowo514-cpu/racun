@@ -3,10 +3,24 @@ const modalProfile = document.getElementById('profile-modal');
 const btnEditProfile = document.getElementById('btn-edit-profile');
 const btnThemeToggle = document.getElementById('btn-theme-toggle');
 const btnSaveProfile = document.getElementById('btn-save-profile');
+const btnCloseProfile = document.getElementById('btn-close-profile');
+const btnCancelProfile = document.getElementById('btn-cancel-profile');
+
+const inputUserName = document.getElementById('input-user-name');
+const inputProfilePhoto = document.getElementById('input-profile-photo');
+const btnChoosePhoto = document.getElementById('btn-choose-photo');
+const btnRemovePhoto = document.getElementById('btn-remove-photo');
+const profileAvatarUploader = document.getElementById('profile-avatar-uploader');
+const modalAvatarPreview = document.getElementById('modal-avatar-preview');
+const headerAvatarContainer = document.getElementById('header-avatar-container');
+const headerUserName = document.getElementById('header-user-name');
+
 const inputLimitKalium = document.getElementById('limit-kalium');
 const inputLimitFosfor = document.getElementById('limit-fosfor');
 const inputLimitNatrium = document.getElementById('limit-natrium');
 const inputLimitAir = document.getElementById('limit-air');
+
+let tempProfilePhoto = null;
 
 const loadingOverlay = document.getElementById('loading-overlay');
 const currentDateEl = document.getElementById('current-date');
@@ -114,7 +128,9 @@ async function initApp() {
     // Check Profile
     if (!userProfile) {
         modalProfile.classList.remove('hidden');
+        renderModalAvatarPreview(null, "");
     } else {
+        renderUserProfileHeader();
         updateDashboard();
     }
     
@@ -132,12 +148,15 @@ function loadLocalStorage() {
     const savedProfile = localStorage.getItem('ggk_user_profile');
     if (savedProfile) {
         userProfile = JSON.parse(savedProfile);
+        if (!userProfile.name) userProfile.name = "Pasien";
         if (!userProfile.natriumLimit) userProfile.natriumLimit = 2000;
         if (!userProfile.airLimit) userProfile.airLimit = 1500;
+        if (inputUserName) inputUserName.value = userProfile.name;
         inputLimitKalium.value = userProfile.kaliumLimit;
         inputLimitFosfor.value = userProfile.fosforLimit;
         inputLimitNatrium.value = userProfile.natriumLimit;
         inputLimitAir.value = userProfile.airLimit;
+        renderUserProfileHeader();
     }
 
     const savedLogs = localStorage.getItem('ggk_daily_logs');
@@ -158,6 +177,7 @@ function loadLocalStorage() {
 }
 
 function saveProfile() {
+    const name = (inputUserName.value.trim()) || "Pasien";
     const kLimit = parseInt(inputLimitKalium.value);
     const pLimit = parseInt(inputLimitFosfor.value);
     const naLimit = parseInt(inputLimitNatrium.value) || 2000;
@@ -168,10 +188,95 @@ function saveProfile() {
         return;
     }
 
-    userProfile = { kaliumLimit: kLimit, fosforLimit: pLimit, natriumLimit: naLimit, airLimit: airLimit };
+    let photoToSave = userProfile ? userProfile.photo : null;
+    if (tempProfilePhoto === "") {
+        photoToSave = null;
+    } else if (tempProfilePhoto) {
+        photoToSave = tempProfilePhoto;
+    }
+
+    userProfile = {
+        name: name,
+        photo: photoToSave,
+        kaliumLimit: kLimit,
+        fosforLimit: pLimit,
+        natriumLimit: naLimit,
+        airLimit: airLimit
+    };
+
     localStorage.setItem('ggk_user_profile', JSON.stringify(userProfile));
+    tempProfilePhoto = null;
     modalProfile.classList.add('hidden');
+    renderUserProfileHeader();
     updateDashboard();
+}
+
+function renderUserProfileHeader() {
+    const name = (userProfile && userProfile.name) ? userProfile.name.trim() : "Pasien";
+    if (headerUserName) headerUserName.textContent = name;
+    
+    const initial = name ? name.charAt(0).toUpperCase() : "P";
+    if (headerAvatarContainer) {
+        if (userProfile && userProfile.photo) {
+            headerAvatarContainer.innerHTML = `<img src="${userProfile.photo}" alt="${name}">`;
+        } else {
+            headerAvatarContainer.innerHTML = `<span id="header-avatar-initial">${initial}</span>`;
+        }
+    }
+}
+
+function renderModalAvatarPreview(photoUrl, name) {
+    const initial = (name && name.trim()) ? name.trim().charAt(0).toUpperCase() : "P";
+    if (!modalAvatarPreview) return;
+    if (photoUrl) {
+        modalAvatarPreview.innerHTML = `<img src="${photoUrl}" alt="Foto Profil">`;
+        if (btnRemovePhoto) btnRemovePhoto.classList.remove('hidden');
+    } else {
+        modalAvatarPreview.innerHTML = `<span id="modal-avatar-initial" class="avatar-initial-large">${initial}</span>`;
+        if (btnRemovePhoto) btnRemovePhoto.classList.add('hidden');
+    }
+}
+
+function processImageFile(file, callback) {
+    if (!file || !file.type.startsWith('image/')) {
+        alert("Harap pilih file gambar (JPG/PNG/WebP).");
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            const maxSize = 200;
+            let width = img.width;
+            let height = img.height;
+
+            if (width > height) {
+                if (width > maxSize) {
+                    height = Math.round((height * maxSize) / width);
+                    width = maxSize;
+                }
+            } else {
+                if (height > maxSize) {
+                    width = Math.round((width * maxSize) / height);
+                    height = maxSize;
+                }
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+            callback(dataUrl);
+        };
+        img.onerror = function() {
+            alert("Gagal memproses gambar. Coba gunakan foto lain.");
+        };
+        img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
 }
 
 function saveLogs() {
@@ -832,13 +937,77 @@ btnThemeToggle.addEventListener('click', () => {
 
 btnEditProfile.addEventListener('click', () => {
     modalProfile.classList.remove('hidden');
+    tempProfilePhoto = null;
     if (userProfile) {
+        if (inputUserName) inputUserName.value = userProfile.name || "";
         inputLimitKalium.value = userProfile.kaliumLimit;
         inputLimitFosfor.value = userProfile.fosforLimit;
         inputLimitNatrium.value = userProfile.natriumLimit || 2000;
         inputLimitAir.value = userProfile.airLimit || 1500;
+        renderModalAvatarPreview(userProfile.photo, userProfile.name);
+    } else {
+        if (inputUserName) inputUserName.value = "";
+        renderModalAvatarPreview(null, "");
     }
 });
+
+if (btnCloseProfile) {
+    btnCloseProfile.addEventListener('click', () => {
+        if (userProfile) {
+            modalProfile.classList.add('hidden');
+            tempProfilePhoto = null;
+        } else {
+            alert("Harap lengkapi profil Anda terlebih dahulu.");
+        }
+    });
+}
+
+if (btnCancelProfile) {
+    btnCancelProfile.addEventListener('click', () => {
+        if (userProfile) {
+            modalProfile.classList.add('hidden');
+            tempProfilePhoto = null;
+        } else {
+            alert("Harap lengkapi profil Anda terlebih dahulu.");
+        }
+    });
+}
+
+if (profileAvatarUploader) {
+    profileAvatarUploader.addEventListener('click', () => inputProfilePhoto.click());
+}
+
+if (btnChoosePhoto) {
+    btnChoosePhoto.addEventListener('click', () => inputProfilePhoto.click());
+}
+
+if (btnRemovePhoto) {
+    btnRemovePhoto.addEventListener('click', () => {
+        tempProfilePhoto = "";
+        renderModalAvatarPreview(null, inputUserName.value);
+        inputProfilePhoto.value = '';
+    });
+}
+
+if (inputProfilePhoto) {
+    inputProfilePhoto.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        processImageFile(file, (dataUrl) => {
+            tempProfilePhoto = dataUrl;
+            renderModalAvatarPreview(dataUrl, inputUserName.value);
+        });
+    });
+}
+
+if (inputUserName) {
+    inputUserName.addEventListener('input', function() {
+        const currentPhoto = (tempProfilePhoto === "") ? null : (tempProfilePhoto || (userProfile && userProfile.photo) || null);
+        if (!currentPhoto) {
+            renderModalAvatarPreview(null, this.value);
+        }
+    });
+}
 
 btnSaveProfile.addEventListener('click', saveProfile);
 
