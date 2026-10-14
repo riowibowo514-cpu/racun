@@ -398,6 +398,12 @@ h3 { font-size: 1.1rem; font-weight: 600; }
     border-bottom: none;
 }
 
+.backup-restore-box {
+    background: rgba(241, 245, 249, 0.7);
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 10px;
+}
+
 /* Kidney Companion Status Card */
 .kidney-status-card {
     display: flex;
@@ -868,6 +874,7 @@ body.dark-mode .report-card { background: #1e293b; border-color: #334155; color:
 body.dark-mode .report-table th { background: #1e293b; border-color: #334155; }
 body.dark-mode .report-table td { border-color: #334155; }
 body.dark-mode .report-table-wrapper { border-color: #334155; }
+body.dark-mode .backup-restore-box { background: #1e293b; border-color: #334155; }
 
 /* Print View Stylesheet */
 @media print {

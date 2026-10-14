@@ -42,6 +42,11 @@ const btnPrintReport = document.getElementById('btn-print-report');
 const btnExportCsv = document.getElementById('btn-export-csv');
 const btnCopyWa = document.getElementById('btn-copy-wa');
 
+// Backup & Restore DOM Elements
+const btnBackupData = document.getElementById('btn-backup-data');
+const btnTriggerRestore = document.getElementById('btn-trigger-restore');
+const inputRestoreFile = document.getElementById('input-restore-file');
+
 // Global Therapy Presets (KDOQI & PERNEFRI Standard)
 const THERAPY_PRESETS = {
     HD: {
@@ -545,6 +550,69 @@ function copyReportToWhatsApp() {
     }).catch(() => {
         prompt("Salin teks berikut untuk WhatsApp:", msg);
     });
+}
+
+// --- Data Backup & Restore Operations ---
+function backupAppData() {
+    const backupObj = {
+        app: "Pemantau Asupan GGK",
+        version: "6.0.0",
+        backupTimestamp: new Date().toISOString(),
+        userProfile: userProfile,
+        dailyLogs: dailyLogs,
+        customFoods: customFoods
+    };
+
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupObj, null, 2));
+    const downloadAnchor = document.createElement('a');
+    const patientName = (userProfile && userProfile.name) ? userProfile.name.trim().replace(/\s+/g, '_') : 'Pasien';
+    const dateStr = new Date().toISOString().split('T')[0];
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", `Backup_GGK_${patientName}_${dateStr}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+}
+
+function restoreAppData(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        try {
+            const parsed = JSON.parse(event.target.result);
+            if (!parsed.dailyLogs && !parsed.userProfile) {
+                alert("File cadangan tidak valid atau format salah.");
+                return;
+            }
+
+            if (confirm("Pulihkan data dari file ini? Data di perangkat Anda saat ini akan diselaraskan dengan cadangan.")) {
+                if (parsed.userProfile) {
+                    userProfile = parsed.userProfile;
+                    localStorage.setItem('ggk_user_profile', JSON.stringify(userProfile));
+                }
+                if (parsed.dailyLogs) {
+                    dailyLogs = parsed.dailyLogs;
+                    localStorage.setItem('ggk_daily_logs', JSON.stringify(dailyLogs));
+                }
+                if (parsed.customFoods) {
+                    customFoods = parsed.customFoods;
+                    localStorage.setItem('ggk_custom_foods', JSON.stringify(customFoods));
+                }
+
+                loadLocalStorage();
+                updateDashboard();
+                renderUserProfileHeader();
+                alert("✅ Seluruh data berhasil dipulihkan secara utuh!");
+                modalProfile.classList.add('hidden');
+            }
+        } catch (err) {
+            alert("Gagal membaca file cadangan: " + err.message);
+        }
+        inputRestoreFile.value = '';
+    };
+    reader.readAsText(file);
 }
 
 function saveLogs() {
@@ -1263,6 +1331,19 @@ if (btnExportCsv) {
 
 if (btnCopyWa) {
     btnCopyWa.addEventListener('click', copyReportToWhatsApp);
+}
+
+// Backup & Restore Listeners
+if (btnBackupData) {
+    btnBackupData.addEventListener('click', backupAppData);
+}
+
+if (btnTriggerRestore) {
+    btnTriggerRestore.addEventListener('click', () => inputRestoreFile.click());
+}
+
+if (inputRestoreFile) {
+    inputRestoreFile.addEventListener('change', restoreAppData);
 }
 
 if (btnCloseProfile) {

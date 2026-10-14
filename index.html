@@ -7,7 +7,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6366f1">
     <link rel="apple-touch-icon" href="/icon-192.png">
-    <link rel="stylesheet" href="/styles.css?v=6.0.0">
+    <link rel="stylesheet" href="/styles.css?v=6.1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -304,6 +304,25 @@
                 <input type="number" id="limit-air" class="input-field" min="1" placeholder="Misal: 1500">
             </div>
 
+            <!-- Backup & Restore Data Section -->
+            <div class="backup-restore-box mt-3 p-3">
+                <div class="flex-between">
+                    <div>
+                        <strong class="text-xs" style="color: var(--text-main);">Cadangkan & Pulihkan Data</strong>
+                        <p class="text-xs text-gray" style="font-size: 0.7rem; margin-top: 1px;">Simpan riwayat ke file atau pindahkan ke HP baru.</p>
+                    </div>
+                </div>
+                <div class="flex-between gap-2 mt-2">
+                    <button type="button" id="btn-backup-data" class="btn btn-outline btn-sm w-full" style="font-size: 0.75rem; padding: 5px 8px;">
+                        📥 Cadangkan (Backup)
+                    </button>
+                    <button type="button" id="btn-trigger-restore" class="btn btn-outline btn-sm w-full" style="font-size: 0.75rem; padding: 5px 8px;">
+                        📤 Pulihkan (Restore)
+                    </button>
+                    <input type="file" id="input-restore-file" accept=".json,application/json" class="hidden">
+                </div>
+            </div>
+
             <div class="flex-between gap-2 mt-4">
                 <button id="btn-cancel-profile" type="button" class="btn btn-outline w-full">Batal</button>
                 <button id="btn-save-profile" type="button" class="btn btn-primary w-full">Simpan</button>
@@ -473,6 +492,6 @@
         <button id="btn-update-app" class="btn btn-primary btn-sm" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Perbarui</button>
     </div>
 
-    <script src="/app.js?v=6.0.0"></script>
+    <script src="/app.js?v=6.1.0"></script>
 </body>
 </html>

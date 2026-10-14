@@ -1,0 +1,299 @@
+{
+  "project_name": "NutriKidney (Pemantau Asupan Pasien Gagal Ginjal Kronik)",
+  "version": "1.0.0",
+  "created_at": "2026-10-14",
+  "document_type": "Comprehensive Commercialization & Pitch Deck Blueprint",
+  "author": "Inisiator Proyek & Tim Engineering NutriKidney",
+  "executive_summary": {
+    "vision": "Menjadi platform digital kesehatan ginjal mandiri terdepan di Indonesia dan Asia Tenggara yang membantu pasien GGK mencegah komplikasi fatal (hiperkalemia & kelebihan cairan) melalui manajemen nutrisi cerdas, kolaboratif, dan terintegrasi klinis.",
+    "core_value_proposition": "Kalkulator gizi klinis pintar berbasis standar KDOQI/PERNEFRI yang mengintegrasikan pemantauan Kalium, Fosfor, Natrium, dan Cairan secara lokal-pertama (zero-cost privacy), dengan opsi sinkronisasi awan multi-perangkat bagi keluarga pendamping (caregiver) dan portal evaluasi interdialitik bagi dokter nefrologi.",
+    "business_model_summary": "Freemium Local-First (B2C) + Family Caregiver Multi-Device Subscription + B2B SaaS Dashboard untuk Unit Hemodialisis Rumah Sakit & Klinik Dialisis."
+  },
+  "problem_analysis": {
+    "clinical_pain_points": [
+      {
+        "issue": "Hiperkalemia Akut (Kelebihan Kalium)",
+        "impact": "Menjadi penyebab utama henti jantung mendadak (cardiac arrest) pada pasien GGK/HD, terutama saat jeda cuci darah akhir pekan (68-72 jam). Pasien kesulitan membedakan makanan tinggi vs rendah kalium."
+      },
+      {
+        "issue": "Kelebihan Cairan (Interdialytic Weight Gain / IDWG > 5%)",
+        "impact": "Menyebabkan edema paru akut (sesak napas), krisis hipertensi, dan komplikasi kardiovaskular saat cuci darah. Sulit menghitung akumulasi cairan dari sup, buah, dan minuman."
+      },
+      {
+        "issue": "Hiperfosfatemia & Gangguan Tulang (CKD-MBD)",
+        "impact": "Penumpukan fosfor menyebabkan gatal tak tertahankan, kerapuhan tulang, dan kalsifikasi pembuluh darah."
+      },
+      {
+        "issue": "Dietary Recall Amnesia saat Kontrol Dokter",
+        "impact": "Saat dokter/ahli gizi visit di ruang HD bertanya riwayat asupan 3 hari terakhir, pasien hanya menjawab dengan perkiraan samar-samar tanpa bukti kuantitatif."
+      }
+    ],
+    "user_behavior_barriers": [
+      "Pasien lanjut usia enggan memakai aplikasi yang rumit, lambat, atau memaksa login dengan password rumit di awal.",
+      "Keluarga pendamping (caregiver) sering cemas dari kejauhan karena tidak tahu apa yang dikonsumsi orang tuanya di rumah.",
+      "Kekhawatiran privasi data rekam medis pasien."
+    ]
+  },
+  "market_opportunity": {
+    "target_geography": "Indonesia (Fase 1) & Asia Tenggara (Fase 2)",
+    "market_size_indonesia": {
+      "prevalence": "Lebih dari 700.000 pasien GGK stadium akhir (ESRD), dengan lebih dari 150.000 pasien aktif menjalani Hemodialisis dan CAPD rutin di Indonesia.",
+      "dialysis_growth_rate": "Tumbuh 12-15% per tahun, menjadi salah satu beban pembiayaan katastropik terbesar BPJS Kesehatan.",
+      "number_of_dialysis_centers": "Lebih dari 900 unit hemodialisis (RS Pemerintah, RS Swasta, dan Klinik Dialisis Mandiri) di seluruh Indonesia."
+    },
+    "key_stakeholders": [
+      "Pasien GGK (Hemodialisis, CAPD, Pra-Dialisis Stadium 3-5)",
+      "Caregivers (Anak, Pasangan, Pendamping Pasien)",
+      "Dokter Spesialis Penyakit Dalam Konsultan Ginjal Hipertensi (Sp.PD-KGH)",
+      "Ahli Gizi Klinis Rumah Sakit & Perawat Dialisis",
+      "Klinik Dialisis Swasta & Rumah Sakit",
+      "Komunitas Pasien (KPCDI - Komunitas Pasien Cuci Darah Indonesia)",
+      "Perusahaan Farmasi & Suplemen Renal (Binder Fosfor, Kalsium Polistiren Sulfonat, Dialisat)"
+    ]
+  },
+  "product_architecture_and_strategy": {
+    "architecture_paradigm": "Local-First PWA evolving to Hybrid Cloud SaaS",
+    "phases": [
+      {
+        "phase": "Fase 1: Local-First PWA (Saat Ini / Berjalan)",
+        "infrastructure_cost": "Rp 0 / bulan (Netlify Free Tier + GitHub)",
+        "features": [
+          "PWA Offline-First (bisa diinstal di Android & iOS tanpa App Store).",
+          "Database 1.168 bahan makanan (USDA & TKPI terverifikasi, 0 nulls).",
+          "Smart Search dengan pengurutan relevansi bahan segar vs olahan.",
+          "Indikator Dinamis Status Ginjal (Visual Kidney Companion).",
+          "Smart Presets jenis terapi (HD 3 hari, CAPD 7 hari, Pra-Dialisis).",
+          "Penyuntingan dan pembuatan resep masakan pribadi.",
+          "Foto profil pasien lokal dan nama panggilan ramah.",
+          "Laporan asupan kumulatif 3 hari dan 7 hari.",
+          "Ekspor Cetak PDF Medis, Spreadsheet CSV, dan Salin WhatsApp.",
+          "Fitur Cadangkan & Pulihkan (Backup & Restore file JSON mandiri)."
+        ]
+      },
+      {
+        "phase": "Fase 2: Cloud Sync & Caregiver Collaboration (Monetisasi B2C)",
+        "infrastructure": "Supabase / Firebase (PostgreSQL) + Auth Google/WhatsApp OTP",
+        "features": [
+          "Auto-Sync Cloud: Data otomatis tersimpan aman di server awan saat ada internet.",
+          "Akun Caregiver (Mode Pendamping): Anak bisa memantau asupan orang tua secara real-time dari HP berbeda.",
+          "Notifikasi WhatsApp Pengingat Minum & Batas Kalium Harian.",
+          "Pelacak Tren Laboratorium Bulanan (Kreatinin, Ureum, Kalium Darah, Hemoglobin)."
+        ]
+      },
+      {
+        "phase": "Fase 3: Provider Portal & EMR Integration (Monetisasi B2B)",
+        "infrastructure": "Dedicated HIPAA & Permenkes RME Compliant Cloud (SatuSehat API Ready)",
+        "features": [
+          "Dashboard Web untuk Dokter Sp.PD-KGH dan Ahli Gizi Klinik HD.",
+          "Analisis Kepatuhan Interdialitik (Prediksi IDWG sebelum sesi HD).",
+          "Integrasi Rekam Medis Elektronik (RME) Rumah Sakit.",
+          "Portal edukasi dan sponsorship obat/makanan renal terverifikasi."
+        ]
+      }
+    ]
+  },
+  "business_model_and_monetization": {
+    "pricing_tiers": [
+      {
+        "tier_name": "Paket Sahabat Ginjal (FREE)",
+        "price": "Rp 0 / Selamanya",
+        "target": "Seluruh pasien baru & komunitas GGK",
+        "value_proposition": "Pencegahan mandiri tanpa beban biaya",
+        "features": [
+          "Penyimpanan lokal di HP (100% offline).",
+          "Pencarian lengkap gizi 1.168 makanan.",
+          "Pemantauan harian Kalium, Fosfor, Natrium, Air.",
+          "Kartu interaktif respon beban ginjal.",
+          "Laporan kumulatif 3 & 7 hari (Cetak PDF & WA).",
+          "Backup & restore manual via file JSON."
+        ]
+      },
+      {
+        "tier_name": "Paket Siaga Keluarga / Caregiver PRO (B2C Subscription)",
+        "price_options": {
+          "monthly": "Rp 25.000 / bulan",
+          "annual": "Rp 240.000 / tahun (Diskon 20%, Rp 20.000/bln)"
+        },
+        "target": "Pasien rutin HD/CAPD dan anak/keluarga pendamping",
+        "value_proposition": "Ketenangan pikiran keluarga & keamanan data permanen",
+        "features": [
+          "Semua fitur Paket FREE.",
+          "Cloud Auto-Sync: Ganti HP data tidak hilang, sinkron otomatis.",
+          "Akses Caregiver Multi-Device: Pantau dari 2-3 HP keluarga sekaligus.",
+          "Pencatatan Hasil Uji Lab Darah berkala + Grafik Korelasi Pola Makan.",
+          "Laporan Analisis AI Bulanan untuk dikonsultasikan ke dokter.",
+          "Notifikasi Peringatan Bahaya ke WA Caregiver jika asupan berlebih."
+        ]
+      },
+      {
+        "tier_name": "Paket Klinik HD & Rumah Sakit (B2B SaaS)",
+        "price_options": {
+          "per_clinic_monthly": "Rp 1.500.000 – Rp 3.500.000 / unit HD / bulan",
+          "setup_and_training": "Rp 5.000.000 (one-time onboarding)"
+        },
+        "target": "Unit Hemodialisis RS, Klinik Dialisis Swasta, Puskesmas Rujukan",
+        "value_proposition": "Menurunkan komplikasi intradialitik & akreditasi mutu pelayanan klinis",
+        "features": [
+          "Web Portal Dokter & Ahli Gizi untuk 50 - 200 pasien cuci darah.",
+          "Dashboard Evaluasi Asupan Interdialitik (Cepat ditinjau saat visite HD).",
+          "Export Data Agregat Kepatuhan Diet untuk Standar Mutu Akreditasi RS.",
+          "Integrasi REST API ke Sistem Rekam Medis Elektronik (RME)."
+        ]
+      }
+    ],
+    "revenue_projections_3_years": {
+      "year_1": {
+        "active_free_users": 15000,
+        "paid_subscribers_b2c": 1200,
+        "b2b_clinics": 5,
+        "estimated_annual_revenue_idr": "Rp 408.000.000"
+      },
+      "year_2": {
+        "active_free_users": 60000,
+        "paid_subscribers_b2c": 6500,
+        "b2b_clinics": 25,
+        "estimated_annual_revenue_idr": "Rp 2.110.000.000"
+      },
+      "year_3": {
+        "active_free_users": 180000,
+        "paid_subscribers_b2c": 22000,
+        "b2b_clinics": 80,
+        "estimated_annual_revenue_idr": "Rp 7.680.000.000"
+      }
+    }
+  },
+  "go_to_market_strategy": {
+    "distribution_channels": [
+      {
+        "channel": "Komunitas Pasien Cuci Darah (Grassroot KPCDI)",
+        "action": "Edukasi nutrisi gratis di seminar webinar pasien GGK, grup WhatsApp/Facebook pasien HD, dan testimoni pengguna."
+      },
+      {
+        "channel": "Kemitraan Ruang Hemodialisis (Hospital Point-of-Care)",
+        "action": "Menyediakan brosur/standee barcode aplikasi di ruang tunggu cuci darah tempat pasien & keluarga menunggu selama 4-5 jam."
+      },
+      {
+        "channel": "Endorsement Dokter Nefrologi & Ahli Gizi Ginjal",
+        "action": "Mempresentasikan kemudahan laporan PDF interdialitik 3 hari di simposium ilmiah PERNEFRI dan ASDI (Asosiasi Dietisien Indonesia)."
+      },
+      {
+        "channel": "Kemitraan Industri Nutrisi & Farmasi Khusus Renal",
+        "action": "Co-branding edukasi asupan dengan produsen susu renal, suplemen asam amino esensial, atau pengikat fosfor."
+      }
+    ]
+  },
+  "pitch_deck_structure_prompt": {
+    "purpose": "Panduan prompt terstruktur yang bisa dimasukkan ke AI generator presentasi (seperti Gamma.app, Beautiful.ai, atau ChatGPT) untuk menghasilkan 10 slide pitch deck profesional.",
+    "slides": [
+      {
+        "slide_number": 1,
+        "title": "Cover / Judul",
+        "headline": "NutriKidney: Sahabat Digital Nutrisi Pasien Gagal Ginjal",
+        "subheadline": "Mencegah Komplikasi Fatal & Meningkatkan Kualitas Hidup Pasien Dialisis Melalui Pemantauan Nutrisi Klinis Mandiri",
+        "visual_prompt": "Minimalist modern medical illustration showing healthy stylized kidneys, smartphone with clean health dashboard, and a caring caregiver touching a patient's hand."
+      },
+      {
+        "slide_number": 2,
+        "title": "The Problem (Masalah Nyata)",
+        "headline": "Diet Gagal Ginjal adalah Masalah Hidup dan Mati",
+        "bullet_points": [
+          "Bukan sekadar diet biasa: Kelebihan kalium dapat memicu serangan jantung mendadak dalam hitungan jam.",
+          "Kelebihan cairan antar-sesi cuci darah memicu sesak napas akut di ruang ICU.",
+          "Pasien dan keluarga kebingungan menghitung miligram zat gizi dari makanan lokal Indonesia.",
+          "Saat kontrol cuci darah, dokter tidak memiliki data konkret mengenai apa yang dikonsumsi pasien selama 3 hari terakhir."
+        ],
+        "visual_prompt": "Infographic showing the dangerous 3-day interdialytic weekend gap with ECG warning icon and fluid overload indicator."
+      },
+      {
+        "slide_number": 3,
+        "title": "The Solution (Solusi NutriKidney)",
+        "headline": "Kalkulator Gizi Cerdas, Responsif & Sesuai Standar Medis Global",
+        "bullet_points": [
+          "Database Terlengkap: 1.168 makanan Indonesia & internasional terverifikasi USDA & TKPI.",
+          "Smart Presets KDOQI/PERNEFRI: Menyesuaikan otomatis untuk pasien Hemodialisis (HD), CAPD, maupun Pra-Dialisis.",
+          "Interactive Kidney Companion: Indikator visual respon ginjal real-time (Aman, Waspada, Bahaya).",
+          "Laporan Kumulatif Interdialitik (3 Hari & 7 Hari): Siap cetak PDF rapi untuk ditunjukkan ke dokter."
+        ],
+        "visual_prompt": "High-fidelity mockups of NutriKidney PWA on mobile screen showing the kidney status badge, search bar, and report modal."
+      },
+      {
+        "slide_number": 4,
+        "title": "Target Market & Demographics",
+        "headline": "Pasar yang Besar, Tumbuh Cepat, dan Memiliki Retensi Sangat Tinggi",
+        "bullet_points": [
+          "700.000+ Pasien GGK di Indonesia, dengan 150.000+ pasien dialisis rutin seumur hidup.",
+          "Pasien dialisis adalah 'lifelong users' (pengguna seumur hidup) dengan tingkat kepatuhan dan retensi aplikasi tertinggi di industri kesehatan.",
+          "Didukung oleh ratusan ribu keluarga pendamping (caregivers) yang aktif mencari solusi terbaik untuk orang tua mereka."
+        ],
+        "visual_prompt": "Market size donut chart (TAM, SAM, SOM) for renal health tech in Indonesia."
+      },
+      {
+        "slide_number": 5,
+        "title": "Traction & Current Product Status",
+        "headline": "Produk Telah Berjalan (Live PWA) dengan Arsitektur Efisien",
+        "bullet_points": [
+          "Aplikasi sudah aktif digunakan secara live di web/PWA.",
+          "Arsitektur Local-First memastikan biaya server awal adalah Rp 0 (Nol Rupiah).",
+          "Pengguna dapat menyimpan data lokal, foto profil, dan ekspor ke WhatsApp/PDF seketika."
+        ],
+        "visual_prompt": "Screenshot of live product with badge '100% Operational & Verified'."
+      },
+      {
+        "slide_number": 6,
+        "title": "Business Model: Local-First Freemium",
+        "headline": "Akuisisi Pengguna Bebas Hambatan Menuju Langganan Berbayar",
+        "bullet_points": [
+          "FREE TIER: Offline PWA di HP pengguna sebagai magnet akuisisi ribuan pasien komunitas.",
+          "B2C CARE PRO (Rp 25.000/bln): Cloud auto-sync, akun pendamping keluarga (caregiver), pelacak tren hasil lab darah.",
+          "B2B CLINIC SAAS (Rp 1.5jt - 3.5jt/bln): Portal monitoring untuk unit hemodialisis rumah sakit."
+        ],
+        "visual_prompt": "Comparison table of Free vs Pro Caregiver vs Clinic Enterprise tiers."
+      },
+      {
+        "slide_number": 7,
+        "title": "Competitive Advantage (Keunggulan Kompetitif)",
+        "headline": "Mengapa NutriKidney Mengungguli Aplikasi Kalori Umum",
+        "bullet_points": [
+          "Aplikasi diet umum (MyFitnessPal, FatSecret) fokus pada kalori dan berat badan, BUKAN Kalium, Fosfor, dan Cairan.",
+          "Satu-satunya yang memiliki logika klinis khusus Hemodialisis (jeda 3 hari) vs CAPD (ultrafiltrasi harian).",
+          "100% Makanan Lokal Nusantara (Pelecing kangkung, ayam rica, tahu tempe, ikan air tawar, kopi tubruk).",
+          "Privacy-first: Bekerja tanpa wajib login internet yang rumit."
+        ],
+        "visual_prompt": "Matrix feature comparison highlighting NutriKidney vs General Diet Apps vs Hospital Paper Forms."
+      },
+      {
+        "slide_number": 8,
+        "title": "Go-To-Market & Growth Strategy",
+        "headline": "Distribusi Langsung di Titik Kritis Perawatan Pasien",
+        "bullet_points": [
+          "Pasien berada di ruang HD selama 4-5 jam per sesi (2-3 kali seminggu) dengan waktu luang tinggi untuk berinteraksi di smartphone.",
+          "Kolaborasi dengan Komunitas Pasien Cuci Darah Indonesia (KPCDI).",
+          "Kemitraan strategis dengan unit hemodialisis RS swasta dan farmasi renal."
+        ],
+        "visual_prompt": "Growth flywheel diagram connecting Patient, Caregiver, Community, and Nephrologist."
+      },
+      {
+        "slide_number": 9,
+        "title": "Financial Projections",
+        "headline": "Pertumbuhan Pendapatan Berkelanjutan dengan Margin Tinggi",
+        "bullet_points": [
+          "Tahun 1: 1.200 pelanggan B2C + 5 Klinik HD = Rp 408 Juta ARR.",
+          "Tahun 2: 6.500 pelanggan B2C + 25 Klinik HD = Rp 2,1 Miliar ARR.",
+          "Tahun 3: 22.000 pelanggan B2C + 80 Klinik HD = Rp 7,6 Miliar ARR.",
+          "Margin kotor di atas 80% karena efisiensi arsitektur PWA cloud."
+        ],
+        "visual_prompt": "3-Year Revenue Bar Chart showing exponential B2C and B2B SaaS growth."
+      },
+      {
+        "slide_number": 10,
+        "title": "Vision & Call to Action",
+        "headline": "Membangun Ekosistem Kesehatan Ginjal Masa Depan",
+        "bullet_points": [
+          "Membantu ribuan pasien GGK hidup lebih sehat, produktif, dan aman dari komplikasi mendadak.",
+          "Mengundang mitra strategis, nefrolog, dan klinik untuk bersama mewujudkan standar baru perawatan ginjal digital di Indonesia."
+        ],
+        "visual_prompt": "Inspiring closing image with product logo, contact info, and website URL."
+      }
+    ]
+  }
+}
