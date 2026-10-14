@@ -7,7 +7,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6366f1">
     <link rel="apple-touch-icon" href="/icon-192.png">
-    <link rel="stylesheet" href="/styles.css?v=4.0.0">
+    <link rel="stylesheet" href="/styles.css?v=5.0.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -82,13 +82,14 @@
             </div>
             
             <div class="tabs mt-3 mb-3">
-                <button id="tab-mentah" class="tab-btn active">Bahan Mentah</button>
+                <button id="tab-semua" class="tab-btn active">Semua</button>
+                <button id="tab-mentah" class="tab-btn">Bahan Mentah</button>
                 <button id="tab-olahan" class="tab-btn">Bahan Olahan</button>
             </div>
 
             <div class="form-group mt-3 relative">
-                <label for="search-input" id="search-label">Cari Bahan Mentah</label>
-                <input type="text" id="search-input" class="input-field" placeholder="Ketik nama bahan (min 2 huruf)..." autocomplete="off">
+                <label for="search-input" id="search-label">Cari Semua Bahan & Masakan</label>
+                <input type="text" id="search-input" class="input-field" placeholder="Ketik nama bahan/masakan (misal: kangkung)..." autocomplete="off">
                 <ul id="search-results" class="autocomplete-list hidden"></ul>
             </div>
             
@@ -259,6 +260,6 @@
         <button id="btn-update-app" class="btn btn-primary btn-sm" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Perbarui</button>
     </div>
 
-    <script src="/app.js?v=4.0.0"></script>
+    <script src="/app.js?v=5.0.0"></script>
 </body>
 </html>

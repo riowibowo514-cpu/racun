@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ggk-tracker-v4';
+const CACHE_NAME = 'ggk-tracker-v5';
 const ASSETS = [
     '/',
     '/index.html',

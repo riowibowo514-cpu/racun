@@ -49,6 +49,7 @@ const logList = document.getElementById('log-list');
 const logCount = document.getElementById('log-count');
 
 // --- Tab & Recipe DOM Elements ---
+const tabSemua = document.getElementById('tab-semua');
 const tabMentah = document.getElementById('tab-mentah');
 const tabOlahan = document.getElementById('tab-olahan');
 const btnOpenRecipe = document.getElementById('btn-open-recipe');
@@ -79,7 +80,7 @@ let userProfile = null;
 let dailyLogs = {};
 let selectedIngredient = null;
 let currentDateStr = "";
-let searchMode = "Mentah"; // "Mentah" or "Olahan"
+let searchMode = "Semua"; // "Semua", "Mentah", or "Olahan"
 
 // Recipe Builder State
 let currentRecipeItems = [];
@@ -301,19 +302,29 @@ function switchTab(mode) {
     selectedCard.classList.add('hidden');
     selectedIngredient = null;
     
-    if (mode === "Mentah") {
+    if (tabSemua) tabSemua.classList.remove('active');
+    tabMentah.classList.remove('active');
+    tabOlahan.classList.remove('active');
+
+    if (mode === "Semua") {
+        if (tabSemua) tabSemua.classList.add('active');
+        searchLabel.textContent = "Cari Semua Bahan & Masakan";
+        searchInput.placeholder = "Ketik nama bahan/masakan (misal: kangkung)...";
+        btnOpenRecipe.classList.remove('hidden');
+    } else if (mode === "Mentah") {
         tabMentah.classList.add('active');
-        tabOlahan.classList.remove('active');
         searchLabel.textContent = "Cari Bahan Mentah";
+        searchInput.placeholder = "Ketik nama bahan mentah...";
         btnOpenRecipe.classList.add('hidden');
     } else {
         tabOlahan.classList.add('active');
-        tabMentah.classList.remove('active');
         searchLabel.textContent = "Cari Masakan / Resep Olahan";
+        searchInput.placeholder = "Ketik nama masakan / resep...";
         btnOpenRecipe.classList.remove('hidden');
     }
 }
 
+if (tabSemua) tabSemua.addEventListener('click', () => switchTab("Semua"));
 tabMentah.addEventListener('click', () => switchTab("Mentah"));
 tabOlahan.addEventListener('click', () => switchTab("Olahan"));
 
@@ -332,26 +343,64 @@ searchInput.addEventListener('input', function() {
     let targetData = [];
     if (searchMode === "Mentah") {
         targetData = foodDatabase.filter(d => d.tipe === "Mentah");
-    } else {
+    } else if (searchMode === "Olahan") {
         // Combine Olahan from JSON + Custom User Foods
         const dbOlahan = foodDatabase.filter(d => d.tipe === "Olahan");
         targetData = [...customFoods, ...dbOlahan];
+    } else {
+        // "Semua": All food database + Custom foods
+        targetData = [...foodDatabase, ...customFoods];
     }
 
     const keywords = query.split(' ').filter(k => k.length > 0);
     const matched = targetData.filter(item => {
         const itemName = item.nama_bahan.toLowerCase();
         return keywords.every(kw => itemName.includes(kw));
-    }).slice(0, 10); // Limit to 10 results
+    });
 
-    if (matched.length > 0) {
+    // Smart Relevance Sorting
+    matched.sort((a, b) => {
+        const aName = a.nama_bahan.toLowerCase();
+        const bName = b.nama_bahan.toLowerCase();
+
+        // 1. Exact match
+        if (aName === query && bName !== query) return -1;
+        if (bName === query && aName !== query) return 1;
+
+        // 2. Starts with query (e.g. "kangkung..." vs "pelecing kangkung")
+        const aStarts = aName.startsWith(query);
+        const bStarts = bName.startsWith(query);
+        if (aStarts && !bStarts) return -1;
+        if (!aStarts && bStarts) return 1;
+
+        // 3. Prioritize raw/fresh/standard items containing "segar"
+        const aIsSegar = aName.includes("segar");
+        const bIsSegar = bName.includes("segar");
+        if (aIsSegar && !bIsSegar) return -1;
+        if (!aIsSegar && bIsSegar) return 1;
+
+        // 4. Shorter name length
+        if (Math.abs(aName.length - bName.length) > 5) {
+            return aName.length - bName.length;
+        }
+
+        // 5. Alphabetical
+        return aName.localeCompare(bName, 'id');
+    });
+
+    const displayResults = matched.slice(0, 15);
+
+    if (displayResults.length > 0) {
         searchResults.classList.remove('hidden');
-        matched.forEach(item => {
+        displayResults.forEach(item => {
             const li = document.createElement('li');
-            const isCustom = item.isCustom ? '<span style="color:var(--primary); font-size:0.7rem;">⭐ Resep Pribadi</span>' : '';
+            const isCustom = item.isCustom ? '<span style="color:var(--primary); font-size:0.7rem; font-weight:600;">⭐ Resep Pribadi</span>' : '';
+            const tipeBadge = item.tipe ? `<span class="badge ${item.tipe === 'Mentah' ? 'badge-mentah' : 'badge-olahan'}" style="font-size:0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">${item.tipe}</span>` : '';
             li.innerHTML = `
-                <div>${item.nama_bahan} ${isCustom}</div>
-                <span class="item-cat">${item.kelompok || "Masakan Olahan"}</span>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div><strong>${item.nama_bahan}</strong> ${tipeBadge} ${isCustom}</div>
+                </div>
+                <span class="item-cat">${item.kelompok || (item.tipe === "Olahan" ? "Masakan Olahan" : "Bahan Mentah")}</span>
             `;
             li.addEventListener('click', () => selectIngredient(item));
             searchResults.appendChild(li);
@@ -551,14 +600,33 @@ recipeSearchInput.addEventListener('input', function() {
     const matched = targetData.filter(item => {
         const itemName = item.nama_bahan.toLowerCase();
         return keywords.every(kw => itemName.includes(kw));
-    }).slice(0, 10);
+    });
 
-    if (matched.length > 0) {
+    // Smart Relevance Sorting
+    matched.sort((a, b) => {
+        const aName = a.nama_bahan.toLowerCase();
+        const bName = b.nama_bahan.toLowerCase();
+        if (aName === query && bName !== query) return -1;
+        if (bName === query && aName !== query) return 1;
+        const aStarts = aName.startsWith(query);
+        const bStarts = bName.startsWith(query);
+        if (aStarts && !bStarts) return -1;
+        if (!aStarts && bStarts) return 1;
+        const aIsSegar = aName.includes("segar");
+        const bIsSegar = bName.includes("segar");
+        if (aIsSegar && !bIsSegar) return -1;
+        if (!aIsSegar && bIsSegar) return 1;
+        return aName.localeCompare(bName, 'id');
+    });
+
+    const displayResults = matched.slice(0, 15);
+
+    if (displayResults.length > 0) {
         recipeSearchResults.classList.remove('hidden');
-        matched.forEach(item => {
+        displayResults.forEach(item => {
             const li = document.createElement('li');
             li.innerHTML = `
-                <div>${item.nama_bahan}</div>
+                <div><strong>${item.nama_bahan}</strong></div>
                 <span class="item-cat">${item.kelompok}</span>
             `;
             li.addEventListener('click', () => selectRecipeIngredient(item));
