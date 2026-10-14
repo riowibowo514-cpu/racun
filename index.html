@@ -16,8 +16,8 @@
         <header class="glass-panel">
             <div class="header-content">
                 <div>
-                    <h1>Pemantau Kalium & Fosfor</h1>
-                    <p class="subtitle">Khusus Penderita GGK</p>
+                    <h1>Pemantau Asupan GGK</h1>
+                    <p class="subtitle">Kalium, Fosfor, Natrium & Cairan</p>
                 </div>
                 <div>
                     <button id="btn-theme-toggle" class="btn btn-outline btn-sm" style="margin-right: 5px;">🌙</button>
@@ -51,6 +51,28 @@
                 </div>
                 <div id="fosfor-alert" class="alert hidden mt-2"></div>
             </div>
+
+            <div class="progress-container mt-4">
+                <div class="progress-header">
+                    <span class="font-semibold">Natrium</span>
+                    <span id="natrium-text" class="text-sm">0 / 0 mg</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="natrium-bar" class="progress-bar natrium-color"></div>
+                </div>
+                <div id="natrium-alert" class="alert hidden mt-2"></div>
+            </div>
+
+            <div class="progress-container mt-4">
+                <div class="progress-header">
+                    <span class="font-semibold">Cairan (Air)</span>
+                    <span id="air-text" class="text-sm">0 / 0 ml</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="air-bar" class="progress-bar air-color"></div>
+                </div>
+                <div id="air-alert" class="alert hidden mt-2"></div>
+            </div>
         </section>
 
         <!-- Form Tambah Asupan -->
@@ -77,7 +99,7 @@
                     <h3 id="sel-name">Nama Bahan</h3>
                     <span id="sel-category" class="badge">Kategori</span>
                 </div>
-                <div class="ingredient-stats mt-3">
+                <div class="ingredient-stats mt-3" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
                     <div class="stat-box">
                         <span class="stat-label">Kalium / 100g</span>
                         <span id="sel-kalium" class="stat-val font-semibold">0 mg</span>
@@ -86,9 +108,17 @@
                         <span class="stat-label">Fosfor / 100g</span>
                         <span id="sel-fosfor" class="stat-val font-semibold">0 mg</span>
                     </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Natrium / 100g</span>
+                        <span id="sel-natrium" class="stat-val font-semibold">0 mg</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Air / 100g</span>
+                        <span id="sel-air" class="stat-val font-semibold">0 ml</span>
+                    </div>
                 </div>
                 <div id="null-warning" class="alert alert-warning text-sm mt-3 hidden">
-                    ⚠ Data kandungan gizi tidak tersedia untuk bahan ini. Otomatis dihitung sebagai 0 mg.
+                    ⚠ Data kandungan gizi tidak lengkap untuk bahan ini. Otomatis dihitung sebagai 0.
                 </div>
 
                 <div class="form-group mt-3">
@@ -101,9 +131,11 @@
 
                 <div class="calculated-preview mt-3">
                     <span class="text-sm text-gray">Estimasi Asupan:</span> 
-                    <div class="preview-vals mt-1">
+                    <div class="preview-vals mt-1" style="display: flex; flex-wrap: wrap; gap: 12px;">
                         <span class="font-semibold kalium-text">K: <span id="preview-kalium">0</span> mg</span>
                         <span class="font-semibold fosfor-text">P: <span id="preview-fosfor">0</span> mg</span>
+                        <span class="font-semibold natrium-text">Na: <span id="preview-natrium">0</span> mg</span>
+                        <span class="font-semibold air-text">Air: <span id="preview-air">0</span> ml</span>
                     </div>
                 </div>
 
@@ -132,12 +164,22 @@
             
             <div class="form-group mt-4">
                 <label for="limit-kalium">Batas Kalium Harian (mg)</label>
-                <input type="number" id="limit-kalium" class="input-field" min="1" placeholder="Misal: 2000">
+                <input type="number" id="limit-kalium" class="input-field" min="1" placeholder="Misal: 2500">
             </div>
             
             <div class="form-group mt-3">
                 <label for="limit-fosfor">Batas Fosfor Harian (mg)</label>
                 <input type="number" id="limit-fosfor" class="input-field" min="1" placeholder="Misal: 800">
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="limit-natrium">Batas Natrium Harian (mg)</label>
+                <input type="number" id="limit-natrium" class="input-field" min="1" placeholder="Misal: 2000">
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="limit-air">Batas Cairan / Air Harian (ml / g)</label>
+                <input type="number" id="limit-air" class="input-field" min="1" placeholder="Misal: 1500">
             </div>
 
             <button id="btn-save-profile" class="btn btn-primary mt-5 w-full">Simpan Profil</button>
@@ -190,9 +232,11 @@
                 <div class="flex-between mt-2 border-t pt-2 border-gray-200" style="border-top: 1px solid #cbd5e1;">
                     <span class="text-sm text-gray">Estimasi Gizi (per 100g):</span>
                 </div>
-                <div class="flex-between mt-1">
+                <div class="flex-between mt-1" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
                     <span class="font-semibold kalium-text text-sm">Kalium: <span id="recipe-k-100">0</span> mg</span>
                     <span class="font-semibold fosfor-text text-sm">Fosfor: <span id="recipe-p-100">0</span> mg</span>
+                    <span class="font-semibold natrium-text text-sm">Natrium: <span id="recipe-na-100">0</span> mg</span>
+                    <span class="font-semibold air-text text-sm">Air: <span id="recipe-air-100">0</span> ml</span>
                 </div>
             </div>
 

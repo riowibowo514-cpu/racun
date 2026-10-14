@@ -5,6 +5,8 @@ const btnThemeToggle = document.getElementById('btn-theme-toggle');
 const btnSaveProfile = document.getElementById('btn-save-profile');
 const inputLimitKalium = document.getElementById('limit-kalium');
 const inputLimitFosfor = document.getElementById('limit-fosfor');
+const inputLimitNatrium = document.getElementById('limit-natrium');
+const inputLimitAir = document.getElementById('limit-air');
 
 const loadingOverlay = document.getElementById('loading-overlay');
 const currentDateEl = document.getElementById('current-date');
@@ -16,6 +18,14 @@ const fosforBar = document.getElementById('fosfor-bar');
 const kaliumAlert = document.getElementById('kalium-alert');
 const fosforAlert = document.getElementById('fosfor-alert');
 
+const natriumText = document.getElementById('natrium-text');
+const natriumBar = document.getElementById('natrium-bar');
+const natriumAlert = document.getElementById('natrium-alert');
+
+const airText = document.getElementById('air-text');
+const airBar = document.getElementById('air-bar');
+const airAlert = document.getElementById('air-alert');
+
 const searchLabel = document.getElementById('search-label');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
@@ -24,11 +34,15 @@ const selName = document.getElementById('sel-name');
 const selCategory = document.getElementById('sel-category');
 const selKalium = document.getElementById('sel-kalium');
 const selFosfor = document.getElementById('sel-fosfor');
+const selNatrium = document.getElementById('sel-natrium');
+const selAir = document.getElementById('sel-air');
 const nullWarning = document.getElementById('null-warning');
 
 const portionInput = document.getElementById('portion-input');
 const previewKalium = document.getElementById('preview-kalium');
 const previewFosfor = document.getElementById('preview-fosfor');
+const previewNatrium = document.getElementById('preview-natrium');
+const previewAir = document.getElementById('preview-air');
 const btnAddEntry = document.getElementById('btn-add-entry');
 
 const logList = document.getElementById('log-list');
@@ -55,6 +69,8 @@ const recipeEmpty = document.getElementById('recipe-empty');
 const recipeTotalWeight = document.getElementById('recipe-total-weight');
 const recipeK100 = document.getElementById('recipe-k-100');
 const recipeP100 = document.getElementById('recipe-p-100');
+const recipeNa100 = document.getElementById('recipe-na-100');
+const recipeAir100 = document.getElementById('recipe-air-100');
 
 // --- State Variables ---
 let foodDatabase = [];
@@ -115,8 +131,12 @@ function loadLocalStorage() {
     const savedProfile = localStorage.getItem('ggk_user_profile');
     if (savedProfile) {
         userProfile = JSON.parse(savedProfile);
+        if (!userProfile.natriumLimit) userProfile.natriumLimit = 2000;
+        if (!userProfile.airLimit) userProfile.airLimit = 1500;
         inputLimitKalium.value = userProfile.kaliumLimit;
         inputLimitFosfor.value = userProfile.fosforLimit;
+        inputLimitNatrium.value = userProfile.natriumLimit;
+        inputLimitAir.value = userProfile.airLimit;
     }
 
     const savedLogs = localStorage.getItem('ggk_daily_logs');
@@ -139,13 +159,15 @@ function loadLocalStorage() {
 function saveProfile() {
     const kLimit = parseInt(inputLimitKalium.value);
     const pLimit = parseInt(inputLimitFosfor.value);
+    const naLimit = parseInt(inputLimitNatrium.value) || 2000;
+    const airLimit = parseInt(inputLimitAir.value) || 1500;
 
-    if (!kLimit || !pLimit || kLimit <= 0 || pLimit <= 0) {
-        alert("Harap masukkan angka yang valid untuk batas harian.");
+    if (!kLimit || !pLimit || kLimit <= 0 || pLimit <= 0 || naLimit <= 0 || airLimit <= 0) {
+        alert("Harap masukkan angka yang valid untuk semua batas harian.");
         return;
     }
 
-    userProfile = { kaliumLimit: kLimit, fosforLimit: pLimit };
+    userProfile = { kaliumLimit: kLimit, fosforLimit: pLimit, natriumLimit: naLimit, airLimit: airLimit };
     localStorage.setItem('ggk_user_profile', JSON.stringify(userProfile));
     modalProfile.classList.add('hidden');
     updateDashboard();
@@ -167,27 +189,42 @@ function updateDashboard() {
     const todayLogs = dailyLogs[currentDateStr] || [];
     let totalKalium = 0;
     let totalFosfor = 0;
+    let totalNatrium = 0;
+    let totalAir = 0;
 
     todayLogs.forEach(log => {
-        totalKalium += log.kalium_konsumsi;
-        totalFosfor += log.fosfor_konsumsi;
+        totalKalium += log.kalium_konsumsi || 0;
+        totalFosfor += log.fosfor_konsumsi || 0;
+        totalNatrium += log.natrium_konsumsi || 0;
+        totalAir += log.air_konsumsi || 0;
     });
+
+    const naLimit = userProfile.natriumLimit || 2000;
+    const airLimit = userProfile.airLimit || 1500;
 
     // Update Text
     kaliumText.textContent = `${totalKalium.toFixed(1)} / ${userProfile.kaliumLimit} mg`;
     fosforText.textContent = `${totalFosfor.toFixed(1)} / ${userProfile.fosforLimit} mg`;
+    natriumText.textContent = `${totalNatrium.toFixed(1)} / ${naLimit} mg`;
+    airText.textContent = `${totalAir.toFixed(1)} / ${airLimit} ml`;
 
     // Update Progress Bars
     let kPercent = (totalKalium / userProfile.kaliumLimit) * 100;
     let pPercent = (totalFosfor / userProfile.fosforLimit) * 100;
+    let naPercent = (totalNatrium / naLimit) * 100;
+    let airPercent = (totalAir / airLimit) * 100;
     
     // Cap at 100% for visual width
     kaliumBar.style.width = `${Math.min(kPercent, 100)}%`;
     fosforBar.style.width = `${Math.min(pPercent, 100)}%`;
+    natriumBar.style.width = `${Math.min(naPercent, 100)}%`;
+    airBar.style.width = `${Math.min(airPercent, 100)}%`;
 
     // Color and Alert Logic
     updateProgressBarState(kPercent, kaliumBar, kaliumAlert, "Kalium");
     updateProgressBarState(pPercent, fosforBar, fosforAlert, "Fosfor");
+    updateProgressBarState(naPercent, natriumBar, natriumAlert, "Natrium");
+    updateProgressBarState(airPercent, airBar, airAlert, "Cairan");
 
     renderLogList(todayLogs);
 }
@@ -212,6 +249,8 @@ function updateProgressBarState(percent, barElement, alertElement, nutrientName)
         // Reset to original color via CSS variables
         if(nutrientName === "Kalium") barElement.style.backgroundColor = 'var(--kalium-color)';
         if(nutrientName === "Fosfor") barElement.style.backgroundColor = 'var(--fosfor-color)';
+        if(nutrientName === "Natrium") barElement.style.backgroundColor = 'var(--natrium-color)';
+        if(nutrientName === "Cairan") barElement.style.backgroundColor = 'var(--air-color)';
     }
 }
 
@@ -230,12 +269,18 @@ function renderLogList(logs) {
     reversedLogs.forEach(log => {
         const li = document.createElement('li');
         li.className = 'log-item';
+        const kVal = (log.kalium_konsumsi || 0).toFixed(1);
+        const pVal = (log.fosfor_konsumsi || 0).toFixed(1);
+        const naVal = (log.natrium_konsumsi || 0).toFixed(1);
+        const airVal = (log.air_konsumsi || 0).toFixed(1);
         li.innerHTML = `
             <div class="log-item-info">
                 <div class="log-item-name">${log.nama_bahan} <span class="text-sm font-normal text-gray">(${log.porsi_g}g)</span></div>
-                <div class="log-item-details">
-                    <span class="kalium-text font-semibold">K: ${log.kalium_konsumsi.toFixed(1)} mg</span> | 
-                    <span class="fosfor-text font-semibold">P: ${log.fosfor_konsumsi.toFixed(1)} mg</span>
+                <div class="log-item-details" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                    <span class="kalium-text font-semibold">K: ${kVal} mg</span>
+                    <span class="fosfor-text font-semibold">P: ${pVal} mg</span>
+                    <span class="natrium-text font-semibold">Na: ${naVal} mg</span>
+                    <span class="air-text font-semibold">Air: ${airVal} ml</span>
                 </div>
             </div>
             <div>
@@ -336,12 +381,16 @@ function selectIngredient(item) {
     selName.textContent = item.nama_bahan;
     selCategory.textContent = item.kelompok || "Masakan Olahan";
     
-    // Handle null values
+    // Handle values
     const kVal = item.kalium_mg;
     const pVal = item.fosfor_mg;
+    const naVal = item.natrium_mg;
+    const airVal = item.air_g;
     
     selKalium.textContent = kVal !== null && kVal !== undefined ? `${kVal.toFixed(1)} mg` : 'N/A';
     selFosfor.textContent = pVal !== null && pVal !== undefined ? `${pVal.toFixed(1)} mg` : 'N/A';
+    selNatrium.textContent = naVal !== null && naVal !== undefined ? `${naVal.toFixed(1)} mg` : 'N/A';
+    selAir.textContent = airVal !== null && airVal !== undefined ? `${airVal.toFixed(1)} ml` : 'N/A';
 
     if (kVal === null || pVal === null || kVal === undefined || pVal === undefined) {
         nullWarning.classList.remove('hidden');
@@ -353,6 +402,8 @@ function selectIngredient(item) {
     portionInput.value = '';
     previewKalium.textContent = '0';
     previewFosfor.textContent = '0';
+    previewNatrium.textContent = '0';
+    previewAir.textContent = '0';
     
     // Focus portion input
     portionInput.focus();
@@ -368,12 +419,18 @@ portionInput.addEventListener('input', function() {
     // Treat null as 0 for calculation
     const kBase = selectedIngredient.kalium_mg || 0;
     const pBase = selectedIngredient.fosfor_mg || 0;
+    const naBase = selectedIngredient.natrium_mg || 0;
+    const airBase = selectedIngredient.air_g || 0;
 
     const kTotal = (kBase / 100) * portion;
     const pTotal = (pBase / 100) * portion;
+    const naTotal = (naBase / 100) * portion;
+    const airTotal = (airBase / 100) * portion;
 
     previewKalium.textContent = kTotal.toFixed(1);
     previewFosfor.textContent = pTotal.toFixed(1);
+    previewNatrium.textContent = naTotal.toFixed(1);
+    previewAir.textContent = airTotal.toFixed(1);
 });
 
 
@@ -389,9 +446,13 @@ btnAddEntry.addEventListener('click', () => {
 
     const kBase = selectedIngredient.kalium_mg || 0;
     const pBase = selectedIngredient.fosfor_mg || 0;
+    const naBase = selectedIngredient.natrium_mg || 0;
+    const airBase = selectedIngredient.air_g || 0;
 
     const kTotal = (kBase / 100) * portion;
     const pTotal = (pBase / 100) * portion;
+    const naTotal = (naBase / 100) * portion;
+    const airTotal = (airBase / 100) * portion;
 
     const entry = {
         id: Date.now().toString(),
@@ -400,6 +461,8 @@ btnAddEntry.addEventListener('click', () => {
         porsi_g: portion,
         kalium_konsumsi: kTotal,
         fosfor_konsumsi: pTotal,
+        natrium_konsumsi: naTotal,
+        air_konsumsi: airTotal,
         timestamp: new Date().toISOString()
     };
 
@@ -434,10 +497,14 @@ window.editEntry = function(id) {
         if (portion > 0) {
             const kBase = (log.kalium_konsumsi / log.porsi_g) * 100;
             const pBase = (log.fosfor_konsumsi / log.porsi_g) * 100;
+            const naBase = ((log.natrium_konsumsi || 0) / log.porsi_g) * 100;
+            const airBase = ((log.air_konsumsi || 0) / log.porsi_g) * 100;
             
             log.porsi_g = portion;
             log.kalium_konsumsi = (kBase / 100) * portion;
             log.fosfor_konsumsi = (pBase / 100) * portion;
+            log.natrium_konsumsi = (naBase / 100) * portion;
+            log.air_konsumsi = (airBase / 100) * portion;
             
             saveLogs();
             updateDashboard();
@@ -524,16 +591,22 @@ btnAddRecipeItem.addEventListener('click', () => {
 
     const kBase = recipeSelectedIngredient.kalium_mg || 0;
     const pBase = recipeSelectedIngredient.fosfor_mg || 0;
+    const naBase = recipeSelectedIngredient.natrium_mg || 0;
+    const airBase = recipeSelectedIngredient.air_g || 0;
 
     const itemTotalK = (kBase / 100) * portion;
     const itemTotalP = (pBase / 100) * portion;
+    const itemTotalNa = (naBase / 100) * portion;
+    const itemTotalAir = (airBase / 100) * portion;
 
     currentRecipeItems.push({
         id: Date.now().toString(),
         nama_bahan: recipeSelectedIngredient.nama_bahan,
         porsi_g: portion,
         kalium_total: itemTotalK,
-        fosfor_total: itemTotalP
+        fosfor_total: itemTotalP,
+        natrium_total: itemTotalNa,
+        air_total: itemTotalAir
     });
 
     // Reset Add Input
@@ -549,6 +622,8 @@ function renderRecipeItems() {
     let totalWeight = 0;
     let totalK = 0;
     let totalP = 0;
+    let totalNa = 0;
+    let totalAir = 0;
 
     if (currentRecipeItems.length === 0) {
         recipeEmpty.style.display = 'block';
@@ -556,8 +631,10 @@ function renderRecipeItems() {
         recipeEmpty.style.display = 'none';
         currentRecipeItems.forEach(item => {
             totalWeight += item.porsi_g;
-            totalK += item.kalium_total;
-            totalP += item.fosfor_total;
+            totalK += item.kalium_total || 0;
+            totalP += item.fosfor_total || 0;
+            totalNa += item.natrium_total || 0;
+            totalAir += item.air_total || 0;
 
             const li = document.createElement('li');
             li.className = 'log-item py-2';
@@ -578,11 +655,17 @@ function renderRecipeItems() {
     if (totalWeight > 0) {
         const kPer100 = (totalK / totalWeight) * 100;
         const pPer100 = (totalP / totalWeight) * 100;
+        const naPer100 = (totalNa / totalWeight) * 100;
+        const airPer100 = (totalAir / totalWeight) * 100;
         recipeK100.textContent = kPer100.toFixed(1);
         recipeP100.textContent = pPer100.toFixed(1);
+        recipeNa100.textContent = naPer100.toFixed(1);
+        recipeAir100.textContent = airPer100.toFixed(1);
     } else {
         recipeK100.textContent = '0';
         recipeP100.textContent = '0';
+        recipeNa100.textContent = '0';
+        recipeAir100.textContent = '0';
     }
 }
 
@@ -604,6 +687,8 @@ btnSaveRecipe.addEventListener('click', () => {
 
     const kPer100 = parseFloat(recipeK100.textContent);
     const pPer100 = parseFloat(recipeP100.textContent);
+    const naPer100 = parseFloat(recipeNa100.textContent);
+    const airPer100 = parseFloat(recipeAir100.textContent);
 
     const newRecipe = {
         kode: "CUSTOM_" + Date.now(),
@@ -612,7 +697,9 @@ btnSaveRecipe.addEventListener('click', () => {
         tipe: "Olahan",
         isCustom: true,
         kalium_mg: kPer100,
-        fosfor_mg: pPer100
+        fosfor_mg: pPer100,
+        natrium_mg: naPer100,
+        air_g: airPer100
     };
 
     customFoods.push(newRecipe);
@@ -641,6 +728,8 @@ btnEditProfile.addEventListener('click', () => {
     if (userProfile) {
         inputLimitKalium.value = userProfile.kaliumLimit;
         inputLimitFosfor.value = userProfile.fosforLimit;
+        inputLimitNatrium.value = userProfile.natriumLimit || 2000;
+        inputLimitAir.value = userProfile.airLimit || 1500;
     }
 });
 
