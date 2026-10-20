@@ -152,6 +152,8 @@ const tabMentah = document.getElementById('tab-mentah');
 const tabOlahan = document.getElementById('tab-olahan');
 const btnOpenRecipe = document.getElementById('btn-open-recipe');
 const recipeModal = document.getElementById('recipe-modal');
+const recipeModalTitle = document.getElementById('recipe-modal-title');
+const btnCloseRecipeX = document.getElementById('btn-close-recipe-x');
 const btnCancelRecipe = document.getElementById('btn-cancel-recipe');
 const btnSaveRecipe = document.getElementById('btn-save-recipe');
 
@@ -165,11 +167,47 @@ const btnAddRecipeItem = document.getElementById('btn-add-recipe-item');
 
 const recipeItemsList = document.getElementById('recipe-items-list');
 const recipeEmpty = document.getElementById('recipe-empty');
+const recipeRawWeightEl = document.getElementById('recipe-raw-weight');
+const recipeCookingMethod = document.getElementById('recipe-cooking-method');
+const cookingMethodHint = document.getElementById('cooking-method-hint');
+const recipeFinalWeightInput = document.getElementById('recipe-final-weight');
+const btnCopyRawWeight = document.getElementById('btn-copy-raw-weight');
+const finalWeightMoistureHint = document.getElementById('final-weight-moisture-hint');
 const recipeTotalWeight = document.getElementById('recipe-total-weight');
 const recipeK100 = document.getElementById('recipe-k-100');
 const recipeP100 = document.getElementById('recipe-p-100');
 const recipeNa100 = document.getElementById('recipe-na-100');
 const recipeAir100 = document.getElementById('recipe-air-100');
+
+const selCookingBadge = document.getElementById('sel-cooking-badge');
+const btnEditCustomRecipe = document.getElementById('btn-edit-custom-recipe');
+const legacyRecipeWarning = document.getElementById('legacy-recipe-warning');
+const btnFixLegacyRecipe = document.getElementById('btn-fix-legacy-recipe');
+
+// Water-Soluble Nutrient Retention Factors (USDA & Renal Dietetics Leaching Guidelines)
+const COOKING_RETENTION = {
+    STANDAR: {
+        label: "Normal (Tanpa Buang Air)",
+        kFactor: 1.0,
+        pFactor: 1.0,
+        naFactor: 1.0,
+        hint: "💡 Seluruh mineral bahan mentah bertahan di masakan (Retensi Kalium 100%, Fosfor 100%)."
+    },
+    REBUS_BUANG_1X: {
+        label: "Rebus & Buang Air 1x (-35% K)",
+        kFactor: 0.65,
+        pFactor: 0.85,
+        naFactor: 0.70,
+        hint: "💧 Peluruhan ke air rebusan yang dibuang mengurangi Kalium ~35%, Fosfor ~15%, dan Natrium ~30%."
+    },
+    REBUS_BUANG_2X: {
+        label: "Teknik GGK: Rebus Buang Air 2x (-50% K)",
+        kFactor: 0.50,
+        pFactor: 0.80,
+        naFactor: 0.60,
+        hint: "♨️ Teknik leaching/double-boiling GGK meluruhkan Kalium ~50%, Fosfor ~20%, dan Natrium ~40% ke air yang dibuang."
+    }
+};
 
 // --- State Variables ---
 let foodDatabase = [];
@@ -183,6 +221,7 @@ let searchMode = "Semua"; // "Semua", "Mentah", or "Olahan"
 // Recipe Builder State
 let currentRecipeItems = [];
 let recipeSelectedIngredient = null;
+let editingRecipeCode = null;
 
 
 // --- Initialization ---
@@ -993,11 +1032,13 @@ searchInput.addEventListener('input', function() {
         searchResults.classList.remove('hidden');
         displayResults.forEach(item => {
             const li = document.createElement('li');
+            const isLegacyRecipe = item.isCustom && (!item.berat_akhir_g || item.berat_akhir_g <= 0);
             const isCustom = item.isCustom ? '<span style="color:var(--primary); font-size:0.7rem; font-weight:600;">⭐ Resep Pribadi</span>' : '';
+            const legacyTag = isLegacyRecipe ? '<span class="badge" style="background:#fef3c7; color:#b45309; font-size:0.63rem; margin-left:4px;">⚠ Berat akhir belum diisi</span>' : '';
             const tipeBadge = item.tipe ? `<span class="badge ${item.tipe === 'Mentah' ? 'badge-mentah' : 'badge-olahan'}" style="font-size:0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">${item.tipe}</span>` : '';
             li.innerHTML = `
-                <div style="display: flex; align-items: center; justify-content: space-between;">
-                    <div><strong>${item.nama_bahan}</strong> ${tipeBadge} ${isCustom}</div>
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
+                    <div><strong>${item.nama_bahan}</strong> ${tipeBadge} ${isCustom} ${legacyTag}</div>
                 </div>
                 <span class="item-cat">${item.kelompok || (item.tipe === "Olahan" ? "Masakan Olahan" : "Bahan Mentah")}</span>
             `;
@@ -1028,6 +1069,27 @@ function selectIngredient(item) {
 
     selName.textContent = item.nama_bahan;
     selCategory.textContent = item.kelompok || "Masakan Olahan";
+
+    // Handle Custom Recipe Badges & Legacy Warning
+    if (item.isCustom) {
+        if (btnEditCustomRecipe) btnEditCustomRecipe.classList.remove('hidden');
+        const hasFinalWeight = item.berat_akhir_g && item.berat_akhir_g > 0;
+        if (!hasFinalWeight) {
+            if (legacyRecipeWarning) legacyRecipeWarning.classList.remove('hidden');
+            if (selCookingBadge) selCookingBadge.classList.add('hidden');
+        } else {
+            if (legacyRecipeWarning) legacyRecipeWarning.classList.add('hidden');
+            if (selCookingBadge) {
+                const methodInfo = COOKING_RETENTION[item.cooking_method || 'STANDAR'] || COOKING_RETENTION.STANDAR;
+                selCookingBadge.textContent = `⚖️ Matang: ${item.berat_akhir_g}g • ${methodInfo.label}`;
+                selCookingBadge.classList.remove('hidden');
+            }
+        }
+    } else {
+        if (btnEditCustomRecipe) btnEditCustomRecipe.classList.add('hidden');
+        if (legacyRecipeWarning) legacyRecipeWarning.classList.add('hidden');
+        if (selCookingBadge) selCookingBadge.classList.add('hidden');
+    }
     
     // Handle values
     const kVal = item.kalium_mg;
@@ -1163,7 +1225,7 @@ window.editEntry = function(id) {
 };
 
 
-// --- Recipe Builder Logic ---
+// --- Recipe Builder Logic (Phase 1: Final Cooked Weight + Water-Soluble Nutrient Retention) ---
 btnOpenRecipe.addEventListener('click', () => {
     recipeModal.classList.remove('hidden');
     resetRecipeBuilder();
@@ -1173,15 +1235,105 @@ btnCancelRecipe.addEventListener('click', () => {
     recipeModal.classList.add('hidden');
 });
 
+if (btnCloseRecipeX) {
+    btnCloseRecipeX.addEventListener('click', () => {
+        recipeModal.classList.add('hidden');
+    });
+}
+
+if (btnEditCustomRecipe) {
+    btnEditCustomRecipe.addEventListener('click', () => {
+        if (selectedIngredient && selectedIngredient.isCustom) {
+            openEditRecipeModal(selectedIngredient);
+        }
+    });
+}
+
+if (btnFixLegacyRecipe) {
+    btnFixLegacyRecipe.addEventListener('click', () => {
+        if (selectedIngredient && selectedIngredient.isCustom) {
+            openEditRecipeModal(selectedIngredient);
+        }
+    });
+}
+
 function resetRecipeBuilder() {
+    editingRecipeCode = null;
+    if (recipeModalTitle) recipeModalTitle.textContent = "Buat Resep Olahan";
     recipeNameInput.value = '';
     recipeSearchInput.value = '';
     recipeSearchResults.classList.add('hidden');
     recipeSelectedCard.classList.add('hidden');
     recipePortionInput.value = '';
+    if (recipeCookingMethod) recipeCookingMethod.value = 'STANDAR';
+    if (recipeFinalWeightInput) recipeFinalWeightInput.value = '';
     currentRecipeItems = [];
     recipeSelectedIngredient = null;
     renderRecipeItems();
+}
+
+function openEditRecipeModal(recipe) {
+    editingRecipeCode = recipe.kode;
+    recipeModal.classList.remove('hidden');
+    if (recipeModalTitle) recipeModalTitle.textContent = "Lengkapi / Edit Resep Pribadi";
+    recipeNameInput.value = recipe.nama_bahan || '';
+    recipeSearchInput.value = '';
+    recipeSearchResults.classList.add('hidden');
+    recipeSelectedCard.classList.add('hidden');
+    recipePortionInput.value = '';
+
+    if (recipeCookingMethod) {
+        recipeCookingMethod.value = recipe.cooking_method || 'STANDAR';
+    }
+
+    if (Array.isArray(recipe.ingredients) && recipe.ingredients.length > 0) {
+        currentRecipeItems = recipe.ingredients.map(ing => ({ ...ing }));
+    } else {
+        // Legacy recipe created before ingredients array was stored: reconstruct a 100g base item
+        const fallbackWeight = recipe.berat_mentah_g || 100;
+        currentRecipeItems = [{
+            id: Date.now().toString(),
+            nama_bahan: `${recipe.nama_bahan} (Komposisi Awal)`,
+            porsi_g: fallbackWeight,
+            kalium_total: ((recipe.kalium_mg || 0) / 100) * fallbackWeight,
+            fosfor_total: ((recipe.fosfor_mg || 0) / 100) * fallbackWeight,
+            natrium_total: ((recipe.natrium_mg || 0) / 100) * fallbackWeight,
+            air_total: ((recipe.air_g || 0) / 100) * fallbackWeight
+        }];
+    }
+
+    if (recipeFinalWeightInput) {
+        recipeFinalWeightInput.value = (recipe.berat_akhir_g && recipe.berat_akhir_g > 0) ? recipe.berat_akhir_g : '';
+    }
+
+    renderRecipeItems();
+    if (recipeFinalWeightInput && (!recipe.berat_akhir_g || recipe.berat_akhir_g <= 0)) {
+        recipeFinalWeightInput.focus();
+    }
+}
+
+if (recipeCookingMethod) {
+    recipeCookingMethod.addEventListener('change', () => {
+        renderRecipeItems();
+    });
+}
+
+if (recipeFinalWeightInput) {
+    recipeFinalWeightInput.addEventListener('input', () => {
+        renderRecipeItems();
+    });
+}
+
+if (btnCopyRawWeight) {
+    btnCopyRawWeight.addEventListener('click', () => {
+        const rawWeight = currentRecipeItems.reduce((acc, item) => acc + (item.porsi_g || 0), 0);
+        if (rawWeight > 0 && recipeFinalWeightInput) {
+            recipeFinalWeightInput.value = Math.round(rawWeight);
+            renderRecipeItems();
+        } else {
+            alert("Tambahkan bahan mentah terlebih dahulu.");
+        }
+    });
 }
 
 recipeSearchInput.addEventListener('input', function() {
@@ -1286,22 +1438,22 @@ btnAddRecipeItem.addEventListener('click', () => {
 
 function renderRecipeItems() {
     recipeItemsList.innerHTML = '';
-    let totalWeight = 0;
-    let totalK = 0;
-    let totalP = 0;
-    let totalNa = 0;
-    let totalAir = 0;
+    let totalRawWeight = 0;
+    let rawTotalK = 0;
+    let rawTotalP = 0;
+    let rawTotalNa = 0;
+    let rawTotalAir = 0;
 
     if (currentRecipeItems.length === 0) {
         recipeEmpty.style.display = 'block';
     } else {
         recipeEmpty.style.display = 'none';
         currentRecipeItems.forEach(item => {
-            totalWeight += item.porsi_g;
-            totalK += item.kalium_total || 0;
-            totalP += item.fosfor_total || 0;
-            totalNa += item.natrium_total || 0;
-            totalAir += item.air_total || 0;
+            totalRawWeight += item.porsi_g;
+            rawTotalK += item.kalium_total || 0;
+            rawTotalP += item.fosfor_total || 0;
+            rawTotalNa += item.natrium_total || 0;
+            rawTotalAir += item.air_total || 0;
 
             const li = document.createElement('li');
             li.className = 'log-item py-2';
@@ -1316,23 +1468,58 @@ function renderRecipeItems() {
         });
     }
 
-    recipeTotalWeight.textContent = totalWeight.toString();
-    
-    // Calculate per 100g for the final recipe
-    if (totalWeight > 0) {
-        const kPer100 = (totalK / totalWeight) * 100;
-        const pPer100 = (totalP / totalWeight) * 100;
-        const naPer100 = (totalNa / totalWeight) * 100;
-        const airPer100 = (totalAir / totalWeight) * 100;
+    if (recipeRawWeightEl) recipeRawWeightEl.textContent = totalRawWeight.toFixed(0);
+
+    // 1. Apply Water-Soluble Nutrient Retention Factor (Leaching)
+    const methodKey = (recipeCookingMethod && recipeCookingMethod.value) ? recipeCookingMethod.value : 'STANDAR';
+    const retention = COOKING_RETENTION[methodKey] || COOKING_RETENTION.STANDAR;
+    if (cookingMethodHint) cookingMethodHint.textContent = retention.hint;
+
+    const retainedTotalK = rawTotalK * retention.kFactor;
+    const retainedTotalP = rawTotalP * retention.pFactor;
+    const retainedTotalNa = rawTotalNa * retention.naFactor;
+
+    // 2. Final Cooked Weight & Moisture Change Calculation
+    const finalWeightVal = recipeFinalWeightInput ? parseFloat(recipeFinalWeightInput.value) : 0;
+    const effectiveFinalWeight = (finalWeightVal && finalWeightVal > 0) ? finalWeightVal : 0;
+
+    recipeTotalWeight.textContent = effectiveFinalWeight > 0 ? effectiveFinalWeight.toString() : "0 (Belum diisi)";
+
+    // Calculate physical water content after cooking (moisture loss via evaporation or gain via broth/boiling)
+    if (totalRawWeight > 0 && effectiveFinalWeight > 0) {
+        const weightDelta = effectiveFinalWeight - totalRawWeight;
+        // Dry matter cannot exceed final weight; water adjusts by weightDelta
+        let cookedTotalAir = rawTotalAir + weightDelta;
+        // Clamp water between 2% of cooked weight (crispy/dry) and 98% of cooked weight (clear soup)
+        cookedTotalAir = Math.max(effectiveFinalWeight * 0.02, Math.min(effectiveFinalWeight * 0.98, cookedTotalAir));
+
+        const kPer100 = (retainedTotalK / effectiveFinalWeight) * 100;
+        const pPer100 = (retainedTotalP / effectiveFinalWeight) * 100;
+        const naPer100 = (retainedTotalNa / effectiveFinalWeight) * 100;
+        const airPer100 = (cookedTotalAir / effectiveFinalWeight) * 100;
+
         recipeK100.textContent = kPer100.toFixed(1);
         recipeP100.textContent = pPer100.toFixed(1);
         recipeNa100.textContent = naPer100.toFixed(1);
         recipeAir100.textContent = airPer100.toFixed(1);
+
+        if (finalWeightMoistureHint) {
+            if (weightDelta < -1) {
+                finalWeightMoistureHint.innerHTML = `🔥 Menyusut <strong>${Math.abs(weightDelta).toFixed(0)}g</strong> (penguapan air). Mineral per 100g menjadi lebih padat.`;
+            } else if (weightDelta > 1) {
+                finalWeightMoistureHint.innerHTML = `💧 Bertambah <strong>+${weightDelta.toFixed(0)}g</strong> (penyerapan air/kuah). Mineral per 100g menjadi lebih encer.`;
+            } else {
+                finalWeightMoistureHint.textContent = `⚖️ Berat matang sama dengan berat total bahan mentah.`;
+            }
+        }
     } else {
         recipeK100.textContent = '0';
         recipeP100.textContent = '0';
         recipeNa100.textContent = '0';
         recipeAir100.textContent = '0';
+        if (finalWeightMoistureHint) {
+            finalWeightMoistureHint.textContent = `Masukkan berat akhir masakan matang (> 0 gram) untuk menghitung gizi per 100g.`;
+        }
     }
 }
 
@@ -1345,6 +1532,7 @@ btnSaveRecipe.addEventListener('click', () => {
     const name = recipeNameInput.value.trim();
     if (!name) {
         alert("Harap masukkan nama masakan.");
+        recipeNameInput.focus();
         return;
     }
     if (currentRecipeItems.length === 0) {
@@ -1352,33 +1540,56 @@ btnSaveRecipe.addEventListener('click', () => {
         return;
     }
 
+    const finalWeight = recipeFinalWeightInput ? parseFloat(recipeFinalWeightInput.value) : 0;
+    if (!finalWeight || finalWeight <= 0) {
+        alert("Harap isi 'Berat Akhir Masakan Matang (gram)' dengan angka lebih dari 0 agar gizi per 100g dapat dihitung secara akurat.");
+        if (recipeFinalWeightInput) recipeFinalWeightInput.focus();
+        return;
+    }
+
+    const totalRawWeight = currentRecipeItems.reduce((acc, item) => acc + (item.porsi_g || 0), 0);
+    const methodKey = (recipeCookingMethod && recipeCookingMethod.value) ? recipeCookingMethod.value : 'STANDAR';
+
     const kPer100 = parseFloat(recipeK100.textContent);
     const pPer100 = parseFloat(recipeP100.textContent);
     const naPer100 = parseFloat(recipeNa100.textContent);
     const airPer100 = parseFloat(recipeAir100.textContent);
 
-    const newRecipe = {
-        kode: "CUSTOM_" + Date.now(),
+    const recipeObj = {
+        kode: editingRecipeCode || ("CUSTOM_" + Date.now()),
         nama_bahan: name,
         kelompok: "Masakan Olahan (Custom)",
         tipe: "Olahan",
         isCustom: true,
+        cooking_method: methodKey,
+        berat_mentah_g: totalRawWeight,
+        berat_akhir_g: finalWeight,
+        ingredients: currentRecipeItems.map(i => ({ ...i })),
         kalium_mg: kPer100,
         fosfor_mg: pPer100,
         natrium_mg: naPer100,
         air_g: airPer100
     };
 
-    customFoods.push(newRecipe);
+    if (editingRecipeCode) {
+        const idx = customFoods.findIndex(f => f.kode === editingRecipeCode);
+        if (idx !== -1) {
+            customFoods[idx] = recipeObj;
+        } else {
+            customFoods.push(recipeObj);
+        }
+    } else {
+        customFoods.push(recipeObj);
+    }
+
     saveCustomFoods();
     
-    alert(`Resep "${name}" berhasil disimpan!`);
+    alert(`✅ Resep "${name}" berhasil disimpan (Berat akhir: ${finalWeight}g)!`);
     recipeModal.classList.add('hidden');
     
-    // Switch to Olahan tab and pre-fill search
+    // Switch to Olahan tab and select the updated/new recipe immediately
     switchTab("Olahan");
-    searchInput.value = name;
-    searchInput.dispatchEvent(new Event('input'));
+    selectIngredient(recipeObj);
 });
 
 

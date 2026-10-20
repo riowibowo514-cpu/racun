@@ -7,7 +7,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6366f1">
     <link rel="apple-touch-icon" href="/icon-192.png">
-    <link rel="stylesheet" href="/styles.css?v=6.2.0">
+    <link rel="stylesheet" href="/styles.css?v=6.3.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -159,24 +159,38 @@
 
             <div id="selected-ingredient-card" class="ingredient-card hidden mt-3">
                 <div class="ingredient-header">
-                    <h3 id="sel-name">Nama Bahan</h3>
-                    <span id="sel-category" class="badge">Kategori</span>
+                    <div>
+                        <h3 id="sel-name">Nama Bahan</h3>
+                        <span id="sel-cooking-badge" class="badge hidden mt-1" style="display: inline-block; font-size: 0.68rem; background: #e0f2fe; color: #0369a1;"></span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <button type="button" id="btn-edit-custom-recipe" class="btn-warning-sm hidden" style="padding: 3px 8px; font-size: 0.72rem; margin-right: 0;">✏️ Edit Resep</button>
+                        <span id="sel-category" class="badge">Kategori</span>
+                    </div>
+                </div>
+                <div id="legacy-recipe-warning" class="alert alert-warning text-sm mt-3 hidden" style="display: flex; flex-direction: column; gap: 6px;">
+                    <div>
+                        <strong>⚠ Berat akhir belum diisi:</strong> Resep lama ini masih menggunakan jumlah berat bahan mentah sebagai cadangan.
+                    </div>
+                    <button type="button" id="btn-fix-legacy-recipe" class="btn btn-outline btn-sm" style="align-self: flex-start; padding: 4px 10px; font-size: 0.75rem; background: white;">
+                        ⚖️ Lengkapi Berat Akhir Matang
+                    </button>
                 </div>
                 <div class="ingredient-stats mt-3" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
                     <div class="stat-box">
-                        <span class="stat-label">Kalium / 100g</span>
+                        <span class="stat-label">Estimasi Kalium / 100g</span>
                         <span id="sel-kalium" class="stat-val font-semibold">0 mg</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-label">Fosfor / 100g</span>
+                        <span class="stat-label">Estimasi Fosfor / 100g</span>
                         <span id="sel-fosfor" class="stat-val font-semibold">0 mg</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-label">Natrium / 100g</span>
+                        <span class="stat-label">Estimasi Natrium / 100g</span>
                         <span id="sel-natrium" class="stat-val font-semibold">0 mg</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-label">Air / 100g</span>
+                        <span class="stat-label">Estimasi Air / 100g</span>
                         <span id="sel-air" class="stat-val font-semibold">0 ml</span>
                     </div>
                 </div>
@@ -185,7 +199,7 @@
                 </div>
 
                 <div class="form-group mt-3">
-                    <label for="portion-input">Berat Porsi</label>
+                    <label for="portion-input">Berat Porsi Dimakan</label>
                     <div class="input-group">
                         <input type="number" id="portion-input" class="input-field" min="1" placeholder="Misal: 150">
                         <span class="input-suffix">gram</span>
@@ -193,7 +207,7 @@
                 </div>
 
                 <div class="calculated-preview mt-3">
-                    <span class="text-sm text-gray">Estimasi Asupan:</span> 
+                    <span class="text-sm text-gray">Estimasi Asupan Porsi Ini:</span> 
                     <div class="preview-vals mt-1" style="display: flex; flex-wrap: wrap; gap: 12px;">
                         <span class="font-semibold kalium-text">K: <span id="preview-kalium">0</span> mg</span>
                         <span class="font-semibold fosfor-text">P: <span id="preview-fosfor">0</span> mg</span>
@@ -373,13 +387,16 @@
 
     <!-- Modal Recipe Builder -->
     <div id="recipe-modal" class="modal-overlay hidden">
-        <div class="modal-content glass-panel" style="max-width: 450px;">
-            <h2>Buat Resep Olahan</h2>
-            <p class="text-sm mt-1 text-gray">Nilai gizi otomatis dihitung dari bahan mentah penyusunnya.</p>
+        <div class="modal-content glass-panel" style="max-width: 470px; max-height: 92vh; overflow-y: auto;">
+            <div class="flex-between">
+                <h2 id="recipe-modal-title">Buat Resep Olahan</h2>
+                <button id="btn-close-recipe-x" class="btn-close" title="Tutup">&times;</button>
+            </div>
+            <p class="text-sm mt-1 text-gray">Hitung estimasi gizi per 100g berdasarkan bahan mentah, cara masak (peluruhan air), dan berat akhir matang.</p>
             
-            <div class="form-group mt-4">
+            <div class="form-group mt-3">
                 <label for="recipe-name">Nama Masakan / Olahan</label>
-                <input type="text" id="recipe-name" class="input-field" placeholder="Misal: Soto Nasi Spesial">
+                <input type="text" id="recipe-name" class="input-field" placeholder="Misal: Tumis Kangkung / Soto Ayam">
             </div>
             
             <div class="form-group mt-3 relative">
@@ -393,7 +410,7 @@
                 <div class="font-semibold text-sm" id="recipe-sel-name">Nama Bahan</div>
                 <div class="flex-between mt-2 gap-2">
                     <div class="input-group" style="flex: 1;">
-                        <input type="number" id="recipe-portion" class="input-field" style="padding: 0.5rem;" placeholder="Berat">
+                        <input type="number" id="recipe-portion" class="input-field" style="padding: 0.5rem;" placeholder="Berat mentah">
                         <span class="input-suffix" style="padding: 0.5rem;">g</span>
                     </div>
                     <button id="btn-add-recipe-item" class="btn btn-primary" style="padding: 0.5rem 1rem;">Tambah</button>
@@ -401,23 +418,51 @@
             </div>
 
             <!-- List of added ingredients -->
-            <div class="mt-4">
-                <h3 class="text-sm font-semibold">Komposisi Bahan:</h3>
-                <ul id="recipe-items-list" class="log-list mt-2 mb-3" style="max-height: 150px; overflow-y: auto;">
-                    <li class="empty-state text-sm" id="recipe-empty">Belum ada bahan ditambahkan.</li>
+            <div class="mt-3">
+                <div class="flex-between">
+                    <h3 class="text-sm font-semibold">Komposisi Bahan Mentah:</h3>
+                    <span class="text-xs text-gray">Total mentah: <strong id="recipe-raw-weight">0</strong> g</span>
+                </div>
+                <ul id="recipe-items-list" class="log-list mt-2 mb-3" style="max-height: 135px; overflow-y: auto;">
+                    <li class="empty-state text-sm" id="recipe-empty" style="padding: 12px 0;">Belum ada bahan ditambahkan.</li>
                 </ul>
+            </div>
+
+            <!-- Metode Pengolahan (Water-Soluble Nutrient Retention / Leaching) -->
+            <div class="form-group mt-3">
+                <label for="recipe-cooking-method">Cara Pengolahan (Koreksi Nutrien Larut Air)</label>
+                <select id="recipe-cooking-method" class="input-field" style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+                    <option value="STANDAR">🍲 Normal: Tumis / Goreng / Kukus / Berkuah (Air tidak dibuang)</option>
+                    <option value="REBUS_BUANG_1X">💧 Rebus & Buang Air Rebusan 1x (Kalium larut -35%, Fosfor -15%)</option>
+                    <option value="REBUS_BUANG_2X">♨️ Teknik GGK: Rendam & Rebus Buang Air 2x (Kalium larut -50%, Fosfor -20%)</option>
+                </select>
+                <small id="cooking-method-hint" class="text-xs text-gray mt-1" style="display: block; font-size: 0.72rem; line-height: 1.3;">
+                    💡 Seluruh mineral bahan mentah bertahan di masakan (Retensi Kalium 100%, Fosfor 100%).
+                </small>
+            </div>
+
+            <!-- Berat Akhir Masakan Matang (Wajib - Fase 1) -->
+            <div class="form-group mt-3 p-3" style="background: rgba(99, 102, 241, 0.06); border: 1.5px solid rgba(99, 102, 241, 0.28); border-radius: 10px;">
+                <div class="flex-between">
+                    <label for="recipe-final-weight" style="margin-bottom: 0.25rem; font-weight: 600; color: var(--primary);">⚖️ Berat Akhir Masakan Matang (Wajib)</label>
+                    <button type="button" id="btn-copy-raw-weight" class="btn btn-outline btn-sm" style="padding: 2px 7px; font-size: 0.68rem;">= Sama dgn Mentah</button>
+                </div>
+                <div class="input-group mt-1">
+                    <input type="number" id="recipe-final-weight" class="input-field" min="1" step="1" placeholder="Timbang/perkirakan berat seluruh masakan matang..." style="background: white;">
+                    <span class="input-suffix">gram</span>
+                </div>
+                <small class="text-xs text-gray mt-1" id="final-weight-moisture-hint" style="display: block; font-size: 0.71rem; line-height: 1.3;">
+                    Masakan menyusut saat digoreng/tumis (air menguap) atau bertambah berat saat diberi air kuah.
+                </small>
             </div>
 
             <!-- Total Preview -->
             <div class="calculated-preview mt-3 p-3">
                 <div class="flex-between">
-                    <span class="text-sm">Total Berat Masakan:</span>
-                    <span class="font-semibold"><span id="recipe-total-weight">0</span> g</span>
+                    <span class="text-xs text-gray">Total Berat Matang: <strong id="recipe-total-weight" style="color: var(--text-main);">0</strong> g</span>
+                    <span class="badge" style="font-size: 0.65rem; background: #e0e7ff; color: #4338ca;">Estimasi per 100g Matang</span>
                 </div>
-                <div class="flex-between mt-2 border-t pt-2 border-gray-200" style="border-top: 1px solid #cbd5e1;">
-                    <span class="text-sm text-gray">Estimasi Gizi (per 100g):</span>
-                </div>
-                <div class="flex-between mt-1" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
+                <div class="flex-between mt-2 pt-2" style="border-top: 1px solid #cbd5e1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
                     <span class="font-semibold kalium-text text-sm">Kalium: <span id="recipe-k-100">0</span> mg</span>
                     <span class="font-semibold fosfor-text text-sm">Fosfor: <span id="recipe-p-100">0</span> mg</span>
                     <span class="font-semibold natrium-text text-sm">Natrium: <span id="recipe-na-100">0</span> mg</span>
@@ -533,6 +578,6 @@
         <button id="btn-update-app" class="btn btn-primary btn-sm" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Perbarui</button>
     </div>
 
-    <script src="/app.js?v=6.2.0"></script>
+    <script src="/app.js?v=6.3.0"></script>
 </body>
 </html>
