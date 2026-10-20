@@ -7,7 +7,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6366f1">
     <link rel="apple-touch-icon" href="/icon-192.png">
-    <link rel="stylesheet" href="/styles.css?v=6.1.0">
+    <link rel="stylesheet" href="/styles.css?v=6.2.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -226,15 +226,15 @@
 
     <!-- Modal Profil -->
     <div id="profile-modal" class="modal-overlay hidden">
-        <div class="modal-content glass-panel" style="max-width: 440px;">
+            <div class=" modal-content glass-panel" style="max-width: 460px; max-height: 92vh; overflow-y: auto;">
             <div class="flex-between">
                 <h2>Profil & Batas Harian</h2>
                 <button id="btn-close-profile" class="btn-close" title="Tutup">&times;</button>
             </div>
-            <p class="text-sm mt-1 text-gray">Atur identitas pasien dan target batas gizi harian.</p>
+            <p class="text-sm mt-1 text-gray">Atur identitas pasien dan kalkulasi target gizi sesuai Konsensus PERNEFRI.</p>
 
             <!-- Photo Upload Section -->
-            <div class="profile-photo-section mt-4">
+            <div class="profile-photo-section mt-3">
                 <div class="profile-avatar-uploader" id="profile-avatar-uploader" title="Klik untuk pilih foto">
                     <div class="avatar-preview-box" id="modal-avatar-preview">
                         <span id="modal-avatar-initial" class="avatar-initial-large">P</span>
@@ -267,41 +267,82 @@
                     <button type="button" class="therapy-btn" data-type="CAPD">
                         <span class="therapy-icon">🔄</span>
                         <div class="therapy-info">
-                            <strong>CAPD</strong>
+                            <strong>CAPD (PD)</strong>
                             <small>Dialisis Mandiri</small>
                         </div>
                     </button>
                     <button type="button" class="therapy-btn" data-type="KONSERVATIF">
                         <span class="therapy-icon">🛡️</span>
                         <div class="therapy-info">
-                            <strong>Pra-Dialisis</strong>
+                            <strong>Pre-Dialisis</strong>
                             <small>Non-Dialisis</small>
                         </div>
                     </button>
                 </div>
-                <div id="therapy-preset-notice" class="text-xs text-gray mt-2" style="background: rgba(99, 102, 241, 0.08); padding: 8px 10px; border-radius: 8px; border-left: 3px solid var(--primary); line-height: 1.35;">
-                    💡 <strong>Standar Medis Global (KDOQI/PERNEFRI)</strong> diterapkan otomatis ke batas gizi di bawah. Anda tetap dapat mengubah angka jika dokter memberi target khusus.
+            </div>
+
+            <!-- Parameter Klinis Pasien (Berat Badan Kering & Urin) -->
+            <div class="clinical-params-box mt-3 p-3" style="background: rgba(99, 102, 241, 0.06); border: 1px solid rgba(99, 102, 241, 0.22); border-radius: 12px;">
+                <div class="flex-between">
+                    <strong class="text-xs" style="color: var(--primary); text-transform: uppercase; letter-spacing: 0.4px;">⚖️ Kalkulator Konsensus PERNEFRI</strong>
+                    <span class="badge" style="font-size: 0.65rem; background: #e0e7ff; color: #4338ca;">Otomatis</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="mt-2">
+                    <div class="form-group">
+                        <label for="input-weight" style="font-size: 0.8rem; margin-bottom: 3px;">BB Kering / Ideal</label>
+                        <div class="input-group">
+                            <input type="number" id="input-weight" class="input-field" min="15" max="200" step="0.5" placeholder="60" style="padding: 0.55rem 0.7rem;">
+                            <span class="input-suffix" style="padding: 0.55rem 0.6rem; font-size: 0.8rem;">kg</span>
+                        </div>
+                    </div>
+                    <div class="form-group" id="urine-input-group">
+                        <label for="input-urine" style="font-size: 0.8rem; margin-bottom: 3px;">Urin 24 Jam</label>
+                        <div class="input-group">
+                            <input type="number" id="input-urine" class="input-field" min="0" max="4000" step="50" placeholder="500" style="padding: 0.55rem 0.7rem;">
+                            <span class="input-suffix" style="padding: 0.55rem 0.6rem; font-size: 0.8rem;">ml</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-gray mt-2" id="weight-clinical-note" style="font-size: 0.72rem; line-height: 1.35;">
+                    ℹ️ <strong>Penting:</strong> Untuk pasien <strong>HD / CAPD</strong>, gunakan <strong>Berat Badan Kering</strong> (berat sesudah cuci darah / tanpa bengkak cairan).
+                </p>
+                <div id="therapy-preset-notice" class="text-xs mt-2" style="background: rgba(255, 255, 255, 0.75); padding: 7px 9px; border-radius: 8px; border-left: 3px solid var(--primary); line-height: 1.35; font-size: 0.73rem; color: var(--text-main);">
+                    💡 Rumus aktif: Kalium <strong>17 mg/kgBB</strong>, Cairan <strong>500 ml + Urin</strong>, Fosfor <strong>800 mg</strong>, Natrium <strong>2000 mg</strong>.
                 </div>
             </div>
 
             <div class="form-group mt-3">
-                <label for="limit-kalium">Batas Kalium Harian (mg)</label>
-                <input type="number" id="limit-kalium" class="input-field" min="1" placeholder="Misal: 2000">
+                <div class="flex-between">
+                    <label for="limit-kalium" style="margin-bottom: 0.25rem;">Batas Kalium Harian (mg)</label>
+                    <small id="formula-hint-kalium" class="text-xs" style="color: var(--kalium-color); font-weight: 600; font-size: 0.72rem;">17 mg × BB (Tabel 4)</small>
+                </div>
+                <input type="number" id="limit-kalium" class="input-field" min="1" placeholder="Misal: 1020">
             </div>
             
             <div class="form-group mt-3">
-                <label for="limit-fosfor">Batas Fosfor Harian (mg)</label>
+                <div class="flex-between">
+                    <label for="limit-fosfor" style="margin-bottom: 0.25rem;">Batas Fosfor Harian (mg)</label>
+                    <small id="formula-hint-fosfor" class="text-xs" style="color: var(--fosfor-color); font-weight: 600; font-size: 0.72rem;">800 - 1000 mg/hari (Tabel 4)</small>
+                </div>
                 <input type="number" id="limit-fosfor" class="input-field" min="1" placeholder="Misal: 800">
             </div>
 
             <div class="form-group mt-3">
-                <label for="limit-natrium">Batas Natrium Harian (mg)</label>
+                <div class="flex-between">
+                    <label for="limit-natrium" style="margin-bottom: 0.25rem;">Batas Natrium Harian (mg)</label>
+                    <small id="formula-hint-natrium" class="text-xs" style="color: var(--natrium-color); font-weight: 600; font-size: 0.72rem;">NaCl 5-6 g/hari (Tabel 4)</small>
+                </div>
                 <input type="number" id="limit-natrium" class="input-field" min="1" placeholder="Misal: 2000">
             </div>
 
             <div class="form-group mt-3">
-                <label for="limit-air">Batas Cairan / Air Harian (ml / g)</label>
-                <input type="number" id="limit-air" class="input-field" min="1" placeholder="Misal: 1500">
+                <div class="flex-between">
+                    <label for="limit-air" style="margin-bottom: 0.25rem;">Batas Cairan / Air Harian (ml)</label>
+                    <small id="formula-hint-air" class="text-xs" style="color: var(--air-color); font-weight: 600; font-size: 0.72rem;">500 ml + Urin (Tabel 3)</small>
+                </div>
+                <input type="number" id="limit-air" class="input-field" min="1" placeholder="Misal: 1000">
             </div>
 
             <!-- Backup & Restore Data Section -->
@@ -492,6 +533,6 @@
         <button id="btn-update-app" class="btn btn-primary btn-sm" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Perbarui</button>
     </div>
 
-    <script src="/app.js?v=6.1.0"></script>
+    <script src="/app.js?v=6.2.0"></script>
 </body>
 </html>

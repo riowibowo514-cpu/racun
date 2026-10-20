@@ -47,39 +47,57 @@ const btnBackupData = document.getElementById('btn-backup-data');
 const btnTriggerRestore = document.getElementById('btn-trigger-restore');
 const inputRestoreFile = document.getElementById('input-restore-file');
 
-// Global Therapy Presets (KDOQI & PERNEFRI Standard)
+// Global Therapy Presets (Konsensus Nutrisi PGK PERNEFRI 2011 - Tabel 3 & Tabel 4)
 const THERAPY_PRESETS = {
     HD: {
         name: "Hemodialisis",
         badge: "HD",
-        kalium: 2000,
-        fosfor: 800,
-        natrium: 2000,
-        air: 1200,
+        kaliumPerKg: 17, // Tabel 4: 8 - 17 mg/kg/hari (pakai batas maksimal 17 mg/kg)
+        fosfor: 800,     // Tabel 4: 800 - 1000 mg/hari
+        natrium: 2000,   // Tabel 4: NaCl 5 - 6 g/hari (~2000 mg Natrium)
+        airBase: 500,    // Tabel 3: 500 ml/hari + produksi urin
+        useUrineForFluid: true,
+        defaultWeight: 60,
+        defaultUrine: 500,
         defaultPeriod: 3
     },
     CAPD: {
-        name: "CAPD",
+        name: "CAPD (PD)",
         badge: "CAPD",
-        kalium: 3000,
-        fosfor: 900,
-        natrium: 2000,
-        air: 1800,
+        kaliumPerKg: 17, // Tabel 4: 8 - 17 mg/kg/hari (pakai batas maksimal 17 mg/kg)
+        fosfor: 800,     // Tabel 4: 800 - 1000 mg/hari
+        natrium: 2000,   // Tabel 4: NaCl 5 - 10 g/hari
+        air: 1800,       // Tabel 3: Monitor; 1500 - 2000 ml/hari
+        useUrineForFluid: false,
+        defaultWeight: 60,
+        defaultUrine: 500,
         defaultPeriod: 7
     },
     KONSERVATIF: {
-        name: "Pra-Dialisis",
-        badge: "Pra-HD",
-        kalium: 2200,
-        fosfor: 800,
-        natrium: 1800,
-        air: 1800,
+        name: "Pre-Dialisis",
+        badge: "Pre-HD",
+        kaliumPerKg: 39, // Tabel 4: 39 mg/kg/hari, tergantung nilai laboratorium
+        fosfor: 800,     // Tabel 4: 800 - 1000 mg/hari
+        natrium: 1800,   // Tabel 4: NaCl <5 g/hari (<2000 mg Natrium)
+        air: 2000,       // Tabel 3: Tidak dibatasi dengan produksi urin yang normal
+        useUrineForFluid: false,
+        defaultWeight: 60,
+        defaultUrine: 1000,
         defaultPeriod: 7
     }
 };
 
 let selectedTherapy = 'HD';
 let currentReportPeriod = 3;
+
+const inputWeight = document.getElementById('input-weight');
+const inputUrine = document.getElementById('input-urine');
+const urineInputGroup = document.getElementById('urine-input-group');
+const weightClinicalNote = document.getElementById('weight-clinical-note');
+const formulaHintKalium = document.getElementById('formula-hint-kalium');
+const formulaHintFosfor = document.getElementById('formula-hint-fosfor');
+const formulaHintNatrium = document.getElementById('formula-hint-natrium');
+const formulaHintAir = document.getElementById('formula-hint-air');
 
 const inputLimitKalium = document.getElementById('limit-kalium');
 const inputLimitFosfor = document.getElementById('limit-fosfor');
@@ -194,6 +212,9 @@ async function initApp() {
     // Check Profile
     if (!userProfile) {
         modalProfile.classList.remove('hidden');
+        if (inputWeight) inputWeight.value = 60;
+        if (inputUrine) inputUrine.value = 500;
+        selectTherapyType('HD', true);
         renderModalAvatarPreview(null, "");
     } else {
         renderUserProfileHeader();
@@ -216,10 +237,14 @@ function loadLocalStorage() {
         userProfile = JSON.parse(savedProfile);
         if (!userProfile.name) userProfile.name = "Pasien";
         if (!userProfile.therapyType) userProfile.therapyType = 'HD';
+        if (!userProfile.weightKg) userProfile.weightKg = 60;
+        if (userProfile.urineMl === undefined || userProfile.urineMl === null) userProfile.urineMl = 500;
         if (!userProfile.natriumLimit) userProfile.natriumLimit = 2000;
-        if (!userProfile.airLimit) userProfile.airLimit = 1500;
+        if (!userProfile.airLimit) userProfile.airLimit = 1000;
         selectedTherapy = userProfile.therapyType;
         if (inputUserName) inputUserName.value = userProfile.name;
+        if (inputWeight) inputWeight.value = userProfile.weightKg;
+        if (inputUrine) inputUrine.value = userProfile.urineMl;
         inputLimitKalium.value = userProfile.kaliumLimit;
         inputLimitFosfor.value = userProfile.fosforLimit;
         inputLimitNatrium.value = userProfile.natriumLimit;
@@ -247,10 +272,12 @@ function loadLocalStorage() {
 
 function saveProfile() {
     const name = (inputUserName.value.trim()) || "Pasien";
+    const weightKg = parseFloat(inputWeight ? inputWeight.value : 60) || 60;
+    const urineMl = parseFloat(inputUrine ? inputUrine.value : 0) || 0;
     const kLimit = parseInt(inputLimitKalium.value);
     const pLimit = parseInt(inputLimitFosfor.value);
     const naLimit = parseInt(inputLimitNatrium.value) || 2000;
-    const airLimit = parseInt(inputLimitAir.value) || 1500;
+    const airLimit = parseInt(inputLimitAir.value) || 1000;
 
     if (!kLimit || !pLimit || kLimit <= 0 || pLimit <= 0 || naLimit <= 0 || airLimit <= 0) {
         alert("Harap masukkan angka yang valid untuk semua batas harian.");
@@ -268,6 +295,8 @@ function saveProfile() {
         name: name,
         photo: photoToSave,
         therapyType: selectedTherapy,
+        weightKg: weightKg,
+        urineMl: urineMl,
         kaliumLimit: kLimit,
         fosforLimit: pLimit,
         natriumLimit: naLimit,
@@ -300,6 +329,93 @@ function renderUserProfileHeader() {
     }
 }
 
+function calculateConsensusLimits(recalcAll = true) {
+    const preset = THERAPY_PRESETS[selectedTherapy] || THERAPY_PRESETS.HD;
+    const weight = parseFloat(inputWeight ? inputWeight.value : 0) || preset.defaultWeight;
+    const urine = parseFloat(inputUrine ? inputUrine.value : 0) || 0;
+
+    // 1. Kalium: Tabel 4 PERNEFRI (HD & CAPD: 17 mg/kgBB, Pre-dialisis: 39 mg/kgBB)
+    const calculatedKalium = Math.round(weight * preset.kaliumPerKg);
+    inputLimitKalium.value = calculatedKalium;
+
+    if (recalcAll) {
+        // 2. Fosfor: Tabel 4 PERNEFRI (800 - 1000 mg/hari)
+        inputLimitFosfor.value = preset.fosfor;
+        // 3. Natrium: Tabel 4 PERNEFRI
+        inputLimitNatrium.value = preset.natrium;
+    }
+
+    // 4. Cairan / Air: Tabel 3 PERNEFRI
+    if (preset.useUrineForFluid) {
+        // HD: 500 ml + produksi urin 24 jam
+        inputLimitAir.value = Math.round(preset.airBase + urine);
+    } else if (recalcAll) {
+        inputLimitAir.value = preset.air;
+    }
+
+    updateFormulaHints(preset, weight, urine, calculatedKalium);
+}
+
+function updateFormulaHints(preset, weight, urine, calculatedKalium) {
+    if (formulaHintKalium) {
+        if (selectedTherapy === 'KONSERVATIF') {
+            formulaHintKalium.textContent = `39 mg × ${weight} kg = ${calculatedKalium} mg (Tabel 4)`;
+        } else {
+            formulaHintKalium.textContent = `17 mg × ${weight} kg = ${calculatedKalium} mg (Tabel 4: 8-17 mg/kg)`;
+        }
+    }
+
+    if (formulaHintFosfor) {
+        formulaHintFosfor.textContent = `800 – 1000 mg/hari (Tabel 4)`;
+    }
+
+    if (formulaHintNatrium) {
+        if (selectedTherapy === 'KONSERVATIF') {
+            formulaHintNatrium.textContent = `NaCl <5 g/hari (Tabel 4)`;
+        } else if (selectedTherapy === 'CAPD') {
+            formulaHintNatrium.textContent = `NaCl 5 – 10 g/hari (Tabel 4)`;
+        } else {
+            formulaHintNatrium.textContent = `NaCl 5 – 6 g/hari (Tabel 4)`;
+        }
+    }
+
+    if (formulaHintAir) {
+        if (selectedTherapy === 'HD') {
+            formulaHintAir.textContent = `500 ml + ${urine} ml urin = ${500 + urine} ml (Tabel 3)`;
+        } else if (selectedTherapy === 'CAPD') {
+            formulaHintAir.textContent = `Monitor: 1500 – 2000 ml/hari (Tabel 3)`;
+        } else {
+            formulaHintAir.textContent = `Urin normal: Tidak dibatasi / ~2000 ml (Tabel 3)`;
+        }
+    }
+
+    if (urineInputGroup) {
+        if (selectedTherapy === 'HD') {
+            urineInputGroup.style.opacity = '1';
+        } else {
+            urineInputGroup.style.opacity = '0.65';
+        }
+    }
+
+    if (weightClinicalNote) {
+        if (selectedTherapy === 'KONSERVATIF') {
+            weightClinicalNote.innerHTML = `ℹ️ <strong>Penting (Pre-Dialisis):</strong> Gunakan <strong>Berat Badan Ideal / Tanpa Edema</strong> untuk menghitung batas Kalium (39 mg/kgBB/hari).`;
+        } else {
+            weightClinicalNote.innerHTML = `ℹ️ <strong>Penting (HD / CAPD):</strong> Gunakan <strong>Berat Badan Kering</strong> (berat badan sesudah cuci darah / setelah cairan drain keluar tanpa bengkak).`;
+        }
+    }
+
+    if (therapyPresetNotice) {
+        if (selectedTherapy === 'HD') {
+            therapyPresetNotice.innerHTML = `💡 <strong>Standar PERNEFRI (HD):</strong> Kalium <strong>17 mg/kgBB</strong> (maks dari 8–17 mg/kg), Cairan <strong>500 ml + Produksi Urin</strong>, Fosfor <strong>800–1000 mg</strong>.`;
+        } else if (selectedTherapy === 'CAPD') {
+            therapyPresetNotice.innerHTML = `💡 <strong>Standar PERNEFRI (CAPD):</strong> Kalium <strong>17 mg/kgBB</strong> (maks dari 8–17 mg/kg), Cairan <strong>1500–2000 ml/hari</strong>, Fosfor <strong>800–1000 mg</strong>.`;
+        } else {
+            therapyPresetNotice.innerHTML = `💡 <strong>Standar PERNEFRI (Pre-Dialisis):</strong> Kalium <strong>39 mg/kgBB/hari</strong>, Fosfor <strong>800–1000 mg</strong>, Cairan disesuaikan urin.`;
+        }
+    }
+}
+
 function selectTherapyType(type, applyPresets = true) {
     selectedTherapy = type;
     therapyBtns.forEach(btn => {
@@ -310,12 +426,15 @@ function selectTherapyType(type, applyPresets = true) {
         }
     });
 
-    if (applyPresets && THERAPY_PRESETS[type]) {
-        const preset = THERAPY_PRESETS[type];
-        inputLimitKalium.value = preset.kalium;
-        inputLimitFosfor.value = preset.fosfor;
-        inputLimitNatrium.value = preset.natrium;
-        inputLimitAir.value = preset.air;
+    const preset = THERAPY_PRESETS[type] || THERAPY_PRESETS.HD;
+    const weight = parseFloat(inputWeight ? inputWeight.value : 0) || preset.defaultWeight;
+    const urine = parseFloat(inputUrine ? inputUrine.value : 0) || 0;
+    const calculatedKalium = Math.round(weight * preset.kaliumPerKg);
+
+    if (applyPresets) {
+        calculateConsensusLimits(true);
+    } else {
+        updateFormulaHints(preset, weight, urine, calculatedKalium);
     }
 }
 
@@ -433,8 +552,8 @@ function generateCumulativeReport(days) {
         });
     });
 
-    const kLimitDay = (userProfile && userProfile.kaliumLimit) ? userProfile.kaliumLimit : therapy.kalium;
-    const airLimitDay = (userProfile && userProfile.airLimit) ? userProfile.airLimit : therapy.air;
+    const kLimitDay = (userProfile && userProfile.kaliumLimit) ? userProfile.kaliumLimit : Math.round((therapy.defaultWeight || 60) * therapy.kaliumPerKg);
+    const airLimitDay = (userProfile && userProfile.airLimit) ? userProfile.airLimit : (therapy.useUrineForFluid ? (therapy.airBase + (therapy.defaultUrine || 500)) : therapy.air);
     const pLimitDay = (userProfile && userProfile.fosforLimit) ? userProfile.fosforLimit : therapy.fosfor;
     const naLimitDay = (userProfile && userProfile.natriumLimit) ? userProfile.natriumLimit : therapy.natrium;
 
@@ -1276,14 +1395,18 @@ btnEditProfile.addEventListener('click', () => {
     tempProfilePhoto = null;
     if (userProfile) {
         if (inputUserName) inputUserName.value = userProfile.name || "";
+        if (inputWeight) inputWeight.value = userProfile.weightKg || 60;
+        if (inputUrine) inputUrine.value = (userProfile.urineMl !== undefined && userProfile.urineMl !== null) ? userProfile.urineMl : 500;
         inputLimitKalium.value = userProfile.kaliumLimit;
         inputLimitFosfor.value = userProfile.fosforLimit;
         inputLimitNatrium.value = userProfile.natriumLimit || 2000;
-        inputLimitAir.value = userProfile.airLimit || 1500;
+        inputLimitAir.value = userProfile.airLimit || 1000;
         selectTherapyType(userProfile.therapyType || 'HD', false);
         renderModalAvatarPreview(userProfile.photo, userProfile.name);
     } else {
         if (inputUserName) inputUserName.value = "";
+        if (inputWeight) inputWeight.value = 60;
+        if (inputUrine) inputUrine.value = 500;
         selectTherapyType('HD', true);
         renderModalAvatarPreview(null, "");
     }
@@ -1295,6 +1418,19 @@ therapyBtns.forEach(btn => {
         selectTherapyType(btn.dataset.type, true);
     });
 });
+
+// Real-time Consensus Calculation when Weight or Urine changes
+if (inputWeight) {
+    inputWeight.addEventListener('input', () => {
+        calculateConsensusLimits(false);
+    });
+}
+
+if (inputUrine) {
+    inputUrine.addEventListener('input', () => {
+        calculateConsensusLimits(false);
+    });
+}
 
 // Report Modal Event Listeners
 if (btnOpenReport) {
