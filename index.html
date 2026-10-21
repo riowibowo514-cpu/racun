@@ -7,8 +7,10 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6366f1">
     <link rel="apple-touch-icon" href="/icon-192.png">
-    <link rel="stylesheet" href="/styles.css?v=6.4.0">
+    <link rel="stylesheet" href="/styles.css?v=6.5.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fase 3: penghitung kunjungan anonim (tanpa cookie, tanpa data kesehatan) -->
+    <script src="/analytics.js?v=6.5.0"></script>
 </head>
 <body>
     <div class="app-container">
@@ -244,6 +246,11 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Pemberitahuan Penghitung Anonim (Fase 3) -->
+            <p class="analytics-notice text-xs text-gray mt-2" style="font-size: 0.7rem; line-height: 1.4; text-align: center;">
+                📊 Aplikasi memakai penghitung kunjungan anonim tanpa cookie. Catatan asupan tidak pernah keluar dari ponsel. <a href="/privasi.html" style="color: var(--primary); font-weight: 600;">Kebijakan Privasi</a>
+            </p>
         </section>
 
     </div>
@@ -388,6 +395,19 @@
                     </button>
                     <input type="file" id="input-restore-file" accept=".json,application/json" class="hidden">
                 </div>
+            </div>
+
+            <!-- Penghitung Anonim (Fase 3) -->
+            <div class="backup-restore-box mt-3 p-3">
+                <label for="toggle-analytics" style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer; margin: 0;">
+                    <input type="checkbox" id="toggle-analytics" style="margin-top: 3px; width: 16px; height: 16px; accent-color: var(--primary);">
+                    <span>
+                        <strong class="text-xs" style="color: var(--text-main);">Bantu pengembangan dengan penghitung kunjungan anonim</strong>
+                        <span class="text-xs text-gray" style="display: block; font-size: 0.7rem; line-height: 1.35; margin-top: 2px;">
+                            Tanpa cookie. Hanya menghitung jumlah kunjungan; catatan asupan &amp; profil tidak dikirim. <a href="/privasi.html" style="color: var(--primary);">Selengkapnya</a>
+                        </span>
+                    </span>
+                </label>
             </div>
 
             <div class="flex-between gap-2 mt-4">
@@ -601,6 +621,6 @@
         <button id="btn-update-app" class="btn btn-primary btn-sm" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Perbarui</button>
     </div>
 
-    <script src="/app.js?v=6.4.0"></script>
+    <script src="/app.js?v=6.5.0"></script>
 </body>
 </html>

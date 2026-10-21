@@ -1,9 +1,11 @@
-const CACHE_NAME = 'ggk-tracker-v13';
+const CACHE_NAME = 'ggk-tracker-v14';
 const ASSETS = [
     '/',
     '/index.html',
     '/styles.css',
     '/app.js',
+    '/analytics.js',
+    '/privasi.html',
     '/data_gizi_ggk_final.json',
     '/icon-192.png',
     '/icon-512.png'
@@ -47,6 +49,6 @@ self.addEventListener('fetch', (e) => {
                 }
                 return networkResponse;
             })
-            .catch(() => caches.match(e.request))
+            .catch(() => caches.match(e.request, { ignoreSearch: true }))
     );
 });

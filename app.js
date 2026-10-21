@@ -2069,6 +2069,25 @@ if (inputUserName) {
 
 btnSaveProfile.addEventListener('click', saveProfile);
 
+// Fase 3: Pengaturan penghitung kunjungan anonim (opt-out)
+(function setupAnalyticsToggle() {
+    const toggle = document.getElementById('toggle-analytics');
+    if (!toggle) return;
+    const KEY = 'ggk_analytics_optout';
+    let optedOut = false;
+    try { optedOut = localStorage.getItem(KEY) === '1'; } catch (e) {}
+    toggle.checked = !optedOut;
+    toggle.addEventListener('change', () => {
+        try {
+            if (toggle.checked) localStorage.removeItem(KEY);
+            else localStorage.setItem(KEY, '1');
+        } catch (e) {}
+        alert(toggle.checked
+            ? 'Penghitung kunjungan anonim diaktifkan. Terima kasih telah membantu pengembangan aplikasi.'
+            : 'Penghitung kunjungan anonim dimatikan. Aplikasi tetap berfungsi penuh.');
+    });
+})();
+
 
 // Start app
 document.addEventListener('DOMContentLoaded', initApp);

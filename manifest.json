@@ -1,7 +1,7 @@
 {
   "name": "Pemantau GGK",
   "short_name": "GGK Tracker",
-  "start_url": "/",
+  "start_url": "/?mode=pwa",
   "display": "standalone",
   "background_color": "#e0e7ff",
   "theme_color": "#6366f1",
