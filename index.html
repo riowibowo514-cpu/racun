@@ -7,10 +7,10 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#6366f1">
     <link rel="apple-touch-icon" href="/icon-192.png">
-    <link rel="stylesheet" href="/styles.css?v=6.5.0">
+    <link rel="stylesheet" href="/styles.css?v=6.6.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Fase 3: penghitung kunjungan anonim (tanpa cookie, tanpa data kesehatan) -->
-    <script src="/analytics.js?v=6.5.0"></script>
+    <script src="/analytics.js?v=6.6.0"></script>
 </head>
 <body>
     <div class="app-container">
@@ -61,7 +61,7 @@
         <!-- Dashboard / Progress -->
         <section id="dashboard" class="glass-panel mt-4">
             <div class="flex-between">
-                <h2>Ringkasan Hari Ini</h2>
+                <h2>Ringkasan Hari Ini <span class="badge" style="font-size: 0.62rem; vertical-align: middle; background: #e0e7ff; color: #4338ca;">Estimasi</span></h2>
                 <span id="current-date" class="text-xs text-gray font-normal"></span>
             </div>
 
@@ -87,10 +87,10 @@
                 </div>
                 <div class="kidney-status-details">
                     <div class="flex-between">
-                        <span class="kidney-status-label" id="kidney-status-label">Beban Ginjal: Optimal</span>
-                        <span class="kidney-badge" id="kidney-badge">Aman 🌿</span>
+                        <span class="kidney-status-label" id="kidney-status-label">Estimasi Asupan: Dalam Batas</span>
+                        <span class="kidney-badge" id="kidney-badge">Dalam Target 🌿</span>
                     </div>
-                    <p class="kidney-status-desc" id="kidney-status-desc">Semua asupan (Kalium, Fosfor, Natrium & Cairan) dalam target aman.</p>
+                    <p class="kidney-status-desc" id="kidney-status-desc">Estimasi asupan Kalium, Fosfor, Natrium &amp; Cairan masih di bawah batas harian yang Anda atur.</p>
                 </div>
             </div>
             
@@ -136,6 +136,11 @@
                     <div id="air-bar" class="progress-bar air-color"></div>
                 </div>
                 <div id="air-alert" class="alert hidden mt-2"></div>
+            </div>
+
+            <!-- Disclaimer tetap (Fase 4) -->
+            <div class="medical-disclaimer mt-4 p-3" style="background: rgba(100, 116, 139, 0.08); border: 1px solid rgba(100, 116, 139, 0.25); border-radius: 10px; font-size: 0.72rem; line-height: 1.45; color: var(--text-main);">
+                ⚕️ <strong>Penting:</strong> Aplikasi ini adalah alat bantu pencatatan dan edukasi, <strong>bukan pengganti saran dokter atau ahli gizi</strong>. Seluruh angka adalah estimasi dari tabel komposisi pangan. Batas asupan harian Anda ditentukan oleh dokter/ahli gizi yang merawat Anda; angka bawaan aplikasi hanya titik awal dari Konsensus PERNEFRI. <a href="/tentang.html" style="color: var(--primary); font-weight: 600;">Tentang &amp; sumber data</a>
             </div>
         </section>
 
@@ -249,7 +254,7 @@
 
             <!-- Pemberitahuan Penghitung Anonim (Fase 3) -->
             <p class="analytics-notice text-xs text-gray mt-2" style="font-size: 0.7rem; line-height: 1.4; text-align: center;">
-                📊 Aplikasi memakai penghitung kunjungan anonim tanpa cookie. Catatan asupan tidak pernah keluar dari ponsel. <a href="/privasi.html" style="color: var(--primary); font-weight: 600;">Kebijakan Privasi</a>
+                📊 Aplikasi memakai penghitung kunjungan anonim tanpa cookie. Catatan asupan tidak pernah keluar dari ponsel. <a href="/privasi.html" style="color: var(--primary); font-weight: 600;">Kebijakan Privasi</a> · <a href="/tentang.html" style="color: var(--primary); font-weight: 600;">Tentang</a>
             </p>
         </section>
 
@@ -538,8 +543,8 @@
             <div id="report-status-banner" class="report-status-banner status-safe mt-3">
                 <span class="report-status-icon" id="report-status-icon">🌿</span>
                 <div>
-                    <strong id="report-status-title">Asupan Kumulatif Terjaga Aman</strong>
-                    <p class="text-xs text-gray" id="report-status-desc">Semua akumulasi zat gizi dalam target periode ini.</p>
+                    <strong id="report-status-title">Estimasi Akumulasi Dalam Batas</strong>
+                    <p class="text-xs text-gray" id="report-status-desc">Seluruh estimasi zat gizi kumulatif berada di bawah batas yang Anda atur.</p>
                 </div>
             </div>
 
@@ -621,6 +626,6 @@
         <button id="btn-update-app" class="btn btn-primary btn-sm" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Perbarui</button>
     </div>
 
-    <script src="/app.js?v=6.5.0"></script>
+    <script src="/app.js?v=6.6.0"></script>
 </body>
 </html>

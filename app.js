@@ -740,7 +740,7 @@ function generateCumulativeReport(days) {
     const maxRatio = Math.max(cumK / targetK, cumAir / targetAir, cumP / targetP, cumNa / targetNa);
     reportStatusBanner.classList.remove('status-safe', 'status-warning', 'status-danger');
 
-    let statusText = 'Estimasi Akumulasi Asupan Aman Terkendali';
+    let statusText = 'Estimasi Akumulasi Dalam Batas';
     let statusState = 'safe';
     if (maxRatio > 1.0) {
         statusState = 'danger';
@@ -755,12 +755,12 @@ function generateCumulativeReport(days) {
         reportStatusBanner.classList.add('status-warning');
         reportStatusIcon.textContent = '⚠️';
         reportStatusTitle.textContent = statusText;
-        reportStatusDesc.textContent = `Estimasi asupan kumulatif berada di ${Math.round(maxRatio * 100)}% dari batas aman. Pertahankan pemilihan menu rendah kalium/cairan.`;
+        reportStatusDesc.textContent = `Estimasi asupan kumulatif berada di ${Math.round(maxRatio * 100)}% dari batas yang Anda atur. Pertimbangkan menu rendah kalium/cairan.`;
     } else {
         reportStatusBanner.classList.add('status-safe');
         reportStatusIcon.textContent = '🌿';
         reportStatusTitle.textContent = statusText;
-        reportStatusDesc.textContent = `Seluruh estimasi zat gizi kumulatif terjaga di bawah batas aman periode ${days} hari.`;
+        reportStatusDesc.textContent = `Seluruh estimasi zat gizi kumulatif berada di bawah batas yang Anda atur untuk periode ${days} hari.`;
     }
 
     if (reportTableBody) {
@@ -956,6 +956,7 @@ function exportReportCSV() {
     const therapy = THERAPY_PRESETS[userProfile ? userProfile.therapyType : 'HD'] || THERAPY_PRESETS.HD;
     let csvContent = `Laporan Estimasi Asupan Pasien GGK\n`;
     csvContent += `Status Data,ESTIMASI (TKPI & USDA)\n`;
+    csvContent += `Catatan,"Alat bantu pencatatan; bukan pengganti saran dokter/ahli gizi"\n`;
     csvContent += `Nama Pasien,${patientName}\n`;
     csvContent += `Terapi,${therapy.name} (${therapy.badge})\n`;
     csvContent += `Periode,${currentReportPeriod} Hari\n`;
@@ -1001,7 +1002,7 @@ function copyReportToWhatsApp() {
     msg += `• Est. Cairan: ${totalAir}\n`;
     msg += `• Est. Fosfor: ${totalP}\n`;
     msg += `• Est. Natrium: ${totalNa}\n\n`;
-    msg += `_Catatan: Angka merupakan estimasi (Pemantau Asupan GGK)_`;
+    msg += `_Catatan: Angka merupakan estimasi (Pemantau Asupan GGK) berdasarkan TKPI & USDA. Alat bantu pencatatan, bukan pengganti saran dokter/ahli gizi._`;
 
     navigator.clipboard.writeText(msg).then(() => {
         alert("✅ Ringkasan berhasil disalin! Anda dapat menempelkannya (paste) langsung ke chat WhatsApp dokter atau keluarga.");
@@ -1107,11 +1108,11 @@ function updateDashboard() {
     const naLimit = userProfile.natriumLimit || 2000;
     const airLimit = userProfile.airLimit || 1500;
 
-    // Update Text
-    kaliumText.textContent = `${totalKalium.toFixed(1)} / ${userProfile.kaliumLimit} mg`;
-    fosforText.textContent = `${totalFosfor.toFixed(1)} / ${userProfile.fosforLimit} mg`;
-    natriumText.textContent = `${totalNatrium.toFixed(1)} / ${naLimit} mg`;
-    airText.textContent = `${totalAir.toFixed(1)} / ${airLimit} ml`;
+    // Update Text (Fase 4: semua angka asupan diberi label estimasi)
+    kaliumText.textContent = `Est. ${totalKalium.toFixed(1)} / ${userProfile.kaliumLimit} mg`;
+    fosforText.textContent = `Est. ${totalFosfor.toFixed(1)} / ${userProfile.fosforLimit} mg`;
+    natriumText.textContent = `Est. ${totalNatrium.toFixed(1)} / ${naLimit} mg`;
+    airText.textContent = `Est. ${totalAir.toFixed(1)} / ${airLimit} ml`;
 
     // Update Progress Bars
     let kPercent = (totalKalium / userProfile.kaliumLimit) * 100;
@@ -1155,21 +1156,22 @@ function updateKidneyStatus(kPercent, pPercent, naPercent, airPercent) {
 
     statusCard.classList.remove('status-safe', 'status-warning', 'status-danger');
 
+    // Fase 4: status menggambarkan estimasi asupan vs batas, bukan kondisi/diagnosis ginjal
     if (topNutrient.pct >= 100) {
         statusCard.classList.add('status-danger');
-        statusLabel.textContent = 'Beban Ginjal: Melebihi Batas';
+        statusLabel.textContent = 'Estimasi Asupan: Melebihi Batas';
         statusBadge.textContent = 'Perhatian 🚨';
-        statusDesc.textContent = `${topNutrient.name} telah melampaui batas harian (${Math.round(topNutrient.pct)}%). Batasi asupan tinggi ${topNutrient.name.toLowerCase()} untuk sisa hari ini.`;
+        statusDesc.textContent = `Estimasi ${topNutrient.name.toLowerCase()} sudah melampaui batas harian Anda (${Math.round(topNutrient.pct)}%). Diskusikan dengan dokter/ahli gizi bila sering terjadi.`;
     } else if (topNutrient.pct >= 80) {
         statusCard.classList.add('status-warning');
-        statusLabel.textContent = 'Beban Ginjal: Mendekati Batas';
+        statusLabel.textContent = 'Estimasi Asupan: Mendekati Batas';
         statusBadge.textContent = 'Waspada ⚠️';
-        statusDesc.textContent = `${topNutrient.name} sudah mencapai ${Math.round(topNutrient.pct)}% batas harian. Pilih menu rendah ${topNutrient.name.toLowerCase()} untuk berikutnya.`;
+        statusDesc.textContent = `Estimasi ${topNutrient.name.toLowerCase()} sudah mencapai ${Math.round(topNutrient.pct)}% batas harian. Pertimbangkan menu rendah ${topNutrient.name.toLowerCase()} berikutnya.`;
     } else {
         statusCard.classList.add('status-safe');
-        statusLabel.textContent = 'Beban Ginjal: Optimal';
-        statusBadge.textContent = 'Aman 🌿';
-        statusDesc.textContent = 'Semua asupan (Kalium, Fosfor, Natrium & Cairan) berada dalam batas aman.';
+        statusLabel.textContent = 'Estimasi Asupan: Dalam Batas';
+        statusBadge.textContent = 'Dalam Target 🌿';
+        statusDesc.textContent = 'Estimasi asupan Kalium, Fosfor, Natrium & Cairan masih di bawah batas harian yang Anda atur.';
     }
 }
 
@@ -1181,12 +1183,12 @@ function updateProgressBarState(percent, barElement, alertElement, nutrientName)
 
     if (percent >= 100) {
         barElement.style.backgroundColor = 'var(--danger)';
-        alertElement.textContent = `⚠ Batas ${nutrientName} harian telah terlampaui!`;
+        alertElement.textContent = `⚠ Estimasi ${nutrientName} harian telah melampaui batas.`;
         alertElement.classList.add('alert-danger');
         alertElement.classList.remove('hidden');
     } else if (percent >= 80) {
         barElement.style.backgroundColor = 'var(--warning)';
-        alertElement.textContent = `⚠ Anda hampir mendekati batas ${nutrientName} harian.`;
+        alertElement.textContent = `⚠ Estimasi ${nutrientName} harian mendekati batas.`;
         alertElement.classList.add('alert-warning');
         alertElement.classList.remove('hidden');
     } else {
@@ -1221,6 +1223,7 @@ function renderLogList(logs) {
             <div class="log-item-info">
                 <div class="log-item-name">${log.nama_bahan} <span class="text-sm font-normal text-gray">(${log.porsi_g}g)</span></div>
                 <div class="log-item-details" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                    <span class="text-xs text-gray" style="font-size: 0.68rem;">Est.</span>
                     <span class="kalium-text font-semibold">K: ${kVal} mg</span>
                     <span class="fosfor-text font-semibold">P: ${pVal} mg</span>
                     <span class="natrium-text font-semibold">Na: ${naVal} mg</span>

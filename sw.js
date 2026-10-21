@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ggk-tracker-v14';
+const CACHE_NAME = 'ggk-tracker-v15';
 const ASSETS = [
     '/',
     '/index.html',
@@ -6,6 +6,7 @@ const ASSETS = [
     '/app.js',
     '/analytics.js',
     '/privasi.html',
+    '/tentang.html',
     '/data_gizi_ggk_final.json',
     '/icon-192.png',
     '/icon-512.png'
