@@ -38,6 +38,8 @@ const reportTargetAir = document.getElementById('report-target-air');
 const reportTargetP = document.getElementById('report-target-p');
 const reportTargetNa = document.getElementById('report-target-na');
 const reportTableBody = document.getElementById('report-table-body');
+const reportGeneratedTimestamp = document.getElementById('report-generated-timestamp');
+const btnExportImage = document.getElementById('btn-export-image');
 const btnPrintReport = document.getElementById('btn-print-report');
 const btnExportCsv = document.getElementById('btn-export-csv');
 const btnCopyWa = document.getElementById('btn-copy-wa');
@@ -46,6 +48,7 @@ const btnCopyWa = document.getElementById('btn-copy-wa');
 const btnBackupData = document.getElementById('btn-backup-data');
 const btnTriggerRestore = document.getElementById('btn-trigger-restore');
 const inputRestoreFile = document.getElementById('input-restore-file');
+const linkQuickBackup = document.getElementById('link-quick-backup');
 
 // Global Therapy Presets (Konsensus Nutrisi PGK PERNEFRI 2011 - Tabel 3 & Tabel 4)
 const THERAPY_PRESETS = {
@@ -224,16 +227,77 @@ let recipeSelectedIngredient = null;
 let editingRecipeCode = null;
 
 
+// --- Durable IndexedDB Mirror for Local-First Persistence (Phase 2) ---
+const IDB_NAME = 'NutriKidneyDB';
+const IDB_STORE = 'kv_store';
+
+function openNutriDB() {
+    return new Promise((resolve, reject) => {
+        if (!('indexedDB' in window)) return resolve(null);
+        const req = indexedDB.open(IDB_NAME, 1);
+        req.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(IDB_STORE)) {
+                db.createObjectStore(IDB_STORE);
+            }
+        };
+        req.onsuccess = (e) => resolve(e.target.result);
+        req.onerror = () => resolve(null);
+    });
+}
+
+async function idbSet(key, val) {
+    try {
+        const db = await openNutriDB();
+        if (!db) return;
+        const tx = db.transaction(IDB_STORE, 'readwrite');
+        tx.objectStore(IDB_STORE).put(val, key);
+    } catch (e) {
+        console.warn("IDB write warning:", e);
+    }
+}
+
+async function idbGet(key) {
+    try {
+        const db = await openNutriDB();
+        if (!db) return null;
+        return new Promise((resolve) => {
+            const tx = db.transaction(IDB_STORE, 'readonly');
+            const req = tx.objectStore(IDB_STORE).get(key);
+            req.onsuccess = () => resolve(req.result !== undefined ? req.result : null);
+            req.onerror = () => resolve(null);
+        });
+    } catch (e) {
+        return null;
+    }
+}
+
+async function requestPersistentStorage() {
+    if (navigator.storage && navigator.storage.persist) {
+        try {
+            await navigator.storage.persist();
+        } catch (e) {
+            console.warn("Persistent storage request error:", e);
+        }
+    }
+}
+
 // --- Initialization ---
 async function initApp() {
-    // Set Current Date
+    // Request durable browser storage (prevents OS from clearing data)
+    requestPersistentStorage();
+
+    // Set Current Date (Local Timezone Safe)
     const today = new Date();
-    currentDateStr = today.toISOString().split('T')[0];
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    currentDateStr = `${year}-${month}-${day}`;
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     currentDateEl.textContent = today.toLocaleDateString('id-ID', options);
 
-    // Load Local Storage
-    loadLocalStorage();
+    // Load Local Storage (with IndexedDB fallback recovery)
+    await loadLocalStorage();
 
     // Fetch Database
     try {
@@ -269,11 +333,26 @@ async function initApp() {
 }
 
 
-// --- Local Storage Operations ---
-function loadLocalStorage() {
-    const savedProfile = localStorage.getItem('ggk_user_profile');
+// --- Local Storage & IndexedDB Operations ---
+async function loadLocalStorage() {
+    let savedProfile = localStorage.getItem('ggk_user_profile');
+    if (!savedProfile) {
+        const idbProfile = await idbGet('ggk_user_profile');
+        if (idbProfile) {
+            savedProfile = JSON.stringify(idbProfile);
+            localStorage.setItem('ggk_user_profile', savedProfile);
+        }
+    }
+
     if (savedProfile) {
-        userProfile = JSON.parse(savedProfile);
+        try {
+            userProfile = JSON.parse(savedProfile);
+        } catch (e) {
+            userProfile = null;
+        }
+    }
+
+    if (userProfile) {
         if (!userProfile.name) userProfile.name = "Pasien";
         if (!userProfile.therapyType) userProfile.therapyType = 'HD';
         if (!userProfile.weightKg) userProfile.weightKg = 60;
@@ -290,22 +369,53 @@ function loadLocalStorage() {
         inputLimitAir.value = userProfile.airLimit;
         selectTherapyType(selectedTherapy, false);
         renderUserProfileHeader();
+        idbSet('ggk_user_profile', userProfile);
     }
 
-    const savedLogs = localStorage.getItem('ggk_daily_logs');
+    let savedLogs = localStorage.getItem('ggk_daily_logs');
+    if (!savedLogs) {
+        const idbLogs = await idbGet('ggk_daily_logs');
+        if (idbLogs) {
+            savedLogs = JSON.stringify(idbLogs);
+            localStorage.setItem('ggk_daily_logs', savedLogs);
+        }
+    }
     if (savedLogs) {
-        dailyLogs = JSON.parse(savedLogs);
+        try {
+            dailyLogs = JSON.parse(savedLogs) || {};
+        } catch (e) {
+            dailyLogs = {};
+        }
+        idbSet('ggk_daily_logs', dailyLogs);
     }
     
+    // Also migrate any UTC-shifted key from today if needed
+    const utcDateStr = new Date().toISOString().split('T')[0];
+    if (utcDateStr !== currentDateStr && dailyLogs[utcDateStr] && (!dailyLogs[currentDateStr] || dailyLogs[currentDateStr].length === 0)) {
+        dailyLogs[currentDateStr] = [...dailyLogs[utcDateStr]];
+    }
+
     // Ensure array exists for today
     if (!dailyLogs[currentDateStr]) {
         dailyLogs[currentDateStr] = [];
     }
 
     // Load Custom Foods (Recipes)
-    const savedCustomFoods = localStorage.getItem('ggk_custom_foods');
+    let savedCustomFoods = localStorage.getItem('ggk_custom_foods');
+    if (!savedCustomFoods) {
+        const idbRecipes = await idbGet('ggk_custom_foods');
+        if (idbRecipes) {
+            savedCustomFoods = JSON.stringify(idbRecipes);
+            localStorage.setItem('ggk_custom_foods', savedCustomFoods);
+        }
+    }
     if (savedCustomFoods) {
-        customFoods = JSON.parse(savedCustomFoods);
+        try {
+            customFoods = JSON.parse(savedCustomFoods) || [];
+        } catch (e) {
+            customFoods = [];
+        }
+        idbSet('ggk_custom_foods', customFoods);
     }
 }
 
@@ -343,6 +453,7 @@ function saveProfile() {
     };
 
     localStorage.setItem('ggk_user_profile', JSON.stringify(userProfile));
+    idbSet('ggk_user_profile', userProfile);
     tempProfilePhoto = null;
     modalProfile.classList.add('hidden');
     renderUserProfileHeader();
@@ -531,7 +642,16 @@ function processImageFile(file, callback) {
     reader.readAsDataURL(file);
 }
 
+function formatLocalDateKey(dateObj) {
+    const y = dateObj.getFullYear();
+    const m = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const d = String(dateObj.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
 // --- Cumulative Report Functions ---
+let lastReportData = null;
+
 function generateCumulativeReport(days) {
     currentReportPeriod = days;
     
@@ -546,22 +666,28 @@ function generateCumulativeReport(days) {
 
     const patientName = (userProfile && userProfile.name) ? userProfile.name : "Pasien";
     const therapy = THERAPY_PRESETS[userProfile ? userProfile.therapyType : 'HD'] || THERAPY_PRESETS.HD;
+    const weightInfo = (userProfile && userProfile.weightKg) ? ` • BB: ${userProfile.weightKg} kg` : '';
     if (reportPatientInfo) {
-        reportPatientInfo.textContent = `Pasien: ${patientName} • Terapi: ${therapy.name} (${therapy.badge})`;
+        reportPatientInfo.textContent = `Pasien: ${patientName} • Terapi: ${therapy.name} (${therapy.badge})${weightInfo}`;
     }
 
     const dates = [];
     for (let i = days - 1; i >= 0; i--) {
         const d = new Date();
         d.setDate(d.getDate() - i);
-        dates.push(d.toISOString().split('T')[0]);
+        dates.push(formatLocalDateKey(d));
     }
 
-    const startDate = new Date(dates[0]);
-    const endDate = new Date(dates[dates.length - 1]);
+    const startDate = new Date(dates[0] + "T00:00:00");
+    const endDate = new Date(dates[dates.length - 1] + "T00:00:00");
     const dateOpts = { day: 'numeric', month: 'short', year: 'numeric' };
     const dateRangeStr = `Periode: ${startDate.toLocaleDateString('id-ID', dateOpts)} s/d ${endDate.toLocaleDateString('id-ID', dateOpts)} (${days} Hari)`;
     if (reportDateRange) reportDateRange.textContent = dateRangeStr;
+
+    const nowFormatted = new Date().toLocaleString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    if (reportGeneratedTimestamp) {
+        reportGeneratedTimestamp.innerHTML = `Tanggal Laporan: <strong>${nowFormatted}</strong> • Status Angka: <strong>Estimasi</strong>`;
+    }
 
     let cumK = 0, cumAir = 0, cumP = 0, cumNa = 0;
     const dailyBreakdown = [];
@@ -614,28 +740,34 @@ function generateCumulativeReport(days) {
     const maxRatio = Math.max(cumK / targetK, cumAir / targetAir, cumP / targetP, cumNa / targetNa);
     reportStatusBanner.classList.remove('status-safe', 'status-warning', 'status-danger');
 
+    let statusText = 'Estimasi Akumulasi Asupan Aman Terkendali';
+    let statusState = 'safe';
     if (maxRatio > 1.0) {
+        statusState = 'danger';
+        statusText = 'Estimasi Akumulasi Melebihi Target';
         reportStatusBanner.classList.add('status-danger');
         reportStatusIcon.textContent = '🚨';
-        reportStatusTitle.textContent = 'Akumulasi Asupan Melebihi Target';
-        reportStatusDesc.textContent = `Akumulasi zat gizi melebihi batas kumulatif ${days} hari. Konsultasikan dengan dokter/ahli gizi Anda.`;
+        reportStatusTitle.textContent = statusText;
+        reportStatusDesc.textContent = `Estimasi akumulasi zat gizi melebihi batas kumulatif ${days} hari. Konsultasikan dengan dokter/ahli gizi Anda.`;
     } else if (maxRatio >= 0.85) {
+        statusState = 'warning';
+        statusText = 'Estimasi Akumulasi Mendekati Batas';
         reportStatusBanner.classList.add('status-warning');
         reportStatusIcon.textContent = '⚠️';
-        reportStatusTitle.textContent = 'Akumulasi Asupan Mendekati Batas';
-        reportStatusDesc.textContent = `Asupan kumulatif berada di ${Math.round(maxRatio * 100)}% dari batas aman. Pertahankan pemilihan menu rendah kalium/cairan.`;
+        reportStatusTitle.textContent = statusText;
+        reportStatusDesc.textContent = `Estimasi asupan kumulatif berada di ${Math.round(maxRatio * 100)}% dari batas aman. Pertahankan pemilihan menu rendah kalium/cairan.`;
     } else {
         reportStatusBanner.classList.add('status-safe');
         reportStatusIcon.textContent = '🌿';
-        reportStatusTitle.textContent = 'Akumulasi Asupan Aman Terkendali';
-        reportStatusDesc.textContent = `Seluruh zat gizi kumulatif terjaga di bawah batas aman periode ${days} hari.`;
+        reportStatusTitle.textContent = statusText;
+        reportStatusDesc.textContent = `Seluruh estimasi zat gizi kumulatif terjaga di bawah batas aman periode ${days} hari.`;
     }
 
     if (reportTableBody) {
         reportTableBody.innerHTML = '';
         dailyBreakdown.forEach(row => {
             const tr = document.createElement('tr');
-            const dObj = new Date(row.date);
+            const dObj = new Date(row.date + "T00:00:00");
             const formattedDate = dObj.toLocaleDateString('id-ID', { weekday: 'short', day: 'numeric', month: 'short' });
             
             const kWarning = row.k > kLimitDay ? 'style="color:var(--danger); font-weight:bold;"' : '';
@@ -651,23 +783,190 @@ function generateCumulativeReport(days) {
             reportTableBody.appendChild(tr);
         });
     }
+
+    lastReportData = {
+        days,
+        patientName,
+        therapyName: `${therapy.name} (${therapy.badge})`,
+        weightKg: (userProfile && userProfile.weightKg) ? userProfile.weightKg : 60,
+        dateRangeStr,
+        nowFormatted,
+        statusState,
+        statusText,
+        cumK, cumAir, cumP, cumNa,
+        targetK, targetAir, targetP, targetNa,
+        kLimitDay, airLimitDay, pLimitDay, naLimitDay,
+        dailyBreakdown
+    };
+}
+
+// Export Report as High-Resolution PNG Image (Zero External Dependencies - HTML5 Canvas)
+function exportReportImage() {
+    if (!lastReportData) {
+        generateCumulativeReport(currentReportPeriod || 3);
+    }
+    const d = lastReportData;
+    if (!d) return;
+
+    const width = 800;
+    const rowHeight = 42;
+    const tableHeight = (d.dailyBreakdown.length + 1) * rowHeight;
+    const height = 520 + tableHeight;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+
+    // Background
+    ctx.fillStyle = '#f8fafc';
+    ctx.fillRect(0, 0, width, height);
+
+    // Header Banner
+    const grad = ctx.createLinearGradient(0, 0, width, 110);
+    grad.addColorStop(0, '#4f46e5');
+    grad.addColorStop(1, '#2563eb');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, width, 115);
+
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 26px Inter, sans-serif';
+    ctx.fillText('LAPORAN ESTIMASI ASUPAN GIZI PASIEN GGK', 36, 48);
+
+    ctx.font = '15px Inter, sans-serif';
+    ctx.fillStyle = '#e0e7ff';
+    ctx.fillText(`Pasien: ${d.patientName}  •  Terapi: ${d.therapyName}  •  BB Kering/Ideal: ${d.weightKg} kg`, 36, 76);
+    ctx.fillText(`${d.dateRangeStr}  •  Dicetak: ${d.nowFormatted}`, 36, 98);
+
+    // Status Box
+    let statusBg = '#ecfdf5', statusBorder = '#10b981', statusColor = '#065f46';
+    if (d.statusState === 'danger') {
+        statusBg = '#fef2f2'; statusBorder = '#ef4444'; statusColor = '#991b1b';
+    } else if (d.statusState === 'warning') {
+        statusBg = '#fefce8'; statusBorder = '#f59e0b'; statusColor = '#92400e';
+    }
+    ctx.fillStyle = statusBg;
+    ctx.fillRect(36, 132, width - 72, 52);
+    ctx.strokeStyle = statusBorder;
+    ctx.lineWidth = 2;
+    ctx.strokeRect(36, 132, width - 72, 52);
+
+    ctx.fillStyle = statusColor;
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillText(`Status: ${d.statusText} (Angka Estimasi)`, 52, 164);
+
+    // 4 Summary Cards
+    const cards = [
+        { label: 'ESTIMASI KALIUM', val: `${d.cumK.toFixed(1)} mg`, sub: `Batas: ${d.targetK} mg (${Math.round(d.cumK / d.targetK * 100)}%)`, color: '#4f46e5' },
+        { label: 'ESTIMASI CAIRAN', val: `${d.cumAir.toFixed(1)} ml`, sub: `Batas: ${d.targetAir} ml (${Math.round(d.cumAir / d.targetAir * 100)}%)`, color: '#0284c7' },
+        { label: 'ESTIMASI FOSFOR', val: `${d.cumP.toFixed(1)} mg`, sub: `Batas: ${d.targetP} mg (${Math.round(d.cumP / d.targetP * 100)}%)`, color: '#db2777' },
+        { label: 'ESTIMASI NATRIUM', val: `${d.cumNa.toFixed(1)} mg`, sub: `Batas: ${d.targetNa} mg (${Math.round(d.cumNa / d.targetNa * 100)}%)`, color: '#d97706' }
+    ];
+
+    const cardW = (width - 72 - 36) / 4;
+    cards.forEach((c, idx) => {
+        const cx = 36 + idx * (cardW + 12);
+        const cy = 202;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(cx, cy, cardW, 92);
+        ctx.strokeStyle = '#cbd5e1';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(cx, cy, cardW, 92);
+
+        ctx.fillStyle = '#64748b';
+        ctx.font = 'bold 11px Inter, sans-serif';
+        ctx.fillText(c.label, cx + 12, cy + 24);
+
+        ctx.fillStyle = c.color;
+        ctx.font = 'bold 20px Inter, sans-serif';
+        ctx.fillText(c.val, cx + 12, cy + 54);
+
+        ctx.fillStyle = '#475569';
+        ctx.font = '11px Inter, sans-serif';
+        ctx.fillText(c.sub, cx + 12, cy + 76);
+    });
+
+    // Table Title
+    ctx.fillStyle = '#0f172a';
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillText('Rincian Estimasi Asupan Harian:', 36, 326);
+
+    // Table Header
+    const tableTop = 340;
+    const colX = [36, 220, 365, 510, 650];
+    ctx.fillStyle = '#e2e8f0';
+    ctx.fillRect(36, tableTop, width - 72, rowHeight);
+
+    ctx.fillStyle = '#1e293b';
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText('Tanggal', colX[0] + 12, tableTop + 26);
+    ctx.fillText('Est. Kalium', colX[1] + 12, tableTop + 26);
+    ctx.fillText('Est. Cairan', colX[2] + 12, tableTop + 26);
+    ctx.fillText('Est. Fosfor', colX[3] + 12, tableTop + 26);
+    ctx.fillText('Est. Natrium', colX[4] + 12, tableTop + 26);
+
+    // Table Rows
+    d.dailyBreakdown.forEach((row, rIdx) => {
+        const ry = tableTop + (rIdx + 1) * rowHeight;
+        ctx.fillStyle = rIdx % 2 === 0 ? '#ffffff' : '#f8fafc';
+        ctx.fillRect(36, ry, width - 72, rowHeight);
+        ctx.strokeStyle = '#e2e8f0';
+        ctx.strokeRect(36, ry, width - 72, rowHeight);
+
+        const dObj = new Date(row.date + "T00:00:00");
+        const formattedDate = dObj.toLocaleDateString('id-ID', { weekday: 'short', day: 'numeric', month: 'short' });
+
+        ctx.fillStyle = '#0f172a';
+        ctx.font = 'bold 13px Inter, sans-serif';
+        ctx.fillText(`${formattedDate} (${row.count} item)`, colX[0] + 12, ry + 26);
+
+        ctx.font = '13px Inter, sans-serif';
+        ctx.fillStyle = row.k > d.kLimitDay ? '#dc2626' : '#1e293b';
+        ctx.fillText(`${row.k.toFixed(1)} mg`, colX[1] + 12, ry + 26);
+
+        ctx.fillStyle = row.air > d.airLimitDay ? '#dc2626' : '#1e293b';
+        ctx.fillText(`${row.air.toFixed(1)} ml`, colX[2] + 12, ry + 26);
+
+        ctx.fillStyle = '#1e293b';
+        ctx.fillText(`${row.p.toFixed(1)} mg`, colX[3] + 12, ry + 26);
+        ctx.fillText(`${row.na.toFixed(1)} mg`, colX[4] + 12, ry + 26);
+    });
+
+    // Footer Disclaimer
+    const footerY = tableTop + tableHeight + 32;
+    ctx.fillStyle = '#64748b';
+    ctx.font = 'italic 12px Inter, sans-serif';
+    ctx.fillText('*Seluruh nilai di atas adalah ESTIMASI berdasarkan database TKPI Kemenkes RI & USDA FDC.', 36, footerY);
+    ctx.fillText('Laporan ini merupakan alat bantu pemantauan mandiri untuk dikonsultasikan kepada Dokter / Ahli Gizi.', 36, footerY + 20);
+
+    // Download PNG
+    const dataUrl = canvas.toDataURL('image/png');
+    const a = document.createElement('a');
+    const cleanName = d.patientName.replace(/\s+/g, '_');
+    const dateStr = formatLocalDateKey(new Date());
+    a.href = dataUrl;
+    a.download = `Laporan_Estimasi_GGK_${cleanName}_${d.days}Hari_${dateStr}.png`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 }
 
 function exportReportCSV() {
     const patientName = (userProfile && userProfile.name) ? userProfile.name : "Pasien";
     const therapy = THERAPY_PRESETS[userProfile ? userProfile.therapyType : 'HD'] || THERAPY_PRESETS.HD;
-    let csvContent = `Laporan Asupan Pasien GGK\n`;
+    let csvContent = `Laporan Estimasi Asupan Pasien GGK\n`;
+    csvContent += `Status Data,ESTIMASI (TKPI & USDA)\n`;
     csvContent += `Nama Pasien,${patientName}\n`;
     csvContent += `Terapi,${therapy.name} (${therapy.badge})\n`;
     csvContent += `Periode,${currentReportPeriod} Hari\n`;
     csvContent += `Tanggal Cetak,${new Date().toLocaleString('id-ID')}\n\n`;
 
-    csvContent += `Tanggal,Waktu,Nama Makanan,Porsi (g),Kalium (mg),Fosfor (mg),Natrium (mg),Air (ml)\n`;
+    csvContent += `Tanggal,Waktu,Nama Makanan,Porsi (g),Estimasi Kalium (mg),Estimasi Fosfor (mg),Estimasi Natrium (mg),Estimasi Air (ml)\n`;
 
     for (let i = currentReportPeriod - 1; i >= 0; i--) {
         const d = new Date();
         d.setDate(d.getDate() - i);
-        const dateStr = d.toISOString().split('T')[0];
+        const dateStr = formatLocalDateKey(d);
         const logs = dailyLogs[dateStr] || [];
         logs.forEach(log => {
             const time = log.timestamp ? new Date(log.timestamp).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }) : '-';
@@ -679,7 +978,7 @@ function exportReportCSV() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Laporan_Gizi_GGK_${patientName}_${currentReportPeriod}Hari.csv`;
+    a.download = `Laporan_Estimasi_Gizi_GGK_${patientName}_${currentReportPeriod}Hari.csv`;
     a.click();
     URL.revokeObjectURL(url);
 }
@@ -691,17 +990,18 @@ function copyReportToWhatsApp() {
     const totalAir = reportTotalAir ? reportTotalAir.textContent : '0';
     const totalP = reportTotalP ? reportTotalP.textContent : '0';
     const totalNa = reportTotalNa ? reportTotalNa.textContent : '0';
+    const nowStr = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
 
-    let msg = `*📊 LAPORAN ASUPAN GIZI PASIEN GGK*\n`;
+    let msg = `*📊 LAPORAN ESTIMASI ASUPAN GIZI PASIEN GGK*\n`;
     msg += `👤 *Nama:* ${patientName}\n`;
     msg += `🩺 *Terapi:* ${therapy.name} (${therapy.badge})\n`;
-    msg += `📅 *Periode:* ${currentReportPeriod} Hari Terakhir\n\n`;
-    msg += `*Akumulasi Zat Gizi:*\n`;
-    msg += `• Kalium: ${totalK}\n`;
-    msg += `• Cairan: ${totalAir}\n`;
-    msg += `• Fosfor: ${totalP}\n`;
-    msg += `• Natrium: ${totalNa}\n\n`;
-    msg += `_Dipantau melalui Pemantau Asupan GGK_`;
+    msg += `📅 *Periode:* ${currentReportPeriod} Hari Terakhir (Dicetak: ${nowStr})\n\n`;
+    msg += `*Estimasi Akumulasi Zat Gizi:*\n`;
+    msg += `• Est. Kalium: ${totalK}\n`;
+    msg += `• Est. Cairan: ${totalAir}\n`;
+    msg += `• Est. Fosfor: ${totalP}\n`;
+    msg += `• Est. Natrium: ${totalNa}\n\n`;
+    msg += `_Catatan: Angka merupakan estimasi (Pemantau Asupan GGK)_`;
 
     navigator.clipboard.writeText(msg).then(() => {
         alert("✅ Ringkasan berhasil disalin! Anda dapat menempelkannya (paste) langsung ke chat WhatsApp dokter atau keluarga.");
@@ -714,7 +1014,7 @@ function copyReportToWhatsApp() {
 function backupAppData() {
     const backupObj = {
         app: "Pemantau Asupan GGK",
-        version: "6.0.0",
+        version: "6.4.0",
         backupTimestamp: new Date().toISOString(),
         userProfile: userProfile,
         dailyLogs: dailyLogs,
@@ -724,7 +1024,7 @@ function backupAppData() {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupObj, null, 2));
     const downloadAnchor = document.createElement('a');
     const patientName = (userProfile && userProfile.name) ? userProfile.name.trim().replace(/\s+/g, '_') : 'Pasien';
-    const dateStr = new Date().toISOString().split('T')[0];
+    const dateStr = formatLocalDateKey(new Date());
     downloadAnchor.setAttribute("href", dataStr);
     downloadAnchor.setAttribute("download", `Backup_GGK_${patientName}_${dateStr}.json`);
     document.body.appendChild(downloadAnchor);
@@ -737,7 +1037,7 @@ function restoreAppData(e) {
     if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = function(event) {
+    reader.onload = async function(event) {
         try {
             const parsed = JSON.parse(event.target.result);
             if (!parsed.dailyLogs && !parsed.userProfile) {
@@ -749,17 +1049,20 @@ function restoreAppData(e) {
                 if (parsed.userProfile) {
                     userProfile = parsed.userProfile;
                     localStorage.setItem('ggk_user_profile', JSON.stringify(userProfile));
+                    await idbSet('ggk_user_profile', userProfile);
                 }
                 if (parsed.dailyLogs) {
                     dailyLogs = parsed.dailyLogs;
                     localStorage.setItem('ggk_daily_logs', JSON.stringify(dailyLogs));
+                    await idbSet('ggk_daily_logs', dailyLogs);
                 }
                 if (parsed.customFoods) {
                     customFoods = parsed.customFoods;
                     localStorage.setItem('ggk_custom_foods', JSON.stringify(customFoods));
+                    await idbSet('ggk_custom_foods', customFoods);
                 }
 
-                loadLocalStorage();
+                await loadLocalStorage();
                 updateDashboard();
                 renderUserProfileHeader();
                 alert("✅ Seluruh data berhasil dipulihkan secara utuh!");
@@ -775,10 +1078,12 @@ function restoreAppData(e) {
 
 function saveLogs() {
     localStorage.setItem('ggk_daily_logs', JSON.stringify(dailyLogs));
+    idbSet('ggk_daily_logs', dailyLogs);
 }
 
 function saveCustomFoods() {
     localStorage.setItem('ggk_custom_foods', JSON.stringify(customFoods));
+    idbSet('ggk_custom_foods', customFoods);
 }
 
 
@@ -1672,6 +1977,10 @@ if (btnPrintReport) {
     });
 }
 
+if (btnExportImage) {
+    btnExportImage.addEventListener('click', exportReportImage);
+}
+
 if (btnExportCsv) {
     btnExportCsv.addEventListener('click', exportReportCSV);
 }
@@ -1683,6 +1992,13 @@ if (btnCopyWa) {
 // Backup & Restore Listeners
 if (btnBackupData) {
     btnBackupData.addEventListener('click', backupAppData);
+}
+
+if (linkQuickBackup) {
+    linkQuickBackup.addEventListener('click', (e) => {
+        e.preventDefault();
+        backupAppData();
+    });
 }
 
 if (btnTriggerRestore) {

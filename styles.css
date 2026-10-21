@@ -877,6 +877,8 @@ body.dark-mode .report-table-wrapper { border-color: #334155; }
 body.dark-mode .backup-restore-box { background: #1e293b; border-color: #334155; }
 body.dark-mode .clinical-params-box { background: rgba(99, 102, 241, 0.12) !important; border-color: rgba(99, 102, 241, 0.3) !important; }
 body.dark-mode #therapy-preset-notice { background: rgba(15, 23, 42, 0.65) !important; color: var(--text-main) !important; }
+body.dark-mode .local-storage-notice { background: rgba(120, 53, 15, 0.3) !important; border-color: rgba(245, 158, 11, 0.4) !important; color: #fde68a !important; }
+body.dark-mode #link-quick-backup { color: #fbbf24 !important; }
 
 /* Print View Stylesheet */
 @media print {
